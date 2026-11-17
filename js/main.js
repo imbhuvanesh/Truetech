@@ -239,8 +239,8 @@ function initHeroLightMotion() {
  * - Provides smooth 60fps return to top when clicked
  */
 function initScrollToTop() {
-  const floatingBtns = document.querySelectorAll('.btn-scroll-top, #btnScrollTop');
-  floatingBtns.forEach(btn => {
+  const scrollBtns = document.querySelectorAll('.btn-scroll-top, .btn-scroll-top-flow, #btnScrollTop, #btnScrollTopFlow');
+  scrollBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       window.scrollTo({
         top: 0,
