@@ -1,0 +1,480 @@
+/* ==========================================================================
+   TRUE TECH - Premium 60fps Animated Mega-Menu System
+   Strictly Monochrome (Pure Black & White)
+   Fluid Height Expansion, Staggered Reveals, Zero Layout Shifts
+   ========================================================================== */
+
+:root {
+  --mega-bg: #000000;
+  --mega-text-primary: #ffffff;
+  --mega-text-secondary: #999999;
+  --mega-text-muted: #555555;
+  --mega-border: #1a1a1a;
+  --mega-card-bg: #0d0d0d;
+  --mega-card-border: #222222;
+  --mega-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --header-height: 72px;
+}
+
+/* --------------------------------------------------------------------------
+   1. Site Header Overrides (Crisp Monochrome Dark)
+   -------------------------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: var(--header-height, 72px);
+  background-color: var(--mega-bg);
+  border-bottom: 1px solid var(--mega-border);
+  z-index: 1000;
+  color: var(--mega-text-primary);
+  font-family: var(--font-sans);
+  box-sizing: border-box;
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.site-header .brand-logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--mega-text-primary);
+  text-decoration: none;
+}
+
+.site-header .brand-logo .tagline-mark {
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-left: 8px;
+}
+
+.nav-desktop {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 8px 14px;
+  text-decoration: none;
+  border-radius: 0 !important;
+  transition: color 0.2s ease, opacity 0.2s ease;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  background: transparent !important;
+  border: none !important;
+}
+
+.nav-link:hover,
+.nav-link.is-menu-open {
+  color: #ffffff !important;
+  background-color: transparent !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.nav-link.active {
+  color: #ffffff !important;
+  font-weight: 700;
+  background-color: transparent !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.nav-link::after {
+  display: none !important;
+  content: none !important;
+}
+
+.site-header .nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.site-header .btn-primary {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #ffffff;
+  font-weight: 700;
+  padding: 8px 20px;
+  border-radius: 9999px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 14px rgba(255, 255, 255, 0.18);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.site-header .btn-primary:hover {
+  background-color: #f2f2f2;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.25);
+  color: #000000;
+}
+
+.site-header .mobile-menu-btn {
+  display: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   2. Full-Width Mega Menu Dropdown Wrapper (Unfolds downward from navbar)
+   -------------------------------------------------------------------------- */
+.mega-dropdown-wrapper {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: var(--mega-bg);
+  border-bottom: 1px solid var(--mega-border);
+  box-shadow: 0 32px 64px rgba(0, 0, 0, 0.95);
+  overflow: hidden;
+  
+  /* Initial collapsed state */
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  
+  /* Smooth 60fps GPU-accelerated height & opacity transition */
+  will-change: height, opacity;
+  transform: translateZ(0);
+  transition: 
+    height 0.32s var(--mega-ease),
+    opacity 0.22s var(--mega-ease),
+    visibility 0.32s ease;
+  z-index: 999;
+}
+
+/* Invisible hover bridge to prevent cursor gap drop */
+.mega-dropdown-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  height: 12px;
+  pointer-events: auto;
+}
+
+.mega-dropdown-wrapper.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.mega-dropdown-inner {
+  position: relative;
+  width: 100%;
+}
+
+.mega-dropdown-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 38px 24px 44px 24px;
+  box-sizing: border-box;
+}
+
+/* --------------------------------------------------------------------------
+   3. Panel Content Animation (Cross-fade & subtle vertical movement)
+   -------------------------------------------------------------------------- */
+.mega-tab-content {
+  position: absolute;
+  top: 38px;
+  left: 24px;
+  right: 24px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 36px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-8px);
+  will-change: transform, opacity;
+  transition: 
+    opacity 0.20s var(--mega-ease),
+    transform 0.24s var(--mega-ease),
+    visibility 0.20s ease;
+}
+
+.mega-tab-content.is-active {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* --------------------------------------------------------------------------
+   4. Staggered Column Animation on Reveal
+   -------------------------------------------------------------------------- */
+.mega-tab-content.is-active .mega-col {
+  animation: megaColReveal 0.32s var(--mega-ease) both;
+}
+
+.mega-tab-content.is-active .mega-col:nth-child(1) { animation-delay: 0.02s; }
+.mega-tab-content.is-active .mega-col:nth-child(2) { animation-delay: 0.06s; }
+.mega-tab-content.is-active .mega-col:nth-child(3) { animation-delay: 0.10s; }
+.mega-tab-content.is-active .mega-col:nth-child(4) { animation-delay: 0.14s; }
+
+@keyframes megaColReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   5. Column Layout, Typography & Link Elements
+   -------------------------------------------------------------------------- */
+.mega-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.mega-col-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--mega-text-muted);
+  margin-bottom: 12px;
+  display: block;
+}
+
+.mega-col-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--mega-text-primary);
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+
+.mega-col-desc {
+  font-size: 0.88rem;
+  color: #888888;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.mega-action-link {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  margin-top: auto;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.mega-action-link:hover {
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+.mega-menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mega-menu-list li a {
+  color: var(--mega-text-secondary);
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  line-height: 1.4;
+  transition: color 0.16s ease, transform 0.16s ease;
+}
+
+.mega-menu-list li a:hover {
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+.mega-menu-list li a:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+  color: #ffffff;
+}
+
+.mega-tag {
+  font-size: 0.65rem;
+  padding: 2px 6px;
+  border: 1px solid #333333;
+  color: #aaaaaa;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+  border-radius: 2px;
+  margin-left: 8px;
+}
+
+/* --------------------------------------------------------------------------
+   6. Spotlight Cards inside Mega Menu
+   -------------------------------------------------------------------------- */
+.mega-card-spotlight {
+  background-color: var(--mega-card-bg);
+  border: 1px solid var(--mega-card-border);
+  padding: 18px;
+  border-radius: 4px;
+  margin-top: auto;
+  transition: border-color 0.15s ease;
+}
+
+.mega-card-spotlight:hover {
+  border-color: #444444;
+}
+
+.mega-card-spotlight h4 {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.mega-card-spotlight p {
+  font-size: 0.82rem;
+  color: #888888;
+  line-height: 1.45;
+  margin-bottom: 12px;
+}
+
+.mega-card-spotlight a {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  display: inline-block;
+  transition: transform 0.15s ease;
+}
+
+.mega-card-spotlight a:hover {
+  transform: translateX(3px);
+}
+
+/* Employee Spotlight Avatar */
+.mega-emp-avatar {
+  width: 42px;
+  height: 42px;
+  border: 1px solid #333333;
+  background-color: #141414;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+  border-radius: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   7. Full-Screen Backdrop Dimmer
+   -------------------------------------------------------------------------- */
+.mega-backdrop-dimmer {
+  position: fixed;
+  top: var(--header-height, 72px);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s var(--mega-ease), visibility 0.25s;
+  pointer-events: none;
+  z-index: 998;
+}
+
+.mega-backdrop-dimmer.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* --------------------------------------------------------------------------
+   8. Responsive Behavior
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .mega-tab-content,
+  .mega-tab-content.is-active {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+}
+
+@media (max-width: 900px) {
+  .nav-desktop {
+    display: none !important;
+  }
+  .site-header .mobile-menu-btn {
+    display: block !important;
+  }
+  .mega-dropdown-wrapper {
+    display: none !important;
+  }
+  .mega-backdrop-dimmer {
+    display: none !important;
+  }
+}

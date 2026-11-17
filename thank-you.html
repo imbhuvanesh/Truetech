@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You — True Tech</title>
+  <meta name="description"
+    content="Thank you for reaching out to True Tech. We have received your message and will be in touch shortly.">
+  <link rel="canonical" href="https://truetech.agency/thank-you.html">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+
+<body>
+
+  <!-- Navigation Header (Clean & Minimal) -->
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="brand-logo" aria-label="True Tech Homepage">
+        TRUE TECH
+        <span class="tagline-mark">SOLUTIONS</span>
+      </a>
+
+      <!-- Desktop Navigation: Exactly 6 Main Pages -->
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="solutions.html" class="nav-link">Solutions</a></li>
+          <li><a href="employees.html" class="nav-link">Employees</a></li>
+          <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="contact.html" class="btn btn-primary btn-sm">Get in Touch</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" style="padding-top: var(--space-4xl); padding-bottom: var(--space-4xl);">
+      <div class="container container-narrow text-center">
+        <div class="card"
+          style="background: #fff; border: 1px solid rgba(0, 0, 0, 0.08); border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06); padding: var(--space-3xl);">
+          <div style="font-size: 3rem; margin-bottom: var(--space-xs);">✓</div>
+          <span class="section-kicker">Message Sent</span>
+          <h1 style="font-size: 2.2rem; margin-top: var(--space-xs);">Thank You! We Received Your Message.</h1>
+
+          <div
+            style="background: var(--bg-secondary); border: 1px solid rgba(0, 0, 0, 0.08); border-radius: 12px; padding: var(--space-md); margin: var(--space-xl) auto; max-width: 400px;">
+            <div class="font-mono text-muted" style="font-size: 0.8rem;">YOUR REFERENCE CODE:</div>
+            <div id="reference-code" class="font-mono" style="font-size: 1.3rem; font-weight: 800; margin-top: 4px;">
+              TT-RECEIVED</div>
+          </div>
+
+          <p class="lead" style="margin-bottom: var(--space-2xl);">
+            One of our team members will review what you need and reach out to you within 24 business hours.
+          </p>
+
+          <div class="flex justify-center gap-md flex-wrap">
+            <a href="index.html" class="btn btn-primary">Return to Homepage</a>
+            <a href="services.html" class="btn btn-secondary">Explore Services</a>
+          </div>
+
+          <div
+            style="margin-top: var(--space-2xl); border-top: 1px solid var(--border-subtle); padding-top: var(--space-md); font-size: 0.85rem; color: var(--text-secondary);">
+            Need a faster reply? You can also message us directly on WhatsApp: <a href="https://wa.me/18005550199"
+              target="_blank" rel="noopener"><strong>+1 (800) 555-0199</strong></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Floating Up Button (Above Footer) -->
+  <button type="button" class="btn-scroll-top" id="btnScrollTop" aria-label="Back to top" title="Back to top">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </button>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>&copy; 2026 True Tech. All rights reserved.</div>
+        <div class="footer-legal-links">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms.html">Terms and Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const ref = urlParams.get('ref');
+      if (ref) {
+        document.getElementById('reference-code').textContent = ref;
+      }
+    });
+  </script>
+</body>
+
+</html>

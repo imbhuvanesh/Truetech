@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" fill="none">
+  <rect width="800" height="450" fill="#f6f6f6" stroke="#000000" stroke-width="2"/>
+  <!-- Browser header -->
+  <rect x="0" y="0" width="800" height="40" fill="#000000"/>
+  <circle cx="25" cy="20" r="6" fill="#ffffff"/>
+  <circle cx="45" cy="20" r="6" fill="#ffffff" fill-opacity="0.5"/>
+  <circle cx="65" cy="20" r="6" fill="#ffffff" fill-opacity="0.2"/>
+  <rect x="100" y="10" width="400" height="20" fill="#111111" stroke="#333333" stroke-width="1"/>
+  <text x="120" y="24" fill="#888888" font-family="monospace" font-size="11">https://app.apexfintech.io/analytics</text>
+  
+  <!-- Dashboard UI Wireframe -->
+  <rect x="30" y="70" width="180" height="350" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+  <line x1="50" y1="100" x2="160" y2="100" stroke="#000000" stroke-width="4"/>
+  <line x1="50" y1="130" x2="180" y2="130" stroke="#cccccc" stroke-width="2"/>
+  <line x1="50" y1="160" x2="150" y2="160" stroke="#cccccc" stroke-width="2"/>
+  <line x1="50" y1="190" x2="170" y2="190" stroke="#cccccc" stroke-width="2"/>
+  <line x1="50" y1="220" x2="140" y2="220" stroke="#cccccc" stroke-width="2"/>
+
+  <!-- Main Canvas -->
+  <rect x="230" y="70" width="540" height="100" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+  <text x="250" y="105" font-family="sans-serif" font-weight="700" font-size="14" fill="#000000">PORTFOLIO VALUE: $2,840,290</text>
+  <polyline points="250,145 320,130 390,140 460,115 530,125 600,105 670,110 740,95" fill="none" stroke="#000000" stroke-width="2"/>
+
+  <rect x="230" y="190" width="260" height="230" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+  <rect x="510" y="190" width="260" height="230" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+  
+  <text x="250" y="220" font-family="sans-serif" font-weight="700" font-size="12" fill="#000000">REAL-TIME RISK METRICS</text>
+  <rect x="250" y="240" width="220" height="15" fill="#000000"/>
+  <rect x="250" y="270" width="160" height="15" fill="#555555"/>
+  <rect x="250" y="300" width="190" height="15" fill="#888888"/>
+  <rect x="250" y="330" width="120" height="15" fill="#cccccc"/>
+
+  <text x="530" y="220" font-family="sans-serif" font-weight="700" font-size="12" fill="#000000">TRANSACTION FEED</text>
+  <line x1="530" y1="250" x2="740" y2="250" stroke="#000000" stroke-width="1"/>
+  <line x1="530" y1="280" x2="740" y2="280" stroke="#dddddd" stroke-width="1"/>
+  <line x1="530" y1="310" x2="740" y2="310" stroke="#dddddd" stroke-width="1"/>
+  <line x1="530" y1="340" x2="740" y2="340" stroke="#dddddd" stroke-width="1"/>
+</svg>

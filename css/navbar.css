@@ -1,0 +1,726 @@
+/* ==========================================================================
+   TRUE TECH - Premium Minimal Navbar & Animated Mega Menu
+   Strictly Monochrome (Pure Black & White)
+   ========================================================================== */
+
+:root {
+  --nav-bg: #000000;
+  --nav-text: #ffffff;
+  --nav-text-muted: #888888;
+  --nav-text-subtle: #555555;
+  --nav-border: #1a1a1a;
+  --nav-hover-bg: #111111;
+  --nav-height: 64px;
+  --nav-z-index: 1000;
+  --nav-transition-timing: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --------------------------------------------------------------------------
+   1. Main Header Container
+   -------------------------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: var(--nav-height);
+  background-color: var(--nav-bg);
+  border-bottom: 1px solid var(--nav-border);
+  z-index: var(--nav-z-index);
+  color: var(--nav-text);
+  box-sizing: border-box;
+}
+
+.nav-container {
+  max-width: 1400px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+/* --------------------------------------------------------------------------
+   2. Company Logo (Left)
+   -------------------------------------------------------------------------- */
+.nav-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--nav-text);
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.nav-logo .logo-mark {
+  font-size: 0.95rem;
+  line-height: 1;
+  display: inline-block;
+  color: #ffffff;
+}
+
+.nav-logo:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   3. Center Navigation Links
+   -------------------------------------------------------------------------- */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  gap: 6px;
+}
+
+.nav-item {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav-link-btn {
+  background: transparent;
+  border: none;
+  color: var(--nav-text-muted);
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: color 0.15s ease, background-color 0.15s ease;
+  white-space: nowrap;
+}
+
+.nav-link-btn:hover,
+.nav-item.is-active .nav-link-btn,
+.nav-link-btn:focus-visible {
+  color: var(--nav-text);
+  background-color: var(--nav-hover-bg);
+}
+
+.nav-link-btn:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+.chevron-icon {
+  transition: transform 0.25s var(--nav-transition-timing);
+  opacity: 0.6;
+}
+
+.nav-item.is-active .chevron-icon {
+  transform: rotate(180deg);
+  opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   4. Right Actions (Search, Login, Contact, Primary CTA)
+   -------------------------------------------------------------------------- */
+.nav-actions-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+/* Search Icon Button */
+.nav-search-btn {
+  background: transparent;
+  border: none;
+  color: var(--nav-text-muted);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 4px;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.nav-search-btn:hover,
+.nav-search-btn:focus-visible {
+  color: var(--nav-text);
+  background-color: var(--nav-hover-bg);
+}
+
+.nav-search-btn:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* Login Link */
+.nav-login-link {
+  color: var(--nav-text-muted);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  padding: 6px 10px;
+  transition: color 0.15s ease;
+  white-space: nowrap;
+}
+
+.nav-login-link:hover,
+.nav-login-link:focus-visible {
+  color: var(--nav-text);
+}
+
+.nav-login-link:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* Contact Button (Ghost Outline) */
+.nav-contact-btn {
+  color: var(--nav-text);
+  background: transparent;
+  border: 1px solid #333333;
+  padding: 7px 16px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.nav-contact-btn:hover,
+.nav-contact-btn:focus-visible {
+  background: #1a1a1a;
+  border-color: #666666;
+}
+
+.nav-contact-btn:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* Primary CTA Button (High Contrast White) */
+.nav-primary-cta {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #ffffff;
+  padding: 7px 18px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.nav-primary-cta:hover,
+.nav-primary-cta:focus-visible {
+  background-color: #e0e0e0;
+  border-color: #e0e0e0;
+}
+
+.nav-primary-cta:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* Mobile Toggle Hamburger */
+.nav-mobile-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid #333333;
+  padding: 8px 10px;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  border-radius: 4px;
+}
+
+.nav-mobile-toggle .hamburger-bar {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background-color: #ffffff;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.nav-mobile-toggle[aria-expanded="true"] .hamburger-bar:nth-child(1) {
+  transform: translateY(3.5px) rotate(45deg);
+}
+
+.nav-mobile-toggle[aria-expanded="true"] .hamburger-bar:nth-child(2) {
+  transform: translateY(-3.5px) rotate(-45deg);
+}
+
+/* --------------------------------------------------------------------------
+   5. Mega Menu Animated Dropdown Panel
+   -------------------------------------------------------------------------- */
+.mega-menu-wrapper {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: var(--nav-bg);
+  border-bottom: 1px solid var(--nav-border);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s var(--nav-transition-timing),
+              opacity 0.25s ease,
+              visibility 0.35s ease;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.mega-menu-wrapper.is-open {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.mega-menu-panel {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.mega-menu-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 48px 36px 56px 36px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Content Container for Each Tab */
+.mega-menu-content {
+  display: none;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.25s ease, transform 0.25s var(--nav-transition-timing);
+}
+
+.mega-menu-content.active {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 44px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered Column Animation */
+.mega-menu-content.active .mega-col {
+  animation: megaColSlideIn 0.32s var(--nav-transition-timing) both;
+}
+
+.mega-menu-content.active .mega-col:nth-child(1) { animation-delay: 0.02s; }
+.mega-menu-content.active .mega-col:nth-child(2) { animation-delay: 0.06s; }
+.mega-menu-content.active .mega-col:nth-child(3) { animation-delay: 0.10s; }
+.mega-menu-content.active .mega-col:nth-child(4) { animation-delay: 0.14s; }
+
+@keyframes megaColSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   6. Mega Menu Internal Typography & Layout
+   -------------------------------------------------------------------------- */
+.mega-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.mega-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--nav-text-subtle);
+  margin-bottom: 14px;
+  display: block;
+}
+
+.mega-heading {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--nav-text);
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+
+.mega-desc {
+  font-size: 0.88rem;
+  color: var(--nav-text-muted);
+  line-height: 1.5;
+  margin-bottom: 18px;
+}
+
+.mega-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mega-link-item a {
+  color: var(--nav-text-muted);
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.15s ease, transform 0.15s ease;
+  line-height: 1.4;
+}
+
+.mega-link-item a:hover {
+  color: var(--nav-text);
+  transform: translateX(3px);
+}
+
+.mega-link-item a:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+  color: var(--nav-text);
+}
+
+.mega-link-tag {
+  font-size: 0.65rem;
+  padding: 2px 6px;
+  border: 1px solid #333333;
+  color: #aaaaaa;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+  border-radius: 2px;
+}
+
+/* Bottom Highlight Card within Column */
+.mega-highlight-card {
+  margin-top: 18px;
+  border: 1px solid var(--nav-border);
+  background-color: #080808;
+  padding: 18px;
+  border-radius: 4px;
+  transition: border-color 0.15s ease;
+}
+
+.mega-highlight-card:hover {
+  border-color: #333333;
+}
+
+.mega-highlight-card h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #ffffff;
+}
+
+.mega-highlight-card p {
+  font-size: 0.82rem;
+  color: var(--nav-text-muted);
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.mega-highlight-card a {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   7. Full-Screen Backdrop (Subtle Darkened Dimmer)
+   -------------------------------------------------------------------------- */
+.mega-backdrop {
+  position: fixed;
+  top: var(--nav-height);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  pointer-events: none;
+  z-index: 998;
+}
+
+.mega-backdrop.is-active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* --------------------------------------------------------------------------
+   8. Search Modal Overlay (Ctrl+K)
+   -------------------------------------------------------------------------- */
+.search-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 100px;
+  padding-left: 20px;
+  padding-right: 20px;
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.search-modal-backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.search-modal {
+  background-color: #0a0a0a;
+  border: 1px solid #222222;
+  width: 100%;
+  max-width: 620px;
+  border-radius: 6px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.95);
+  overflow: hidden;
+  transform: translateY(-15px);
+  transition: transform 0.2s var(--nav-transition-timing);
+}
+
+.search-modal-backdrop.is-open .search-modal {
+  transform: translateY(0);
+}
+
+.search-input-header {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #1a1a1a;
+  gap: 12px;
+}
+
+.search-input-header svg {
+  color: #777777;
+  flex-shrink: 0;
+}
+
+.search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 1.05rem;
+}
+
+.search-input::placeholder {
+  color: #555555;
+}
+
+.search-close-btn {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  color: #888888;
+  font-size: 0.75rem;
+  padding: 3px 7px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: monospace;
+}
+
+.search-results-body {
+  max-height: 380px;
+  overflow-y: auto;
+  padding: 16px 20px;
+}
+
+.search-category-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #555555;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+}
+
+.search-result-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  color: #dddddd;
+  text-decoration: none;
+  font-size: 0.92rem;
+  border-radius: 4px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.search-result-link:hover,
+.search-result-link:focus-visible {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  outline: none;
+}
+
+.search-result-link span.cat-badge {
+  font-size: 0.72rem;
+  color: #777777;
+}
+
+/* --------------------------------------------------------------------------
+   9. Mobile Responsive Drawer & Accordion Navigation
+   -------------------------------------------------------------------------- */
+.mobile-nav-panel {
+  display: none;
+  position: fixed;
+  top: var(--nav-height);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000000;
+  overflow-y: auto;
+  padding: 24px;
+  z-index: 999;
+  border-top: 1px solid #1a1a1a;
+}
+
+.mobile-nav-panel.is-open {
+  display: block;
+}
+
+.mobile-accordion-item {
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.mobile-accordion-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 1.15rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+}
+
+.mobile-accordion-btn svg {
+  transition: transform 0.2s ease;
+  color: #888888;
+}
+
+.mobile-accordion-item.open .mobile-accordion-btn svg {
+  transform: rotate(180deg);
+  color: #ffffff;
+}
+
+.mobile-accordion-content {
+  display: none;
+  padding-bottom: 20px;
+}
+
+.mobile-accordion-item.open .mobile-accordion-content {
+  display: block;
+}
+
+.mobile-sub-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mobile-sub-links a {
+  color: #888888;
+  text-decoration: none;
+  font-size: 0.95rem;
+  display: block;
+  padding: 4px 0;
+}
+
+.mobile-sub-links a:hover {
+  color: #ffffff;
+}
+
+.mobile-actions-group {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* --------------------------------------------------------------------------
+   10. Media Queries
+   -------------------------------------------------------------------------- */
+@media (max-width: 1120px) {
+  .nav-menu {
+    display: none;
+  }
+
+  .nav-mobile-toggle {
+    display: flex;
+  }
+
+  .nav-login-link,
+  .nav-contact-btn {
+    display: none;
+  }
+
+  .mega-menu-wrapper {
+    display: none !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-primary-cta {
+    display: none;
+  }
+}
