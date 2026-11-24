@@ -29,7 +29,7 @@ export const WorkPage: React.FC = () => {
         <div className="absolute top-3 right-4 z-20 opacity-70 pointer-events-none">
           <DoodleCorner position="top-right" color="#A8FF00" className="w-8 h-8 sm:w-10 sm:h-10" />
         </div>
-        
+
         {/* Ambient Badge */}
         <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-neon-lime text-xs font-bold uppercase tracking-wider mb-4">
           <span>Case Studies &amp; Delivered Systems</span>

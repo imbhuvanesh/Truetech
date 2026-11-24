@@ -51,7 +51,7 @@ export const TabContentToggle: React.FC = () => {
   const activeIndexRef = useRef(0);
   const isAnimatingRef = useRef(false);
   const queuedIndexRef = useRef<number | null>(null);
-  const switchTabRef = useRef<(idx: number) => void>(() => {});
+  const switchTabRef = useRef<(idx: number) => void>(() => { });
 
   const runTransition = useCallback((nextIndex: number) => {
     const currentSplit = splitsRef.current[activeIndexRef.current];
@@ -159,7 +159,7 @@ export const TabContentToggle: React.FC = () => {
         // Fallback if SplitText is not available
         return {
           lines: [el],
-          revert: () => {},
+          revert: () => { },
         };
       }
     });
