@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { ConnectorArrow1, ConnectorArrow2, SmallNeonSticker } from './Doodles';
-import { MaskedLineReveal, FadeUpParagraph } from './AnimatedText';
+import { MaskedLineReveal, FadeUpParagraph, SlowHighlight } from './AnimatedText';
 import { Code2, ArrowUpRight } from 'lucide-react';
 
 export const RewardsSection: React.FC = () => {
@@ -15,7 +15,7 @@ export const RewardsSection: React.FC = () => {
   };
 
   return (
-    <section className="relative w-full bg-white rounded-t-[36px] sm:rounded-t-[48px] md:rounded-t-[56px] pt-6 sm:pt-8 md:pt-10 pb-8 sm:pb-10 md:pb-12 px-4 sm:px-8 md:px-12 text-primary-black shadow-[0_-12px_45px_rgba(0,0,0,0.06)]">
+    <section className="relative w-full bg-[#DCF4A2] rounded-t-[36px] sm:rounded-t-[48px] md:rounded-t-[56px] pt-6 sm:pt-8 md:pt-10 pb-8 sm:pb-10 md:pb-12 px-4 sm:px-8 md:px-12 text-primary-black shadow-[0_-12px_45px_rgba(0,0,0,0.06)]">
       <div className="max-w-6xl mx-auto">
         
         {/* The 3 Horizontal Reward / Pillar Cards Grid */}
@@ -43,7 +43,7 @@ export const RewardsSection: React.FC = () => {
               }}
               whileHover={{ y: -6 }}
               onClick={() => scrollTo('services')}
-              className="h-full bg-[#F6F6F6] rounded-[32px] p-6 sm:p-7 md:p-8 flex flex-col justify-between transition-all duration-300 shadow-card-soft hover:shadow-card-hover border border-black/[0.035] cursor-pointer"
+              className="h-full bg-white rounded-[32px] p-6 sm:p-7 md:p-8 flex flex-col justify-between transition-all duration-300 shadow-card-soft hover:shadow-card-hover border border-black/[0.04] cursor-pointer"
             >
               <div>
                 {/* Heading with smooth line reveal */}
@@ -52,12 +52,12 @@ export const RewardsSection: React.FC = () => {
                   className="font-sans text-xl sm:text-[22px] font-bold uppercase tracking-tight text-primary-black leading-[1.1]"
                   delay={0.1}
                 />
-                {/* Subtitle with fade up */}
+                {/* Subtitle with fade up and slow green highlight */}
                 <FadeUpParagraph
-                  className="font-sans text-xs sm:text-[13px] text-[#555555] mt-2.5 font-normal"
+                  className="font-sans text-xs sm:text-[13px] text-[#444444] mt-2.5 font-normal leading-relaxed"
                   delay={0.25}
                 >
-                  high-performance websites, apps & custom software
+                  high-performance <SlowHighlight>websites, apps &amp; custom software</SlowHighlight>
                 </FadeUpParagraph>
               </div>
 
@@ -131,7 +131,7 @@ export const RewardsSection: React.FC = () => {
               }}
               whileHover={{ y: -6 }}
               onClick={() => scrollTo('work')}
-              className="h-full bg-[#F6F6F6] rounded-[32px] p-6 sm:p-7 md:p-8 flex flex-col justify-between transition-all duration-300 shadow-card-soft hover:shadow-card-hover border border-black/[0.035] cursor-pointer"
+              className="h-full bg-white rounded-[32px] p-6 sm:p-7 md:p-8 flex flex-col justify-between transition-all duration-300 shadow-card-soft hover:shadow-card-hover border border-black/[0.04] cursor-pointer"
             >
               <div>
                 {/* Heading with smooth line reveal */}
@@ -140,12 +140,12 @@ export const RewardsSection: React.FC = () => {
                   className="font-sans text-xl sm:text-[22px] font-bold uppercase tracking-tight text-primary-black leading-[1.1]"
                   delay={0.15}
                 />
-                {/* Subtitle with fade up */}
+                {/* Subtitle with fade up and slow green highlight */}
                 <FadeUpParagraph
-                  className="font-sans text-xs sm:text-[13px] text-[#555555] mt-2.5 font-normal"
+                  className="font-sans text-xs sm:text-[13px] text-[#444444] mt-2.5 font-normal leading-relaxed"
                   delay={0.3}
                 >
-                  brand identity, graphic design & video production
+                  <SlowHighlight>brand identity</SlowHighlight>, graphic design &amp; <SlowHighlight>video production</SlowHighlight>
                 </FadeUpParagraph>
               </div>
 
@@ -220,7 +220,7 @@ export const RewardsSection: React.FC = () => {
               }}
               whileHover={{ y: -6 }}
               onClick={() => scrollTo('contact')}
-              className="h-full bg-[#F6F6F6] rounded-[32px] p-6 sm:p-7 md:p-8 flex flex-col justify-between transition-all duration-300 shadow-card-soft hover:shadow-card-hover border border-black/[0.035] cursor-pointer"
+              className="h-full bg-white rounded-[32px] p-6 sm:p-7 md:p-8 flex flex-col justify-between transition-all duration-300 shadow-card-soft hover:shadow-card-hover border border-black/[0.04] cursor-pointer"
             >
               <div>
                 {/* Heading with smooth line reveal */}
@@ -229,12 +229,12 @@ export const RewardsSection: React.FC = () => {
                   className="font-sans text-xl sm:text-[22px] font-bold uppercase tracking-tight text-primary-black leading-[1.1]"
                   delay={0.2}
                 />
-                {/* Subtitle with fade up */}
+                {/* Subtitle with fade up and slow green highlight */}
                 <FadeUpParagraph
-                  className="font-sans text-xs sm:text-[13px] text-[#555555] mt-2.5 font-normal"
+                  className="font-sans text-xs sm:text-[13px] text-[#444444] mt-2.5 font-normal leading-relaxed"
                   delay={0.35}
                 >
-                  Meta ad campaigns, social growth & workflow automation
+                  <SlowHighlight>Meta ad campaigns</SlowHighlight>, social growth &amp; <SlowHighlight>workflow automation</SlowHighlight>
                 </FadeUpParagraph>
               </div>
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowUp, Mail, Phone, MessageSquare, ArrowUpRight, Globe } from 'lucide-react';
 import { DoodleStar } from '../Doodles';
+import { SlowHighlight } from '../AnimatedText';
 import { Link } from 'react-router-dom';
 
 export const Footer: React.FC = () => {
@@ -48,7 +49,7 @@ export const Footer: React.FC = () => {
               <DoodleStar className="w-3 h-3 text-neon-lime" />
             </div>
             <h3 className="font-sans font-light text-2xl sm:text-3xl md:text-4xl text-white tracking-tight leading-snug">
-              Have a Project in Mind? <span className="font-bold text-white">Let's Create</span> <span className="font-bold text-neon-lime">Impact.</span>
+              Have a Project in Mind? Let's Create <SlowHighlight dark>Impact</SlowHighlight>.
             </h3>
             <p className="font-sans font-normal text-xs sm:text-sm text-zinc-400 mt-2">
               From web platforms and custom software to brand systems and scalable Meta ad funnels.

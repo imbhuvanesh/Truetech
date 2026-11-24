@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 import { servicesData } from '../../data/agencyData';
 import type { ServiceCategory } from '../../data/agencyData';
-import { MaskedLineReveal, FadeUpParagraph, FadeUpText } from '../AnimatedText';
+import { MaskedLineReveal, FadeUpParagraph, FadeUpText, SlowHighlight } from '../AnimatedText';
 import { SmallNeonSticker, ConnectorArrow1 } from '../Doodles';
 
 interface ServicesSectionProps {
@@ -44,7 +44,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
   const [activeServiceModal, setActiveServiceModal] = useState<ServiceCategory | null>(null);
 
   return (
-    <section id="services" className="relative w-full py-8 sm:py-10 md:py-12 px-4 sm:px-8 text-black bg-white">
+    <section id="services" className="relative w-full py-8 sm:py-10 md:py-12 px-4 sm:px-8 text-black bg-[#DCF4A2]">
       <div className="max-w-6xl mx-auto">
 
         {/* Section Header */}
@@ -62,10 +62,10 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
           </div>
           
           <FadeUpParagraph
-            className="mt-4 md:mt-0 max-w-md text-sm sm:text-base text-zinc-600 font-normal font-sans leading-relaxed"
+            className="mt-4 md:mt-0 max-w-md text-sm sm:text-base text-zinc-700 font-normal font-sans leading-relaxed"
             delay={0.25}
           >
-            Six cohesive disciplines covering your entire digital footprint — from high-performance engineering to viral creative and automated systems.
+            Six cohesive disciplines covering your entire digital footprint — from <SlowHighlight>high-performance engineering</SlowHighlight> to viral creative and <SlowHighlight>automated systems</SlowHighlight>.
           </FadeUpParagraph>
         </div>
 
@@ -91,7 +91,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                   }}
                   whileHover={{ y: -6 }}
                   onClick={() => onSelectService(service.title)}
-                  className="h-full bg-[#F6F6F6] rounded-[32px] p-6 sm:p-7 md:p-8 flex flex-col justify-between transition-all duration-300 shadow-card-soft hover:shadow-card-hover border border-black/[0.035] cursor-pointer"
+                  className="h-full bg-white rounded-[32px] p-6 sm:p-7 md:p-8 flex flex-col justify-between transition-all duration-300 shadow-card-soft hover:shadow-card-hover border border-black/[0.04] cursor-pointer"
                 >
                   <div>
                     {/* Top Header: Icon + Popular Pill Badge */}

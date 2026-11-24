@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUpRight, Sparkles, CheckCircle2 } from 'lucide-react';
 import { portfolioData } from '../../data/agencyData';
 import type { ProjectItem } from '../../data/agencyData';
-import { MaskedLineReveal, FadeUpParagraph, FadeUpText } from '../AnimatedText';
+import { MaskedLineReveal, FadeUpParagraph, FadeUpText, SlowHighlight } from '../AnimatedText';
 import { DoodleStar, DoodleUnderline } from '../Doodles';
 
 export const PortfolioSection: React.FC = () => {
@@ -51,7 +51,7 @@ export const PortfolioSection: React.FC = () => {
               className="text-sm sm:text-base text-zinc-300 font-normal font-sans leading-relaxed"
               delay={0.25}
             >
-              A curated showcase of high-performance websites, scalable software, brand systems, and high-impact digital campaigns.
+              A curated showcase of <SlowHighlight dark>high-performance websites</SlowHighlight>, <SlowHighlight dark>scalable software</SlowHighlight>, brand systems, and <SlowHighlight dark>high-impact digital campaigns</SlowHighlight>.
             </FadeUpParagraph>
             <DoodleUnderline className="w-48 h-3 text-neon-lime mt-2" />
           </div>

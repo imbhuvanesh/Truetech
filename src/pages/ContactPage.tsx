@@ -88,8 +88,8 @@ export const ContactPage: React.FC = () => {
         <ContactSection preselectedService="Web Development" />
       </div>
 
-      {/* Trust & Guarantee Box */}
-      <div className="w-full max-w-[1260px] bg-[#FAFBFD] rounded-[36px] sm:rounded-[48px] p-8 sm:p-10 border border-black/[0.05] shadow-[0_12px_40px_rgba(0,0,0,0.04)] my-2 sm:my-3">
+      {/* Trust & Guarantee Box (Creamy Avocado #DCF4A2) */}
+      <div className="w-full max-w-[1260px] bg-[#DCF4A2] rounded-[36px] sm:rounded-[48px] p-8 sm:p-10 border border-black/[0.05] shadow-[0_12px_40px_rgba(0,0,0,0.04)] my-2 sm:my-3">
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
           <div className="flex items-start space-x-3.5">
             <div className="w-10 h-10 rounded-xl bg-royal-blue/10 text-royal-blue flex items-center justify-center shrink-0">

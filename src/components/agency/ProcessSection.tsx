@@ -2,7 +2,7 @@ import React from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Search, Compass, PenTool, Rocket, CheckCircle2, ArrowUpRight } from 'lucide-react';
 import { processSteps } from '../../data/agencyData';
-import { MaskedLineReveal, FadeUpParagraph, FadeUpText } from '../AnimatedText';
+import { MaskedLineReveal, FadeUpParagraph, FadeUpText, SlowHighlight } from '../AnimatedText';
 import { ConnectorArrow1, ConnectorArrow2, SmallNeonSticker } from '../Doodles';
 
 const stepIcons = [Search, Compass, PenTool, Rocket];
@@ -18,7 +18,7 @@ export const ProcessSection: React.FC = () => {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section id="process" className="relative w-full py-8 sm:py-10 md:py-12 px-4 sm:px-8 text-black bg-[#FAFAFB]">
+    <section id="process" className="relative w-full py-8 sm:py-10 md:py-12 px-4 sm:px-8 text-black bg-[#DCF4A2]">
       <div className="max-w-6xl mx-auto">
 
         {/* Section Header */}
@@ -36,10 +36,10 @@ export const ProcessSection: React.FC = () => {
           </div>
           
           <FadeUpParagraph
-            className="mt-4 md:mt-0 max-w-md text-sm sm:text-base text-zinc-600 font-normal font-sans leading-relaxed"
+            className="mt-4 md:mt-0 max-w-md text-sm sm:text-base text-zinc-700 font-normal font-sans leading-relaxed"
             delay={0.25}
           >
-            A battle-tested methodology designed to eliminate ambiguity, ship on time, and maximize commercial impact.
+            A battle-tested methodology designed to <SlowHighlight>eliminate ambiguity</SlowHighlight>, <SlowHighlight>ship on time</SlowHighlight>, and maximize <SlowHighlight>commercial impact</SlowHighlight>.
           </FadeUpParagraph>
         </div>
 

@@ -48,9 +48,9 @@ export const HomePage: React.FC = () => {
       </div>
 
       {/* =========================================================================
-          STACKED CONTAINER 2: WHAT WE DO / 3 PILLARS (PURE WHITE)
+          STACKED CONTAINER 2: WHAT WE DO / 3 PILLARS (CREAMY AVOCADO #DCF4A2)
          ========================================================================= */}
-      <div className="w-full max-w-[1260px] bg-white rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(0,10,40,0.08)] border border-black/[0.05] my-2 sm:my-3 overflow-hidden">
+      <div className="w-full max-w-[1260px] bg-[#DCF4A2] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(0,10,40,0.08)] border border-black/[0.05] my-2 sm:my-3 overflow-hidden">
         <RewardsSection />
       </div>
 
@@ -69,9 +69,9 @@ export const HomePage: React.FC = () => {
       </div>
 
       {/* =========================================================================
-          STACKED CONTAINER 5: CORE DISCIPLINES / SERVICES (CRISP WHITE)
+          STACKED CONTAINER 5: CORE DISCIPLINES / SERVICES (CREAMY AVOCADO #DCF4A2)
          ========================================================================= */}
-      <div className="w-full max-w-[1260px] bg-white rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(6,69,216,0.06)] border border-black/[0.05] my-2 sm:my-3 overflow-hidden">
+      <div className="w-full max-w-[1260px] bg-[#DCF4A2] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(6,69,216,0.06)] border border-black/[0.05] my-2 sm:my-3 overflow-hidden">
         <ServicesSection onSelectService={handleSelectService} />
       </div>
 

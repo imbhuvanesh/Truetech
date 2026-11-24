@@ -2,7 +2,7 @@ import React from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { HeroHashtag, TopRightArrow, BottomLeftArrow, GetStartedBadge, DoodleConnectorBracket, DoodleStar } from './Doodles';
 import { FloatingNFTCard } from './FloatingNFTCard';
-import { MaskedHeroWord } from './AnimatedText';
+import { MaskedHeroWord, SlowHighlight } from './AnimatedText';
 import { ArrowUpRight, Sparkles } from 'lucide-react';
 
 interface HeroSectionProps {
@@ -174,7 +174,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onGetStarted, onExplor
           transition={{ duration: 0.7, delay: 0.5 }}
           className="relative z-20 mt-4 sm:mt-6 max-w-xl text-center text-white/90 font-sans font-normal text-xs sm:text-sm md:text-base leading-relaxed px-4"
         >
-          Your ideas deserve more than just an online presence. We turn them into powerful digital experiences through <span className="font-bold text-white">technology</span>, <span className="font-bold text-white">creativity</span> and <span className="font-bold text-neon-lime">smart marketing</span>.
+          Your ideas deserve more than just an online presence. We turn them into powerful digital experiences through <SlowHighlight dark>technology</SlowHighlight>, <SlowHighlight dark>creativity</SlowHighlight> and <SlowHighlight dark>smart marketing</SlowHighlight>.
         </motion.p>
 
         {/* Hero Action CTA Buttons */}

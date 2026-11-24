@@ -1,14 +1,14 @@
 import React from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { ConnectorArrow1, ConnectorArrow2, SmallNeonSticker } from '../Doodles';
-import { MaskedLineReveal, FadeUpParagraph, FadeUpText } from '../AnimatedText';
+import { MaskedLineReveal, FadeUpParagraph, FadeUpText, SlowHighlight } from '../AnimatedText';
 import { Code2, ArrowUpRight, CheckCircle2 } from 'lucide-react';
 
 export const AboutSection: React.FC<{ onExploreServices: () => void }> = ({ onExploreServices }) => {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section id="about" className="relative w-full py-8 sm:py-10 md:py-12 px-4 sm:px-8 text-black bg-white">
+    <section id="about" className="relative w-full py-8 sm:py-10 md:py-12 px-4 sm:px-8 text-black bg-[#DCF4A2]">
       <div className="max-w-6xl mx-auto">
         
         {/* Section Header */}
@@ -44,14 +44,14 @@ export const AboutSection: React.FC<{ onExploreServices: () => void }> = ({ onEx
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-7">
               <FadeUpText delay={0.1} className="font-sans font-light text-2xl sm:text-3xl text-black leading-snug">
-                "Our goal is to help brands <span className="font-bold">establish their online presence</span>, improve their digital identity and <span className="font-bold">grow their business</span>."
+                "Our goal is to help brands <SlowHighlight>establish their online presence</SlowHighlight>, improve their digital identity and <SlowHighlight>grow their business</SlowHighlight>."
               </FadeUpText>
               
               <FadeUpParagraph
                 delay={0.2}
-                className="mt-4 text-sm sm:text-base text-zinc-600 font-normal font-sans leading-relaxed"
+                className="mt-4 text-sm sm:text-base text-zinc-700 font-normal font-sans leading-relaxed"
               >
-                In today's digital landscape, generic websites and disconnected marketing fail to convert. We unite world-class software engineering with strategic design and high-yield marketing funnels so your company leads its market.
+                In today's digital landscape, generic websites and disconnected marketing fail to convert. We unite world-class <SlowHighlight>software engineering</SlowHighlight> with strategic design and high-yield <SlowHighlight>marketing funnels</SlowHighlight> so your company leads its market.
               </FadeUpParagraph>
 
               <div className="mt-6 flex flex-wrap items-center gap-3">

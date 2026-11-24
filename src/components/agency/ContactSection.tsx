@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Send, CheckCircle, Sparkles, MessageSquare, Mail, ArrowUpRight } from 'lucide-react';
-import { MaskedLineReveal, FadeUpParagraph, FadeUpText } from '../AnimatedText';
+import { MaskedLineReveal, FadeUpParagraph, FadeUpText, SlowHighlight } from '../AnimatedText';
 import { DoodleStar, DoodleUnderline } from '../Doodles';
 
 const servicesList = [
@@ -88,7 +88,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ preselectedServi
               className="text-sm sm:text-base text-white/85 font-normal font-sans leading-relaxed"
               delay={0.25}
             >
-              Let's turn your ideas into something extraordinary. Tell us about your goals and our partners will reply with a detailed project proposal within 2 hours.
+              Let's turn your ideas into something extraordinary. Tell us about your goals and our partners will reply with a detailed project proposal <SlowHighlight dark>within 2 hours</SlowHighlight>.
             </FadeUpParagraph>
             <DoodleUnderline className="w-48 h-3 text-neon-lime mt-2" />
           </div>

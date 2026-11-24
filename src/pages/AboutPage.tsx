@@ -64,8 +64,8 @@ export const AboutPage: React.FC = () => {
         </div>
       </div>
 
-      {/* Main Narrative & Values Container */}
-      <div className="w-full max-w-[1260px] bg-[#FAFBFD] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(0,10,40,0.06)] border border-black/[0.05] my-2 sm:my-3 overflow-hidden">
+      {/* Main Narrative & Values Container (Creamy Avocado #DCF4A2) */}
+      <div className="w-full max-w-[1260px] bg-[#DCF4A2] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(0,10,40,0.06)] border border-black/[0.05] my-2 sm:my-3 overflow-hidden">
         <AboutSection onExploreServices={() => navigate('/services')} />
       </div>
 

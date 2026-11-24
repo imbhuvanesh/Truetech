@@ -216,7 +216,7 @@ export const TabContentToggle: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative w-full py-8 sm:py-10 md:py-12 px-4 sm:px-8 bg-white border-y border-black/[0.06] overflow-hidden">
+    <section className="relative w-full py-8 sm:py-10 md:py-12 px-4 sm:px-8 bg-[#DCF4A2] border-y border-black/[0.06] overflow-hidden">
       <div ref={containerRef} className="tabs-demo">
         {/* Section Header Label */}
         <div className="text-center mb-8">

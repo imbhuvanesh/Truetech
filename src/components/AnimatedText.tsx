@@ -220,3 +220,55 @@ export const FadeUpText: React.FC<{
     </div>
   );
 };
+
+// Slow Green Highlighter for key important words across the entire site
+// Slowly draws from left to right as the user scrolls into view
+// Re-triggers every time user visits (once: false)
+export const SlowHighlight: React.FC<{
+  children: React.ReactNode;
+  className?: string;
+  delay?: number;
+  duration?: number;
+  dark?: boolean;
+}> = ({
+  children,
+  className = '',
+  delay = 0.25,
+  duration = 0.85,
+  dark = false,
+}) => {
+  const shouldReduceMotion = useReducedMotion();
+
+  return (
+    <span className={`relative inline-block px-1.5 py-0.5 rounded mx-0.5 font-bold ${className}`}>
+      {/* Animated Green Highlighter Sweep from Left to Right */}
+      <motion.span
+        initial={{ scaleX: shouldReduceMotion ? 1 : 0 }}
+        whileInView={{ scaleX: 1 }}
+        viewport={{ once: false, amount: 0.35 }}
+        transition={{
+          duration: shouldReduceMotion ? 0.01 : duration,
+          delay: shouldReduceMotion ? 0 : delay,
+          ease: [0.16, 1, 0.3, 1],
+        }}
+        style={{
+          transformOrigin: 'left center',
+          willChange: 'transform',
+        }}
+        className={`absolute inset-0 rounded pointer-events-none ${
+          dark
+            ? 'bg-[#A8FF00] shadow-[0_0_16px_rgba(168,255,0,0.55)]'
+            : 'bg-[#A8FF00]/60 border-b-2 border-[#65A30D]'
+        }`}
+      />
+      {/* Foreground text sitting on top of the green highlight */}
+      <span
+        className={`relative z-10 transition-colors duration-300 ${
+          dark ? 'text-primary-black font-extrabold' : 'text-primary-black font-bold'
+        }`}
+      >
+        {children}
+      </span>
+    </span>
+  );
+};

@@ -2,7 +2,7 @@ import React from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Sparkles, Terminal, CheckCircle2, Layers, Target, ArrowUpRight, Code2 } from 'lucide-react';
 import { whyChooseUsData } from '../../data/agencyData';
-import { MaskedLineReveal, FadeUpParagraph, FadeUpText } from '../AnimatedText';
+import { MaskedLineReveal, FadeUpParagraph, FadeUpText, SlowHighlight } from '../AnimatedText';
 import { ConnectorArrow1, SmallNeonSticker } from '../Doodles';
 
 const iconMap: Record<string, React.ElementType> = {
@@ -26,7 +26,7 @@ export const WhyChooseUsSection: React.FC = () => {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section id="why-us" className="relative w-full py-8 sm:py-10 md:py-12 px-4 sm:px-8 text-black bg-white">
+    <section id="why-us" className="relative w-full py-8 sm:py-10 md:py-12 px-4 sm:px-8 text-black bg-[#DCF4A2]">
       <div className="max-w-6xl mx-auto">
 
         {/* Section Header */}
@@ -44,10 +44,10 @@ export const WhyChooseUsSection: React.FC = () => {
           </div>
           
           <FadeUpParagraph
-            className="mt-4 md:mt-0 max-w-md text-sm sm:text-base text-zinc-600 font-normal font-sans leading-relaxed"
+            className="mt-4 md:mt-0 max-w-md text-sm sm:text-base text-zinc-700 font-normal font-sans leading-relaxed"
             delay={0.25}
           >
-            We bridge the gap between aesthetic brilliance, robust technical engineering, and aggressive commercial growth.
+            We bridge the gap between <SlowHighlight>aesthetic brilliance</SlowHighlight>, robust <SlowHighlight>technical engineering</SlowHighlight>, and aggressive <SlowHighlight>commercial growth</SlowHighlight>.
           </FadeUpParagraph>
         </div>
 

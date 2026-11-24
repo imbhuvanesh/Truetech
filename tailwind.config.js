@@ -22,6 +22,7 @@ export default {
         'royal-blue': '#063DCE',
         'deep-navy': '#082A83',
         'neon-lime': '#A6FF00',
+        'creamy-avocado': '#DCF4A2',
         'primary-black': '#080808',
         'soft-grey': '#F3F3F3',
         'secondary-blue': '#174CCF',
