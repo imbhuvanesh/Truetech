@@ -33,7 +33,7 @@ export const Footer: React.FC = () => {
           Distinct dark obsidian palette (#070B16), layered card styling,
           proper depth, subtle shadows and rounded corners
          ========================================================================= */}
-      <div className="w-full bg-[#070B16] text-white rounded-[36px] sm:rounded-[48px] md:rounded-[56px] p-6 sm:p-10 md:p-14 lg:p-16 border border-white/10 shadow-[0_25px_80px_rgba(0,0,0,0.5)] relative overflow-hidden">
+      <div className="w-full bg-[#070B16] text-white rounded-[36px] sm:rounded-[48px] md:rounded-[56px] p-6 sm:p-8 md:p-10 lg:p-12 border border-white/10 shadow-[0_25px_80px_rgba(0,0,0,0.5)] relative overflow-hidden">
         
         {/* Subtle Tech Grid Accent */}
         <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none" />
@@ -41,10 +41,9 @@ export const Footer: React.FC = () => {
         {/* =========================================================================
             LAYER 1: TOP CALLOUT CARD (Pre-footer CTA Banner inside container)
            ========================================================================= */}
-        <div className="relative z-10 bg-white/[0.04] border border-white/10 rounded-[28px] sm:rounded-[36px] p-6 sm:p-8 md:p-10 mb-12 sm:mb-16 flex flex-col lg:flex-row items-center justify-between gap-6 shadow-[0_12px_40px_rgba(0,0,0,0.3)]">
+        <div className="relative z-10 bg-white/[0.04] border border-white/10 rounded-[28px] sm:rounded-[36px] p-6 sm:p-8 md:p-10 mb-8 sm:mb-10 flex flex-col lg:flex-row items-center justify-between gap-6 shadow-[0_12px_40px_rgba(0,0,0,0.3)]">
           <div className="text-center lg:text-left max-w-xl">
             <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-neon-lime/10 border border-neon-lime/20 text-neon-lime text-xs font-bold uppercase tracking-wider mb-3">
-              <span className="w-1.5 h-1.5 rounded-full bg-neon-lime animate-pulse" />
               <span>Let's Build Together</span>
               <DoodleStar className="w-3 h-3 text-neon-lime" />
             </div>
@@ -80,7 +79,7 @@ export const Footer: React.FC = () => {
         {/* =========================================================================
             LAYER 2: MAIN FOOTER CONTENT GRID
            ========================================================================= */}
-        <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 pb-12 sm:pb-16 border-b border-white/10 text-xs sm:text-sm">
+        <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 pb-8 sm:pb-10 border-b border-white/10 text-xs sm:text-sm">
           
           {/* Col 1 (5 cols): Company Brand & Philosophy */}
           <div className="lg:col-span-5 flex flex-col justify-between">
@@ -96,7 +95,6 @@ export const Footer: React.FC = () => {
                 <div className="flex flex-col">
                   <div className="flex items-center space-x-1.5">
                     <span className="font-sans font-bold text-xl tracking-tight text-white">NEXUS</span>
-                    <span className="w-1.5 h-1.5 rounded-full bg-neon-lime" />
                   </div>
                   <span className="font-sans font-light text-white/70 text-[10px] tracking-wider uppercase">Digital Agency</span>
                 </div>
@@ -108,7 +106,6 @@ export const Footer: React.FC = () => {
 
               {/* Status Indicator */}
               <div className="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-medium font-sans">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                 <span>Accepting New Client Projects for Q1 2027</span>
               </div>
             </div>
@@ -137,9 +134,8 @@ export const Footer: React.FC = () => {
 
           {/* Col 2 (2 cols): Navigation */}
           <div className="lg:col-span-2">
-            <div className="font-sans font-bold text-xs text-white uppercase tracking-wider mb-4 flex items-center space-x-1.5">
-              <span>Navigation</span>
-              <span className="w-1.5 h-1.5 rounded-full bg-royal-blue" />
+            <div className="font-sans font-bold text-xs text-white uppercase tracking-wider mb-4">
+              Navigation
             </div>
             <ul className="space-y-2.5 text-zinc-400 font-sans text-xs sm:text-sm">
               {navLinks.map((link) => (
@@ -158,9 +154,8 @@ export const Footer: React.FC = () => {
 
           {/* Col 3 (3 cols): Services */}
           <div className="lg:col-span-3">
-            <div className="font-sans font-bold text-xs text-white uppercase tracking-wider mb-4 flex items-center space-x-1.5">
-              <span>Services</span>
-              <span className="w-1.5 h-1.5 rounded-full bg-neon-lime" />
+            <div className="font-sans font-bold text-xs text-white uppercase tracking-wider mb-4">
+              Services
             </div>
             <ul className="space-y-2.5 text-zinc-400 font-sans text-xs sm:text-sm">
               {serviceLinks.map((svc) => (
@@ -179,9 +174,8 @@ export const Footer: React.FC = () => {
 
           {/* Col 4 (2 cols): Contact Info */}
           <div className="lg:col-span-2">
-            <div className="font-sans font-bold text-xs text-white uppercase tracking-wider mb-4 flex items-center space-x-1.5">
-              <span>Direct Reach</span>
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+            <div className="font-sans font-bold text-xs text-white uppercase tracking-wider mb-4">
+              Direct Reach
             </div>
             <ul className="space-y-3 text-zinc-400 font-sans text-xs">
               <li className="flex items-start space-x-2">

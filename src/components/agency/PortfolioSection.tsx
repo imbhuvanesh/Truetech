@@ -24,7 +24,7 @@ export const PortfolioSection: React.FC = () => {
     : portfolioData.filter(p => p.category === activeCategory);
 
   return (
-    <section id="work" className="relative w-full py-16 sm:py-20 md:py-28 px-4 sm:px-8 text-white bg-[#0A1022] select-none">
+    <section id="work" className="relative w-full py-8 sm:py-10 md:py-12 px-4 sm:px-8 text-white bg-[#0A1022] select-none">
       
       {/* Subtle Tech Grid inside Midnight Container */}
       <div className="absolute inset-0 bg-grid-pattern opacity-15 pointer-events-none" />
@@ -32,10 +32,9 @@ export const PortfolioSection: React.FC = () => {
       <div className="relative max-w-6xl mx-auto z-10">
 
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-14 pb-6 border-b border-white/10">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 sm:mb-8 pb-4 border-b border-white/10">
           <div className="max-w-2xl">
             <FadeUpText delay={0.05} className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-neon-lime/10 border border-neon-lime/20 text-neon-lime font-bold text-xs tracking-wider uppercase mb-3">
-              <span className="w-1.5 h-1.5 rounded-full bg-neon-lime animate-pulse" />
               <span>Selected Portfolio</span>
               <DoodleStar className="w-3.5 h-3.5 text-neon-lime" />
             </FadeUpText>
@@ -59,7 +58,7 @@ export const PortfolioSection: React.FC = () => {
         </div>
 
         {/* Filter Pills Container (Glass Dark Stacked Card) */}
-        <div className="bg-white/[0.06] backdrop-blur-md p-2 rounded-2xl sm:rounded-full mb-10 sm:mb-12 border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.3)] overflow-x-auto">
+        <div className="bg-white/[0.06] backdrop-blur-md p-2 rounded-2xl sm:rounded-full mb-6 sm:mb-8 border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.3)] overflow-x-auto">
           <div className="flex items-center space-x-1.5 min-w-max">
             {categories.map((cat) => (
               <button

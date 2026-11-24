@@ -26,14 +26,13 @@ export const WhyChooseUsSection: React.FC = () => {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section id="why-us" className="relative w-full py-16 sm:py-24 md:py-32 px-4 sm:px-8 text-black bg-white">
+    <section id="why-us" className="relative w-full py-8 sm:py-10 md:py-12 px-4 sm:px-8 text-black bg-white">
       <div className="max-w-6xl mx-auto">
 
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 pb-6 border-b border-black/[0.08]">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 sm:mb-8 pb-4 border-b border-black/[0.08]">
           <div className="max-w-2xl">
             <FadeUpText delay={0.05} className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-royal-blue/10 text-royal-blue font-bold text-xs tracking-wider uppercase mb-3">
-              <span className="w-1.5 h-1.5 rounded-full bg-royal-blue animate-pulse" />
               <span>Competitive Edge</span>
             </FadeUpText>
             

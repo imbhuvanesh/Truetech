@@ -8,14 +8,13 @@ export const AboutSection: React.FC<{ onExploreServices: () => void }> = ({ onEx
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section id="about" className="relative w-full py-16 sm:py-24 md:py-28 px-4 sm:px-8 text-black bg-white">
+    <section id="about" className="relative w-full py-8 sm:py-10 md:py-12 px-4 sm:px-8 text-black bg-white">
       <div className="max-w-6xl mx-auto">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 pb-6 border-b border-black/[0.08]">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 sm:mb-8 pb-4 border-b border-black/[0.08]">
           <div className="max-w-2xl">
             <FadeUpText delay={0.05} className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-royal-blue/10 text-royal-blue font-bold text-xs tracking-wider uppercase mb-3">
-              <span className="w-1.5 h-1.5 rounded-full bg-royal-blue animate-pulse" />
               <span>About Nexus Studio</span>
             </FadeUpText>
             
@@ -40,7 +39,7 @@ export const AboutSection: React.FC<{ onExploreServices: () => void }> = ({ onEx
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.15 }}
           transition={{ duration: 0.6 }}
-          className="bg-[#FAFAFB] rounded-[36px] p-6 sm:p-10 md:p-12 mb-12 border border-black/[0.04] shadow-card-soft"
+          className="bg-[#FAFAFB] rounded-[36px] p-6 sm:p-10 md:p-12 mb-8 border border-black/[0.04] shadow-card-soft"
         >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-7">

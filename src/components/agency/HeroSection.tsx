@@ -29,7 +29,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="inline-flex items-center space-x-2.5 px-4 sm:px-5 py-2 rounded-full bg-zinc-900/80 border border-white/15 text-xs sm:text-sm text-zinc-300 shadow-[0_4px_20px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.08)_inset] backdrop-blur-md mb-8 group hover:border-white/30 transition-all duration-300"
         >
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_#34d399]" />
           <span className="font-medium tracking-wide">Creative Technology & Digital Marketing Agency</span>
           <span className="hidden sm:inline-block text-zinc-500">•</span>
           <span className="hidden sm:inline-block text-white font-semibold">Accepting New Projects</span>

@@ -17,11 +17,10 @@ export const ContactPage: React.FC = () => {
       {/* =========================================================================
           PAGE HERO BANNER: DEDICATED CONTACT HEADER (ROYAL BLUE STACKED CARD)
          ========================================================================= */}
-      <div className="w-full max-w-[1260px] bg-[#0645D8] hero-grid rounded-[36px] sm:rounded-[48px] md:rounded-[56px] p-8 sm:p-14 md:p-18 text-white text-center shadow-[0_25px_80px_rgba(4,26,85,0.4)] border border-white/15 my-3 sm:my-5 relative overflow-hidden">
+      <div className="w-full max-w-[1260px] bg-[#0645D8] hero-grid rounded-[36px] sm:rounded-[48px] md:rounded-[56px] p-6 sm:p-10 md:p-12 text-white text-center shadow-[0_25px_80px_rgba(4,26,85,0.4)] border border-white/15 my-2 sm:my-3 relative overflow-hidden">
         
         {/* Ambient Badge */}
         <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-neon-lime text-xs font-bold uppercase tracking-wider mb-4">
-          <span className="w-2 h-2 rounded-full bg-neon-lime animate-pulse" />
           <span>Direct Partner Access</span>
           <DoodleStar className="w-3.5 h-3.5 text-neon-lime" />
         </div>
@@ -85,12 +84,12 @@ export const ContactPage: React.FC = () => {
       </div>
 
       {/* Main Interactive Contact Form Container (Deep Royal Cobalt Stacked Card) */}
-      <div className="w-full max-w-[1260px] bg-[#062B88] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_25px_80px_rgba(4,26,85,0.4)] border border-white/15 my-3 sm:my-5 overflow-hidden">
+      <div className="w-full max-w-[1260px] bg-[#062B88] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_25px_80px_rgba(4,26,85,0.4)] border border-white/15 my-2 sm:my-3 overflow-hidden">
         <ContactSection preselectedService="Web Development" />
       </div>
 
       {/* Trust & Guarantee Box */}
-      <div className="w-full max-w-[1260px] bg-[#FAFBFD] rounded-[36px] sm:rounded-[48px] p-8 sm:p-10 border border-black/[0.05] shadow-[0_12px_40px_rgba(0,0,0,0.04)] my-3 sm:my-5">
+      <div className="w-full max-w-[1260px] bg-[#FAFBFD] rounded-[36px] sm:rounded-[48px] p-8 sm:p-10 border border-black/[0.05] shadow-[0_12px_40px_rgba(0,0,0,0.04)] my-2 sm:my-3">
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
           <div className="flex items-start space-x-3.5">
             <div className="w-10 h-10 rounded-xl bg-royal-blue/10 text-royal-blue flex items-center justify-center shrink-0">

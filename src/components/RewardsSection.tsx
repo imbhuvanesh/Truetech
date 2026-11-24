@@ -15,7 +15,7 @@ export const RewardsSection: React.FC = () => {
   };
 
   return (
-    <section className="relative w-full bg-white rounded-t-[36px] sm:rounded-t-[48px] md:rounded-t-[56px] pt-12 sm:pt-16 md:pt-20 pb-16 sm:pb-24 px-4 sm:px-8 md:px-12 text-primary-black shadow-[0_-12px_45px_rgba(0,0,0,0.06)]">
+    <section className="relative w-full bg-white rounded-t-[36px] sm:rounded-t-[48px] md:rounded-t-[56px] pt-6 sm:pt-8 md:pt-10 pb-8 sm:pb-10 md:pb-12 px-4 sm:px-8 md:px-12 text-primary-black shadow-[0_-12px_45px_rgba(0,0,0,0.06)]">
       <div className="max-w-6xl mx-auto">
         
         {/* The 3 Horizontal Reward / Pillar Cards Grid */}

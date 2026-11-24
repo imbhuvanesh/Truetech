@@ -216,12 +216,11 @@ export const TabContentToggle: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative w-full py-16 sm:py-20 md:py-28 px-4 sm:px-8 bg-white border-y border-black/[0.06] overflow-hidden">
+    <section className="relative w-full py-8 sm:py-10 md:py-12 px-4 sm:px-8 bg-white border-y border-black/[0.06] overflow-hidden">
       <div ref={containerRef} className="tabs-demo">
         {/* Section Header Label */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-royal-blue/10 text-royal-blue font-bold text-xs tracking-wider uppercase mb-3">
-            <span className="w-1.5 h-1.5 rounded-full bg-royal-blue animate-pulse" />
             <span>Collaboration Framework</span>
           </div>
           <h2 className="text-sm font-semibold tracking-widest text-zinc-400 uppercase">
