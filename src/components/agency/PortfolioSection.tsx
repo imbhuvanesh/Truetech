@@ -109,13 +109,13 @@ export const PortfolioSection: React.FC = () => {
               <motion.div
                 key={project.id}
                 layout
-                initial={{ opacity: 0, scale: 0.95 }}
+                initial={{ opacity: 0, scale: 0.96 }}
                 animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.35, delay: (idx % 3) * 0.05 }}
-                whileHover={{ y: -6 }}
+                exit={{ opacity: 0, scale: 0.96 }}
+                transition={{ duration: 0.75, delay: (idx % 3) * 0.08, ease: [0.19, 1, 0.22, 1] }}
+                whileHover={{ y: -8, transition: { duration: 0.45, ease: [0.19, 1, 0.22, 1] } }}
                 onClick={() => setSelectedProject(project)}
-                className="cursor-pointer bg-[#11182D] rounded-[32px] p-6 sm:p-7 flex flex-col justify-between border border-white/10 shadow-[0_12px_40px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(6,69,216,0.3)] hover:border-white/25 transition-all duration-300 group"
+                className="cursor-pointer bg-[#11182D] rounded-[32px] p-6 sm:p-7 flex flex-col justify-between border border-white/10 shadow-[0_12px_40px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(6,69,216,0.3)] hover:border-white/25 transition-shadow duration-500 group"
               >
                 <div>
                   {/* Visual Preview Box */}

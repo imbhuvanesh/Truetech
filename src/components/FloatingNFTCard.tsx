@@ -27,11 +27,11 @@ export const FloatingNFTCard: React.FC<FloatingNFTCardProps> = ({
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
-  const mouseXSpring = useSpring(x, { stiffness: 350, damping: 25 });
-  const mouseYSpring = useSpring(y, { stiffness: 350, damping: 25 });
+  const mouseXSpring = useSpring(x, { stiffness: 180, damping: 28 });
+  const mouseYSpring = useSpring(y, { stiffness: 180, damping: 28 });
 
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ['10deg', '-10deg']);
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ['-10deg', '10deg']);
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ['8deg', '-8deg']);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ['-8deg', '8deg']);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!cardRef.current) return;
@@ -70,9 +70,9 @@ export const FloatingNFTCard: React.FC<FloatingNFTCardProps> = ({
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      initial={{ opacity: 0, scale: 0.85, y: 30 }}
+      initial={{ opacity: 0, scale: 0.88, y: 35 }}
       animate={{ opacity: 1, scale: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: floatDelay, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 1.2, delay: floatDelay, ease: [0.19, 1, 0.22, 1] }}
       style={{
         transformStyle: 'preserve-3d',
       }}
@@ -80,12 +80,12 @@ export const FloatingNFTCard: React.FC<FloatingNFTCardProps> = ({
     >
       <motion.div
         animate={{
-          y: [-5, 5, -5],
+          y: [-6, 6, -6],
           rotate: [defaultRotate - 1, defaultRotate + 1, defaultRotate - 1],
         }}
         transition={{
           repeat: Infinity,
-          duration: 5.5,
+          duration: 8.5,
           ease: 'easeInOut',
           delay: floatDelay,
         }}
@@ -95,8 +95,8 @@ export const FloatingNFTCard: React.FC<FloatingNFTCardProps> = ({
           transformStyle: 'preserve-3d',
         }}
         whileHover={{
-          scale: 1.06,
-          transition: { duration: 0.2 },
+          scale: 1.05,
+          transition: { duration: 0.45, ease: [0.19, 1, 0.22, 1] },
         }}
         className="glass-nft-card rounded-[30px] p-5 sm:p-6 flex flex-col items-center justify-center min-w-[155px] sm:min-w-[180px] md:min-w-[200px] shadow-[0_20px_50px_rgba(0,10,60,0.35),0_0_0_1px_rgba(255,255,255,0.2)_inset] hover:shadow-[0_25px_65px_rgba(0,10,70,0.5),0_0_0_1px_rgba(255,255,255,0.3)_inset] transition-all"
       >

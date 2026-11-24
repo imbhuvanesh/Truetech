@@ -51,7 +51,7 @@ export const RewardsSection: React.FC = () => {
             <motion.div
               initial={{
                 opacity: 0,
-                y: shouldReduceMotion ? 0 : 20,
+                y: shouldReduceMotion ? 0 : 25,
               }}
               whileInView={{
                 opacity: 1,
@@ -59,13 +59,13 @@ export const RewardsSection: React.FC = () => {
               }}
               viewport={{ once: false, amount: 0.05 }}
               transition={{
-                duration: shouldReduceMotion ? 0.01 : 0.6,
+                duration: shouldReduceMotion ? 0.01 : 0.95,
                 delay: shouldReduceMotion ? 0 : 0.05,
-                ease: [0.16, 1, 0.3, 1],
+                ease: [0.19, 1, 0.22, 1],
               }}
-              whileHover={{ y: -6 }}
+              whileHover={{ y: -8, transition: { duration: 0.45, ease: [0.19, 1, 0.22, 1] } }}
               onClick={() => scrollTo('services')}
-              className="relative h-full bg-white rounded-[32px] p-6 sm:p-7 md:p-8 flex flex-col justify-between transition-all duration-300 shadow-card-soft hover:shadow-card-hover border border-black/[0.04] cursor-pointer overflow-hidden"
+              className="relative h-full bg-white rounded-[32px] p-6 sm:p-7 md:p-8 flex flex-col justify-between transition-shadow duration-500 shadow-card-soft hover:shadow-card-hover border border-black/[0.04] cursor-pointer overflow-hidden"
             >
               {/* Hand-Drawn Sketch Card Border Overlay */}
               <DoodleCardBorder color="#080808" />
@@ -107,15 +107,15 @@ export const RewardsSection: React.FC = () => {
                   }}
                   viewport={{ once: false, amount: 0.05 }}
                   transition={{
-                    duration: shouldReduceMotion ? 0.01 : 0.55,
+                    duration: shouldReduceMotion ? 0.01 : 0.85,
                     delay: shouldReduceMotion ? 0 : 0.2,
-                    ease: [0.16, 1, 0.3, 1],
+                    ease: [0.19, 1, 0.22, 1],
                   }}
                   className="relative flex items-center justify-center pr-6 sm:pr-8"
                 >
                   
                   {/* Tilted Blue Pill Sticker with Layered Shadow */}
-                  <div className="relative bg-royal-blue text-white rounded-2xl px-4 py-3 flex items-center space-x-3 shadow-pill-blue transform -rotate-6 transition-all duration-200 hover:scale-[1.03]">
+                  <div className="relative bg-royal-blue text-white rounded-2xl px-4 py-3 flex items-center space-x-3 shadow-pill-blue transform -rotate-6 transition-all duration-300 hover:scale-[1.03]">
                     <div className="relative w-9 h-9 rounded-full bg-white/15 flex items-center justify-center border border-white/30 shadow-inner">
                       <Code2 className="w-5 h-5 text-neon-lime" />
                     </div>
@@ -126,7 +126,7 @@ export const RewardsSection: React.FC = () => {
                   </div>
 
                   {/* Overlapping Neon Lime Green Pill Sticker with Glow Shadow */}
-                  <div className="absolute -right-2 sm:-right-4 -bottom-3 bg-neon-lime text-primary-black font-sans text-xs font-bold px-3.5 py-1.5 rounded-full shadow-pill-neon border border-black/10 select-none transition-all duration-200 hover:scale-105">
+                  <div className="absolute -right-2 sm:-right-4 -bottom-3 bg-neon-lime text-primary-black font-sans text-xs font-bold px-3.5 py-1.5 rounded-full shadow-pill-neon border border-black/10 select-none transition-all duration-300 hover:scale-105">
                     FAST & SCALABLE
                   </div>
 
@@ -148,7 +148,7 @@ export const RewardsSection: React.FC = () => {
             <motion.div
               initial={{
                 opacity: 0,
-                y: shouldReduceMotion ? 0 : 20,
+                y: shouldReduceMotion ? 0 : 25,
               }}
               whileInView={{
                 opacity: 1,
@@ -156,13 +156,13 @@ export const RewardsSection: React.FC = () => {
               }}
               viewport={{ once: false, amount: 0.05 }}
               transition={{
-                duration: shouldReduceMotion ? 0.01 : 0.6,
+                duration: shouldReduceMotion ? 0.01 : 0.95,
                 delay: shouldReduceMotion ? 0 : 0.1,
-                ease: [0.16, 1, 0.3, 1],
+                ease: [0.19, 1, 0.22, 1],
               }}
-              whileHover={{ y: -6 }}
+              whileHover={{ y: -8, transition: { duration: 0.45, ease: [0.19, 1, 0.22, 1] } }}
               onClick={() => scrollTo('work')}
-              className="relative h-full bg-white rounded-[32px] p-6 sm:p-7 md:p-8 flex flex-col justify-between transition-all duration-300 shadow-card-soft hover:shadow-card-hover border border-black/[0.04] cursor-pointer overflow-hidden"
+              className="relative h-full bg-white rounded-[32px] p-6 sm:p-7 md:p-8 flex flex-col justify-between transition-shadow duration-500 shadow-card-soft hover:shadow-card-hover border border-black/[0.04] cursor-pointer overflow-hidden"
             >
               {/* Hand-Drawn Sketch Card Border Overlay */}
               <DoodleCardBorder color="#080808" />
@@ -204,9 +204,9 @@ export const RewardsSection: React.FC = () => {
                   }}
                   viewport={{ once: false, amount: 0.05 }}
                   transition={{
-                    duration: shouldReduceMotion ? 0.01 : 0.55,
+                    duration: shouldReduceMotion ? 0.01 : 0.85,
                     delay: shouldReduceMotion ? 0 : 0.25,
-                    ease: [0.16, 1, 0.3, 1],
+                    ease: [0.19, 1, 0.22, 1],
                   }}
                   className="relative flex flex-col items-center"
                 >
@@ -246,7 +246,7 @@ export const RewardsSection: React.FC = () => {
             <motion.div
               initial={{
                 opacity: 0,
-                y: shouldReduceMotion ? 0 : 20,
+                y: shouldReduceMotion ? 0 : 25,
               }}
               whileInView={{
                 opacity: 1,
@@ -254,13 +254,13 @@ export const RewardsSection: React.FC = () => {
               }}
               viewport={{ once: false, amount: 0.05 }}
               transition={{
-                duration: shouldReduceMotion ? 0.01 : 0.6,
+                duration: shouldReduceMotion ? 0.01 : 0.95,
                 delay: shouldReduceMotion ? 0 : 0.15,
-                ease: [0.16, 1, 0.3, 1],
+                ease: [0.19, 1, 0.22, 1],
               }}
-              whileHover={{ y: -6 }}
+              whileHover={{ y: -8, transition: { duration: 0.45, ease: [0.19, 1, 0.22, 1] } }}
               onClick={() => scrollTo('contact')}
-              className="relative h-full bg-white rounded-[32px] p-6 sm:p-7 md:p-8 flex flex-col justify-between transition-all duration-300 shadow-card-soft hover:shadow-card-hover border border-black/[0.04] cursor-pointer overflow-hidden"
+              className="relative h-full bg-white rounded-[32px] p-6 sm:p-7 md:p-8 flex flex-col justify-between transition-shadow duration-500 shadow-card-soft hover:shadow-card-hover border border-black/[0.04] cursor-pointer overflow-hidden"
             >
               {/* Hand-Drawn Sketch Card Border Overlay */}
               <DoodleCardBorder color="#080808" />

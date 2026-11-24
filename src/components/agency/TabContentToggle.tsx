@@ -36,10 +36,10 @@ const TAB_CONTENT: TabItem[] = [
   },
 ];
 
-const DURATION = 0.4;
-const STAGGER = 0.06;
-const OVERLAP = '<0.24';
-const Y_OFFSET = 150;
+const DURATION = 0.85;
+const STAGGER = 0.08;
+const OVERLAP = '<0.45';
+const Y_OFFSET = 130;
 
 export const TabContentToggle: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -91,9 +91,9 @@ export const TabContentToggle: React.FC = () => {
 
     tlRef.current.to(currentLines, {
       yPercent: Y_OFFSET,
-      duration: DURATION,
-      stagger: STAGGER,
-      ease: 'power1.in',
+      duration: DURATION * 0.7,
+      stagger: STAGGER * 0.75,
+      ease: 'power2.in',
     });
 
     tlRef.current.to(
@@ -102,7 +102,7 @@ export const TabContentToggle: React.FC = () => {
         yPercent: 0,
         duration: DURATION,
         stagger: STAGGER,
-        ease: 'power1.out',
+        ease: 'power3.out',
       },
       OVERLAP
     );
@@ -187,9 +187,9 @@ export const TabContentToggle: React.FC = () => {
                 { yPercent: Y_OFFSET, opacity: 1 },
                 {
                   yPercent: 0,
-                  duration: DURATION + 0.1,
+                  duration: DURATION + 0.2,
                   stagger: STAGGER,
-                  ease: 'power1.out',
+                  ease: 'power3.out',
                 }
               );
             }

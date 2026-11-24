@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 
-const EASE_BEZIER = [0.16, 1, 0.3, 1] as const;
+const EASE_BEZIER = [0.19, 1, 0.22, 1] as const;
 
 // Exact Neon Green Hand-Drawn Hashtag # symbol matching reference image
 export const HeroHashtag: React.FC<{ className?: string }> = ({ className = '' }) => {
@@ -16,9 +16,9 @@ export const HeroHashtag: React.FC<{ className?: string }> = ({ className = '' }
       animate={{ scale: 1, rotate: -4, opacity: 1 }}
       transition={{
         type: 'spring',
-        stiffness: 240,
-        damping: 18,
-        delay: 0.15,
+        stiffness: 180,
+        damping: 24,
+        delay: 0.2,
       }}
       className={`select-none filter drop-shadow-[0_0_18px_rgba(168,255,0,0.7)] drop-shadow-[0_8px_16px_rgba(0,10,40,0.3)] ${className}`}
     >
@@ -29,7 +29,7 @@ export const HeroHashtag: React.FC<{ className?: string }> = ({ className = '' }
         strokeLinecap="round"
         initial={{ pathLength: shouldReduceMotion ? 1 : 0 }}
         animate={{ pathLength: 1 }}
-        transition={{ duration: 0.5, delay: 0.2, ease: EASE_BEZIER }}
+        transition={{ duration: 0.9, delay: 0.25, ease: EASE_BEZIER }}
       />
       <motion.path 
         d="M 88 12 L 68 118" 
@@ -38,7 +38,7 @@ export const HeroHashtag: React.FC<{ className?: string }> = ({ className = '' }
         strokeLinecap="round" 
         initial={{ pathLength: shouldReduceMotion ? 1 : 0 }}
         animate={{ pathLength: 1 }}
-        transition={{ duration: 0.5, delay: 0.35, ease: EASE_BEZIER }}
+        transition={{ duration: 0.9, delay: 0.45, ease: EASE_BEZIER }}
       />
       <motion.path 
         d="M 12 44 L 118 40" 
@@ -47,7 +47,7 @@ export const HeroHashtag: React.FC<{ className?: string }> = ({ className = '' }
         strokeLinecap="round" 
         initial={{ pathLength: shouldReduceMotion ? 1 : 0 }}
         animate={{ pathLength: 1 }}
-        transition={{ duration: 0.45, delay: 0.5, ease: EASE_BEZIER }}
+        transition={{ duration: 0.85, delay: 0.65, ease: EASE_BEZIER }}
       />
       <motion.path 
         d="M 8 84 L 114 80" 
@@ -56,7 +56,7 @@ export const HeroHashtag: React.FC<{ className?: string }> = ({ className = '' }
         strokeLinecap="round" 
         initial={{ pathLength: shouldReduceMotion ? 1 : 0 }}
         animate={{ pathLength: 1 }}
-        transition={{ duration: 0.45, delay: 0.65, ease: EASE_BEZIER }}
+        transition={{ duration: 0.85, delay: 0.85, ease: EASE_BEZIER }}
       />
     </motion.svg>
   );
@@ -72,12 +72,12 @@ export const TopRightArrow: React.FC<{ className?: string }> = ({ className = ''
       fill="none" 
       xmlns="http://www.w3.org/2000/svg"
       animate={{
-        y: [-3, 3, -3],
-        rotate: [-1, 2, -1],
+        y: [-4, 4, -4],
+        rotate: [-1.5, 2, -1.5],
       }}
       transition={{
         repeat: Infinity,
-        duration: 4.5,
+        duration: 7.5,
         ease: 'easeInOut',
       }}
       className={`select-none filter drop-shadow-[0_0_15px_rgba(168,255,0,0.6)] ${className}`}
@@ -91,8 +91,8 @@ export const TopRightArrow: React.FC<{ className?: string }> = ({ className = ''
         initial={{ pathLength: shouldReduceMotion ? 1 : 0, opacity: 0 }}
         animate={{ pathLength: 1, opacity: 1 }}
         transition={{ 
-          pathLength: { duration: 1.1, delay: 0.6, ease: EASE_BEZIER },
-          opacity: { duration: 0.2, delay: 0.6 }
+          pathLength: { duration: 1.8, delay: 0.6, ease: EASE_BEZIER },
+          opacity: { duration: 0.3, delay: 0.6 }
         }}
       />
       <motion.path 
@@ -105,8 +105,8 @@ export const TopRightArrow: React.FC<{ className?: string }> = ({ className = ''
         initial={{ pathLength: shouldReduceMotion ? 1 : 0, opacity: 0 }}
         animate={{ pathLength: 1, opacity: 1 }}
         transition={{ 
-          pathLength: { duration: 0.35, delay: 1.5, ease: EASE_BEZIER },
-          opacity: { duration: 0.1, delay: 1.5 }
+          pathLength: { duration: 0.6, delay: 2.1, ease: EASE_BEZIER },
+          opacity: { duration: 0.2, delay: 2.1 }
         }}
       />
     </motion.svg>
@@ -123,12 +123,12 @@ export const BottomLeftArrow: React.FC<{ className?: string }> = ({ className = 
       fill="none" 
       xmlns="http://www.w3.org/2000/svg"
       animate={{
-        y: [3, -3, 3],
-        rotate: [1, -2, 1],
+        y: [4, -4, 4],
+        rotate: [1.5, -2, 1.5],
       }}
       transition={{
         repeat: Infinity,
-        duration: 5,
+        duration: 8.0,
         ease: 'easeInOut',
       }}
       className={`select-none filter drop-shadow-[0_0_15px_rgba(168,255,0,0.6)] ${className}`}
@@ -142,8 +142,8 @@ export const BottomLeftArrow: React.FC<{ className?: string }> = ({ className = 
         initial={{ pathLength: shouldReduceMotion ? 1 : 0, opacity: 0 }}
         animate={{ pathLength: 1, opacity: 1 }}
         transition={{ 
-          pathLength: { duration: 1.1, delay: 0.75, ease: EASE_BEZIER },
-          opacity: { duration: 0.2, delay: 0.75 }
+          pathLength: { duration: 1.8, delay: 0.75, ease: EASE_BEZIER },
+          opacity: { duration: 0.3, delay: 0.75 }
         }}
       />
       <motion.path 
@@ -156,8 +156,8 @@ export const BottomLeftArrow: React.FC<{ className?: string }> = ({ className = 
         initial={{ pathLength: shouldReduceMotion ? 1 : 0, opacity: 0 }}
         animate={{ pathLength: 1, opacity: 1 }}
         transition={{ 
-          pathLength: { duration: 0.35, delay: 1.65, ease: EASE_BEZIER },
-          opacity: { duration: 0.1, delay: 1.65 }
+          pathLength: { duration: 0.6, delay: 2.25, ease: EASE_BEZIER },
+          opacity: { duration: 0.2, delay: 2.25 }
         }}
       />
     </motion.svg>
@@ -356,7 +356,7 @@ export const DoodleConnectorBracket: React.FC<{ className?: string; color?: stri
         fill="none"
         initial={{ pathLength: shouldReduceMotion ? 1 : 0, opacity: 0 }}
         animate={{ pathLength: 1, opacity: 1 }}
-        transition={{ duration: 0.7, delay: 0.25, ease: EASE_BEZIER }}
+        transition={{ duration: 1.4, delay: 0.3, ease: EASE_BEZIER }}
       />
     </motion.svg>
   );
@@ -385,7 +385,7 @@ export const DoodleUnderline: React.FC<{ className?: string; color?: string }> =
         initial={{ pathLength: shouldReduceMotion ? 1 : 0, opacity: 0 }}
         whileInView={{ pathLength: 1, opacity: 1 }}
         viewport={{ once: false, amount: 0.2 }}
-        transition={{ duration: 0.6, ease: EASE_BEZIER }}
+        transition={{ duration: 1.35, ease: EASE_BEZIER }}
       />
     </motion.svg>
   );
@@ -414,7 +414,7 @@ export const DoodleCircle: React.FC<{ className?: string; color?: string }> = ({
         initial={{ pathLength: shouldReduceMotion ? 1 : 0, opacity: 0 }}
         whileInView={{ pathLength: 1, opacity: 1 }}
         viewport={{ once: false, amount: 0.2 }}
-        transition={{ duration: 0.8, ease: EASE_BEZIER }}
+        transition={{ duration: 1.45, ease: EASE_BEZIER }}
       />
     </motion.svg>
   );
@@ -491,7 +491,7 @@ export const DoodleCorner: React.FC<{
       initial={{ opacity: 0, scale: 0.8 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: false, amount: 0.1 }}
-      transition={{ duration: 0.45, ease: EASE_BEZIER }}
+      transition={{ duration: 0.7, ease: EASE_BEZIER }}
       className={`select-none pointer-events-none ${rotationClass} ${className}`}
     >
       <motion.path
@@ -503,7 +503,7 @@ export const DoodleCorner: React.FC<{
         initial={{ pathLength: 0 }}
         whileInView={{ pathLength: 1 }}
         viewport={{ once: false, amount: 0.1 }}
-        transition={{ duration: 0.6, ease: EASE_BEZIER }}
+        transition={{ duration: 1.25, ease: EASE_BEZIER }}
       />
       <circle cx="6" cy="6" r="3" fill={color} />
       <path d="M 14 14 L 20 20" stroke={color} strokeWidth="2.5" strokeLinecap="round" />
@@ -522,7 +522,7 @@ export const DoodleWashiTape: React.FC<{ className?: string; color?: string; tex
       initial={{ opacity: 0, scale: 0.9 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: false, amount: 0.1 }}
-      transition={{ duration: 0.4 }}
+      transition={{ duration: 0.65, ease: EASE_BEZIER }}
       className={`relative inline-flex items-center justify-center px-4 py-1 select-none pointer-events-none ${className}`}
     >
       <svg
@@ -575,7 +575,7 @@ export const DoodleSparkle: React.FC<{ className?: string; color?: string }> = (
         rotate: [0, 8, -8, 0],
       }}
       transition={{
-        duration: 3.5,
+        duration: 6.5,
         repeat: Infinity,
         ease: 'easeInOut',
       }}
@@ -604,7 +604,7 @@ export const DoodleBurst: React.FC<{ className?: string; color?: string }> = ({
       xmlns="http://www.w3.org/2000/svg"
       whileInView={{ rotate: [0, 15, 0] }}
       viewport={{ once: false }}
-      transition={{ duration: 1.2, ease: 'easeOut' }}
+      transition={{ duration: 1.8, ease: EASE_BEZIER }}
       className={`select-none pointer-events-none ${className}`}
     >
       <path d="M 25 4 L 25 12" stroke={color} strokeWidth="3" strokeLinecap="round" />
@@ -640,7 +640,7 @@ export const DoodleSquiggle: React.FC<{ className?: string; color?: string }> = 
         initial={{ pathLength: 0 }}
         whileInView={{ pathLength: 1 }}
         viewport={{ once: false, amount: 0.2 }}
-        transition={{ duration: 0.8, ease: EASE_BEZIER }}
+        transition={{ duration: 1.45, ease: EASE_BEZIER }}
       />
     </motion.svg>
   );
@@ -656,8 +656,8 @@ export const DoodleCloud: React.FC<{ className?: string; color?: string }> = ({
       viewBox="0 0 64 44"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      animate={{ y: [-3, 3, -3] }}
-      transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+      animate={{ y: [-4, 4, -4] }}
+      transition={{ duration: 7.5, repeat: Infinity, ease: 'easeInOut' }}
       className={`select-none pointer-events-none ${className}`}
     >
       <motion.path
@@ -670,7 +670,7 @@ export const DoodleCloud: React.FC<{ className?: string; color?: string }> = ({
         initial={{ pathLength: 0 }}
         whileInView={{ pathLength: 1 }}
         viewport={{ once: false, amount: 0.1 }}
-        transition={{ duration: 0.9, ease: EASE_BEZIER }}
+        transition={{ duration: 1.35, ease: EASE_BEZIER }}
       />
     </motion.svg>
   );
@@ -725,8 +725,8 @@ export const DoodlePaperPlane: React.FC<{ className?: string; color?: string }> 
       viewBox="0 0 90 60"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      animate={{ y: [-2, 3, -2], rotate: [-1, 2, -1] }}
-      transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
+      animate={{ y: [-3, 4, -3], rotate: [-1.5, 2.5, -1.5] }}
+      transition={{ duration: 7.2, repeat: Infinity, ease: 'easeInOut' }}
       className={`select-none pointer-events-none ${className}`}
     >
       {/* Plane */}
@@ -750,7 +750,7 @@ export const DoodlePaperPlane: React.FC<{ className?: string; color?: string }> 
         initial={{ pathLength: 0 }}
         whileInView={{ pathLength: 1 }}
         viewport={{ once: false, amount: 0.1 }}
-        transition={{ duration: 1.1, ease: EASE_BEZIER }}
+        transition={{ duration: 1.85, ease: EASE_BEZIER }}
       />
     </motion.svg>
   );
@@ -820,8 +820,8 @@ export const DoodleRocket: React.FC<{ className?: string; color?: string }> = ({
       viewBox="0 0 56 64"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      animate={{ y: [-2, 3, -2], rotate: [-2, 1, -2] }}
-      transition={{ duration: 3.8, repeat: Infinity, ease: 'easeInOut' }}
+      animate={{ y: [-3, 4, -3], rotate: [-2, 1.5, -2] }}
+      transition={{ duration: 6.8, repeat: Infinity, ease: 'easeInOut' }}
       className={`select-none ${className}`}
     >
       {/* Rocket fuselage */}
@@ -981,7 +981,7 @@ export const DoodleCompass: React.FC<{ className?: string; color?: string }> = (
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       animate={{ rotate: [0, 8, -6, 0] }}
-      transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+      transition={{ duration: 8.5, repeat: Infinity, ease: 'easeInOut' }}
       className={`select-none pointer-events-none ${className}`}
     >
       <circle cx="25" cy="25" r="21" stroke={color} strokeWidth="3" strokeLinecap="round" />

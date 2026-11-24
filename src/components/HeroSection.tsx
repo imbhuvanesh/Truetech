@@ -157,7 +157,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onGetStarted, onExplor
             <motion.span
               initial={{ scale: shouldReduceMotion ? 1 : 0.88, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 1.1, ease: [0.19, 1, 0.22, 1] }}
               className="text-[82px] sm:text-[120px] md:text-[150px] lg:text-[185px] xl:text-[210px] font-extrabold tracking-tighter leading-none text-white drop-shadow-[0_12px_36px_rgba(0,10,50,0.35)] select-none"
             >
               WE
@@ -174,17 +174,17 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onGetStarted, onExplor
             
             {/* Word 1: BUILD. */}
             <div className="text-white font-bold">
-              <MaskedHeroWord text="BUILD." delay={0.15} />
+              <MaskedHeroWord text="BUILD." delay={0.2} />
             </div>
 
             {/* Word 2: CREATE. */}
             <div className="text-white/95 font-bold mt-1 md:mt-2">
-              <MaskedHeroWord text="CREATE." delay={0.3} />
+              <MaskedHeroWord text="CREATE." delay={0.4} />
             </div>
 
             {/* Word 3: GROW. (Neon Lime Accent) */}
             <div className="relative text-neon-lime font-extrabold mt-1 md:mt-2 flex items-center">
-              <MaskedHeroWord text="GROW." delay={0.45} />
+              <MaskedHeroWord text="GROW." delay={0.6} />
               <div className="absolute -right-10 -top-4 hidden sm:block pointer-events-none">
                 <DoodleBurst color="#A8FF00" className="w-9 h-9 opacity-85" />
               </div>
@@ -198,7 +198,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onGetStarted, onExplor
         <motion.p
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.5 }}
+          transition={{ duration: 1.0, delay: 0.7 }}
           className="relative z-20 mt-4 sm:mt-6 max-w-xl text-center text-white/90 font-sans font-normal text-xs sm:text-sm md:text-base leading-relaxed px-4"
         >
           Your ideas deserve more than just an online presence. We turn them into powerful digital experiences through <SlowHighlight dark>technology</SlowHighlight>, <SlowHighlight dark>creativity</SlowHighlight> and <SlowHighlight dark>smart marketing</SlowHighlight>.

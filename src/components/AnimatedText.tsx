@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 
-// Cubic bezier matching himaaax's tab transition: cubic-bezier(0.256, 0.009, 0.125, 0.997)
-const HIMAAAX_EASE = [0.256, 0.009, 0.125, 0.997] as const;
+// Premium quintic easing curve [0.19, 1, 0.22, 1] for ultra-smooth, slow, silky editorial motion
+const LUXURY_EASE = [0.19, 1, 0.22, 1] as const;
 
 interface MaskedHeadingProps {
   text: string;
@@ -16,7 +16,7 @@ export const MaskedHeroWord: React.FC<MaskedHeadingProps> = ({
   text,
   className = '',
   delay = 0,
-  stagger = 0.04,
+  stagger = 0.045,
 }) => {
   const shouldReduceMotion = useReducedMotion();
   const letters = Array.from(text);
@@ -34,15 +34,15 @@ export const MaskedHeroWord: React.FC<MaskedHeadingProps> = ({
 
   const letterVariants = {
     hidden: {
-      y: shouldReduceMotion ? '0%' : '150%',
+      y: shouldReduceMotion ? '0%' : '140%',
       opacity: shouldReduceMotion ? 1 : 0,
     },
     visible: {
       y: '0%',
       opacity: 1,
       transition: {
-        duration: shouldReduceMotion ? 0 : 0.45,
-        ease: HIMAAAX_EASE,
+        duration: shouldReduceMotion ? 0 : 0.85,
+        ease: LUXURY_EASE,
       },
     },
   };
@@ -71,14 +71,14 @@ export const MaskedHeroWord: React.FC<MaskedHeadingProps> = ({
 };
 
 // Line-by-line masked reveal for Section Headings
-// Uses .himaaax-split-line overflow-hidden mask with 150% Y-offset
+// Uses .himaaax-split-line overflow-hidden mask with Y-offset
 // Re-triggers every time the user visits (once: false)
 export const MaskedLineReveal: React.FC<{
   lines: string[];
   className?: string;
   delay?: number;
   stagger?: number;
-}> = ({ lines, className = '', delay = 0, stagger = 0.06 }) => {
+}> = ({ lines, className = '', delay = 0, stagger = 0.08 }) => {
   const shouldReduceMotion = useReducedMotion();
 
   const containerVariants = {
@@ -94,15 +94,15 @@ export const MaskedLineReveal: React.FC<{
 
   const lineVariants = {
     hidden: {
-      y: shouldReduceMotion ? 0 : '150%',
+      y: shouldReduceMotion ? 0 : '140%',
       opacity: shouldReduceMotion ? 1 : 0,
     },
     visible: {
       y: '0%',
       opacity: 1,
       transition: {
-        duration: shouldReduceMotion ? 0 : 0.45,
-        ease: HIMAAAX_EASE,
+        duration: shouldReduceMotion ? 0 : 0.95,
+        ease: LUXURY_EASE,
       },
     },
   };
@@ -131,13 +131,11 @@ export const MaskedLineReveal: React.FC<{
 };
 
 // Split Text Reveal that automatically splits by sentences or word chunks
-// Wraps lines with himaaax-split-line mask and re-triggers on every scroll visit
 export const SplitMaskedText: React.FC<{
   text: string;
   className?: string;
   delay?: number;
 }> = ({ text, className = '', delay = 0 }) => {
-  // Split on sentences or punctuation
   const lines = text
     .split(/(?<=[.!?])\s+/)
     .filter(Boolean);
@@ -152,7 +150,6 @@ export const SplitMaskedText: React.FC<{
 };
 
 // Paragraph smooth fade and masked slide up
-// Re-triggers every time user scrolls past (once: false)
 export const FadeUpParagraph: React.FC<{
   children: React.ReactNode;
   className?: string;
@@ -173,9 +170,9 @@ export const FadeUpParagraph: React.FC<{
         }}
         viewport={{ once: false, amount: 0.15 }}
         transition={{
-          duration: shouldReduceMotion ? 0 : 0.5,
+          duration: shouldReduceMotion ? 0 : 1.05,
           delay: shouldReduceMotion ? 0 : delay,
-          ease: HIMAAAX_EASE,
+          ease: LUXURY_EASE,
         }}
         className={className}
         style={{ willChange: 'transform, opacity' }}
@@ -187,7 +184,6 @@ export const FadeUpParagraph: React.FC<{
 };
 
 // Generic Text / Heading smooth fade and masked slide up
-// Re-triggers every time user scrolls past (once: false)
 export const FadeUpText: React.FC<{
   children: React.ReactNode;
   className?: string;
@@ -208,9 +204,9 @@ export const FadeUpText: React.FC<{
         }}
         viewport={{ once: false, amount: 0.15 }}
         transition={{
-          duration: shouldReduceMotion ? 0 : 0.45,
+          duration: shouldReduceMotion ? 0 : 0.9,
           delay: shouldReduceMotion ? 0 : delay,
-          ease: HIMAAAX_EASE,
+          ease: LUXURY_EASE,
         }}
         className={className}
         style={{ willChange: 'transform, opacity' }}
@@ -222,7 +218,7 @@ export const FadeUpText: React.FC<{
 };
 
 // Slow Green Highlighter for key important words across the entire site
-// Slowly draws from left to right as the user scrolls into view
+// Slowly and smoothly draws from left to right as the user scrolls into view
 // Re-triggers every time user visits (once: false)
 export const SlowHighlight: React.FC<{
   children: React.ReactNode;
@@ -233,8 +229,8 @@ export const SlowHighlight: React.FC<{
 }> = ({
   children,
   className = '',
-  delay = 0.25,
-  duration = 0.85,
+  delay = 0.3,
+  duration = 1.35,
   dark = false,
 }) => {
   const shouldReduceMotion = useReducedMotion();
@@ -249,7 +245,7 @@ export const SlowHighlight: React.FC<{
         transition={{
           duration: shouldReduceMotion ? 0.01 : duration,
           delay: shouldReduceMotion ? 0 : delay,
-          ease: [0.16, 1, 0.3, 1],
+          ease: LUXURY_EASE,
         }}
         style={{
           transformOrigin: 'left center',

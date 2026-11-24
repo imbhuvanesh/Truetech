@@ -65,10 +65,10 @@ export const AboutSection: React.FC<{ onExploreServices: () => void }> = ({ onEx
 
         {/* Big Narrative Highlight Banner (Light Container with Soft Layered Shadow & Sketch Border) */}
         <motion.div
-          initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
+          initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.15 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 1.05, ease: [0.19, 1, 0.22, 1] }}
           className="relative bg-[#FAFAFB] rounded-[36px] p-6 sm:p-10 md:p-12 mb-8 border border-black/[0.04] shadow-card-soft overflow-hidden"
         >
           {/* Hand-Drawn Sketch Border Overlay */}
@@ -132,13 +132,13 @@ export const AboutSection: React.FC<{ onExploreServices: () => void }> = ({ onEx
           {/* Card 1: Modern Technology */}
           <div className="relative group">
             <motion.div
-              initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
+              initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 25 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.1 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              whileHover={{ y: -6 }}
+              transition={{ duration: 0.95, delay: 0.1, ease: [0.19, 1, 0.22, 1] }}
+              whileHover={{ y: -8, transition: { duration: 0.45, ease: [0.19, 1, 0.22, 1] } }}
               onClick={onExploreServices}
-              className="h-full bg-[#F6F6F6] rounded-[32px] p-6 sm:p-7 md:p-8 flex flex-col justify-between transition-all duration-300 shadow-card-soft hover:shadow-card-hover border border-black/[0.035] cursor-pointer"
+              className="h-full bg-[#F6F6F6] rounded-[32px] p-6 sm:p-7 md:p-8 flex flex-col justify-between transition-shadow duration-500 shadow-card-soft hover:shadow-card-hover border border-black/[0.035] cursor-pointer"
             >
               <div>
                 <MaskedLineReveal
@@ -185,13 +185,13 @@ export const AboutSection: React.FC<{ onExploreServices: () => void }> = ({ onEx
           {/* Card 2: Bold Creativity */}
           <div className="relative group">
             <motion.div
-              initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
+              initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 25 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              whileHover={{ y: -6 }}
+              transition={{ duration: 0.95, delay: 0.2, ease: [0.19, 1, 0.22, 1] }}
+              whileHover={{ y: -8, transition: { duration: 0.45, ease: [0.19, 1, 0.22, 1] } }}
               onClick={onExploreServices}
-              className="h-full bg-[#F6F6F6] rounded-[32px] p-6 sm:p-7 md:p-8 flex flex-col justify-between transition-all duration-300 shadow-card-soft hover:shadow-card-hover border border-black/[0.035] cursor-pointer"
+              className="h-full bg-[#F6F6F6] rounded-[32px] p-6 sm:p-7 md:p-8 flex flex-col justify-between transition-shadow duration-500 shadow-card-soft hover:shadow-card-hover border border-black/[0.035] cursor-pointer"
             >
               <div>
                 <MaskedLineReveal
@@ -237,13 +237,13 @@ export const AboutSection: React.FC<{ onExploreServices: () => void }> = ({ onEx
           {/* Card 3: Smart Marketing */}
           <div className="relative group">
             <motion.div
-              initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
+              initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 25 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.1 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              whileHover={{ y: -6 }}
+              transition={{ duration: 0.95, delay: 0.3, ease: [0.19, 1, 0.22, 1] }}
+              whileHover={{ y: -8, transition: { duration: 0.45, ease: [0.19, 1, 0.22, 1] } }}
               onClick={onExploreServices}
-              className="h-full bg-[#F6F6F6] rounded-[32px] p-6 sm:p-7 md:p-8 flex flex-col justify-between transition-all duration-300 shadow-card-soft hover:shadow-card-hover border border-black/[0.035] cursor-pointer"
+              className="h-full bg-[#F6F6F6] rounded-[32px] p-6 sm:p-7 md:p-8 flex flex-col justify-between transition-shadow duration-500 shadow-card-soft hover:shadow-card-hover border border-black/[0.035] cursor-pointer"
             >
               <div>
                 <MaskedLineReveal

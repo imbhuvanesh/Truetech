@@ -89,12 +89,12 @@ export const ProcessSection: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: false, amount: 0.15 }}
                   transition={{
-                    duration: shouldReduceMotion ? 0.01 : 0.6,
-                    delay: shouldReduceMotion ? 0 : idx * 0.1,
-                    ease: [0.16, 1, 0.3, 1],
+                    duration: shouldReduceMotion ? 0.01 : 0.95,
+                    delay: shouldReduceMotion ? 0 : idx * 0.12,
+                    ease: [0.19, 1, 0.22, 1],
                   }}
-                  whileHover={{ y: -6 }}
-                  className="relative h-full bg-[#F6F6F6] rounded-[32px] p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 shadow-card-soft hover:shadow-card-hover border border-black/[0.035] overflow-hidden"
+                  whileHover={{ y: -8, transition: { duration: 0.45, ease: [0.19, 1, 0.22, 1] } }}
+                  className="relative h-full bg-[#F6F6F6] rounded-[32px] p-6 sm:p-7 flex flex-col justify-between transition-shadow duration-500 shadow-card-soft hover:shadow-card-hover border border-black/[0.035] overflow-hidden"
                 >
                   {/* Subtle hand-drawn card border overlay */}
                   <DoodleCardBorder color="#080808" />

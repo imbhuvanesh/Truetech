@@ -38,10 +38,10 @@ export const FloatingBackToTop: React.FC = () => {
           initial={{ opacity: 0, scale: 0.6, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.6, y: 20 }}
-          whileHover={{ scale: 1.12, rotate: -4 }}
-          whileTap={{ scale: 0.92 }}
-          transition={{ type: 'spring', stiffness: 350, damping: 20 }}
-          className="fixed bottom-6 right-6 z-50 group flex items-center justify-center w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-[#070B16] text-[#A8FF00] border-2 border-[#A8FF00] shadow-[0_10px_30px_rgba(0,0,0,0.45),0_0_20px_rgba(168,255,0,0.35)] hover:shadow-[0_14px_40px_rgba(0,0,0,0.6),0_0_30px_rgba(168,255,0,0.65)] cursor-pointer focus:outline-none focus:ring-4 focus:ring-[#A8FF00]/40 transition-shadow duration-300"
+          whileHover={{ scale: 1.08, rotate: -3 }}
+          whileTap={{ scale: 0.94 }}
+          transition={{ duration: 0.45, ease: [0.19, 1, 0.22, 1] }}
+          className="fixed bottom-6 right-6 z-50 group flex items-center justify-center w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-[#070B16] text-[#A8FF00] border-2 border-[#A8FF00] shadow-[0_10px_30px_rgba(0,0,0,0.45),0_0_20px_rgba(168,255,0,0.35)] hover:shadow-[0_14px_40px_rgba(0,0,0,0.6),0_0_30px_rgba(168,255,0,0.65)] cursor-pointer focus:outline-none focus:ring-4 focus:ring-[#A8FF00]/40 transition-shadow duration-500"
         >
           {/* Hand-drawn organic sketch border loop */}
           <svg
