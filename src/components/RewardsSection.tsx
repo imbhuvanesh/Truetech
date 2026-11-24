@@ -1,6 +1,16 @@
 import React from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { ConnectorArrow1, ConnectorArrow2, SmallNeonSticker } from './Doodles';
+import {
+  ConnectorArrow1,
+  ConnectorArrow2,
+  SmallNeonSticker,
+  DoodleCorner,
+  DoodleWashiTape,
+  DoodleCodeTag,
+  DoodleSparkle,
+  DoodleRocket,
+  DoodleCardBorder,
+} from './Doodles';
 import { MaskedLineReveal, FadeUpParagraph, SlowHighlight } from './AnimatedText';
 import { Code2, ArrowUpRight } from 'lucide-react';
 
@@ -15,8 +25,20 @@ export const RewardsSection: React.FC = () => {
   };
 
   return (
-    <section className="relative w-full bg-[#DCF4A2] rounded-t-[36px] sm:rounded-t-[48px] md:rounded-t-[56px] pt-6 sm:pt-8 md:pt-10 pb-8 sm:pb-10 md:pb-12 px-4 sm:px-8 md:px-12 text-primary-black shadow-[0_-12px_45px_rgba(0,0,0,0.06)]">
+    <section className="relative w-full bg-[#DCF4A2] rounded-t-[36px] sm:rounded-t-[48px] md:rounded-t-[56px] pt-6 sm:pt-8 md:pt-10 pb-8 sm:pb-10 md:pb-12 px-4 sm:px-8 md:px-12 text-primary-black shadow-[0_-12px_45px_rgba(0,0,0,0.06)] overflow-hidden">
+      {/* Hand-Drawn Container Corners */}
+      <div className="absolute top-3 left-4 z-10 opacity-70 pointer-events-none">
+        <DoodleCorner position="top-left" color="#080808" className="w-8 h-8 sm:w-10 sm:h-10" />
+      </div>
+      <div className="absolute top-3 right-4 z-10 opacity-70 pointer-events-none">
+        <DoodleCorner position="top-right" color="#080808" className="w-8 h-8 sm:w-10 sm:h-10" />
+      </div>
+
       <div className="max-w-6xl mx-auto">
+        {/* Notebook Tape Header Badge */}
+        <div className="flex items-center justify-center mb-6">
+          <DoodleWashiTape text="NOTEBOOK // THREE CORE PILLARS" color="#FFFFFF" className="shadow-sm" />
+        </div>
         
         {/* The 3 Horizontal Reward / Pillar Cards Grid */}
         <div className="relative grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
@@ -43,15 +65,24 @@ export const RewardsSection: React.FC = () => {
               }}
               whileHover={{ y: -6 }}
               onClick={() => scrollTo('services')}
-              className="h-full bg-white rounded-[32px] p-6 sm:p-7 md:p-8 flex flex-col justify-between transition-all duration-300 shadow-card-soft hover:shadow-card-hover border border-black/[0.04] cursor-pointer"
+              className="relative h-full bg-white rounded-[32px] p-6 sm:p-7 md:p-8 flex flex-col justify-between transition-all duration-300 shadow-card-soft hover:shadow-card-hover border border-black/[0.04] cursor-pointer overflow-hidden"
             >
+              {/* Hand-Drawn Sketch Card Border Overlay */}
+              <DoodleCardBorder color="#080808" />
+
               <div>
-                {/* Heading with smooth line reveal */}
-                <MaskedLineReveal
-                  lines={["WE BUILD", "DIGITAL PRODUCTS"]}
-                  className="font-sans text-xl sm:text-[22px] font-bold uppercase tracking-tight text-primary-black leading-[1.1]"
-                  delay={0.1}
-                />
+                <div className="flex items-start justify-between">
+                  {/* Heading with smooth line reveal */}
+                  <MaskedLineReveal
+                    lines={["WE BUILD", "DIGITAL PRODUCTS"]}
+                    className="font-sans text-xl sm:text-[22px] font-bold uppercase tracking-tight text-primary-black leading-[1.1]"
+                    delay={0.1}
+                  />
+                  {/* Hand-Drawn Code Tag Sketch */}
+                  <div className="opacity-80">
+                    <DoodleCodeTag color="#080808" className="w-9 h-6" />
+                  </div>
+                </div>
                 {/* Subtitle with fade up and slow green highlight */}
                 <FadeUpParagraph
                   className="font-sans text-xs sm:text-[13px] text-[#444444] mt-2.5 font-normal leading-relaxed"
@@ -131,15 +162,24 @@ export const RewardsSection: React.FC = () => {
               }}
               whileHover={{ y: -6 }}
               onClick={() => scrollTo('work')}
-              className="h-full bg-white rounded-[32px] p-6 sm:p-7 md:p-8 flex flex-col justify-between transition-all duration-300 shadow-card-soft hover:shadow-card-hover border border-black/[0.04] cursor-pointer"
+              className="relative h-full bg-white rounded-[32px] p-6 sm:p-7 md:p-8 flex flex-col justify-between transition-all duration-300 shadow-card-soft hover:shadow-card-hover border border-black/[0.04] cursor-pointer overflow-hidden"
             >
+              {/* Hand-Drawn Sketch Card Border Overlay */}
+              <DoodleCardBorder color="#080808" />
+
               <div>
-                {/* Heading with smooth line reveal */}
-                <MaskedLineReveal
-                  lines={["WE CREATE", "POWERFUL BRANDS"]}
-                  className="font-sans text-xl sm:text-[22px] font-bold uppercase tracking-tight text-primary-black leading-[1.1]"
-                  delay={0.15}
-                />
+                <div className="flex items-start justify-between">
+                  {/* Heading with smooth line reveal */}
+                  <MaskedLineReveal
+                    lines={["WE CREATE", "POWERFUL BRANDS"]}
+                    className="font-sans text-xl sm:text-[22px] font-bold uppercase tracking-tight text-primary-black leading-[1.1]"
+                    delay={0.15}
+                  />
+                  {/* Doodle Sparkle Accent */}
+                  <div className="opacity-80">
+                    <DoodleSparkle color="#A8FF00" className="w-6 h-6" />
+                  </div>
+                </div>
                 {/* Subtitle with fade up and slow green highlight */}
                 <FadeUpParagraph
                   className="font-sans text-xs sm:text-[13px] text-[#444444] mt-2.5 font-normal leading-relaxed"
@@ -220,15 +260,24 @@ export const RewardsSection: React.FC = () => {
               }}
               whileHover={{ y: -6 }}
               onClick={() => scrollTo('contact')}
-              className="h-full bg-white rounded-[32px] p-6 sm:p-7 md:p-8 flex flex-col justify-between transition-all duration-300 shadow-card-soft hover:shadow-card-hover border border-black/[0.04] cursor-pointer"
+              className="relative h-full bg-white rounded-[32px] p-6 sm:p-7 md:p-8 flex flex-col justify-between transition-all duration-300 shadow-card-soft hover:shadow-card-hover border border-black/[0.04] cursor-pointer overflow-hidden"
             >
+              {/* Hand-Drawn Sketch Card Border Overlay */}
+              <DoodleCardBorder color="#080808" />
+
               <div>
-                {/* Heading with smooth line reveal */}
-                <MaskedLineReveal
-                  lines={["WE GROW", "YOUR BUSINESS"]}
-                  className="font-sans text-xl sm:text-[22px] font-bold uppercase tracking-tight text-primary-black leading-[1.1]"
-                  delay={0.2}
-                />
+                <div className="flex items-start justify-between">
+                  {/* Heading with smooth line reveal */}
+                  <MaskedLineReveal
+                    lines={["WE GROW", "YOUR BUSINESS"]}
+                    className="font-sans text-xl sm:text-[22px] font-bold uppercase tracking-tight text-primary-black leading-[1.1]"
+                    delay={0.2}
+                  />
+                  {/* Hand-Drawn Rocket Doodle */}
+                  <div className="opacity-80">
+                    <DoodleRocket color="#080808" className="w-8 h-8" />
+                  </div>
+                </div>
                 {/* Subtitle with fade up and slow green highlight */}
                 <FadeUpParagraph
                   className="font-sans text-xs sm:text-[13px] text-[#444444] mt-2.5 font-normal leading-relaxed"

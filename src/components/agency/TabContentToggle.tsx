@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import gsap from 'gsap';
 import { SplitText } from 'gsap/SplitText';
+import { DoodleCorner, DoodleChatBubble, DoodleLightbulb, DoodleSparkle, DoodleCardBorder } from '../Doodles';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(SplitText);
@@ -217,13 +218,30 @@ export const TabContentToggle: React.FC = () => {
 
   return (
     <section className="relative w-full py-8 sm:py-10 md:py-12 px-4 sm:px-8 bg-[#DCF4A2] border-y border-black/[0.06] overflow-hidden">
-      <div ref={containerRef} className="tabs-demo">
+      {/* Hand-Drawn Container Corners */}
+      <div className="absolute top-3 left-4 z-10 opacity-70 pointer-events-none">
+        <DoodleCorner position="top-left" color="#080808" className="w-8 h-8 sm:w-10 sm:h-10" />
+      </div>
+      <div className="absolute top-3 right-4 z-10 opacity-70 pointer-events-none">
+        <DoodleCorner position="top-right" color="#080808" className="w-8 h-8 sm:w-10 sm:h-10" />
+      </div>
+
+      {/* Floating Doodle Accents */}
+      <div className="absolute top-8 left-8 hidden lg:block pointer-events-none opacity-80">
+        <DoodleLightbulb color="#080808" className="w-9 h-11" />
+      </div>
+      <div className="absolute top-8 right-8 hidden lg:block pointer-events-none opacity-80">
+        <DoodleChatBubble color="#080808" className="w-10 h-8" />
+      </div>
+
+      <div ref={containerRef} className="tabs-demo relative z-10">
         {/* Section Header Label */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-royal-blue/10 text-royal-blue font-bold text-xs tracking-wider uppercase mb-3">
             <span>Collaboration Framework</span>
+            <DoodleSparkle color="#080808" className="w-3.5 h-3.5" />
           </div>
-          <h2 className="text-sm font-semibold tracking-widest text-zinc-400 uppercase">
+          <h2 className="text-sm font-semibold tracking-widest text-zinc-600 uppercase">
             Built for High-Growth Product Environments
           </h2>
         </div>
@@ -244,7 +262,8 @@ export const TabContentToggle: React.FC = () => {
         </div>
 
         {/* Content Wrapper matching himaaax code with ID #contentWrapper */}
-        <div className="content-wrapper" id="contentWrapper">
+        <div className="content-wrapper relative bg-white/60 backdrop-blur-sm rounded-3xl p-6 sm:p-10 border border-black/[0.04] shadow-card-soft" id="contentWrapper">
+          <DoodleCardBorder color="#080808" />
           {TAB_CONTENT.map((tab, idx) => (
             <div
               key={tab.id}

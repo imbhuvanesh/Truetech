@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { PortfolioSection } from '../components/agency/PortfolioSection';
 import { ProcessSection } from '../components/agency/ProcessSection';
-import { DoodleStar, DoodleUnderline } from '../components/Doodles';
+import { DoodleStar, DoodleUnderline, DoodleCorner } from '../components/Doodles';
 import { MaskedLineReveal, FadeUpParagraph } from '../components/AnimatedText';
 import { ArrowUpRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
@@ -22,6 +22,13 @@ export const WorkPage: React.FC = () => {
           PAGE HERO BANNER: DEDICATED WORK HEADER (ROYAL BLUE STACKED CARD)
          ========================================================================= */}
       <div className="w-full max-w-[1260px] bg-[#0645D8] hero-grid rounded-[36px] sm:rounded-[48px] md:rounded-[56px] p-6 sm:p-10 md:p-12 text-white text-center shadow-[0_25px_80px_rgba(4,26,85,0.4)] border border-white/15 my-2 sm:my-3 relative overflow-hidden">
+        {/* Hand-Drawn Container Corners */}
+        <div className="absolute top-3 left-4 z-20 opacity-70 pointer-events-none">
+          <DoodleCorner position="top-left" color="#A8FF00" className="w-8 h-8 sm:w-10 sm:h-10" />
+        </div>
+        <div className="absolute top-3 right-4 z-20 opacity-70 pointer-events-none">
+          <DoodleCorner position="top-right" color="#A8FF00" className="w-8 h-8 sm:w-10 sm:h-10" />
+        </div>
         
         {/* Ambient Badge */}
         <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-neon-lime text-xs font-bold uppercase tracking-wider mb-4">

@@ -465,3 +465,574 @@ export const DoodleArrowDown: React.FC<{ className?: string; color?: string }> =
     </svg>
   );
 };
+
+// =========================================================================
+// HAND-DRAWN DOODLE EXTENSION SUITE FOR CONTAINERS & CARDS
+// =========================================================================
+
+// 1. Hand-Drawn Container Corner Accent
+export const DoodleCorner: React.FC<{
+  position?: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
+  className?: string;
+  color?: string;
+}> = ({ position = 'top-left', className = '', color = '#080808' }) => {
+  const rotationClass = {
+    'top-left': 'rotate-0',
+    'top-right': 'rotate-90',
+    'bottom-right': 'rotate-180',
+    'bottom-left': '-rotate-90',
+  }[position];
+
+  return (
+    <motion.svg
+      viewBox="0 0 44 44"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      initial={{ opacity: 0, scale: 0.8 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: false, amount: 0.1 }}
+      transition={{ duration: 0.45, ease: EASE_BEZIER }}
+      className={`select-none pointer-events-none ${rotationClass} ${className}`}
+    >
+      <motion.path
+        d="M 6 38 C 6 20, 10 8, 38 6"
+        stroke={color}
+        strokeWidth="3.5"
+        strokeLinecap="round"
+        fill="none"
+        initial={{ pathLength: 0 }}
+        whileInView={{ pathLength: 1 }}
+        viewport={{ once: false, amount: 0.1 }}
+        transition={{ duration: 0.6, ease: EASE_BEZIER }}
+      />
+      <circle cx="6" cy="6" r="3" fill={color} />
+      <path d="M 14 14 L 20 20" stroke={color} strokeWidth="2.5" strokeLinecap="round" />
+    </motion.svg>
+  );
+};
+
+// 2. Hand-Drawn Notebook Washi Tape Strip
+export const DoodleWashiTape: React.FC<{ className?: string; color?: string; text?: string }> = ({
+  className = '',
+  color = '#A8FF00',
+  text,
+}) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.9 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: false, amount: 0.1 }}
+      transition={{ duration: 0.4 }}
+      className={`relative inline-flex items-center justify-center px-4 py-1 select-none pointer-events-none ${className}`}
+    >
+      <svg
+        viewBox="0 0 120 30"
+        preserveAspectRatio="none"
+        className="absolute inset-0 w-full h-full filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.08)]"
+      >
+        <path
+          d="M 0 0 L 120 2 L 118 28 L 2 30 Z"
+          fill={color}
+          opacity="0.85"
+        />
+        {/* Torn edge zigzags */}
+        <path
+          d="M 0 0 L 3 8 L 0 15 L 4 23 L 0 30"
+          stroke="#000000"
+          strokeWidth="1"
+          strokeOpacity="0.2"
+          fill="none"
+        />
+        <path
+          d="M 120 0 L 117 8 L 120 15 L 116 23 L 120 30"
+          stroke="#000000"
+          strokeWidth="1"
+          strokeOpacity="0.2"
+          fill="none"
+        />
+      </svg>
+      {text && (
+        <span className="relative z-10 font-mono text-[10px] sm:text-xs font-bold text-black uppercase tracking-wider">
+          {text}
+        </span>
+      )}
+    </motion.div>
+  );
+};
+
+// 3. Hand-Drawn Sparkle / Cross-Star
+export const DoodleSparkle: React.FC<{ className?: string; color?: string }> = ({
+  className = '',
+  color = '#A8FF00',
+}) => {
+  return (
+    <motion.svg
+      viewBox="0 0 36 36"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      animate={{
+        scale: [1, 1.15, 1],
+        rotate: [0, 8, -8, 0],
+      }}
+      transition={{
+        duration: 3.5,
+        repeat: Infinity,
+        ease: 'easeInOut',
+      }}
+      className={`select-none pointer-events-none ${className}`}
+    >
+      {/* 4-point sparkle with organic curve */}
+      <path
+        d="M 18 2 C 18 10, 22 18, 34 18 C 22 18, 18 26, 18 34 C 18 26, 14 18, 2 18 C 14 18, 18 10, 18 2 Z"
+        fill={color}
+      />
+      <circle cx="30" cy="6" r="1.5" fill={color} />
+      <circle cx="6" cy="30" r="1.5" fill={color} />
+    </motion.svg>
+  );
+};
+
+// 4. Hand-Drawn Sunburst / Radial Spark
+export const DoodleBurst: React.FC<{ className?: string; color?: string }> = ({
+  className = '',
+  color = '#080808',
+}) => {
+  return (
+    <motion.svg
+      viewBox="0 0 50 50"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      whileInView={{ rotate: [0, 15, 0] }}
+      viewport={{ once: false }}
+      transition={{ duration: 1.2, ease: 'easeOut' }}
+      className={`select-none pointer-events-none ${className}`}
+    >
+      <path d="M 25 4 L 25 12" stroke={color} strokeWidth="3" strokeLinecap="round" />
+      <path d="M 25 38 L 25 46" stroke={color} strokeWidth="3" strokeLinecap="round" />
+      <path d="M 4 25 L 12 25" stroke={color} strokeWidth="3" strokeLinecap="round" />
+      <path d="M 38 25 L 46 25" stroke={color} strokeWidth="3" strokeLinecap="round" />
+      <path d="M 10 10 L 16 16" stroke={color} strokeWidth="2.8" strokeLinecap="round" />
+      <path d="M 34 34 L 40 40" stroke={color} strokeWidth="2.8" strokeLinecap="round" />
+      <path d="M 40 10 L 34 16" stroke={color} strokeWidth="2.8" strokeLinecap="round" />
+      <path d="M 10 40 L 16 34" stroke={color} strokeWidth="2.8" strokeLinecap="round" />
+    </motion.svg>
+  );
+};
+
+// 5. Hand-Drawn Playful Squiggle Line
+export const DoodleSquiggle: React.FC<{ className?: string; color?: string }> = ({
+  className = '',
+  color = '#080808',
+}) => {
+  return (
+    <motion.svg
+      viewBox="0 0 100 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={`select-none pointer-events-none ${className}`}
+    >
+      <motion.path
+        d="M 4 14 Q 16 2, 28 14 T 52 14 T 76 14 T 96 12"
+        stroke={color}
+        strokeWidth="3.5"
+        strokeLinecap="round"
+        fill="none"
+        initial={{ pathLength: 0 }}
+        whileInView={{ pathLength: 1 }}
+        viewport={{ once: false, amount: 0.2 }}
+        transition={{ duration: 0.8, ease: EASE_BEZIER }}
+      />
+    </motion.svg>
+  );
+};
+
+// 6. Hand-Drawn Floating Idea Cloud
+export const DoodleCloud: React.FC<{ className?: string; color?: string }> = ({
+  className = '',
+  color = '#080808',
+}) => {
+  return (
+    <motion.svg
+      viewBox="0 0 64 44"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      animate={{ y: [-3, 3, -3] }}
+      transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+      className={`select-none pointer-events-none ${className}`}
+    >
+      <motion.path
+        d="M 16 36 C 8 36, 4 30, 8 22 C 6 14, 16 8, 24 12 C 28 4, 40 4, 46 10 C 54 8, 60 16, 56 24 C 62 30, 56 36, 48 36 Z"
+        stroke={color}
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        fill="none"
+        initial={{ pathLength: 0 }}
+        whileInView={{ pathLength: 1 }}
+        viewport={{ once: false, amount: 0.1 }}
+        transition={{ duration: 0.9, ease: EASE_BEZIER }}
+      />
+    </motion.svg>
+  );
+};
+
+// 7. Hand-Drawn Idea Lightbulb with Radiating Rays
+export const DoodleLightbulb: React.FC<{ className?: string; color?: string; bulbColor?: string }> = ({
+  className = '',
+  color = '#080808',
+  bulbColor = '#A8FF00',
+}) => {
+  return (
+    <motion.svg
+      viewBox="0 0 54 64"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      whileHover={{ scale: 1.15, rotate: 6 }}
+      transition={{ type: 'spring', stiffness: 350 }}
+      className={`select-none ${className}`}
+    >
+      {/* Bulb body */}
+      <path
+        d="M 17 38 C 12 34, 8 26, 8 19 C 8 9, 16 2, 27 2 C 38 2, 46 9, 46 19 C 46 26, 42 34, 37 38 L 36 46 L 18 46 Z"
+        fill={bulbColor}
+        fillOpacity="0.3"
+        stroke={color}
+        strokeWidth="3.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      {/* Filament */}
+      <path d="M 21 24 L 25 15 L 29 24 L 33 15" stroke={color} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+      {/* Screw base */}
+      <path d="M 20 46 L 34 46" stroke={color} strokeWidth="3" strokeLinecap="round" />
+      <path d="M 22 51 L 32 51" stroke={color} strokeWidth="3" strokeLinecap="round" />
+      <path d="M 24 56 L 30 56" stroke={color} strokeWidth="2.8" strokeLinecap="round" />
+      {/* Radiating idea rays */}
+      <path d="M 27 0 L 27 -4" stroke={color} strokeWidth="2.8" strokeLinecap="round" />
+      <path d="M 3 10 L -1 7" stroke={color} strokeWidth="2.5" strokeLinecap="round" />
+      <path d="M 51 10 L 55 7" stroke={color} strokeWidth="2.5" strokeLinecap="round" />
+    </motion.svg>
+  );
+};
+
+// 8. Hand-Drawn Paper Aeroplane (Flight Path)
+export const DoodlePaperPlane: React.FC<{ className?: string; color?: string }> = ({
+  className = '',
+  color = '#A8FF00',
+}) => {
+  return (
+    <motion.svg
+      viewBox="0 0 90 60"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      animate={{ y: [-2, 3, -2], rotate: [-1, 2, -1] }}
+      transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
+      className={`select-none pointer-events-none ${className}`}
+    >
+      {/* Plane */}
+      <path
+        d="M 40 18 L 84 8 L 60 46 L 50 28 Z"
+        fill={color}
+        fillOpacity="0.25"
+        stroke={color}
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path d="M 84 8 L 50 28" stroke={color} strokeWidth="2.5" strokeLinecap="round" />
+      {/* Dotted Loop flight trail */}
+      <motion.path
+        d="M 6 48 C 18 52, 28 36, 18 26 C 10 18, 20 6, 36 14 L 46 20"
+        stroke={color}
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeDasharray="4 4"
+        initial={{ pathLength: 0 }}
+        whileInView={{ pathLength: 1 }}
+        viewport={{ once: false, amount: 0.1 }}
+        transition={{ duration: 1.1, ease: EASE_BEZIER }}
+      />
+    </motion.svg>
+  );
+};
+
+// 9. Hand-Drawn Target Bullseye
+export const DoodleTarget: React.FC<{ className?: string; color?: string }> = ({
+  className = '',
+  color = '#080808',
+}) => {
+  return (
+    <motion.svg
+      viewBox="0 0 54 54"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={`select-none pointer-events-none ${className}`}
+    >
+      {/* Outer imperfect circle */}
+      <circle cx="27" cy="27" r="23" stroke={color} strokeWidth="3" strokeLinecap="round" strokeDasharray="140" />
+      {/* Middle circle */}
+      <circle cx="27" cy="27" r="14" stroke={color} strokeWidth="2.6" strokeLinecap="round" />
+      {/* Center hit dot */}
+      <circle cx="27" cy="27" r="5" fill={color} />
+      {/* Arrow hit shaft */}
+      <path d="M 27 27 L 46 8" stroke={color} strokeWidth="2.5" strokeLinecap="round" />
+      <path d="M 42 6 L 48 8 L 46 14" stroke={color} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+    </motion.svg>
+  );
+};
+
+// 10. Hand-Drawn 3-Spike Royal Crown
+export const DoodleCrown: React.FC<{ className?: string; color?: string }> = ({
+  className = '',
+  color = '#080808',
+}) => {
+  return (
+    <motion.svg
+      viewBox="0 0 50 36"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      whileHover={{ y: -3, scale: 1.1 }}
+      className={`select-none ${className}`}
+    >
+      <path
+        d="M 6 30 L 8 10 L 20 22 L 25 6 L 30 22 L 42 10 L 44 30 Z"
+        stroke={color}
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        fill="none"
+      />
+      <circle cx="8" cy="8" r="2" fill={color} />
+      <circle cx="25" cy="4" r="2" fill={color} />
+      <circle cx="42" cy="8" r="2" fill={color} />
+      <path d="M 6 30 L 44 30" stroke={color} strokeWidth="3" strokeLinecap="round" />
+    </motion.svg>
+  );
+};
+
+// 11. Hand-Drawn Blast-Off Rocket
+export const DoodleRocket: React.FC<{ className?: string; color?: string }> = ({
+  className = '',
+  color = '#080808',
+}) => {
+  return (
+    <motion.svg
+      viewBox="0 0 56 64"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      animate={{ y: [-2, 3, -2], rotate: [-2, 1, -2] }}
+      transition={{ duration: 3.8, repeat: Infinity, ease: 'easeInOut' }}
+      className={`select-none ${className}`}
+    >
+      {/* Rocket fuselage */}
+      <path
+        d="M 28 4 C 36 12, 42 28, 40 46 L 16 46 C 14 28, 20 12, 28 4 Z"
+        stroke={color}
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        fill="none"
+      />
+      {/* Porch window */}
+      <circle cx="28" cy="24" r="5" stroke={color} strokeWidth="2.5" />
+      {/* Left Fin */}
+      <path d="M 16 38 L 6 48 L 16 46" stroke={color} strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" />
+      {/* Right Fin */}
+      <path d="M 40 38 L 50 48 L 40 46" stroke={color} strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" />
+      {/* Flame trail */}
+      <path d="M 22 48 L 28 60 L 34 48" stroke={color} strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" />
+    </motion.svg>
+  );
+};
+
+// 12. Hand-Drawn Code Tag </>
+export const DoodleCodeTag: React.FC<{ className?: string; color?: string }> = ({
+  className = '',
+  color = '#080808',
+}) => {
+  return (
+    <motion.svg
+      viewBox="0 0 60 40"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={`select-none pointer-events-none ${className}`}
+    >
+      {/* Left bracket < */}
+      <path d="M 18 10 L 6 20 L 18 30" stroke={color} strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
+      {/* Slash / */}
+      <path d="M 34 8 L 24 32" stroke={color} strokeWidth="3.5" strokeLinecap="round" />
+      {/* Right bracket > */}
+      <path d="M 40 10 L 52 20 L 40 30" stroke={color} strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
+    </motion.svg>
+  );
+};
+
+// 13. Hand-Drawn Organic Heart
+export const DoodleHeart: React.FC<{ className?: string; color?: string }> = ({
+  className = '',
+  color = '#A8FF00',
+}) => {
+  return (
+    <motion.svg
+      viewBox="0 0 44 40"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      whileHover={{ scale: 1.25 }}
+      transition={{ type: 'spring', stiffness: 400 }}
+      className={`select-none inline-block ${className}`}
+    >
+      <path
+        d="M 22 10 C 18 2, 4 4, 4 16 C 4 26, 16 32, 22 36 C 28 32, 40 26, 40 16 C 40 4, 26 2, 22 10 Z"
+        stroke={color}
+        strokeWidth="3.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        fill={color}
+        fillOpacity="0.2"
+      />
+    </motion.svg>
+  );
+};
+
+// 14. Hand-Drawn Speech Chat Bubble
+export const DoodleChatBubble: React.FC<{ className?: string; color?: string }> = ({
+  className = '',
+  color = '#080808',
+}) => {
+  return (
+    <motion.svg
+      viewBox="0 0 54 44"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      whileHover={{ y: -3 }}
+      className={`select-none ${className}`}
+    >
+      <path
+        d="M 10 32 L 6 40 L 18 36 C 22 37, 26 38, 30 38 C 42 38, 50 30, 50 20 C 50 10, 42 4, 28 4 C 14 4, 6 11, 6 20 C 6 25, 8 29, 10 32 Z"
+        stroke={color}
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        fill="none"
+      />
+      {/* 3 chat scribbles */}
+      <path d="M 16 16 L 36 16" stroke={color} strokeWidth="2.5" strokeLinecap="round" />
+      <path d="M 16 23 L 30 23" stroke={color} strokeWidth="2.5" strokeLinecap="round" />
+    </motion.svg>
+  );
+};
+
+// 15. Hand-Drawn Camera / Film Frame
+export const DoodleCamera: React.FC<{ className?: string; color?: string }> = ({
+  className = '',
+  color = '#A8FF00',
+}) => {
+  return (
+    <motion.svg
+      viewBox="0 0 50 42"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={`select-none pointer-events-none ${className}`}
+    >
+      <rect x="4" y="10" width="42" height="28" rx="6" stroke={color} strokeWidth="3" strokeLinecap="round" />
+      <circle cx="25" cy="24" r="8" stroke={color} strokeWidth="3" />
+      <circle cx="38" cy="16" r="2" fill={color} />
+      <path d="M 14 10 L 18 4 L 28 4 L 32 10" stroke={color} strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" />
+    </motion.svg>
+  );
+};
+
+// 16. Hand-Drawn Sparkling Diamond
+export const DoodleDiamond: React.FC<{ className?: string; color?: string }> = ({
+  className = '',
+  color = '#A8FF00',
+}) => {
+  return (
+    <motion.svg
+      viewBox="0 0 46 40"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      whileHover={{ rotate: 15, scale: 1.15 }}
+      className={`select-none ${className}`}
+    >
+      <path
+        d="M 12 6 L 34 6 L 42 16 L 23 36 L 4 16 Z"
+        stroke={color}
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        fill="none"
+      />
+      <path d="M 4 16 L 42 16" stroke={color} strokeWidth="2" strokeLinecap="round" />
+      <path d="M 16 6 L 20 16 L 23 36" stroke={color} strokeWidth="2" strokeLinecap="round" />
+      <path d="M 30 6 L 26 16 L 23 36" stroke={color} strokeWidth="2" strokeLinecap="round" />
+    </motion.svg>
+  );
+};
+
+// 17. Hand-Drawn Sketch Compass
+export const DoodleCompass: React.FC<{ className?: string; color?: string }> = ({
+  className = '',
+  color = '#080808',
+}) => {
+  return (
+    <motion.svg
+      viewBox="0 0 50 50"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      animate={{ rotate: [0, 8, -6, 0] }}
+      transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+      className={`select-none pointer-events-none ${className}`}
+    >
+      <circle cx="25" cy="25" r="21" stroke={color} strokeWidth="3" strokeLinecap="round" />
+      <path d="M 25 8 L 30 22 L 25 25 L 20 22 Z" fill={color} stroke={color} strokeWidth="1.5" />
+      <path d="M 25 42 L 20 28 L 25 25 L 30 28 Z" stroke={color} strokeWidth="1.5" fill="none" />
+      <circle cx="25" cy="25" r="2.5" fill={color} />
+    </motion.svg>
+  );
+};
+
+// 18. Hand-Drawn Imperfect Sketch Border Frame
+export const DoodleCardBorder: React.FC<{ className?: string; color?: string }> = ({
+  className = '',
+  color = '#080808',
+}) => {
+  return (
+    <svg
+      viewBox="0 0 400 300"
+      preserveAspectRatio="none"
+      className={`absolute inset-0 w-full h-full pointer-events-none ${className}`}
+      fill="none"
+    >
+      <path
+        d="M 12 18 C 120 14, 280 16, 388 14 C 392 100, 386 210, 390 284 C 270 286, 110 288, 10 284 C 8 200, 14 90, 12 18 Z"
+        stroke={color}
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeDasharray="6 4"
+        opacity="0.35"
+      />
+    </svg>
+  );
+};
+
+// 19. Hand-Drawn 100% Guaranteed Sketch Stamp
+export const DoodleBadge100: React.FC<{ className?: string; color?: string }> = ({
+  className = '',
+  color = '#080808',
+}) => {
+  return (
+    <motion.div
+      initial={{ scale: 0.9, rotate: -6 }}
+      whileInView={{ scale: 1, rotate: -3 }}
+      viewport={{ once: false }}
+      transition={{ type: 'spring', stiffness: 280 }}
+      className={`inline-flex items-center justify-center p-2 rounded-full border-2 border-dashed select-none pointer-events-none ${className}`}
+      style={{ borderColor: color }}
+    >
+      <span className="font-mono text-xs font-black tracking-tighter uppercase px-2 py-0.5" style={{ color }}>
+        ★ 100% AGILE
+      </span>
+    </motion.div>
+  );
+};

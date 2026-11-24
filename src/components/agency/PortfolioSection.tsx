@@ -4,7 +4,13 @@ import { ArrowUpRight, Sparkles, CheckCircle2 } from 'lucide-react';
 import { portfolioData } from '../../data/agencyData';
 import type { ProjectItem } from '../../data/agencyData';
 import { MaskedLineReveal, FadeUpParagraph, FadeUpText, SlowHighlight } from '../AnimatedText';
-import { DoodleStar, DoodleUnderline } from '../Doodles';
+import {
+  DoodleStar,
+  DoodleUnderline,
+  DoodleCorner,
+  DoodleCamera,
+  DoodleWashiTape,
+} from '../Doodles';
 
 export const PortfolioSection: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>('All');
@@ -24,7 +30,14 @@ export const PortfolioSection: React.FC = () => {
     : portfolioData.filter(p => p.category === activeCategory);
 
   return (
-    <section id="work" className="relative w-full py-8 sm:py-10 md:py-12 px-4 sm:px-8 text-white bg-[#0A1022] select-none">
+    <section id="work" className="relative w-full py-8 sm:py-10 md:py-12 px-4 sm:px-8 text-white bg-[#0A1022] select-none overflow-hidden">
+      {/* Hand-Drawn Container Corners */}
+      <div className="absolute top-3 left-4 z-20 opacity-70 pointer-events-none">
+        <DoodleCorner position="top-left" color="#A8FF00" className="w-8 h-8 sm:w-10 sm:h-10" />
+      </div>
+      <div className="absolute top-3 right-4 z-20 opacity-70 pointer-events-none">
+        <DoodleCorner position="top-right" color="#A8FF00" className="w-8 h-8 sm:w-10 sm:h-10" />
+      </div>
       
       {/* Subtle Tech Grid inside Midnight Container */}
       <div className="absolute inset-0 bg-grid-pattern opacity-15 pointer-events-none" />
@@ -34,16 +47,24 @@ export const PortfolioSection: React.FC = () => {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 sm:mb-8 pb-4 border-b border-white/10">
           <div className="max-w-2xl">
-            <FadeUpText delay={0.05} className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-neon-lime/10 border border-neon-lime/20 text-neon-lime font-bold text-xs tracking-wider uppercase mb-3">
-              <span>Selected Portfolio</span>
-              <DoodleStar className="w-3.5 h-3.5 text-neon-lime" />
-            </FadeUpText>
+            <div className="flex items-center space-x-3 mb-3">
+              <FadeUpText delay={0.05} className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-neon-lime/10 border border-neon-lime/20 text-neon-lime font-bold text-xs tracking-wider uppercase">
+                <span>Selected Portfolio</span>
+                <DoodleStar className="w-3.5 h-3.5 text-neon-lime" />
+              </FadeUpText>
+              <DoodleWashiTape text="FEATURED RELEASES" color="#A8FF00" className="hidden sm:inline-flex" />
+            </div>
             
-            <MaskedLineReveal
-              lines={["PROVEN COMMERCIAL WORK", "& CLIENT RESULTS."]}
-              className="font-sans text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-white leading-[1.12]"
-              delay={0.1}
-            />
+            <div className="flex items-center space-x-3">
+              <MaskedLineReveal
+                lines={["PROVEN COMMERCIAL WORK", "& CLIENT RESULTS."]}
+                className="font-sans text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-white leading-[1.12]"
+                delay={0.1}
+              />
+              <div className="hidden lg:block shrink-0 -mt-4">
+                <DoodleCamera color="#A8FF00" className="w-9 h-8 opacity-80" />
+              </div>
+            </div>
           </div>
           
           <div className="mt-4 md:mt-0 max-w-md">

@@ -1,6 +1,12 @@
 import React from 'react';
 import { ArrowUp, Mail, Phone, MessageSquare, ArrowUpRight, Globe } from 'lucide-react';
-import { DoodleStar } from '../Doodles';
+import {
+  DoodleStar,
+  DoodleCorner,
+  DoodleHeart,
+  DoodleCardBorder,
+  DoodleWashiTape,
+} from '../Doodles';
 import { SlowHighlight } from '../AnimatedText';
 import { Link } from 'react-router-dom';
 
@@ -27,7 +33,7 @@ export const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="w-full max-w-[1260px] mx-auto mt-8 sm:mt-12 md:mt-16 mb-6 sm:mb-10 px-2 sm:px-4 select-none">
+    <footer className="w-full max-w-[1260px] mx-auto mt-8 sm:mt-12 md:mt-16 mb-6 sm:mb-10 px-2 sm:px-4 select-none relative">
       
       {/* =========================================================================
           SEPARATE STACKED-CARD CONTAINER
@@ -36,17 +42,31 @@ export const Footer: React.FC = () => {
          ========================================================================= */}
       <div className="w-full bg-[#070B16] text-white rounded-[36px] sm:rounded-[48px] md:rounded-[56px] p-6 sm:p-8 md:p-10 lg:p-12 border border-white/10 shadow-[0_25px_80px_rgba(0,0,0,0.5)] relative overflow-hidden">
         
+        {/* Hand-Drawn Container Corners */}
+        <div className="absolute top-3 left-4 z-20 opacity-70 pointer-events-none">
+          <DoodleCorner position="top-left" color="#A8FF00" className="w-8 h-8 sm:w-10 sm:h-10" />
+        </div>
+        <div className="absolute top-3 right-4 z-20 opacity-70 pointer-events-none">
+          <DoodleCorner position="top-right" color="#A8FF00" className="w-8 h-8 sm:w-10 sm:h-10" />
+        </div>
+
         {/* Subtle Tech Grid Accent */}
         <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none" />
 
         {/* =========================================================================
             LAYER 1: TOP CALLOUT CARD (Pre-footer CTA Banner inside container)
            ========================================================================= */}
-        <div className="relative z-10 bg-white/[0.04] border border-white/10 rounded-[28px] sm:rounded-[36px] p-6 sm:p-8 md:p-10 mb-8 sm:mb-10 flex flex-col lg:flex-row items-center justify-between gap-6 shadow-[0_12px_40px_rgba(0,0,0,0.3)]">
-          <div className="text-center lg:text-left max-w-xl">
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-neon-lime/10 border border-neon-lime/20 text-neon-lime text-xs font-bold uppercase tracking-wider mb-3">
-              <span>Let's Build Together</span>
-              <DoodleStar className="w-3 h-3 text-neon-lime" />
+        <div className="relative z-10 bg-white/[0.04] border border-white/10 rounded-[28px] sm:rounded-[36px] p-6 sm:p-8 md:p-10 mb-8 sm:mb-10 flex flex-col lg:flex-row items-center justify-between gap-6 shadow-[0_12px_40px_rgba(0,0,0,0.3)] overflow-hidden">
+          {/* Hand-Drawn Card Border */}
+          <DoodleCardBorder color="#A8FF00" />
+
+          <div className="text-center lg:text-left max-w-xl relative z-10">
+            <div className="flex items-center justify-center lg:justify-start space-x-2 mb-3">
+              <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-neon-lime/10 border border-neon-lime/20 text-neon-lime text-xs font-bold uppercase tracking-wider">
+                <span>Let's Build Together</span>
+                <DoodleStar className="w-3 h-3 text-neon-lime" />
+              </div>
+              <DoodleWashiTape text="OPEN SLOTS: 2" color="#A8FF00" className="hidden sm:inline-flex" />
             </div>
             <h3 className="font-sans font-light text-2xl sm:text-3xl md:text-4xl text-white tracking-tight leading-snug">
               Have a Project in Mind? Let's Create <SlowHighlight dark>Impact</SlowHighlight>.
@@ -204,7 +224,9 @@ export const Footer: React.FC = () => {
            ========================================================================= */}
         <div className="relative z-10 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-400 font-sans gap-4">
           <div className="flex items-center space-x-2">
-            <span>&copy; 2027 NEXUS Digital Agency. All rights reserved.</span>
+            <span>&copy; 2027 NEXUS Digital Agency. Hand-crafted with</span>
+            <DoodleHeart color="#A8FF00" className="w-4 h-4 inline-block" />
+            <span>for ambitious brands.</span>
           </div>
 
           <div className="flex items-center space-x-4">

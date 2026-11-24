@@ -1,6 +1,15 @@
 import React from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { ConnectorArrow1, ConnectorArrow2, SmallNeonSticker } from '../Doodles';
+import {
+  ConnectorArrow1,
+  ConnectorArrow2,
+  SmallNeonSticker,
+  DoodleCorner,
+  DoodleWashiTape,
+  DoodleCrown,
+  DoodleCardBorder,
+  DoodleSquiggle,
+} from '../Doodles';
 import { MaskedLineReveal, FadeUpParagraph, FadeUpText, SlowHighlight } from '../AnimatedText';
 import { Code2, ArrowUpRight, CheckCircle2 } from 'lucide-react';
 
@@ -8,40 +17,64 @@ export const AboutSection: React.FC<{ onExploreServices: () => void }> = ({ onEx
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section id="about" className="relative w-full py-8 sm:py-10 md:py-12 px-4 sm:px-8 text-black bg-[#DCF4A2]">
+    <section id="about" className="relative w-full py-8 sm:py-10 md:py-12 px-4 sm:px-8 text-black bg-[#DCF4A2] overflow-hidden">
+      {/* Hand-Drawn Container Corners */}
+      <div className="absolute top-3 left-4 z-10 opacity-70 pointer-events-none">
+        <DoodleCorner position="top-left" color="#080808" className="w-8 h-8 sm:w-10 sm:h-10" />
+      </div>
+      <div className="absolute top-3 right-4 z-10 opacity-70 pointer-events-none">
+        <DoodleCorner position="top-right" color="#080808" className="w-8 h-8 sm:w-10 sm:h-10" />
+      </div>
+
       <div className="max-w-6xl mx-auto">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 sm:mb-8 pb-4 border-b border-black/[0.08]">
           <div className="max-w-2xl">
-            <FadeUpText delay={0.05} className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-royal-blue/10 text-royal-blue font-bold text-xs tracking-wider uppercase mb-3">
-              <span>About Nexus Studio</span>
-            </FadeUpText>
+            <div className="flex items-center space-x-3 mb-3">
+              <FadeUpText delay={0.05} className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-royal-blue/10 text-royal-blue font-bold text-xs tracking-wider uppercase">
+                <span>About Nexus Studio</span>
+              </FadeUpText>
+              <DoodleWashiTape text="EST. 2024" color="#FFFFFF" className="hidden sm:inline-flex" />
+            </div>
             
-            <MaskedLineReveal
-              lines={["WE COMBINE TECHNOLOGY,", "CREATIVITY & MARKETING."]}
-              className="font-sans text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-black leading-[1.12]"
-              delay={0.1}
-            />
+            <div className="flex items-center space-x-2">
+              <MaskedLineReveal
+                lines={["WE COMBINE TECHNOLOGY,", "CREATIVITY & MARKETING."]}
+                className="font-sans text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-black leading-[1.12]"
+                delay={0.1}
+              />
+              <div className="hidden lg:block shrink-0 -mt-6">
+                <DoodleCrown color="#080808" className="w-9 h-7" />
+              </div>
+            </div>
           </div>
           
-          <FadeUpParagraph
-            className="mt-4 md:mt-0 max-w-sm text-sm sm:text-base text-zinc-600 font-normal font-sans leading-relaxed"
-            delay={0.25}
-          >
-            We are a creative technology and digital marketing agency providing complete digital solutions to businesses, startups and individuals.
-          </FadeUpParagraph>
+          <div className="mt-4 md:mt-0 max-w-sm">
+            <FadeUpParagraph
+              className="text-sm sm:text-base text-zinc-600 font-normal font-sans leading-relaxed"
+              delay={0.25}
+            >
+              We are a creative technology and digital marketing agency providing complete digital solutions to businesses, startups and individuals.
+            </FadeUpParagraph>
+            <div className="mt-2">
+              <DoodleSquiggle color="#080808" className="w-28 h-5 opacity-70" />
+            </div>
+          </div>
         </div>
 
-        {/* Big Narrative Highlight Banner (Light Container with Soft Layered Shadow) */}
+        {/* Big Narrative Highlight Banner (Light Container with Soft Layered Shadow & Sketch Border) */}
         <motion.div
           initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.15 }}
           transition={{ duration: 0.6 }}
-          className="bg-[#FAFAFB] rounded-[36px] p-6 sm:p-10 md:p-12 mb-8 border border-black/[0.04] shadow-card-soft"
+          className="relative bg-[#FAFAFB] rounded-[36px] p-6 sm:p-10 md:p-12 mb-8 border border-black/[0.04] shadow-card-soft overflow-hidden"
         >
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          {/* Hand-Drawn Sketch Border Overlay */}
+          <DoodleCardBorder color="#080808" />
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
             <div className="lg:col-span-7">
               <FadeUpText delay={0.1} className="font-sans font-light text-2xl sm:text-3xl text-black leading-snug">
                 "Our goal is to help brands <SlowHighlight>establish their online presence</SlowHighlight>, improve their digital identity and <SlowHighlight>grow their business</SlowHighlight>."

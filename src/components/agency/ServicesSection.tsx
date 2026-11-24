@@ -14,7 +14,14 @@ import {
 import { servicesData } from '../../data/agencyData';
 import type { ServiceCategory } from '../../data/agencyData';
 import { MaskedLineReveal, FadeUpParagraph, FadeUpText, SlowHighlight } from '../AnimatedText';
-import { SmallNeonSticker, ConnectorArrow1 } from '../Doodles';
+import {
+  SmallNeonSticker,
+  ConnectorArrow1,
+  DoodleCorner,
+  DoodleWashiTape,
+  DoodleCardBorder,
+  DoodleSquiggle,
+} from '../Doodles';
 
 interface ServicesSectionProps {
   onSelectService: (serviceName: string) => void;
@@ -44,15 +51,26 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
   const [activeServiceModal, setActiveServiceModal] = useState<ServiceCategory | null>(null);
 
   return (
-    <section id="services" className="relative w-full py-8 sm:py-10 md:py-12 px-4 sm:px-8 text-black bg-[#DCF4A2]">
+    <section id="services" className="relative w-full py-8 sm:py-10 md:py-12 px-4 sm:px-8 text-black bg-[#DCF4A2] overflow-hidden">
+      {/* Hand-Drawn Container Corners */}
+      <div className="absolute top-3 left-4 z-10 opacity-70 pointer-events-none">
+        <DoodleCorner position="top-left" color="#080808" className="w-8 h-8 sm:w-10 sm:h-10" />
+      </div>
+      <div className="absolute top-3 right-4 z-10 opacity-70 pointer-events-none">
+        <DoodleCorner position="top-right" color="#080808" className="w-8 h-8 sm:w-10 sm:h-10" />
+      </div>
+
       <div className="max-w-6xl mx-auto">
 
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 sm:mb-8 pb-4 border-b border-black/[0.08]">
           <div className="max-w-2xl">
-            <FadeUpText delay={0.05} className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-royal-blue/10 text-royal-blue font-bold text-xs tracking-wider uppercase mb-3">
-              <span>Full-Spectrum Solutions</span>
-            </FadeUpText>
+            <div className="flex items-center space-x-3 mb-3">
+              <FadeUpText delay={0.05} className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-royal-blue/10 text-royal-blue font-bold text-xs tracking-wider uppercase">
+                <span>Full-Spectrum Solutions</span>
+              </FadeUpText>
+              <DoodleWashiTape text="DISCIPLINES // 01-06" color="#FFFFFF" className="hidden sm:inline-flex" />
+            </div>
             
             <MaskedLineReveal
               lines={["OUR CORE DISCIPLINES", "& DIGITAL SERVICES."]}
@@ -61,12 +79,17 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
             />
           </div>
           
-          <FadeUpParagraph
-            className="mt-4 md:mt-0 max-w-md text-sm sm:text-base text-zinc-700 font-normal font-sans leading-relaxed"
-            delay={0.25}
-          >
-            Six cohesive disciplines covering your entire digital footprint — from <SlowHighlight>high-performance engineering</SlowHighlight> to viral creative and <SlowHighlight>automated systems</SlowHighlight>.
-          </FadeUpParagraph>
+          <div className="mt-4 md:mt-0 max-w-md">
+            <FadeUpParagraph
+              className="text-sm sm:text-base text-zinc-700 font-normal font-sans leading-relaxed"
+              delay={0.25}
+            >
+              Six cohesive disciplines covering your entire digital footprint — from <SlowHighlight>high-performance engineering</SlowHighlight> to viral creative and <SlowHighlight>automated systems</SlowHighlight>.
+            </FadeUpParagraph>
+            <div className="mt-2">
+              <DoodleSquiggle color="#080808" className="w-24 h-4 opacity-60" />
+            </div>
+          </div>
         </div>
 
         {/* =========================================================================
@@ -91,8 +114,10 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                   }}
                   whileHover={{ y: -6 }}
                   onClick={() => onSelectService(service.title)}
-                  className="h-full bg-white rounded-[32px] p-6 sm:p-7 md:p-8 flex flex-col justify-between transition-all duration-300 shadow-card-soft hover:shadow-card-hover border border-black/[0.04] cursor-pointer"
+                  className="relative h-full bg-white rounded-[32px] p-6 sm:p-7 md:p-8 flex flex-col justify-between transition-all duration-300 shadow-card-soft hover:shadow-card-hover border border-black/[0.04] cursor-pointer overflow-hidden"
                 >
+                  {/* Subtle hand-drawn card border overlay */}
+                  <DoodleCardBorder color="#080808" />
                   <div>
                     {/* Top Header: Icon + Popular Pill Badge */}
                     <div className="flex items-center justify-between mb-5">

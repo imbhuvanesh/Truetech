@@ -1,6 +1,16 @@
 import React from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { HeroHashtag, TopRightArrow, BottomLeftArrow, GetStartedBadge, DoodleConnectorBracket, DoodleStar } from './Doodles';
+import {
+  HeroHashtag,
+  TopRightArrow,
+  BottomLeftArrow,
+  GetStartedBadge,
+  DoodleConnectorBracket,
+  DoodleStar,
+  DoodleSparkle,
+  DoodleBurst,
+  DoodleCorner,
+} from './Doodles';
 import { FloatingNFTCard } from './FloatingNFTCard';
 import { MaskedHeroWord, SlowHighlight } from './AnimatedText';
 import { ArrowUpRight, Sparkles } from 'lucide-react';
@@ -15,20 +25,34 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onGetStarted, onExplor
 
   return (
     <section className="relative w-full pt-4 sm:pt-6 md:pt-8 pb-8 sm:pb-12 md:pb-14 px-4 sm:px-6 md:px-8 select-none flex flex-col items-center justify-center overflow-visible">
+      {/* Decorative Container Hand-Drawn Corners */}
+      <div className="absolute top-2 left-3 sm:left-6 z-10 opacity-70">
+        <DoodleCorner position="top-left" color="#A8FF00" className="w-8 h-8 sm:w-10 sm:h-10" />
+      </div>
+      <div className="absolute top-2 right-3 sm:right-6 z-10 opacity-70">
+        <DoodleCorner position="top-right" color="#A8FF00" className="w-8 h-8 sm:w-10 sm:h-10" />
+      </div>
       
       {/* Centered Hero Composition */}
       <div className="relative w-full max-w-6xl mx-auto flex flex-col items-center justify-center text-center">
 
-        {/* Agency Top Category Pill Badge (Clean, No Green Dot) */}
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="mb-3 sm:mb-4 z-20 inline-flex items-center justify-center space-x-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white font-sans text-xs sm:text-[13px] font-semibold tracking-wide shadow-sm"
-        >
-          <span className="uppercase tracking-wider">Creative Technology &amp; Digital Marketing</span>
-          <DoodleStar className="w-3.5 h-3.5 text-neon-lime ml-1" />
-        </motion.div>
+        {/* Agency Top Category Pill Badge with Lightbulb Accent */}
+        <div className="relative mb-3 sm:mb-4 z-20 inline-flex items-center justify-center">
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="inline-flex items-center justify-center space-x-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white font-sans text-xs sm:text-[13px] font-semibold tracking-wide shadow-sm"
+          >
+            <span className="uppercase tracking-wider">Creative Technology &amp; Digital Marketing</span>
+            <DoodleStar className="w-3.5 h-3.5 text-neon-lime ml-1" />
+          </motion.div>
+
+          {/* Hand-Drawn Sparkle Accent */}
+          <div className="absolute -right-8 -top-3 hidden sm:block">
+            <DoodleSparkle color="#A8FF00" className="w-6 h-6" />
+          </div>
+        </div>
 
         {/* Top-Right Hand-Drawn Arrow (Loops toward Elena Vance) */}
         <div className="absolute z-20 pointer-events-none 
@@ -159,8 +183,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onGetStarted, onExplor
             </div>
 
             {/* Word 3: GROW. (Neon Lime Accent) */}
-            <div className="text-neon-lime font-extrabold mt-1 md:mt-2">
+            <div className="relative text-neon-lime font-extrabold mt-1 md:mt-2 flex items-center">
               <MaskedHeroWord text="GROW." delay={0.45} />
+              <div className="absolute -right-10 -top-4 hidden sm:block pointer-events-none">
+                <DoodleBurst color="#A8FF00" className="w-9 h-9 opacity-85" />
+              </div>
             </div>
 
           </div>

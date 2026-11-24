@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/agency/Footer';
+import { FloatingBackToTop } from './components/FloatingBackToTop';
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
 import { ServicesPage } from './pages/ServicesPage';
@@ -23,7 +24,7 @@ export function App() {
   return (
     <HashRouter>
       <ScrollToTop />
-      <div className="min-h-screen bg-[#082B91] text-primary-black flex flex-col items-center justify-start p-2 sm:p-4 md:p-6 lg:p-8 select-none antialiased">
+      <div className="min-h-screen bg-[#082B91] text-primary-black flex flex-col items-center justify-start p-2 sm:p-4 md:p-6 lg:p-8 select-none antialiased relative">
         {/* Navigation Bar */}
         <Navbar />
 
@@ -41,6 +42,9 @@ export function App() {
 
         {/* Redesigned Stacked-Card Footer Container */}
         <Footer />
+
+        {/* Floating Back To Top Button */}
+        <FloatingBackToTop />
       </div>
     </HashRouter>
   );

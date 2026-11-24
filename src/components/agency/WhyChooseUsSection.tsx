@@ -3,7 +3,15 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { Sparkles, Terminal, CheckCircle2, Layers, Target, ArrowUpRight, Code2 } from 'lucide-react';
 import { whyChooseUsData } from '../../data/agencyData';
 import { MaskedLineReveal, FadeUpParagraph, FadeUpText, SlowHighlight } from '../AnimatedText';
-import { ConnectorArrow1, SmallNeonSticker } from '../Doodles';
+import {
+  ConnectorArrow1,
+  SmallNeonSticker,
+  DoodleCorner,
+  DoodleWashiTape,
+  DoodleTarget,
+  DoodleBadge100,
+  DoodleCardBorder,
+} from '../Doodles';
 
 const iconMap: Record<string, React.ElementType> = {
   Sparkles,
@@ -26,29 +34,50 @@ export const WhyChooseUsSection: React.FC = () => {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section id="why-us" className="relative w-full py-8 sm:py-10 md:py-12 px-4 sm:px-8 text-black bg-[#DCF4A2]">
+    <section id="why-us" className="relative w-full py-8 sm:py-10 md:py-12 px-4 sm:px-8 text-black bg-[#DCF4A2] overflow-hidden">
+      {/* Hand-Drawn Container Corners */}
+      <div className="absolute top-3 left-4 z-10 opacity-70 pointer-events-none">
+        <DoodleCorner position="top-left" color="#080808" className="w-8 h-8 sm:w-10 sm:h-10" />
+      </div>
+      <div className="absolute top-3 right-4 z-10 opacity-70 pointer-events-none">
+        <DoodleCorner position="top-right" color="#080808" className="w-8 h-8 sm:w-10 sm:h-10" />
+      </div>
+
       <div className="max-w-6xl mx-auto">
 
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 sm:mb-8 pb-4 border-b border-black/[0.08]">
           <div className="max-w-2xl">
-            <FadeUpText delay={0.05} className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-royal-blue/10 text-royal-blue font-bold text-xs tracking-wider uppercase mb-3">
-              <span>Competitive Edge</span>
-            </FadeUpText>
+            <div className="flex items-center space-x-3 mb-3">
+              <FadeUpText delay={0.05} className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-royal-blue/10 text-royal-blue font-bold text-xs tracking-wider uppercase">
+                <span>Competitive Edge</span>
+              </FadeUpText>
+              <DoodleWashiTape text="WHY NEXUS // 5 PILLARS" color="#FFFFFF" className="hidden sm:inline-flex" />
+            </div>
             
-            <MaskedLineReveal
-              lines={["WHY TOP BRANDS CHOOSE", "NEXUS DIGITAL AGENCY."]}
-              className="font-sans text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-black leading-[1.12]"
-              delay={0.1}
-            />
+            <div className="flex items-center space-x-3">
+              <MaskedLineReveal
+                lines={["WHY TOP BRANDS CHOOSE", "NEXUS DIGITAL AGENCY."]}
+                className="font-sans text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-black leading-[1.12]"
+                delay={0.1}
+              />
+              <div className="hidden lg:block shrink-0 -mt-4">
+                <DoodleTarget color="#080808" className="w-10 h-10" />
+              </div>
+            </div>
           </div>
           
-          <FadeUpParagraph
-            className="mt-4 md:mt-0 max-w-md text-sm sm:text-base text-zinc-700 font-normal font-sans leading-relaxed"
-            delay={0.25}
-          >
-            We bridge the gap between <SlowHighlight>aesthetic brilliance</SlowHighlight>, robust <SlowHighlight>technical engineering</SlowHighlight>, and aggressive <SlowHighlight>commercial growth</SlowHighlight>.
-          </FadeUpParagraph>
+          <div className="mt-4 md:mt-0 max-w-md">
+            <FadeUpParagraph
+              className="text-sm sm:text-base text-zinc-700 font-normal font-sans leading-relaxed"
+              delay={0.25}
+            >
+              We bridge the gap between <SlowHighlight>aesthetic brilliance</SlowHighlight>, robust <SlowHighlight>technical engineering</SlowHighlight>, and aggressive <SlowHighlight>commercial growth</SlowHighlight>.
+            </FadeUpParagraph>
+            <div className="mt-2 flex items-center space-x-2">
+              <DoodleBadge100 color="#080808" />
+            </div>
+          </div>
         </div>
 
         {/* =========================================================================
@@ -72,8 +101,10 @@ export const WhyChooseUsSection: React.FC = () => {
                     ease: [0.16, 1, 0.3, 1],
                   }}
                   whileHover={{ y: -6 }}
-                  className="h-full bg-[#F6F6F6] rounded-[32px] p-6 sm:p-7 md:p-8 flex flex-col justify-between transition-all duration-300 shadow-card-soft hover:shadow-card-hover border border-black/[0.035]"
+                  className="relative h-full bg-[#F6F6F6] rounded-[32px] p-6 sm:p-7 md:p-8 flex flex-col justify-between transition-all duration-300 shadow-card-soft hover:shadow-card-hover border border-black/[0.035] overflow-hidden"
                 >
+                  {/* Subtle hand-drawn card border overlay */}
+                  <DoodleCardBorder color="#080808" />
                   <div>
                     {/* Top: Icon + Metric Tag */}
                     <div className="flex items-center justify-between mb-5">
