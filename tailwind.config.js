@@ -33,6 +33,7 @@ export default {
         display: ['"DM Sans"', 'system-ui', 'sans-serif'],
         archivo: ['"DM Sans"', 'system-ui', 'sans-serif'],
         manrope: ['"DM Sans"', 'system-ui', 'sans-serif'],
+        mono: ['"DM Mono"', 'ui-monospace', 'monospace'],
       },
       boxShadow: {
         'glow': '0 0 50px -10px rgba(255, 255, 255, 0.08)',
