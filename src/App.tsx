@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/agency/Footer';
@@ -7,7 +7,6 @@ import { AboutPage } from './pages/AboutPage';
 import { ServicesPage } from './pages/ServicesPage';
 import { WorkPage } from './pages/WorkPage';
 import { ContactPage } from './pages/ContactPage';
-import { CinematicPreloader } from './components/CinematicPreloader';
 
 // Automatically scroll to top whenever the route changes
 function ScrollToTop() {
@@ -21,38 +20,29 @@ function ScrollToTop() {
 }
 
 export function App() {
-  const [preloaderActive, setPreloaderActive] = useState(true);
-
   return (
-    <>
-      {/* 5-Second Standalone Cinematic Dissolve Preloader */}
-      {preloaderActive && (
-        <CinematicPreloader onComplete={() => setPreloaderActive(false)} />
-      )}
+    <HashRouter>
+      <ScrollToTop />
+      <div className="min-h-screen bg-[#082B91] text-primary-black flex flex-col items-center justify-start p-2 sm:p-4 md:p-6 lg:p-8 select-none antialiased">
+        {/* Navigation Bar */}
+        <Navbar />
 
-      <HashRouter>
-        <ScrollToTop />
-        <div className="min-h-screen bg-[#082B91] text-primary-black flex flex-col items-center justify-start p-2 sm:p-4 md:p-6 lg:p-8 select-none antialiased">
-          {/* Navigation Bar */}
-          <Navbar />
+        {/* Dedicated Page Routes */}
+        <main className="w-full flex flex-col items-center flex-1">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/work" element={<WorkPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="*" element={<HomePage />} />
+          </Routes>
+        </main>
 
-          {/* Dedicated Page Routes */}
-          <main className="w-full flex flex-col items-center flex-1">
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/about" element={<AboutPage />} />
-              <Route path="/services" element={<ServicesPage />} />
-              <Route path="/work" element={<WorkPage />} />
-              <Route path="/contact" element={<ContactPage />} />
-              <Route path="*" element={<HomePage />} />
-            </Routes>
-          </main>
-
-          {/* Redesigned Stacked-Card Footer Container */}
-          <Footer />
-        </div>
-      </HashRouter>
-    </>
+        {/* Redesigned Stacked-Card Footer Container */}
+        <Footer />
+      </div>
+    </HashRouter>
   );
 }
 
