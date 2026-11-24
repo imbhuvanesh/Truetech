@@ -69,26 +69,30 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ preselectedServi
   };
 
   return (
-    <section id="contact" className="relative w-full py-16 sm:py-24 md:py-32 px-4 sm:px-8 text-black bg-white">
-      <div className="max-w-6xl mx-auto">
+    <section id="contact" className="relative w-full py-16 sm:py-24 md:py-32 px-4 sm:px-8 text-white bg-[#062B88] select-none">
+      
+      {/* Subtle Tech Grid Accent */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none" />
+
+      <div className="relative max-w-6xl mx-auto z-10">
 
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 pb-6 border-b border-black/[0.08]">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 pb-6 border-b border-white/15">
           <div className="max-w-2xl">
-            <FadeUpText delay={0.05} className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-royal-blue/10 text-royal-blue font-bold text-xs tracking-wider uppercase mb-3">
-              <span className="w-1.5 h-1.5 rounded-full bg-royal-blue animate-pulse" />
+            <FadeUpText delay={0.05} className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-neon-lime font-bold text-xs tracking-wider uppercase mb-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-neon-lime animate-pulse" />
               <span>Let's Collaborate</span>
             </FadeUpText>
             
             <MaskedLineReveal
               lines={["HAVE A PROJECT IN MIND?", "START A CONVERSATION."]}
-              className="font-sans text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-black leading-[1.12]"
+              className="font-sans text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-white leading-[1.12]"
               delay={0.1}
             />
           </div>
           
           <FadeUpParagraph
-            className="mt-4 md:mt-0 max-w-md text-sm sm:text-base text-zinc-600 font-normal font-sans leading-relaxed"
+            className="mt-4 md:mt-0 max-w-md text-sm sm:text-base text-white/85 font-normal font-sans leading-relaxed"
             delay={0.25}
           >
             Let's turn your ideas into something extraordinary. Tell us about your goals and our partners will reply with a detailed project proposal within 2 hours.

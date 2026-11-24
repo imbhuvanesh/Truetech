@@ -332,3 +332,136 @@ export const SmallNeonSticker: React.FC<{ className?: string }> = ({ className =
     </div>
   );
 };
+
+// Hand-drawn Neon Curly Bracket connecting single "WE" to BUILD / CREATE / GROW
+export const DoodleConnectorBracket: React.FC<{ className?: string; color?: string }> = ({ 
+  className = '', 
+  color = '#A8FF00' 
+}) => {
+  const shouldReduceMotion = useReducedMotion();
+
+  return (
+    <motion.svg
+      viewBox="0 0 54 220"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={`select-none filter drop-shadow-[0_0_12px_rgba(168,255,0,0.5)] ${className}`}
+    >
+      {/* Hand-drawn curly bracket embracing the 3 lines */}
+      <motion.path
+        d="M 44 12 C 24 20, 18 58, 19 92 C 19 104, 10 110, 4 110 C 10 110, 19 116, 19 128 C 18 162, 24 200, 44 208"
+        stroke={color}
+        strokeWidth="6"
+        strokeLinecap="round"
+        fill="none"
+        initial={{ pathLength: shouldReduceMotion ? 1 : 0, opacity: 0 }}
+        animate={{ pathLength: 1, opacity: 1 }}
+        transition={{ duration: 0.7, delay: 0.25, ease: EASE_BEZIER }}
+      />
+    </motion.svg>
+  );
+};
+
+// Hand-drawn doodle scribbled underline
+export const DoodleUnderline: React.FC<{ className?: string; color?: string }> = ({ 
+  className = '', 
+  color = '#A8FF00' 
+}) => {
+  const shouldReduceMotion = useReducedMotion();
+
+  return (
+    <motion.svg
+      viewBox="0 0 240 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={`select-none ${className}`}
+    >
+      <motion.path
+        d="M 4 14 C 40 4, 110 20, 170 10 C 200 5, 225 15, 236 12"
+        stroke={color}
+        strokeWidth="4.5"
+        strokeLinecap="round"
+        fill="none"
+        initial={{ pathLength: shouldReduceMotion ? 1 : 0, opacity: 0 }}
+        whileInView={{ pathLength: 1, opacity: 1 }}
+        viewport={{ once: false, amount: 0.2 }}
+        transition={{ duration: 0.6, ease: EASE_BEZIER }}
+      />
+    </motion.svg>
+  );
+};
+
+// Hand-drawn circular doodle loop (circling a badge or number)
+export const DoodleCircle: React.FC<{ className?: string; color?: string }> = ({ 
+  className = '', 
+  color = '#A8FF00' 
+}) => {
+  const shouldReduceMotion = useReducedMotion();
+
+  return (
+    <motion.svg
+      viewBox="0 0 120 120"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={`select-none ${className}`}
+    >
+      <motion.path
+        d="M 60 12 C 95 10, 112 35, 110 65 C 108 95, 80 112, 48 108 C 20 104, 10 75, 14 45 C 18 18, 52 8, 80 14"
+        stroke={color}
+        strokeWidth="4"
+        strokeLinecap="round"
+        fill="none"
+        initial={{ pathLength: shouldReduceMotion ? 1 : 0, opacity: 0 }}
+        whileInView={{ pathLength: 1, opacity: 1 }}
+        viewport={{ once: false, amount: 0.2 }}
+        transition={{ duration: 0.8, ease: EASE_BEZIER }}
+      />
+    </motion.svg>
+  );
+};
+
+// Hand-drawn sketch 4-point doodle star
+export const DoodleStar: React.FC<{ className?: string; color?: string }> = ({ 
+  className = '', 
+  color = '#A8FF00' 
+}) => {
+  return (
+    <motion.svg
+      viewBox="0 0 40 40"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      whileHover={{ rotate: 90, scale: 1.15 }}
+      transition={{ type: 'spring', stiffness: 300 }}
+      className={`select-none inline-block ${className}`}
+    >
+      <path
+        d="M 20 2 C 20 12, 28 20, 38 20 C 28 20, 20 28, 20 38 C 20 28, 12 20, 2 20 C 12 20, 20 12, 20 2 Z"
+        fill={color}
+      />
+    </motion.svg>
+  );
+};
+
+// Hand-drawn sketch arrow pointing down
+export const DoodleArrowDown: React.FC<{ className?: string; color?: string }> = ({ 
+  className = '', 
+  color = '#080808' 
+}) => {
+  return (
+    <svg viewBox="0 0 40 70" fill="none" className={`select-none ${className}`}>
+      <path
+        d="M 18 6 C 24 24, 20 44, 20 62"
+        stroke={color}
+        strokeWidth="4"
+        strokeLinecap="round"
+      />
+      <path
+        d="M 8 50 L 20 64 L 32 50"
+        stroke={color}
+        strokeWidth="4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};

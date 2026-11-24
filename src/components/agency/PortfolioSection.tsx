@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowUpRight, Sparkles } from 'lucide-react';
+import { ArrowUpRight, Sparkles, CheckCircle2 } from 'lucide-react';
 import { portfolioData } from '../../data/agencyData';
 import type { ProjectItem } from '../../data/agencyData';
 import { MaskedLineReveal, FadeUpParagraph, FadeUpText } from '../AnimatedText';
+import { DoodleStar, DoodleUnderline } from '../Doodles';
 
 export const PortfolioSection: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>('All');
@@ -23,34 +24,42 @@ export const PortfolioSection: React.FC = () => {
     : portfolioData.filter(p => p.category === activeCategory);
 
   return (
-    <section id="work" className="relative w-full py-16 sm:py-24 md:py-32 px-4 sm:px-8 text-black bg-white">
-      <div className="max-w-6xl mx-auto">
+    <section id="work" className="relative w-full py-16 sm:py-20 md:py-28 px-4 sm:px-8 text-white bg-[#0A1022] select-none">
+      
+      {/* Subtle Tech Grid inside Midnight Container */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-15 pointer-events-none" />
+
+      <div className="relative max-w-6xl mx-auto z-10">
 
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-14 pb-6 border-b border-black/[0.08]">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-14 pb-6 border-b border-white/10">
           <div className="max-w-2xl">
-            <FadeUpText delay={0.05} className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-royal-blue/10 text-royal-blue font-bold text-xs tracking-wider uppercase mb-3">
-              <span className="w-1.5 h-1.5 rounded-full bg-royal-blue animate-pulse" />
+            <FadeUpText delay={0.05} className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-neon-lime/10 border border-neon-lime/20 text-neon-lime font-bold text-xs tracking-wider uppercase mb-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-neon-lime animate-pulse" />
               <span>Selected Portfolio</span>
+              <DoodleStar className="w-3.5 h-3.5 text-neon-lime" />
             </FadeUpText>
             
             <MaskedLineReveal
               lines={["PROVEN COMMERCIAL WORK", "& CLIENT RESULTS."]}
-              className="font-sans text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-black leading-[1.12]"
+              className="font-sans text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-white leading-[1.12]"
               delay={0.1}
             />
           </div>
           
-          <FadeUpParagraph
-            className="mt-4 md:mt-0 max-w-md text-sm sm:text-base text-zinc-600 font-normal font-sans leading-relaxed"
-            delay={0.25}
-          >
-            A curated showcase of high-performance websites, scalable software, brand systems, and high-impact digital campaigns.
-          </FadeUpParagraph>
+          <div className="mt-4 md:mt-0 max-w-md">
+            <FadeUpParagraph
+              className="text-sm sm:text-base text-zinc-300 font-normal font-sans leading-relaxed"
+              delay={0.25}
+            >
+              A curated showcase of high-performance websites, scalable software, brand systems, and high-impact digital campaigns.
+            </FadeUpParagraph>
+            <DoodleUnderline className="w-48 h-3 text-neon-lime mt-2" />
+          </div>
         </div>
 
-        {/* Filter Pills Container */}
-        <div className="bg-[#F6F6F6] p-2 rounded-2xl sm:rounded-full mb-10 sm:mb-12 border border-black/[0.04] shadow-card-soft overflow-x-auto">
+        {/* Filter Pills Container (Glass Dark Stacked Card) */}
+        <div className="bg-white/[0.06] backdrop-blur-md p-2 rounded-2xl sm:rounded-full mb-10 sm:mb-12 border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.3)] overflow-x-auto">
           <div className="flex items-center space-x-1.5 min-w-max">
             {categories.map((cat) => (
               <button
@@ -58,8 +67,8 @@ export const PortfolioSection: React.FC = () => {
                 onClick={() => setActiveCategory(cat)}
                 className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-sans transition-all duration-200 ${
                   activeCategory === cat
-                    ? 'bg-royal-blue text-white font-bold shadow-md scale-[1.02]'
-                    : 'text-zinc-600 font-normal hover:text-black hover:bg-white/80'
+                    ? 'bg-neon-lime text-primary-black font-bold shadow-[0_4px_16px_rgba(168,255,0,0.4)] scale-[1.02]'
+                    : 'text-zinc-300 font-normal hover:text-white hover:bg-white/10'
                 }`}
               >
                 {cat}
@@ -69,8 +78,7 @@ export const PortfolioSection: React.FC = () => {
         </div>
 
         {/* =========================================================================
-            PORTFOLIO CARDS MATCHING REFERENCE CARD THEME
-            bg-[#F6F6F6], rounded-[32px], DM Sans, soft layered shadows
+            PORTFOLIO CARDS (Deep Navy Card Stack with Neon Accents)
            ========================================================================= */}
         <motion.div
           layout
@@ -87,13 +95,13 @@ export const PortfolioSection: React.FC = () => {
                 transition={{ duration: 0.35, delay: (idx % 3) * 0.05 }}
                 whileHover={{ y: -6 }}
                 onClick={() => setSelectedProject(project)}
-                className="cursor-pointer bg-[#F6F6F6] rounded-[32px] p-6 sm:p-7 flex flex-col justify-between border border-black/[0.035] shadow-card-soft hover:shadow-card-hover transition-all duration-300 group"
+                className="cursor-pointer bg-[#11182D] rounded-[32px] p-6 sm:p-7 flex flex-col justify-between border border-white/10 shadow-[0_12px_40px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(6,69,216,0.3)] hover:border-white/25 transition-all duration-300 group"
               >
                 <div>
                   {/* Visual Preview Box */}
-                  <div className={`relative h-44 sm:h-48 rounded-2xl bg-gradient-to-br ${project.visualGradient} p-5 flex flex-col justify-between text-white overflow-hidden shadow-md border border-white/10 mb-5 group-hover:scale-[1.01] transition-transform duration-300`}>
+                  <div className={`relative h-44 sm:h-48 rounded-2xl bg-gradient-to-br ${project.visualGradient} p-5 flex flex-col justify-between text-white overflow-hidden shadow-md border border-white/15 mb-5 group-hover:scale-[1.01] transition-transform duration-300`}>
                     <div className="flex items-center justify-between z-10">
-                      <span className="text-[10.5px] font-bold uppercase tracking-wider bg-white/20 backdrop-blur-md px-3 py-1 rounded-full border border-white/20 font-sans">
+                      <span className="text-[10.5px] font-bold uppercase tracking-wider bg-black/40 backdrop-blur-md px-3 py-1 rounded-full border border-white/20 font-sans text-white">
                         {project.category}
                       </span>
                       <div className="w-8 h-8 rounded-full bg-white text-black flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 shadow-md">
@@ -102,39 +110,41 @@ export const PortfolioSection: React.FC = () => {
                     </div>
 
                     <div className="z-10">
-                      <div className="font-sans font-bold text-xs text-white/70 uppercase tracking-widest">{project.client}</div>
-                      <div className="font-sans font-bold text-base sm:text-lg text-white leading-tight drop-shadow-md mt-0.5">
-                        {project.title}
-                      </div>
+                      <div className="text-[11px] font-medium text-white/80 font-sans uppercase tracking-wider">{project.client}</div>
+                      <div className="font-sans font-bold text-lg sm:text-xl text-white tracking-tight">{project.title}</div>
                     </div>
 
-                    <div className="absolute -right-10 -bottom-10 w-36 h-36 bg-white/10 rounded-full blur-xl pointer-events-none" />
-                  </div>
-
-                  {/* Outcome Metric Badge */}
-                  <div className="bg-white rounded-xl px-3.5 py-2 border border-black/[0.04] flex items-center justify-between mb-3.5 shadow-sm">
-                    <span className="text-[11px] font-normal text-zinc-500 font-sans">Key Outcome</span>
-                    <span className="font-sans text-xs font-bold text-emerald-600">{project.metrics}</span>
+                    {/* Gradient Overlay Accent */}
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300" />
                   </div>
 
                   {/* Description */}
-                  <p className="font-sans text-xs sm:text-sm text-zinc-600 line-clamp-2 leading-relaxed font-normal">
+                  <p className="font-sans font-normal text-xs sm:text-[13px] text-zinc-300 leading-relaxed mb-4">
                     {project.description}
                   </p>
+
+                  {/* Impact Metric Pill */}
+                  <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-neon-lime/10 border border-neon-lime/20 text-neon-lime text-xs font-bold font-sans">
+                    <Sparkles className="w-3.5 h-3.5 text-neon-lime" />
+                    <span>{project.metrics}</span>
+                  </div>
                 </div>
 
-                {/* Bottom Pill Tags & Action */}
-                <div className="mt-5 pt-3.5 border-t border-black/[0.04] flex items-center justify-between">
+                {/* Bottom Tags */}
+                <div className="mt-5 pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-2">
                   <div className="flex flex-wrap gap-1.5">
-                    {project.tags.slice(0, 2).map(tag => (
-                      <span key={tag} className="text-[10.5px] font-medium bg-white text-zinc-700 px-2.5 py-1 rounded-lg border border-black/[0.03] shadow-xs font-sans">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-[10.5px] font-medium px-2.5 py-0.5 rounded-full bg-white/10 text-zinc-300 font-sans border border-white/5"
+                      >
                         {tag}
                       </span>
                     ))}
                   </div>
 
-                  <span className="text-xs font-bold text-royal-blue flex items-center space-x-1 font-sans group-hover:underline underline-offset-4">
-                    <span>View Case</span>
+                  <span className="text-xs font-bold text-white group-hover:text-neon-lime flex items-center space-x-1 font-sans transition-colors">
+                    <span>Details</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </span>
                 </div>
@@ -145,75 +155,64 @@ export const PortfolioSection: React.FC = () => {
 
       </div>
 
-      {/* Project Detail Modal */}
-      {selectedProject && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md">
-          <div className="relative w-full max-w-xl bg-white rounded-3xl p-6 sm:p-8 shadow-2xl border border-black/10 max-h-[90vh] overflow-y-auto">
-            <div className="flex items-center justify-between pb-4 border-b border-zinc-100">
-              <div>
-                <span className="text-xs font-bold uppercase text-zinc-400 font-sans">{selectedProject.client} • {selectedProject.year}</span>
-                <h3 className="font-sans font-bold text-2xl text-black mt-0.5">
-                  {selectedProject.title}
-                </h3>
-              </div>
-              <button
-                onClick={() => setSelectedProject(null)}
-                className="w-8 h-8 rounded-full bg-zinc-100 hover:bg-zinc-200 text-zinc-600 flex items-center justify-center font-bold"
-              >
-                ✕
-              </button>
-            </div>
-
-            <div className="py-5 space-y-5">
-              <div className={`w-full h-48 rounded-2xl bg-gradient-to-br ${selectedProject.visualGradient} p-6 flex flex-col justify-end text-white shadow-inner`}>
-                <div className="text-xs font-bold uppercase tracking-wider bg-white/20 backdrop-blur-md px-3 py-1 rounded-full w-max mb-2 font-sans">
+      {/* Interactive Project Details Modal */}
+      <AnimatePresence>
+        {selectedProject && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedProject(null)}
+              className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+            />
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.95, opacity: 0, y: 20 }}
+              className="relative w-full max-w-xl bg-[#0F172A] text-white rounded-[32px] p-6 sm:p-8 border border-white/20 shadow-[0_25px_80px_rgba(0,0,0,0.6)] z-10"
+            >
+              <div className="flex items-center justify-between mb-4">
+                <span className="text-xs font-bold uppercase tracking-wider bg-neon-lime text-black px-3 py-1 rounded-full">
                   {selectedProject.category}
+                </span>
+                <button
+                  onClick={() => setSelectedProject(null)}
+                  className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors"
+                >
+                  ✕
+                </button>
+              </div>
+
+              <h3 className="font-sans font-bold text-2xl sm:text-3xl text-white mb-2">
+                {selectedProject.title}
+              </h3>
+              <p className="text-zinc-300 font-sans text-sm leading-relaxed mb-4">
+                {selectedProject.description}
+              </p>
+
+              <div className="p-4 rounded-2xl bg-white/5 border border-white/10 mb-6">
+                <div className="text-xs text-zinc-400 uppercase tracking-wider mb-1">Key Performance Metric</div>
+                <div className="text-lg font-bold text-neon-lime flex items-center space-x-2">
+                  <CheckCircle2 className="w-5 h-5 text-neon-lime" />
+                  <span>{selectedProject.metrics}</span>
                 </div>
-                <div className="font-sans font-bold text-xl drop-shadow">{selectedProject.metrics}</div>
               </div>
 
-              <div>
-                <h4 className="text-xs font-bold uppercase tracking-wider text-black mb-1.5 font-sans">Project Overview</h4>
-                <p className="text-sm text-zinc-600 leading-relaxed font-sans font-normal">
-                  {selectedProject.description}
-                </p>
+              <div className="flex items-center justify-between pt-4 border-t border-white/10">
+                <div className="text-xs text-zinc-400">Client: <span className="text-white font-medium">{selectedProject.client}</span></div>
+                <button
+                  onClick={() => setSelectedProject(null)}
+                  className="px-5 py-2.5 rounded-full bg-neon-lime text-black font-sans font-bold text-xs hover:bg-white transition-colors"
+                >
+                  Close Case Study
+                </button>
               </div>
-
-              <div>
-                <h4 className="text-xs font-bold uppercase tracking-wider text-black mb-2 font-sans">Technologies & Disciplines</h4>
-                <div className="flex flex-wrap gap-2">
-                  {selectedProject.tags.map(t => (
-                    <span key={t} className="bg-[#F6F6F6] text-zinc-800 text-xs font-medium px-3 py-1.5 rounded-xl border border-black/[0.04] font-sans flex items-center space-x-1.5">
-                      <Sparkles className="w-3 h-3 text-royal-blue" />
-                      <span>{t}</span>
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div className="pt-4 border-t border-zinc-100 flex items-center justify-between">
-              <button
-                onClick={() => setSelectedProject(null)}
-                className="text-xs font-semibold text-zinc-500 hover:text-black font-sans"
-              >
-                Close
-              </button>
-              <button
-                onClick={() => {
-                  setSelectedProject(null);
-                  const el = document.getElementById('contact');
-                  if (el) el.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="px-5 py-2.5 bg-royal-blue text-white font-sans text-xs font-bold rounded-full hover:bg-black transition-colors shadow-md flex items-center space-x-1.5"
-              >
-                <span>Request Similar Project</span>
-                <ArrowUpRight className="w-3.5 h-3.5" />
-              </button>
-            </div>
+            </motion.div>
           </div>
-        </div>
-      )}
+        )}
+      </AnimatePresence>
+
     </section>
   );
 };
