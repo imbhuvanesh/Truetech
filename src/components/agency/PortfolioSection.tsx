@@ -19,7 +19,10 @@ export const PortfolioSection: React.FC = () => {
   const categories = [
     'All',
     'Web Development',
-    'App & Software',
+    'Mobile App',
+    'ERP & CRM',
+    'Custom Software',
+    'AI & Automation',
     'Creative Design',
     'Video Production',
     'Digital Marketing',

@@ -10,6 +10,7 @@ import {
   ArrowUpRight,
   CheckCircle2,
   Code2,
+  Database,
 } from 'lucide-react';
 import { servicesData } from '../../data/agencyData';
 import type { ServiceCategory } from '../../data/agencyData';
@@ -34,16 +35,20 @@ const iconMap: Record<string, React.ElementType> = {
   Video,
   TrendingUp,
   Cpu,
+  Code2,
+  Database,
 };
 
-// Two-line title mapping for each service to match reference card style
+// Two-line title mapping for each service
 const serviceTwoLines: Record<string, string[]> = {
-  'Web Development': ['WEB & APP', 'DEVELOPMENT'],
-  'App & Software Development': ['MOBILE & CUSTOM', 'SOFTWARE'],
-  'Creative Design': ['CREATIVE & BRAND', 'DESIGN'],
-  'Video Production': ['VIDEO & SOCIAL', 'PRODUCTION'],
-  'Digital Marketing': ['DIGITAL & META', 'MARKETING'],
-  'Automation': ['INTELLIGENT', 'AUTOMATION'],
+  'Web Design & Development':          ['WEB DESIGN', '& DEVELOPMENT'],
+  'Mobile App Development':            ['MOBILE APP', 'DEVELOPMENT'],
+  'ERP, CRM, Billing & POS Systems':   ['ERP, CRM', 'BILLING & POS'],
+  'Custom Software & SaaS Engineering':['CUSTOM SOFTWARE', '& SAAS'],
+  'AI, ML & Intelligent Automation':   ['AI & ML', 'AUTOMATION'],
+  'Creative Design & Branding':        ['CREATIVE DESIGN', '& BRANDING'],
+  'Video Production & Motion Graphics':['VIDEO & MOTION', 'PRODUCTION'],
+  'Digital Marketing & Performance Ads':['DIGITAL MARKETING', '& SEO ADS'],
 };
 
 export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectService }) => {
@@ -69,7 +74,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
               <FadeUpText delay={0.05} className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-royal-blue/10 text-royal-blue font-bold text-xs tracking-wider uppercase">
                 <span>Full-Spectrum Solutions</span>
               </FadeUpText>
-              <DoodleWashiTape text="DISCIPLINES // 01-06" color="#FFFFFF" className="hidden sm:inline-flex" />
+              <DoodleWashiTape text="DISCIPLINES // 01-08" color="#FFFFFF" className="hidden sm:inline-flex" />
             </div>
             
             <MaskedLineReveal
@@ -84,7 +89,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
               className="text-sm sm:text-base text-zinc-700 font-normal font-sans leading-relaxed"
               delay={0.25}
             >
-              Six cohesive disciplines covering your entire digital footprint — from <SlowHighlight>high-performance engineering</SlowHighlight> to viral creative and <SlowHighlight>automated systems</SlowHighlight>.
+              Eight cohesive disciplines covering your entire digital ecosystem — from <SlowHighlight>high-performance engineering</SlowHighlight> and enterprise ERP systems to AI automation, cinematic video and <SlowHighlight>data-driven marketing</SlowHighlight>.
             </FadeUpParagraph>
             <div className="mt-2">
               <DoodleSquiggle color="#080808" className="w-24 h-4 opacity-60" />
@@ -93,13 +98,13 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
         </div>
 
         {/* =========================================================================
-            6 SERVICE CARDS MATCHING REFERENCE CARD THEME
-            bg-[#F6F6F6], rounded-[32px], 2-line DM Sans headers, bottom stickers
+            8 SERVICE CARDS (3-col grid: rows of 3+3+2)
+            bg-white, rounded-[32px], 2-line DM Sans headers, bottom stickers
            ========================================================================= */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
           {servicesData.map((service, idx) => {
             const IconComponent = iconMap[service.icon] || Globe;
-            const lines = serviceTwoLines[service.title] || [service.title, 'SOLUTIONS'];
+            const lines = serviceTwoLines[service.title] || [service.title.split(' ').slice(0, 2).join(' ').toUpperCase(), 'SOLUTIONS'];
 
             return (
               <div key={service.id} className="relative group">
@@ -151,9 +156,9 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                       {service.tagline}
                     </FadeUpParagraph>
 
-                    {/* Sub-services Pills Container */}
+                {/* Sub-services Pills Container — show first 5, rest hidden on mobile */}
                     <div className="mt-5 space-y-1.5">
-                      {service.subServices.map((sub) => (
+                      {service.subServices.slice(0, 5).map((sub) => (
                         <div
                           key={sub}
                           className="bg-white/90 rounded-xl px-3 py-1.5 flex items-center space-x-2 border border-black/[0.03] shadow-sm text-xs font-medium text-zinc-800"
@@ -162,6 +167,11 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                           <span>{sub}</span>
                         </div>
                       ))}
+                      {service.subServices.length > 5 && (
+                        <div className="text-[11px] text-zinc-400 font-medium pl-1 pt-0.5">
+                          +{service.subServices.length - 5} more services
+                        </div>
+                      )}
                     </div>
                   </div>
 
@@ -220,8 +230,8 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                   </div>
                 </motion.div>
 
-                {/* Desktop connector arrows between columns 1->2 and 2->3 */}
-                {(idx === 0 || idx === 1 || idx === 3 || idx === 4) && (
+                {/* Desktop connector arrows: between col 1→2 and col 2→3 in each row */}
+                {(idx % 3 === 0 || idx % 3 === 1) && (
                   <div className="hidden lg:block absolute -right-5 top-1/2 transform -translate-y-1/2 z-20 pointer-events-none opacity-60">
                     <ConnectorArrow1 />
                   </div>

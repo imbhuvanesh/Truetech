@@ -42,7 +42,7 @@ export const ServicesPage: React.FC = () => {
         </div>
 
         <MaskedLineReveal
-          lines={["OUR CORE DISCIPLINES", "& DIGITAL SERVICES."]}
+          lines={["OUR 8 CORE DISCIPLINES", "& DIGITAL SERVICES."]}
           className="font-sans text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-[1.08] max-w-4xl mx-auto"
           delay={0.1}
         />
@@ -52,20 +52,22 @@ export const ServicesPage: React.FC = () => {
             className="text-white/85 text-sm sm:text-base md:text-lg leading-relaxed font-normal"
             delay={0.25}
           >
-            We provide full-lifecycle digital capabilities across engineering, product design, brand identity, social video production, growth marketing, and intelligent workflow automation.
+            We provide full-lifecycle digital capabilities across web engineering, mobile apps, ERP & CRM systems, custom software, AI & ML automation, brand design, cinematic video production, and performance marketing — all under one roof.
           </FadeUpParagraph>
           <DoodleUnderline className="w-56 h-4 text-neon-lime mx-auto mt-3" />
         </div>
 
-        {/* 6 Disciplines Pills */}
+        {/* 8 Disciplines Pills */}
         <div className="mt-8 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 text-xs font-sans font-semibold">
           {[
-            'Web Development',
-            'App & Custom Software',
+            'Web Design & Development',
+            'Mobile App Development',
+            'ERP, CRM & POS Systems',
+            'Custom Software & SaaS',
+            'AI, ML & Automation',
             'Creative Design & Branding',
-            'Video & Social Production',
-            'Digital Marketing & Meta Ads',
-            'Intelligent Automation',
+            'Video Production & Motion',
+            'Digital Marketing & SEO Ads',
           ].map((item) => (
             <div key={item} className="px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-white flex items-center space-x-1.5">
               <span>{item}</span>
