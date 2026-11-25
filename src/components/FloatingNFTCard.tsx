@@ -80,7 +80,7 @@ export const FloatingNFTCard: React.FC<FloatingNFTCardProps> = ({
     >
       <motion.div
         animate={{
-          y: [-6, 6, -6],
+          y: [-5, 5, -5],
           rotate: [defaultRotate - 1, defaultRotate + 1, defaultRotate - 1],
         }}
         transition={{
@@ -98,30 +98,28 @@ export const FloatingNFTCard: React.FC<FloatingNFTCardProps> = ({
           scale: 1.05,
           transition: { duration: 0.45, ease: [0.19, 1, 0.22, 1] },
         }}
-        className="glass-nft-card rounded-[30px] p-5 sm:p-6 flex flex-col items-center justify-center min-w-[155px] sm:min-w-[180px] md:min-w-[200px] shadow-[0_20px_50px_rgba(0,10,60,0.35),0_0_0_1px_rgba(255,255,255,0.2)_inset] hover:shadow-[0_25px_65px_rgba(0,10,70,0.5),0_0_0_1px_rgba(255,255,255,0.3)_inset] transition-all"
+        /* Clean, visually independent container without murky overlays or fuzzy layers */
+        className="bg-[#031B5B] border-2 border-white/40 rounded-[28px] p-5 sm:p-6 flex flex-col items-center justify-center min-w-[155px] sm:min-w-[180px] md:min-w-[200px] shadow-[0_20px_50px_rgba(0,10,50,0.55)] hover:border-white hover:shadow-[0_25px_60px_rgba(0,10,60,0.7)] transition-all duration-300"
       >
-        {/* Glow sheen on top */}
-        <div className="absolute inset-0 rounded-[30px] bg-gradient-to-b from-white/40 via-white/10 to-transparent pointer-events-none" />
-
         {/* Avatar with pure white border ring */}
         <div className="relative mb-3 sm:mb-3.5">
           {renderAvatar()}
         </div>
 
-        {/* Name in DM Sans Bold (700) */}
+        {/* Name in DM Sans Bold */}
         <div className="font-sans text-white text-sm sm:text-[15px] font-bold tracking-tight text-center drop-shadow-[0_2px_4px_rgba(0,10,40,0.6)]">
           {name}
         </div>
 
-        {/* Role if provided */}
+        {/* Role */}
         {role && (
-          <div className="font-sans text-neon-lime text-[11px] font-medium tracking-wide mt-0.5 text-center drop-shadow-[0_1px_2px_rgba(0,10,40,0.5)]">
+          <div className="font-sans text-neon-lime text-[11px] font-semibold tracking-wide mt-0.5 text-center">
             {role}
           </div>
         )}
 
-        {/* Points / Metric in DM Sans Regular (400) */}
-        <div className="font-sans text-white/90 text-[10.5px] sm:text-xs font-normal tracking-normal mt-0.5 text-center drop-shadow-[0_1px_3px_rgba(0,10,40,0.5)]">
+        {/* Points / Rating Badge */}
+        <div className="mt-3 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-white font-sans text-[11px] font-medium tracking-tight text-center">
           {points}
         </div>
       </motion.div>

@@ -1,3 +1,70 @@
+export interface ProductItem {
+  id: string;
+  name: string;
+  tagline: string;
+  description: string;
+  badge: string;
+  category: string;
+  features: string[];
+  pricingPlaceholder: string;
+  deliverables: string[];
+  ctaText: string;
+}
+
+export const productsData: ProductItem[] = [
+  {
+    id: 'nexus-starter-suite',
+    name: 'Nexus Core Web Starter',
+    tagline: 'High-performance Next.js production starter kit for enterprises & startups.',
+    description: 'An enterprise-grade, SEO-optimized web foundation pre-configured with modern design tokens, headless CMS schemas, fast analytics, and Core Web Vitals 95+ guarantees.',
+    badge: 'Early Partner Access',
+    category: 'Digital Infrastructure',
+    features: [
+      'Next.js 14 App Router & TypeScript Architecture',
+      'Pre-built 95+ Lighthouse Performance Core',
+      'Automated SEO, Schema.org & AEO OpenGraph meta',
+      'Integrated payment gateways (Stripe & Razorpay)',
+    ],
+    pricingPlaceholder: 'Pricing available on inquiry / Early Partner Access',
+    deliverables: ['Full Source Code', 'Architecture Documentation', 'Setup Support'],
+    ctaText: 'Inquire for Access',
+  },
+  {
+    id: 'autoflow-crm-hub',
+    name: 'AutoFlow WhatsApp & CRM Engine',
+    tagline: 'Automated lead capture, instant WhatsApp dispatch & pipeline sync.',
+    description: 'A pre-integrated automation pipeline connecting web forms, WhatsApp Business Cloud API, CRM databases, and real-time sales team Slack/Discord notifications.',
+    badge: 'Coming Soon',
+    category: 'Automation & AI',
+    features: [
+      'Meta Official Cloud WhatsApp API Webhook Engine',
+      'Automated 30-second lead qualification bot',
+      'Multi-channel CRM synchronization (Zoho, HubSpot)',
+      'Real-time team alerts & escalation logic',
+    ],
+    pricingPlaceholder: 'Tiered rollout • Announcement TBA',
+    deliverables: ['Custom Integration Script', 'Workflow Blueprints', 'Cloud Deployment Guide'],
+    ctaText: 'Join Waitlist',
+  },
+  {
+    id: 'brandbox-design-system',
+    name: 'BrandBox Identity & Design System',
+    tagline: 'Comprehensive digital brand guidelines, UI kit, and marketing asset bank.',
+    description: 'A complete, ready-to-deploy design system comprising Figma UI libraries, social marketing kits, typography tokens, vector icons, and stationery templates.',
+    badge: 'In Development',
+    category: 'Branding & Creative',
+    features: [
+      '400+ Component Tokenized Figma UI Library',
+      'Social media launch templates (Instagram, LinkedIn)',
+      'Vector icon suite & hand-drawn doodle asset pack',
+      'Brand style guide & typography documentation',
+    ],
+    pricingPlaceholder: 'Product bundle • In Development',
+    deliverables: ['Figma Design Files', 'Asset Exports (SVG/PNG)', 'Brand Guidelines PDF'],
+    ctaText: 'Join Waitlist',
+  },
+];
+
 export interface ServiceFAQ {
   question: string;
   answer: string;

@@ -6,6 +6,7 @@ import { FloatingBackToTop } from './components/FloatingBackToTop';
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
 import { ServicesPage } from './pages/ServicesPage';
+import { ProductsPage } from './pages/ProductsPage';
 import { WorkPage } from './pages/WorkPage';
 import { ContactPage } from './pages/ContactPage';
 
@@ -24,8 +25,8 @@ export function App() {
   return (
     <HashRouter>
       <ScrollToTop />
-      <div className="min-h-screen bg-[#082B91] text-primary-black flex flex-col items-center justify-start p-2 sm:p-4 md:p-6 lg:p-8 select-none antialiased relative">
-        {/* Navigation Bar */}
+      <div className="min-h-screen bg-[#082B91] text-primary-black flex flex-col items-center justify-start p-2 sm:p-4 md:p-6 lg:p-8 pt-20 sm:pt-24 md:pt-28 select-none antialiased relative">
+        {/* Floating Fixed Navigation Bar */}
         <Navbar />
 
         {/* Dedicated Page Routes */}
@@ -34,6 +35,7 @@ export function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/services" element={<ServicesPage />} />
+            <Route path="/products" element={<ProductsPage />} />
             <Route path="/work" element={<WorkPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="*" element={<HomePage />} />
@@ -43,7 +45,7 @@ export function App() {
         {/* Redesigned Stacked-Card Footer Container */}
         <Footer />
 
-        {/* Floating Back To Top Button */}
+        {/* Dynamic Circular Scroll-Progress Back To Top Button */}
         <FloatingBackToTop />
       </div>
     </HashRouter>

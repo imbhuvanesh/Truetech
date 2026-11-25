@@ -54,22 +54,22 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onGetStarted, onExplor
           </div>
         </div>
 
-        {/* Top-Right Hand-Drawn Arrow (Loops toward Elena Vance) */}
-        <div className="absolute z-20 pointer-events-none 
-          top-[-8px] right-[2%] 
-          sm:top-[-12px] sm:right-[6%] 
-          md:top-[-15px] md:right-[10%] 
-          lg:top-[-18px] lg:right-[14%]"
+        {/* Top-Right Hand-Drawn Arrow (Points toward Elena Vance card without overlapping) */}
+        <div className="absolute z-10 pointer-events-none 
+          top-[-4px] right-[18%] 
+          sm:top-[-8px] sm:right-[20%] 
+          md:top-[-10px] md:right-[22%] 
+          lg:top-[-12px] lg:right-[24%]"
         >
-          <TopRightArrow className="w-16 h-16 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-36 lg:h-36" />
+          <TopRightArrow className="w-14 h-14 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 opacity-90" />
         </div>
 
-        {/* Floating Profile Card 1: Elena Vance (Design Director) */}
+        {/* Floating Profile Card 1: Elena Vance (Design Director) - Clean independent container */}
         <div className="absolute z-20 
-          top-[4%] right-[-2%] 
-          sm:top-[8%] sm:right-[2%] 
-          md:top-[12%] md:right-[4%] 
-          lg:top-[14%] lg:right-[6%]
+          top-[2%] right-[1%] 
+          sm:top-[5%] sm:right-[2%] 
+          md:top-[8%] md:right-[3%] 
+          lg:top-[10%] lg:right-[4%]
           scale-[0.70] sm:scale-80 md:scale-95 lg:scale-100 origin-top-right hidden sm:block"
         >
           <FloatingNFTCard 
@@ -77,27 +77,27 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onGetStarted, onExplor
             name="Elena Vance" 
             role="Design Director"
             points="★ 5.0 • 48+ Reviews" 
-            defaultRotate={6} 
+            defaultRotate={5} 
             floatDelay={0.3} 
           />
         </div>
 
-        {/* Bottom-Left Hand-Drawn Arrow (Points toward Marcus Chen) */}
-        <div className="absolute z-20 pointer-events-none 
-          bottom-[12%] left-[2%] 
-          sm:bottom-[14%] sm:left-[5%] 
-          md:bottom-[15%] md:left-[8%] 
-          lg:bottom-[16%] lg:left-[10%]"
+        {/* Bottom-Left Hand-Drawn Arrow (Points toward Marcus Chen card without overlapping) */}
+        <div className="absolute z-10 pointer-events-none 
+          bottom-[22%] left-[16%] 
+          sm:bottom-[24%] sm:left-[18%] 
+          md:bottom-[26%] md:left-[20%] 
+          lg:bottom-[28%] lg:left-[22%]"
         >
-          <BottomLeftArrow className="w-16 h-16 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-36 lg:h-36" />
+          <BottomLeftArrow className="w-14 h-14 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 opacity-90" />
         </div>
 
-        {/* Floating Profile Card 2: Marcus Chen (Full-Stack Architect) */}
+        {/* Floating Profile Card 2: Marcus Chen (Full-Stack Architect) - Clean independent container */}
         <div className="absolute z-20 
-          bottom-[2%] left-[-2%] 
-          sm:bottom-[4%] sm:left-[2%] 
-          md:bottom-[6%] md:left-[4%] 
-          lg:bottom-[8%] lg:left-[6%]
+          bottom-[2%] left-[1%] 
+          sm:bottom-[3%] sm:left-[2%] 
+          md:bottom-[4%] md:left-[3%] 
+          lg:bottom-[5%] lg:left-[4%]
           scale-[0.70] sm:scale-80 md:scale-95 lg:scale-100 origin-bottom-left hidden sm:block"
         >
           <FloatingNFTCard 
@@ -105,7 +105,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onGetStarted, onExplor
             name="Marcus Chen" 
             role="Full-Stack Architect"
             points="100% On-Time Delivery" 
-            defaultRotate={-6} 
+            defaultRotate={-5} 
             floatDelay={0.5} 
           />
         </div>
