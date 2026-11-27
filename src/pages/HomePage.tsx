@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { HeroSection } from '../components/HeroSection';
 import { RewardsSection } from '../components/RewardsSection';
 import { TabContentToggle } from '../components/agency/TabContentToggle';
-import { AboutSection } from '../components/agency/AboutSection';
 import { ServicesSection } from '../components/agency/ServicesSection';
 import { ProductsSection } from '../components/agency/ProductsSection';
 import { PortfolioSection } from '../components/agency/PortfolioSection';
@@ -63,14 +62,7 @@ export const HomePage: React.FC = () => {
       </div>
 
       {/* =========================================================================
-          STACKED CONTAINER 4: ABOUT AGENCY (ALABASTER PEARL)
-         ========================================================================= */}
-      <div className="w-full max-w-[1260px] bg-[#FAFBFD] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(0,10,40,0.06)] border border-black/[0.05] my-3 sm:my-4 overflow-hidden">
-        <AboutSection onExploreServices={() => navigate('/services')} />
-      </div>
-
-      {/* =========================================================================
-          STACKED CONTAINER 5: CORE DISCIPLINES / SERVICES (CREAMY AVOCADO #DCF4A2)
+          STACKED CONTAINER 4: CORE DISCIPLINES / SERVICES (CREAMY AVOCADO #DCF4A2)
          ========================================================================= */}
       <div className="w-full max-w-[1260px] bg-[#DCF4A2] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(6,69,216,0.06)] border border-black/[0.05] my-3 sm:my-4 overflow-hidden">
         <ServicesSection onSelectService={handleSelectService} />

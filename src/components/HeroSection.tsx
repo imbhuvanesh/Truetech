@@ -9,7 +9,6 @@ import {
   DoodleBurst,
   DoodleCorner,
 } from './Doodles';
-import { FloatingNFTCard } from './FloatingNFTCard';
 import { MaskedHeroWord, SlowHighlight } from './AnimatedText';
 import { ArrowUpRight, Sparkles } from 'lucide-react';
 
@@ -50,42 +49,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onGetStarted, onExplor
           <div className="absolute -right-8 -top-3 hidden sm:block">
             <DoodleSparkle color="#A8FF00" className="w-6 h-6" />
           </div>
-        </div>
-
-        {/* Floating Profile Card 1: Elena Vance (Design Director) - Completely independent container, zero overlay */}
-        <div className="absolute z-20 
-          top-[4%] right-[0%] 
-          sm:top-[6%] sm:right-[1%] 
-          md:top-[8%] md:right-[2%] 
-          lg:top-[10%] lg:right-[3%]
-          scale-[0.70] sm:scale-80 md:scale-95 lg:scale-100 origin-top-right hidden sm:block pointer-events-auto"
-        >
-          <FloatingNFTCard 
-            type="designer" 
-            name="Elena Vance" 
-            role="Design Director"
-            points="★ 5.0 • 48+ Reviews" 
-            defaultRotate={4} 
-            floatDelay={0.3} 
-          />
-        </div>
-
-        {/* Floating Profile Card 2: Marcus Chen (Full-Stack Architect) - Completely independent container, zero overlay */}
-        <div className="absolute z-20 
-          bottom-[4%] left-[0%] 
-          sm:bottom-[5%] sm:left-[1%] 
-          md:bottom-[6%] md:left-[2%] 
-          lg:bottom-[7%] lg:left-[3%]
-          scale-[0.70] sm:scale-80 md:scale-95 lg:scale-100 origin-bottom-left hidden sm:block pointer-events-auto"
-        >
-          <FloatingNFTCard 
-            type="developer" 
-            name="Marcus Chen" 
-            role="Full-Stack Architect"
-            points="100% On-Time Delivery" 
-            defaultRotate={-4} 
-            floatDelay={0.5} 
-          />
         </div>
 
         {/* Circular Neon Rotating Badge - Safely contained inside container bounds */}

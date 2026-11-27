@@ -1,8 +1,9 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/agency/Footer';
 import { FloatingBackToTop } from './components/FloatingBackToTop';
+import { GenoraPreloader } from './components/GenoraPreloader';
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
 import { ServicesPage } from './pages/ServicesPage';
@@ -22,9 +23,14 @@ function ScrollToTop() {
 }
 
 export function App() {
+  const [loading, setLoading] = useState(true);
+
   return (
     <HashRouter>
       <ScrollToTop />
+      {/* 3-second Premium Organic Bubble Preloader */}
+      {loading && <GenoraPreloader onComplete={() => setLoading(false)} />}
+
       <div className="min-h-screen bg-[#082B91] text-primary-black flex flex-col items-center justify-start p-2 sm:p-4 md:p-6 lg:p-8 pt-20 sm:pt-24 md:pt-28 select-none antialiased relative">
         {/* Floating Fixed Navigation Bar */}
         <Navbar />

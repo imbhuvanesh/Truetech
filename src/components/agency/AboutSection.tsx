@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { MaskedLineReveal, FadeUpParagraph, FadeUpText, SlowHighlight } from '../AnimatedText';
+import { MaskedLineReveal, FadeUpParagraph, SlowHighlight } from '../AnimatedText';
 import { Code2, ArrowUpRight, CheckCircle2 } from 'lucide-react';
 
 export const AboutSection: React.FC<{ onExploreServices: () => void }> = ({ onExploreServices }) => {
@@ -14,9 +14,9 @@ export const AboutSection: React.FC<{ onExploreServices: () => void }> = ({ onEx
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 sm:mb-8 pb-4 border-b border-black/[0.08]">
           <div className="max-w-2xl">
             <div className="flex items-center space-x-3 mb-3">
-              <FadeUpText delay={0.05} className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-royal-blue/10 text-royal-blue font-bold text-xs tracking-wider uppercase">
-                <span>About Nexus Studio</span>
-              </FadeUpText>
+              <span className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-royal-blue/10 text-royal-blue font-bold text-xs tracking-wider uppercase">
+                About Genora Studio
+              </span>
             </div>
             
             <MaskedLineReveal
@@ -27,46 +27,33 @@ export const AboutSection: React.FC<{ onExploreServices: () => void }> = ({ onEx
           </div>
           
           <div className="mt-4 md:mt-0 max-w-sm">
-            <FadeUpParagraph
-              className="text-sm sm:text-base text-zinc-600 font-normal font-sans leading-relaxed"
-              delay={0.25}
-            >
+            <p className="text-sm sm:text-base text-zinc-600 font-normal font-sans leading-relaxed">
               We are a creative technology and digital marketing agency providing complete digital solutions to businesses, startups and individuals.
-            </FadeUpParagraph>
+            </p>
           </div>
         </div>
 
-        {/* Big Narrative Highlight Banner */}
-        <motion.div
-          initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.15 }}
-          transition={{ duration: 1.05, ease: [0.19, 1, 0.22, 1] }}
-          className="relative bg-[#FAFAFB] rounded-[36px] p-6 sm:p-10 md:p-12 mb-8 border border-black/[0.06] shadow-card-soft overflow-hidden"
-        >
+        {/* Big Narrative Highlight Banner — Reliably visible, rich in content */}
+        <div className="relative bg-[#FAFAFB] rounded-[36px] p-6 sm:p-10 md:p-12 mb-8 border border-black/[0.06] shadow-card-soft overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
             <div className="lg:col-span-7">
-              <FadeUpText delay={0.1} className="font-sans font-light text-2xl sm:text-3xl text-black leading-snug">
+              <h3 className="font-sans font-light text-2xl sm:text-3xl text-black leading-snug">
                 "Our goal is to help brands <SlowHighlight>establish their online presence</SlowHighlight>, improve their digital identity and <SlowHighlight>grow their business</SlowHighlight>."
-              </FadeUpText>
+              </h3>
               
-              <FadeUpParagraph
-                delay={0.2}
-                className="mt-4 text-sm sm:text-base text-zinc-700 font-normal font-sans leading-relaxed"
-              >
-                In today's digital landscape, generic websites and disconnected marketing fail to convert. We unite world-class <SlowHighlight>software engineering</SlowHighlight> with strategic design and high-yield <SlowHighlight>marketing funnels</SlowHighlight> so your company leads its market.
-              </FadeUpParagraph>
+              <p className="mt-4 text-sm sm:text-base text-zinc-700 font-normal font-sans leading-relaxed">
+                In today's digital landscape, generic websites and disconnected marketing fail to convert. Genora unites world-class <SlowHighlight>software engineering</SlowHighlight> with strategic design and high-yield <SlowHighlight>marketing funnels</SlowHighlight> so your company leads its market.
+              </p>
 
               <div className="mt-6 flex flex-wrap items-center gap-3">
-                {['Verified Delivery Guarantee', 'Direct Partner Access', 'Rapid Turnarounds'].map((item, i) => (
-                  <FadeUpText
+                {['Verified Delivery Guarantee', 'Direct Partner Access', 'Rapid Turnarounds', 'Enterprise Architecture'].map((item) => (
+                  <span
                     key={item}
-                    delay={0.3 + i * 0.08}
                     className="inline-flex items-center space-x-1.5 bg-white px-3.5 py-1.5 rounded-full text-xs font-medium text-zinc-700 border border-black/[0.04] shadow-sm"
                   >
                     <CheckCircle2 className="w-3.5 h-3.5 text-royal-blue" />
                     <span>{item}</span>
-                  </FadeUpText>
+                  </span>
                 ))}
               </div>
             </div>
@@ -75,21 +62,20 @@ export const AboutSection: React.FC<{ onExploreServices: () => void }> = ({ onEx
               {[
                 { number: '100%', label: 'End-to-End Delivery' },
                 { number: '8-in-1', label: 'Unified Disciplines' },
-                { number: '<2h', label: 'Response Guarantee' },
+                { number: '< 2h', label: 'Response Guarantee' },
                 { number: '+310%', label: 'Average Client ROI' },
-              ].map((stat, i) => (
-                <FadeUpText
+              ].map((stat) => (
+                <div
                   key={stat.label}
-                  delay={0.2 + i * 0.08}
                   className="bg-white rounded-2xl p-4 sm:p-5 border border-black/[0.04] shadow-card-soft hover:shadow-card-hover transition-all"
                 >
                   <div className="font-sans font-bold text-2xl sm:text-3xl text-black">{stat.number}</div>
                   <div className="text-xs text-zinc-500 font-normal font-sans mt-1">{stat.label}</div>
-                </FadeUpText>
+                </div>
               ))}
             </div>
           </div>
-        </motion.div>
+        </div>
 
         {/* The 3 Pillar Cards Grid */}
         <div className="relative grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
