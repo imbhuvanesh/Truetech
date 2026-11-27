@@ -105,7 +105,7 @@ export const Navbar: React.FC = () => {
         <AnimatePresence mode="wait" initial={false}>
           {!expanded ? (
             /* =========================================================================
-               NORDIC MINIMAL COMPACT CIRCULAR BUTTON (TOP-CENTER)
+               NORDIC MINIMAL CIRCULAR BUTTON WITH 'G' LOGO (TOP-CENTER)
                ========================================================================= */
             <motion.button
               key="trigger"
@@ -116,11 +116,11 @@ export const Navbar: React.FC = () => {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.85 }}
               transition={{ duration: 0.2 }}
-              className="w-full h-full flex flex-col items-center justify-center gap-1 cursor-pointer focus:outline-none group rounded-full"
+              className="w-full h-full flex items-center justify-center cursor-pointer focus:outline-none group rounded-full"
             >
-              {/* Minimal Nordic 2-dash icon */}
-              <span className="w-4 h-[1.5px] bg-white/90 rounded-full transition-transform duration-200 group-hover:scale-x-110" />
-              <span className="w-2.5 h-[1.5px] bg-white/70 rounded-full transition-transform duration-200 group-hover:scale-x-125" />
+              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-neon-lime text-[#041A55] font-black text-xs sm:text-sm flex items-center justify-center shadow-[0_0_14px_rgba(168,255,0,0.45)] transition-all duration-200 group-hover:scale-105 group-hover:shadow-[0_0_20px_rgba(168,255,0,0.65)] select-none">
+                <span>G</span>
+              </div>
             </motion.button>
           ) : (
             /* =========================================================================
@@ -130,14 +130,15 @@ export const Navbar: React.FC = () => {
               key="expanded-menu"
               className="flex items-center gap-1 sm:gap-1.5"
             >
-              {/* Close / Collapse Toggle */}
-              <button
+              {/* Brand 'G' Logo (Links to Home and collapses menu) */}
+              <Link
+                to="/"
                 onClick={() => setExpanded(false)}
-                aria-label="Close navigation menu"
-                className="w-8 h-8 rounded-full flex items-center justify-center text-white/60 hover:text-white hover:bg-white/[0.08] active:scale-90 transition-all duration-150 cursor-pointer shrink-0 focus:outline-none"
+                className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-neon-lime text-[#041A55] font-black text-xs sm:text-sm flex items-center justify-center shrink-0 shadow-[0_0_12px_rgba(168,255,0,0.35)] hover:scale-105 active:scale-95 transition-all duration-150 select-none focus:outline-none"
+                title="Genora Home"
               >
-                <X className="w-4 h-4 stroke-[1.75]" />
-              </button>
+                <span>G</span>
+              </Link>
 
               {/* Minimal Divider */}
               <div className="w-[1px] h-4 bg-white/10 shrink-0 mx-0.5" />
@@ -169,6 +170,18 @@ export const Navbar: React.FC = () => {
                   );
                 })}
               </motion.ul>
+
+              {/* Minimal Divider */}
+              <div className="w-[1px] h-4 bg-white/10 shrink-0 mx-0.5" />
+
+              {/* Close / Collapse Button */}
+              <button
+                onClick={() => setExpanded(false)}
+                aria-label="Close navigation menu"
+                className="w-7 h-7 rounded-full flex items-center justify-center text-white/50 hover:text-white hover:bg-white/[0.08] active:scale-90 transition-all duration-150 cursor-pointer shrink-0 focus:outline-none"
+              >
+                <X className="w-3.5 h-3.5 stroke-[2]" />
+              </button>
             </motion.div>
           )}
         </AnimatePresence>
