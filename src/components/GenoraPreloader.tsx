@@ -248,22 +248,6 @@ export const GenoraPreloader: React.FC<GenoraPreloaderProps> = ({ onComplete }) 
             </svg>
           </motion.div>
 
-          {/* Subtitle tag beneath the lettering */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={
-              phase === 'morph' || phase === 'settled'
-                ? { opacity: 1, y: 0 }
-                : { opacity: 0, y: 10 }
-            }
-            transition={{ duration: 0.4, delay: 0.2 }}
-            className="mt-6 sm:mt-8 flex items-center space-x-2"
-          >
-            <span className="h-1.5 w-1.5 rounded-full bg-[#2857CC] animate-ping" />
-            <span className="font-mono text-[11px] sm:text-xs font-semibold tracking-[0.34em] text-[#2857CC] uppercase">
-              CREATIVE TECHNOLOGY &bull; AI STUDIO
-            </span>
-          </motion.div>
 
         </div>
       </motion.div>
