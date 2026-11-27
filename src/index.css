@@ -15,7 +15,7 @@
     overflow-x: hidden;
   }
   ::selection {
-    background-color: #A8FF00;
+    background-color: #DFEF87;
     color: #080808;
   }
 }
@@ -127,7 +127,7 @@
 }
 
 .tab.active {
-  background: #0645D8;
+  background: #05472A;
   color: #ffffff;
   box-shadow: 0 8px 24px -4px rgba(6, 69, 216, 0.4);
 }

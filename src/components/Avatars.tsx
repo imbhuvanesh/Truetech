@@ -25,7 +25,7 @@ export const DesignerAvatar: React.FC<{ size?: number; className?: string }> = (
         {/* Torso / Shoulders */}
         <path d="M22 84 C24 64, 38 58, 50 58 C62 58, 76 64, 78 84 Z" fill="#FFFFFF" />
         {/* Creative Accent Sparkle */}
-        <path d="M78 24 L80 29 L85 31 L80 33 L78 38 L76 33 L71 31 L76 29 Z" fill="#A8FF00" />
+        <path d="M78 24 L80 29 L85 31 L80 33 L78 38 L76 33 L71 31 L76 29 Z" fill="#DFEF87" />
       </svg>
     </div>
   );
@@ -35,7 +35,7 @@ export const DesignerAvatar: React.FC<{ size?: number; className?: string }> = (
 export const DeveloperAvatar: React.FC<{ size?: number; className?: string }> = ({ size = 64, className = '' }) => {
   return (
     <div 
-      className={`rounded-full overflow-hidden bg-gradient-to-tr from-blue-700 via-cyan-600 to-teal-400 flex items-center justify-center shadow-lg border-2 border-white/80 ${className}`}
+      className={`rounded-full overflow-hidden bg-gradient-to-tr from-[#05472A] via-[#085A35] to-[#DFEF87] flex items-center justify-center shadow-lg border-2 border-white/80 ${className}`}
       style={{ width: size, height: size }}
     >
       <svg 
@@ -49,8 +49,8 @@ export const DeveloperAvatar: React.FC<{ size?: number; className?: string }> = 
         <circle cx="50" cy="38" r="18" fill="#FFFFFF" />
         {/* Modern Cap / Headset */}
         <path d="M30 36 C30 24, 70 24, 70 36" stroke="#0F172A" strokeWidth="4" strokeLinecap="round" />
-        <circle cx="28" cy="38" r="4" fill="#A8FF00" />
-        <circle cx="72" cy="38" r="4" fill="#A8FF00" />
+        <circle cx="28" cy="38" r="4" fill="#DFEF87" />
+        <circle cx="72" cy="38" r="4" fill="#DFEF87" />
         {/* Eyes */}
         <circle cx="43" cy="38" r="2.5" fill="#0F172A" />
         <circle cx="57" cy="38" r="2.5" fill="#0F172A" />
@@ -59,7 +59,7 @@ export const DeveloperAvatar: React.FC<{ size?: number; className?: string }> = 
         {/* Torso / Hoodie */}
         <path d="M22 84 C24 64, 38 58, 50 58 C62 58, 76 64, 78 84 Z" fill="#FFFFFF" />
         {/* Code Accent </> */}
-        <text x="50" y="74" fill="#0645D8" fontSize="13" fontWeight="bold" textAnchor="middle" fontFamily="monospace">&lt;/&gt;</text>
+        <text x="50" y="74" fill="#05472A" fontSize="13" fontWeight="bold" textAnchor="middle" fontFamily="monospace">&lt;/&gt;</text>
       </svg>
     </div>
   );

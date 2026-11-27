@@ -26,17 +26,17 @@ export const PortfolioSection: React.FC = () => {
     : portfolioData.filter(p => p.category === activeCategory);
 
   return (
-    <section id="work" className="relative w-full py-8 sm:py-10 md:py-12 px-4 sm:px-8 text-white bg-[#0A1022] select-none overflow-hidden">
-      {/* Subtle Tech Grid inside Midnight Container */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-15 pointer-events-none" />
+    <section id="work" className="relative w-full py-8 sm:py-10 md:py-12 px-4 sm:px-8 text-white bg-[#05472A] select-none overflow-hidden">
+      {/* Subtle Tech Grid inside Evergreen Container */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none" />
 
       <div className="relative max-w-6xl mx-auto z-10">
 
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 sm:mb-8 pb-4 border-b border-white/10">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 sm:mb-8 pb-4 border-b border-white/15">
           <div className="max-w-2xl">
             <div className="flex items-center space-x-3 mb-3">
-              <FadeUpText delay={0.05} className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-neon-lime/10 border border-neon-lime/20 text-neon-lime font-bold text-xs tracking-wider uppercase">
+              <FadeUpText delay={0.05} className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-[#DFEF87] font-bold text-xs tracking-wider uppercase">
                 <span>Selected Portfolio</span>
               </FadeUpText>
             </div>

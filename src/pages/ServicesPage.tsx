@@ -24,21 +24,21 @@ export const ServicesPage: React.FC = () => {
       className="w-full flex flex-col items-center"
     >
       {/* =========================================================================
-          PAGE HERO BANNER: DEDICATED SERVICES HEADER (ROYAL BLUE STACKED CARD)
+          PAGE HERO BANNER: DEDICATED SERVICES HEADER (EVERGREEN STACKED CARD)
          ========================================================================= */}
-      <div className="w-full max-w-[1260px] bg-[#0645D8] hero-grid rounded-[36px] sm:rounded-[48px] md:rounded-[56px] p-6 sm:p-10 md:p-12 text-white text-center shadow-[0_25px_80px_rgba(4,26,85,0.4)] border border-white/15 my-2 sm:my-3 relative overflow-hidden">
+      <div className="w-full max-w-[1260px] bg-[#05472A] hero-grid rounded-[36px] sm:rounded-[48px] md:rounded-[56px] p-6 sm:p-10 md:p-12 text-white text-center shadow-[0_25px_80px_rgba(5,71,42,0.3)] border border-white/15 my-2 sm:my-3 relative overflow-hidden">
         {/* Hand-Drawn Container Corners */}
         <div className="absolute top-3 left-4 z-20 opacity-70 pointer-events-none">
-          <DoodleCorner position="top-left" color="#A8FF00" className="w-8 h-8 sm:w-10 sm:h-10" />
+          <DoodleCorner position="top-left" color="#DFEF87" className="w-8 h-8 sm:w-10 sm:h-10" />
         </div>
         <div className="absolute top-3 right-4 z-20 opacity-70 pointer-events-none">
-          <DoodleCorner position="top-right" color="#A8FF00" className="w-8 h-8 sm:w-10 sm:h-10" />
+          <DoodleCorner position="top-right" color="#DFEF87" className="w-8 h-8 sm:w-10 sm:h-10" />
         </div>
         
         {/* Ambient Badge */}
-        <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-neon-lime text-xs font-bold uppercase tracking-wider mb-4">
+        <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-[#DFEF87] text-xs font-bold uppercase tracking-wider mb-4">
           <span>Complete Digital Capabilities</span>
-          <DoodleStar className="w-3.5 h-3.5 text-neon-lime" />
+          <DoodleStar className="w-3.5 h-3.5 text-[#DFEF87]" />
         </div>
 
         <MaskedLineReveal
@@ -52,9 +52,9 @@ export const ServicesPage: React.FC = () => {
             className="text-white/85 text-sm sm:text-base md:text-lg leading-relaxed font-normal"
             delay={0.25}
           >
-            We provide full-lifecycle digital capabilities across web engineering, mobile apps, ERP & CRM systems, custom software, AI & ML automation, brand design, cinematic video production, and performance marketing — all under one roof.
+            We provide full-lifecycle digital capabilities across web engineering, mobile apps, ERP &amp; CRM systems, custom software, AI &amp; ML automation, brand design, cinematic video production, and performance marketing — all under one roof.
           </FadeUpParagraph>
-          <DoodleUnderline className="w-56 h-4 text-neon-lime mx-auto mt-3" />
+          <DoodleUnderline className="w-56 h-4 text-[#DFEF87] mx-auto mt-3" />
         </div>
 
         {/* 8 Disciplines Pills */}
@@ -76,23 +76,23 @@ export const ServicesPage: React.FC = () => {
         </div>
       </div>
 
-      {/* Main 6 Service Categories Container (Creamy Avocado #DCF4A2 Stacked Card) */}
-      <div className="w-full max-w-[1260px] bg-[#DCF4A2] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(6,69,216,0.06)] border border-black/[0.05] my-2 sm:my-3 overflow-hidden">
+      {/* Main 6 Service Categories Container (Sunny Lime #DFEF87 Stacked Card) */}
+      <div className="w-full max-w-[1260px] bg-[#DFEF87] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(5,71,42,0.08)] border border-[#05472A]/[0.12] my-2 sm:my-3 overflow-hidden">
         <ServicesSection onSelectService={handleSelectService} />
       </div>
 
       {/* 4-Stage Agile Delivery Process */}
-      <div className="w-full max-w-[1260px] bg-[#FAF9F5] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(0,10,40,0.06)] border border-black/[0.05] my-2 sm:my-3 overflow-hidden">
+      <div className="w-full max-w-[1260px] bg-[#FFFFFF] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(5,71,42,0.06)] border border-[#05472A]/[0.08] my-2 sm:my-3 overflow-hidden">
         <ProcessSection />
       </div>
 
       {/* Why Choose Us */}
-      <div className="w-full max-w-[1260px] bg-[#F4F7FB] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(0,10,40,0.06)] border border-black/[0.05] my-2 sm:my-3 overflow-hidden">
+      <div className="w-full max-w-[1260px] bg-[#05472A] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_25px_80px_rgba(5,71,42,0.3)] border border-white/15 my-2 sm:my-3 overflow-hidden">
         <WhyChooseUsSection />
       </div>
 
       {/* Bottom Conversion Callout */}
-      <div className="w-full max-w-[1260px] bg-[#062B88] rounded-[36px] sm:rounded-[48px] p-8 sm:p-12 text-white text-center shadow-[0_25px_80px_rgba(4,26,85,0.4)] border border-white/15 my-2 sm:my-3">
+      <div className="w-full max-w-[1260px] bg-[#05472A] rounded-[36px] sm:rounded-[48px] p-8 sm:p-12 text-white text-center shadow-[0_25px_80px_rgba(5,71,42,0.3)] border border-white/15 my-2 sm:my-3">
         <h3 className="font-sans font-bold text-2xl sm:text-4xl text-white mb-3">
           Need a Custom Solution for Your Brand?
         </h3>
@@ -101,7 +101,7 @@ export const ServicesPage: React.FC = () => {
         </p>
         <button
           onClick={() => navigate('/contact')}
-          className="px-7 py-3.5 rounded-full bg-neon-lime text-primary-black font-sans font-bold text-sm tracking-tight inline-flex items-center space-x-2 shadow-lg hover:bg-white transition-colors"
+          className="px-7 py-3.5 rounded-full bg-[#DFEF87] text-[#05472A] font-sans font-bold text-sm tracking-tight inline-flex items-center space-x-2 shadow-lg hover:bg-white transition-colors cursor-pointer"
         >
           <span>Request Custom Proposal</span>
           <ArrowUpRight className="w-4 h-4" />

@@ -60,7 +60,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ preselectedServi
   };
 
   return (
-    <section id="contact" className="relative w-full py-10 sm:py-14 md:py-16 px-4 sm:px-6 md:px-8 text-white bg-[#062B88] select-none overflow-hidden">
+    <section id="contact" className="relative w-full py-10 sm:py-14 md:py-16 px-4 sm:px-6 md:px-8 text-white bg-transparent select-none overflow-hidden">
       {/* Subtle Tech Grid Accent */}
       <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none" />
 
@@ -70,7 +70,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ preselectedServi
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-10 pb-5 border-b border-white/15">
           <div className="max-w-2xl">
             <div className="flex items-center space-x-3 mb-2.5">
-              <FadeUpText delay={0.05} className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-neon-lime font-bold text-xs tracking-wider uppercase">
+              <FadeUpText delay={0.05} className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-[#DFEF87] font-bold text-xs tracking-wider uppercase">
                 <span>Let's Collaborate</span>
               </FadeUpText>
             </div>
@@ -105,8 +105,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ preselectedServi
 
               {/* Card 1: Fast Response Guarantee */}
               <div className="bg-white rounded-[28px] p-6 sm:p-7 border border-black/[0.035] shadow-card-soft">
-                <div className="w-10 h-10 rounded-2xl bg-royal-blue text-white flex items-center justify-center mb-3.5 shadow-md">
-                  <Clock className="w-5 h-5 text-neon-lime" />
+                <div className="w-10 h-10 rounded-2xl bg-[#05472A] text-white flex items-center justify-center mb-3.5 shadow-md">
+                  <Clock className="w-5 h-5 text-[#DFEF87]" />
                 </div>
                 <h3 className="font-sans font-bold text-lg sm:text-xl text-black">
                   Fast-Track Discovery
@@ -288,7 +288,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ preselectedServi
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-neon-lime text-black font-sans font-bold text-xs sm:text-sm py-3.5 rounded-full shadow-[0_8px_25px_rgba(168,255,0,0.35)] hover:shadow-[0_12px_35px_rgba(168,255,0,0.55)] transition-all hover:scale-[1.008] active:scale-98 flex items-center justify-center space-x-2 mt-2"
+                    className="w-full bg-[#05472A] hover:bg-[#075e38] text-white font-sans font-bold text-xs sm:text-sm py-3.5 rounded-full shadow-[0_8px_25px_rgba(5,71,42,0.3)] hover:shadow-[0_12px_35px_rgba(5,71,42,0.5)] transition-all hover:scale-[1.008] active:scale-98 flex items-center justify-center space-x-2 mt-2 cursor-pointer"
                   >
                     {isSubmitting ? (
                       <span>Sending Your Request...</span>

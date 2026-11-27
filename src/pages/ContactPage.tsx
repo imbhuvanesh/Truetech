@@ -15,21 +15,21 @@ export const ContactPage: React.FC = () => {
       className="w-full flex flex-col items-center"
     >
       {/* =========================================================================
-          PAGE HERO BANNER: DEDICATED CONTACT HEADER (ROYAL BLUE STACKED CARD)
+          PAGE HERO BANNER: DEDICATED CONTACT HEADER (EVERGREEN STACKED CARD)
          ========================================================================= */}
-      <div className="w-full max-w-[1260px] bg-[#0645D8] hero-grid rounded-[36px] sm:rounded-[48px] md:rounded-[56px] p-6 sm:p-10 md:p-12 text-white text-center shadow-[0_25px_80px_rgba(4,26,85,0.4)] border border-white/15 my-2 sm:my-3 relative overflow-hidden">
+      <div className="w-full max-w-[1260px] bg-[#05472A] hero-grid rounded-[36px] sm:rounded-[48px] md:rounded-[56px] p-6 sm:p-10 md:p-12 text-white text-center shadow-[0_25px_80px_rgba(5,71,42,0.3)] border border-white/15 my-2 sm:my-3 relative overflow-hidden">
         {/* Hand-Drawn Container Corners */}
         <div className="absolute top-3 left-4 z-20 opacity-70 pointer-events-none">
-          <DoodleCorner position="top-left" color="#A8FF00" className="w-8 h-8 sm:w-10 sm:h-10" />
+          <DoodleCorner position="top-left" color="#DFEF87" className="w-8 h-8 sm:w-10 sm:h-10" />
         </div>
         <div className="absolute top-3 right-4 z-20 opacity-70 pointer-events-none">
-          <DoodleCorner position="top-right" color="#A8FF00" className="w-8 h-8 sm:w-10 sm:h-10" />
+          <DoodleCorner position="top-right" color="#DFEF87" className="w-8 h-8 sm:w-10 sm:h-10" />
         </div>
         
         {/* Ambient Badge */}
-        <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-neon-lime text-xs font-bold uppercase tracking-wider mb-4">
+        <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-[#DFEF87] text-xs font-bold uppercase tracking-wider mb-4">
           <span>Direct Partner Access</span>
-          <DoodleStar className="w-3.5 h-3.5 text-neon-lime" />
+          <DoodleStar className="w-3.5 h-3.5 text-[#DFEF87]" />
         </div>
 
         <MaskedLineReveal
@@ -45,7 +45,7 @@ export const ContactPage: React.FC = () => {
           >
             Tell us about your project vision, timeline, and goals. Our senior partners respond within 2 hours with a comprehensive audit and project scope.
           </FadeUpParagraph>
-          <DoodleUnderline className="w-56 h-4 text-neon-lime mx-auto mt-3" />
+          <DoodleUnderline className="w-56 h-4 text-[#DFEF87] mx-auto mt-3" />
         </div>
 
         {/* 3 Direct Reach Pillars */}
@@ -69,7 +69,7 @@ export const ContactPage: React.FC = () => {
             href="mailto:hello@genora.agency"
             className="bg-white/10 hover:bg-white/20 border border-white/15 rounded-2xl p-4 flex items-center space-x-3 transition-colors"
           >
-            <div className="w-10 h-10 rounded-xl bg-neon-lime text-black flex items-center justify-center shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-[#DFEF87] text-[#05472A] flex items-center justify-center shrink-0">
               <Mail className="w-5 h-5" />
             </div>
             <div>
@@ -80,51 +80,51 @@ export const ContactPage: React.FC = () => {
 
           <div className="bg-white/10 border border-white/15 rounded-2xl p-4 flex items-center space-x-3">
             <div className="w-10 h-10 rounded-xl bg-white/20 text-white flex items-center justify-center shrink-0">
-              <Clock className="w-5 h-5 text-neon-lime" />
+              <Clock className="w-5 h-5 text-[#DFEF87]" />
             </div>
             <div>
               <div className="text-[11px] text-white/70 uppercase">Response Time</div>
-              <div className="text-sm font-bold text-neon-lime">&lt; 2 Hours</div>
+              <div className="text-sm font-bold text-[#DFEF87]">&lt; 2 Hours</div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Main Interactive Contact Form Container (Deep Royal Cobalt Stacked Card) */}
-      <div className="w-full max-w-[1260px] bg-[#062B88] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_25px_80px_rgba(4,26,85,0.4)] border border-white/15 my-2 sm:my-3 overflow-hidden">
+      {/* Main Interactive Contact Form Container (Evergreen Stacked Card) */}
+      <div className="w-full max-w-[1260px] bg-[#05472A] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_25px_80px_rgba(5,71,42,0.3)] border border-white/15 my-2 sm:my-3 overflow-hidden">
         <ContactSection preselectedService="Web Development" />
       </div>
 
-      {/* Trust & Guarantee Box (Creamy Avocado #DCF4A2) */}
-      <div className="w-full max-w-[1260px] bg-[#DCF4A2] rounded-[36px] sm:rounded-[48px] p-8 sm:p-10 border border-black/[0.05] shadow-[0_12px_40px_rgba(0,0,0,0.04)] my-2 sm:my-3">
+      {/* Trust & Guarantee Box (Sunny Lime #DFEF87) */}
+      <div className="w-full max-w-[1260px] bg-[#DFEF87] rounded-[36px] sm:rounded-[48px] p-8 sm:p-10 border border-[#05472A]/[0.12] shadow-[0_12px_40px_rgba(5,71,42,0.06)] my-2 sm:my-3">
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
           <div className="flex items-start space-x-3.5">
-            <div className="w-10 h-10 rounded-xl bg-royal-blue/10 text-royal-blue flex items-center justify-center shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-[#05472A]/10 text-[#05472A] flex items-center justify-center shrink-0">
               <ShieldCheck className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="font-sans font-bold text-black text-sm">NDAs &amp; IP Protection</h4>
-              <p className="text-zinc-600 text-xs mt-1">Full intellectual property transfer upon delivery. Strict confidentiality guaranteed.</p>
+              <h4 className="font-sans font-bold text-[#05472A] text-sm">NDAs &amp; IP Protection</h4>
+              <p className="text-zinc-700 text-xs mt-1">Full intellectual property transfer upon delivery. Strict confidentiality guaranteed.</p>
             </div>
           </div>
 
           <div className="flex items-start space-x-3.5">
-            <div className="w-10 h-10 rounded-xl bg-royal-blue/10 text-royal-blue flex items-center justify-center shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-[#05472A]/10 text-[#05472A] flex items-center justify-center shrink-0">
               <CheckCircle2 className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="font-sans font-bold text-black text-sm">Milestone-Based Billing</h4>
-              <p className="text-zinc-600 text-xs mt-1">Transparent sprint budgets and milestone-based approvals. No unexpected invoices.</p>
+              <h4 className="font-sans font-bold text-[#05472A] text-sm">Milestone-Based Billing</h4>
+              <p className="text-zinc-700 text-xs mt-1">Transparent sprint budgets and milestone-based approvals. No unexpected invoices.</p>
             </div>
           </div>
 
           <div className="flex items-start space-x-3.5">
-            <div className="w-10 h-10 rounded-xl bg-royal-blue/10 text-royal-blue flex items-center justify-center shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-[#05472A]/10 text-[#05472A] flex items-center justify-center shrink-0">
               <Clock className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="font-sans font-bold text-black text-sm">Dedicated Team Delivery</h4>
-              <p className="text-zinc-600 text-xs mt-1">Dedicated senior designer, full-stack engineer, and product manager per project.</p>
+              <h4 className="font-sans font-bold text-[#05472A] text-sm">Dedicated Team Delivery</h4>
+              <p className="text-zinc-700 text-xs mt-1">Dedicated senior designer, full-stack engineer, and product manager per project.</p>
             </div>
           </div>
         </div>

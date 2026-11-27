@@ -48,21 +48,21 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
   const [activeServiceModal, setActiveServiceModal] = useState<ServiceCategory | null>(null);
 
   return (
-    <section id="services" className="relative w-full py-8 sm:py-10 md:py-12 px-4 sm:px-8 text-[#050761] bg-[#40FFA7] overflow-hidden">
+    <section id="services" className="relative w-full py-8 sm:py-10 md:py-12 px-4 sm:px-8 text-[#05472A] bg-transparent overflow-hidden">
       <div className="max-w-6xl mx-auto">
 
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 sm:mb-8 pb-4 border-b border-[#050761]/[0.12]">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 sm:mb-8 pb-4 border-b border-[#05472A]/[0.12]">
           <div className="max-w-2xl">
             <div className="flex items-center space-x-3 mb-3">
-              <FadeUpText delay={0.05} className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#050761]/10 text-[#050761] font-bold text-xs tracking-wider uppercase">
+              <FadeUpText delay={0.05} className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#05472A]/10 text-[#05472A] font-bold text-xs tracking-wider uppercase">
                 <span>Full-Spectrum Solutions</span>
               </FadeUpText>
             </div>
             
             <MaskedLineReveal
               lines={["OUR CORE DISCIPLINES", "& DIGITAL SERVICES."]}
-              className="font-sans text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#050761] leading-[1.12]"
+              className="font-sans text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#05472A] leading-[1.12]"
               delay={0.1}
             />
           </div>
@@ -113,12 +113,12 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                   <div>
                     {/* Top Header: Icon + Popular Pill Badge */}
                     <div className="flex items-center justify-between mb-5">
-                      <div className="w-11 h-11 rounded-2xl bg-royal-blue text-white flex items-center justify-center shadow-md">
-                        <IconComponent className="w-5 h-5 stroke-[2] text-neon-lime" />
+                      <div className="w-11 h-11 rounded-2xl bg-[#05472A] text-white flex items-center justify-center shadow-md">
+                        <IconComponent className="w-5 h-5 stroke-[2] text-[#DFEF87]" />
                       </div>
                       <div className="flex items-center space-x-2">
                         {service.popularTag && (
-                          <span className="text-[10px] font-bold uppercase tracking-wider bg-neon-lime text-black px-2.5 py-1 rounded-full shadow-sm">
+                          <span className="text-[10px] font-bold uppercase tracking-wider bg-[#DFEF87] text-[#05472A] px-2.5 py-1 rounded-full shadow-sm">
                             {service.popularTag}
                           </span>
                         )}
@@ -131,7 +131,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                     {/* Heading with smooth line reveal */}
                     <MaskedLineReveal
                       lines={lines}
-                      className="font-sans text-xl sm:text-[22px] font-bold uppercase tracking-tight text-primary-black leading-[1.1]"
+                      className="font-sans text-xl sm:text-[22px] font-bold uppercase tracking-tight text-[#05472A] leading-[1.1]"
                       delay={0.1 + (idx % 3) * 0.05}
                     />
 
@@ -167,7 +167,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                     <span className="text-xs font-semibold text-zinc-500 font-sans group-hover:text-black transition-colors">
                       View Service Scope &amp; Deliverables
                     </span>
-                    <div className="w-8 h-8 rounded-full bg-[#F6F6F6] group-hover:bg-[#0645D8] text-zinc-600 group-hover:text-white flex items-center justify-center transition-all duration-200">
+                    <div className="w-8 h-8 rounded-full bg-[#F6F6F6] group-hover:bg-[#05472A] text-zinc-600 group-hover:text-white flex items-center justify-center transition-all duration-200">
                       <ArrowUpRight className="w-4 h-4" />
                     </div>
                   </div>

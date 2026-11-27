@@ -24,30 +24,30 @@ export const WhyChooseUsSection: React.FC = () => {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section id="why-us" className="relative w-full py-8 sm:py-10 md:py-12 px-4 sm:px-8 text-black bg-transparent overflow-hidden">
+    <section id="why-us" className="relative w-full py-8 sm:py-10 md:py-12 px-4 sm:px-8 text-white bg-transparent overflow-hidden">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 sm:mb-8 pb-4 border-b border-black/[0.08]">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 sm:mb-8 pb-4 border-b border-white/15">
           <div className="max-w-2xl">
             <div className="flex items-center space-x-3 mb-3">
-              <FadeUpText delay={0.05} className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-royal-blue/10 text-royal-blue font-bold text-xs tracking-wider uppercase">
+              <FadeUpText delay={0.05} className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-[#DFEF87] font-bold text-xs tracking-wider uppercase">
                 <span>Competitive Edge</span>
               </FadeUpText>
             </div>
             
             <MaskedLineReveal
               lines={["WHY TOP BRANDS CHOOSE", "GENORA DIGITAL AGENCY."]}
-              className="font-sans text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-black leading-[1.12]"
+              className="font-sans text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-white leading-[1.12]"
               delay={0.1}
             />
           </div>
           
           <div className="mt-4 md:mt-0 max-w-md">
             <FadeUpParagraph
-              className="text-sm sm:text-base text-zinc-700 font-normal font-sans leading-relaxed"
+              className="text-sm sm:text-base text-white/85 font-normal font-sans leading-relaxed"
               delay={0.25}
             >
-              We bridge the gap between <SlowHighlight>aesthetic brilliance</SlowHighlight>, robust <SlowHighlight>technical engineering</SlowHighlight>, and aggressive <SlowHighlight>commercial growth</SlowHighlight>.
+              We bridge the gap between <SlowHighlight dark>aesthetic brilliance</SlowHighlight>, robust <SlowHighlight dark>technical engineering</SlowHighlight>, and aggressive <SlowHighlight dark>commercial growth</SlowHighlight>.
             </FadeUpParagraph>
           </div>
         </div>
@@ -84,10 +84,10 @@ export const WhyChooseUsSection: React.FC = () => {
                   <div>
                     {/* Top: Icon + Metric Tag */}
                     <div className="flex items-center justify-between mb-5">
-                      <div className="w-11 h-11 rounded-2xl bg-royal-blue text-white flex items-center justify-center shadow-md">
-                        <Icon className="w-5 h-5 stroke-[2] text-neon-lime" />
+                      <div className="w-11 h-11 rounded-2xl bg-[#05472A] text-white flex items-center justify-center shadow-md">
+                        <Icon className="w-5 h-5 stroke-[2] text-[#DFEF87]" />
                       </div>
-                      <span className="font-sans text-[11px] font-bold uppercase tracking-wider bg-white text-royal-blue px-3 py-1 rounded-full border border-black/[0.04] shadow-sm">
+                      <span className="font-sans text-[11px] font-bold uppercase tracking-wider bg-[#DFEF87] text-[#05472A] px-3 py-1 rounded-full border border-black/[0.04] shadow-sm">
                         {item.metric}
                       </span>
                     </div>
@@ -95,7 +95,7 @@ export const WhyChooseUsSection: React.FC = () => {
                     {/* Heading */}
                     <MaskedLineReveal
                       lines={lines}
-                      className="font-sans text-xl sm:text-[22px] font-bold uppercase tracking-tight text-primary-black leading-[1.1]"
+                      className="font-sans text-xl sm:text-[22px] font-bold uppercase tracking-tight text-[#05472A] leading-[1.1]"
                       delay={0.15}
                     />
 

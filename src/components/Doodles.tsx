@@ -24,7 +24,7 @@ export const HeroHashtag: React.FC<{ className?: string }> = ({ className = '' }
     >
       <motion.path 
         d="M 52 14 L 32 116" 
-        stroke="#A8FF00" 
+        stroke="#DFEF87" 
         strokeWidth="16" 
         strokeLinecap="round"
         initial={{ pathLength: shouldReduceMotion ? 1 : 0 }}
@@ -33,7 +33,7 @@ export const HeroHashtag: React.FC<{ className?: string }> = ({ className = '' }
       />
       <motion.path 
         d="M 88 12 L 68 118" 
-        stroke="#A8FF00" 
+        stroke="#DFEF87" 
         strokeWidth="16" 
         strokeLinecap="round" 
         initial={{ pathLength: shouldReduceMotion ? 1 : 0 }}
@@ -42,7 +42,7 @@ export const HeroHashtag: React.FC<{ className?: string }> = ({ className = '' }
       />
       <motion.path 
         d="M 12 44 L 118 40" 
-        stroke="#A8FF00" 
+        stroke="#DFEF87" 
         strokeWidth="16" 
         strokeLinecap="round" 
         initial={{ pathLength: shouldReduceMotion ? 1 : 0 }}
@@ -51,7 +51,7 @@ export const HeroHashtag: React.FC<{ className?: string }> = ({ className = '' }
       />
       <motion.path 
         d="M 8 84 L 114 80" 
-        stroke="#A8FF00" 
+        stroke="#DFEF87" 
         strokeWidth="16" 
         strokeLinecap="round" 
         initial={{ pathLength: shouldReduceMotion ? 1 : 0 }}
@@ -84,7 +84,7 @@ export const TopRightArrow: React.FC<{ className?: string }> = ({ className = ''
     >
       <motion.path 
         d="M 50 110 C 35 25, 145 15, 140 85 C 136 125, 105 145, 80 160" 
-        stroke="#A8FF00" 
+        stroke="#DFEF87" 
         strokeWidth="12" 
         strokeLinecap="round" 
         fill="none" 
@@ -97,7 +97,7 @@ export const TopRightArrow: React.FC<{ className?: string }> = ({ className = ''
       />
       <motion.path 
         d="M 104 148 L 76 162 L 82 134" 
-        stroke="#A8FF00" 
+        stroke="#DFEF87" 
         strokeWidth="12" 
         strokeLinecap="round" 
         strokeLinejoin="round" 
@@ -135,7 +135,7 @@ export const BottomLeftArrow: React.FC<{ className?: string }> = ({ className = 
     >
       <motion.path 
         d="M 45 145 C 20 120, 25 75, 55 55 C 80 38, 115 50, 142 80" 
-        stroke="#A8FF00" 
+        stroke="#DFEF87" 
         strokeWidth="13" 
         strokeLinecap="round" 
         fill="none" 
@@ -148,7 +148,7 @@ export const BottomLeftArrow: React.FC<{ className?: string }> = ({ className = 
       />
       <motion.path 
         d="M 116 78 L 144 80 L 138 108" 
-        stroke="#A8FF00" 
+        stroke="#DFEF87" 
         strokeWidth="13" 
         strokeLinecap="round" 
         strokeLinejoin="round" 
@@ -336,7 +336,7 @@ export const SmallNeonSticker: React.FC<{ className?: string }> = ({ className =
 // Hand-drawn Neon Curly Bracket connecting single "WE" to BUILD / CREATE / GROW
 export const DoodleConnectorBracket: React.FC<{ className?: string; color?: string }> = ({ 
   className = '', 
-  color = '#A8FF00' 
+  color = '#DFEF87' 
 }) => {
   const shouldReduceMotion = useReducedMotion();
 
@@ -365,7 +365,7 @@ export const DoodleConnectorBracket: React.FC<{ className?: string; color?: stri
 // Hand-drawn doodle scribbled underline
 export const DoodleUnderline: React.FC<{ className?: string; color?: string }> = ({ 
   className = '', 
-  color = '#A8FF00' 
+  color = '#DFEF87' 
 }) => {
   const shouldReduceMotion = useReducedMotion();
 
@@ -394,7 +394,7 @@ export const DoodleUnderline: React.FC<{ className?: string; color?: string }> =
 // Hand-drawn circular doodle loop (circling a badge or number)
 export const DoodleCircle: React.FC<{ className?: string; color?: string }> = ({ 
   className = '', 
-  color = '#A8FF00' 
+  color = '#DFEF87' 
 }) => {
   const shouldReduceMotion = useReducedMotion();
 
@@ -423,7 +423,7 @@ export const DoodleCircle: React.FC<{ className?: string; color?: string }> = ({
 // Hand-drawn sketch 4-point doodle star
 export const DoodleStar: React.FC<{ className?: string; color?: string }> = ({ 
   className = '', 
-  color = '#A8FF00' 
+  color = '#DFEF87' 
 }) => {
   return (
     <motion.svg
@@ -514,7 +514,7 @@ export const DoodleCorner: React.FC<{
 // 2. Hand-Drawn Notebook Washi Tape Strip
 export const DoodleWashiTape: React.FC<{ className?: string; color?: string; text?: string }> = ({
   className = '',
-  color = '#A8FF00',
+  color = '#DFEF87',
   text,
 }) => {
   return (
@@ -563,7 +563,7 @@ export const DoodleWashiTape: React.FC<{ className?: string; color?: string; tex
 // 3. Hand-Drawn Sparkle / Cross-Star
 export const DoodleSparkle: React.FC<{ className?: string; color?: string }> = ({
   className = '',
-  color = '#A8FF00',
+  color = '#DFEF87',
 }) => {
   return (
     <motion.svg
@@ -680,7 +680,7 @@ export const DoodleCloud: React.FC<{ className?: string; color?: string }> = ({
 export const DoodleLightbulb: React.FC<{ className?: string; color?: string; bulbColor?: string }> = ({
   className = '',
   color = '#080808',
-  bulbColor = '#A8FF00',
+  bulbColor = '#DFEF87',
 }) => {
   return (
     <motion.svg
@@ -718,7 +718,7 @@ export const DoodleLightbulb: React.FC<{ className?: string; color?: string; bul
 // 8. Hand-Drawn Paper Aeroplane (Flight Path)
 export const DoodlePaperPlane: React.FC<{ className?: string; color?: string }> = ({
   className = '',
-  color = '#A8FF00',
+  color = '#DFEF87',
 }) => {
   return (
     <motion.svg
@@ -870,7 +870,7 @@ export const DoodleCodeTag: React.FC<{ className?: string; color?: string }> = (
 // 13. Hand-Drawn Organic Heart
 export const DoodleHeart: React.FC<{ className?: string; color?: string }> = ({
   className = '',
-  color = '#A8FF00',
+  color = '#DFEF87',
 }) => {
   return (
     <motion.svg
@@ -925,7 +925,7 @@ export const DoodleChatBubble: React.FC<{ className?: string; color?: string }> 
 // 15. Hand-Drawn Camera / Film Frame
 export const DoodleCamera: React.FC<{ className?: string; color?: string }> = ({
   className = '',
-  color = '#A8FF00',
+  color = '#DFEF87',
 }) => {
   return (
     <motion.svg
@@ -945,7 +945,7 @@ export const DoodleCamera: React.FC<{ className?: string; color?: string }> = ({
 // 16. Hand-Drawn Sparkling Diamond
 export const DoodleDiamond: React.FC<{ className?: string; color?: string }> = ({
   className = '',
-  color = '#A8FF00',
+  color = '#DFEF87',
 }) => {
   return (
     <motion.svg

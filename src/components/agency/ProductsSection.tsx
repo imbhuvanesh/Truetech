@@ -129,10 +129,10 @@ export const ProductsSection: React.FC = () => {
                   <div className="relative z-10">
                     {/* Top Row: Icon + Status Badge */}
                     <div className="flex items-center justify-between mb-4">
-                      <div className="w-12 h-12 rounded-2xl bg-[#0645D8]/10 text-royal-blue flex items-center justify-center shadow-sm">
+                      <div className="w-12 h-12 rounded-2xl bg-[#05472A]/10 text-[#05472A] flex items-center justify-center shadow-sm">
                         <Icon className="w-6 h-6" />
                       </div>
-                      <span className="text-[10.5px] font-mono font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-[#DCF4A2] text-black border border-black/[0.06]">
+                      <span className="text-[10.5px] font-mono font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-[#DFEF87] text-[#05472A] border border-black/[0.06]">
                         {product.badge}
                       </span>
                     </div>
@@ -246,7 +246,7 @@ export const ProductsSection: React.FC = () => {
               <div className="flex items-center space-x-2 text-xs font-mono uppercase tracking-widest text-royal-blue font-bold mb-2">
                 <span>{selectedProductModal.category}</span>
                 <span>•</span>
-                <span className="px-2 py-0.5 rounded-full bg-[#DCF4A2] text-black">
+                <span className="px-2 py-0.5 rounded-full bg-[#DFEF87] text-[#05472A]">
                   {selectedProductModal.badge}
                 </span>
               </div>

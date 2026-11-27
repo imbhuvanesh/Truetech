@@ -26,7 +26,7 @@ export const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="w-full bg-[#050761] text-white border-t border-white/10 mt-16 sm:mt-24 pt-12 sm:pt-16 pb-10 px-4 sm:px-8 select-none relative">
+    <footer className="w-full bg-[#05472A] text-white border-t border-white/10 mt-16 sm:mt-24 pt-12 sm:pt-16 pb-10 px-4 sm:px-8 select-none relative">
       <div className="max-w-6xl mx-auto">
         {/* Main Footer Content Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 pb-8 sm:pb-12 border-b border-white/10 text-xs sm:text-sm">
@@ -39,7 +39,7 @@ export const Footer: React.FC = () => {
                 className="flex items-center space-x-2.5 mb-4 cursor-pointer group select-none"
                 onClick={scrollToTop}
               >
-                <div className="w-9 h-9 rounded-xl bg-[#40FFA7] text-[#050761] flex items-center justify-center font-sans font-black text-base shadow-sm group-hover:scale-105 transition-transform duration-200">
+                <div className="w-9 h-9 rounded-xl bg-[#DFEF87] text-[#05472A] flex items-center justify-center font-sans font-black text-base shadow-sm group-hover:scale-105 transition-transform duration-200">
                   G
                 </div>
                 <div className="flex flex-col">
@@ -53,8 +53,8 @@ export const Footer: React.FC = () => {
               </p>
 
               {/* Status Indicator */}
-              <div className="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-[#40FFA7]/10 border border-[#40FFA7]/20 text-[#40FFA7] text-xs font-medium font-sans">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#40FFA7] animate-pulse" />
+              <div className="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-[#DFEF87]/15 border border-[#DFEF87]/25 text-[#DFEF87] text-xs font-medium font-sans">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#DFEF87] animate-pulse" />
                 <span>Accepting New Client Projects for Q1 2027</span>
               </div>
             </div>
@@ -73,7 +73,7 @@ export const Footer: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="w-8 h-8 rounded-full bg-white/10 hover:bg-[#40FFA7] text-white/70 hover:text-[#050761] border border-white/10 flex items-center justify-center transition-all duration-200"
+                  className="w-8 h-8 rounded-full bg-white/10 hover:bg-[#DFEF87] text-white/70 hover:text-[#05472A] border border-white/10 flex items-center justify-center transition-all duration-200"
                 >
                   {svg}
                 </a>
@@ -92,7 +92,7 @@ export const Footer: React.FC = () => {
                   <Link
                     to={link.href}
                     onClick={scrollToTop}
-                    className="hover:text-[#40FFA7] transition-colors font-medium flex items-center space-x-1"
+                    className="hover:text-[#DFEF87] transition-colors font-medium flex items-center space-x-1"
                   >
                     <span>{link.label}</span>
                   </Link>
@@ -112,7 +112,7 @@ export const Footer: React.FC = () => {
                   <Link
                     to={svc.href}
                     onClick={scrollToTop}
-                    className="hover:text-[#40FFA7] transition-colors font-medium"
+                    className="hover:text-[#DFEF87] transition-colors font-medium"
                   >
                     {svc.label}
                   </Link>
@@ -128,18 +128,18 @@ export const Footer: React.FC = () => {
             </div>
             <ul className="space-y-3 text-white/70 font-sans text-xs">
               <li className="flex items-start space-x-2">
-                <Mail className="w-4 h-4 text-[#40FFA7] shrink-0 mt-0.5" />
+                <Mail className="w-4 h-4 text-[#DFEF87] shrink-0 mt-0.5" />
                 <a href="mailto:hello@genora.agency" className="hover:text-white transition-colors break-all">
                   hello@genora.agency
                 </a>
               </li>
               <li className="flex items-center space-x-2">
-                <Phone className="w-4 h-4 text-[#40FFA7] shrink-0" />
+                <Phone className="w-4 h-4 text-[#DFEF87] shrink-0" />
                 <span className="text-white font-medium">+1 (800) 450-GENORA</span>
               </li>
               <li className="pt-2">
                 <div className="text-[11px] text-white/60 font-normal">
-                  Response Guarantee: <span className="text-[#40FFA7] font-bold">&lt; 2 Hours</span>
+                  Response Guarantee: <span className="text-[#DFEF87] font-bold">&lt; 2 Hours</span>
                 </div>
               </li>
             </ul>
@@ -154,13 +154,13 @@ export const Footer: React.FC = () => {
           </div>
 
           <div className="flex items-center space-x-4">
-            <Link to="/about" className="hover:text-[#40FFA7] transition-colors">Privacy Policy</Link>
+            <Link to="/about" className="hover:text-[#DFEF87] transition-colors">Privacy Policy</Link>
             <span>•</span>
-            <Link to="/about" className="hover:text-[#40FFA7] transition-colors">Terms of Service</Link>
+            <Link to="/about" className="hover:text-[#DFEF87] transition-colors">Terms of Service</Link>
             <span>•</span>
             <button
               onClick={scrollToTop}
-              className="inline-flex items-center space-x-1.5 text-white/80 hover:text-[#40FFA7] transition-colors font-semibold cursor-pointer"
+              className="inline-flex items-center space-x-1.5 text-white/80 hover:text-[#DFEF87] transition-colors font-semibold cursor-pointer"
             >
               <span>Back to Top</span>
               <ArrowUp className="w-3.5 h-3.5" />
