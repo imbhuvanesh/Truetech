@@ -25,7 +25,7 @@ export const RewardsSection: React.FC = () => {
   };
 
   return (
-    <section className="relative w-full bg-[#DCF4A2] rounded-t-[36px] sm:rounded-t-[48px] md:rounded-t-[56px] pt-6 sm:pt-8 md:pt-10 pb-8 sm:pb-10 md:pb-12 px-4 sm:px-8 md:px-12 text-primary-black shadow-[0_-12px_45px_rgba(0,0,0,0.06)] overflow-hidden">
+    <section className="relative w-full bg-transparent pt-6 sm:pt-8 md:pt-10 pb-8 sm:pb-10 md:pb-12 px-4 sm:px-8 md:px-12 text-primary-black overflow-hidden">
       {/* Hand-Drawn Container Corners */}
       <div className="absolute top-3 left-4 z-10 opacity-70 pointer-events-none">
         <DoodleCorner position="top-left" color="#080808" className="w-8 h-8 sm:w-10 sm:h-10" />

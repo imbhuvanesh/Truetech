@@ -2,8 +2,6 @@ import React from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import {
   HeroHashtag,
-  TopRightArrow,
-  BottomLeftArrow,
   GetStartedBadge,
   DoodleConnectorBracket,
   DoodleStar,
@@ -24,12 +22,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onGetStarted, onExplor
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="relative w-full pt-4 sm:pt-6 md:pt-8 pb-8 sm:pb-12 md:pb-14 px-4 sm:px-6 md:px-8 select-none flex flex-col items-center justify-center overflow-visible">
+    <section className="relative w-full pt-6 sm:pt-8 md:pt-10 pb-10 sm:pb-14 md:pb-16 px-4 sm:px-6 md:px-8 select-none flex flex-col items-center justify-center overflow-hidden">
       {/* Decorative Container Hand-Drawn Corners */}
-      <div className="absolute top-2 left-3 sm:left-6 z-10 opacity-70">
+      <div className="absolute top-3 left-4 sm:left-6 z-10 opacity-70">
         <DoodleCorner position="top-left" color="#A8FF00" className="w-8 h-8 sm:w-10 sm:h-10" />
       </div>
-      <div className="absolute top-2 right-3 sm:right-6 z-10 opacity-70">
+      <div className="absolute top-3 right-4 sm:right-6 z-10 opacity-70">
         <DoodleCorner position="top-right" color="#A8FF00" className="w-8 h-8 sm:w-10 sm:h-10" />
       </div>
       
@@ -54,63 +52,43 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onGetStarted, onExplor
           </div>
         </div>
 
-        {/* Top-Right Hand-Drawn Arrow (Points toward Elena Vance card without overlapping) */}
-        <div className="absolute z-10 pointer-events-none 
-          top-[-4px] right-[18%] 
-          sm:top-[-8px] sm:right-[20%] 
-          md:top-[-10px] md:right-[22%] 
-          lg:top-[-12px] lg:right-[24%]"
-        >
-          <TopRightArrow className="w-14 h-14 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 opacity-90" />
-        </div>
-
-        {/* Floating Profile Card 1: Elena Vance (Design Director) - Clean independent container */}
+        {/* Floating Profile Card 1: Elena Vance (Design Director) - Completely independent container, zero overlay */}
         <div className="absolute z-20 
-          top-[2%] right-[1%] 
-          sm:top-[5%] sm:right-[2%] 
-          md:top-[8%] md:right-[3%] 
-          lg:top-[10%] lg:right-[4%]
-          scale-[0.70] sm:scale-80 md:scale-95 lg:scale-100 origin-top-right hidden sm:block"
+          top-[4%] right-[0%] 
+          sm:top-[6%] sm:right-[1%] 
+          md:top-[8%] md:right-[2%] 
+          lg:top-[10%] lg:right-[3%]
+          scale-[0.70] sm:scale-80 md:scale-95 lg:scale-100 origin-top-right hidden sm:block pointer-events-auto"
         >
           <FloatingNFTCard 
             type="designer" 
             name="Elena Vance" 
             role="Design Director"
             points="★ 5.0 • 48+ Reviews" 
-            defaultRotate={5} 
+            defaultRotate={4} 
             floatDelay={0.3} 
           />
         </div>
 
-        {/* Bottom-Left Hand-Drawn Arrow (Points toward Marcus Chen card without overlapping) */}
-        <div className="absolute z-10 pointer-events-none 
-          bottom-[22%] left-[16%] 
-          sm:bottom-[24%] sm:left-[18%] 
-          md:bottom-[26%] md:left-[20%] 
-          lg:bottom-[28%] lg:left-[22%]"
-        >
-          <BottomLeftArrow className="w-14 h-14 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 opacity-90" />
-        </div>
-
-        {/* Floating Profile Card 2: Marcus Chen (Full-Stack Architect) - Clean independent container */}
+        {/* Floating Profile Card 2: Marcus Chen (Full-Stack Architect) - Completely independent container, zero overlay */}
         <div className="absolute z-20 
-          bottom-[2%] left-[1%] 
-          sm:bottom-[3%] sm:left-[2%] 
-          md:bottom-[4%] md:left-[3%] 
-          lg:bottom-[5%] lg:left-[4%]
-          scale-[0.70] sm:scale-80 md:scale-95 lg:scale-100 origin-bottom-left hidden sm:block"
+          bottom-[4%] left-[0%] 
+          sm:bottom-[5%] sm:left-[1%] 
+          md:bottom-[6%] md:left-[2%] 
+          lg:bottom-[7%] lg:left-[3%]
+          scale-[0.70] sm:scale-80 md:scale-95 lg:scale-100 origin-bottom-left hidden sm:block pointer-events-auto"
         >
           <FloatingNFTCard 
             type="developer" 
             name="Marcus Chen" 
             role="Full-Stack Architect"
             points="100% On-Time Delivery" 
-            defaultRotate={-5} 
+            defaultRotate={-4} 
             floatDelay={0.5} 
           />
         </div>
 
-        {/* Circular Neon Rotating Badge */}
+        {/* Circular Neon Rotating Badge - Safely contained inside container bounds */}
         <motion.div
           initial={{
             opacity: 0,
@@ -130,14 +108,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onGetStarted, onExplor
             ease: [0.16, 1, 0.3, 1],
           }}
           className="absolute z-20 
-            bottom-[-16px] right-[2%] 
-            sm:bottom-[-8px] sm:right-[4%] 
-            md:bottom-[4px] md:right-[6%] 
-            lg:bottom-[10px] lg:right-[8%]"
+            bottom-2 right-2 
+            sm:bottom-3 sm:right-4 
+            md:bottom-4 md:right-6 
+            lg:bottom-6 lg:right-8"
         >
           <GetStartedBadge 
             onClick={onGetStarted}
-            className="w-20 h-20 sm:w-26 sm:h-26 md:w-32 md:h-32 lg:w-38 lg:h-38" 
+            className="w-18 h-18 sm:w-22 sm:h-22 md:w-28 md:h-28 lg:w-32 lg:h-32 cursor-pointer" 
           />
         </motion.div>
 
@@ -213,7 +191,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onGetStarted, onExplor
         >
           <button
             onClick={onGetStarted}
-            className="group px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-neon-lime text-primary-black font-sans font-bold text-xs sm:text-sm tracking-tight flex items-center space-x-2 shadow-[0_8px_25px_rgba(168,255,0,0.4)] hover:shadow-[0_12px_35px_rgba(168,255,0,0.6)] hover:scale-105 active:scale-95 transition-all duration-200"
+            className="group px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-neon-lime text-primary-black font-sans font-bold text-xs sm:text-sm tracking-tight flex items-center space-x-2 shadow-[0_8px_25px_rgba(168,255,0,0.4)] hover:shadow-[0_12px_35px_rgba(168,255,0,0.6)] hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer"
           >
             <span>Start a Project</span>
             <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -221,7 +199,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onGetStarted, onExplor
 
           <button
             onClick={onExploreServices}
-            className="px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/25 font-sans font-semibold text-xs sm:text-sm tracking-tight flex items-center space-x-2 backdrop-blur-md transition-all duration-200 hover:scale-105 active:scale-95"
+            className="px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/25 font-sans font-semibold text-xs sm:text-sm tracking-tight flex items-center space-x-2 backdrop-blur-md transition-all duration-200 hover:scale-105 active:scale-95 cursor-pointer"
           >
             <Sparkles className="w-4 h-4 text-neon-lime" />
             <span>Explore Services</span>

@@ -6,6 +6,8 @@ export interface ProductItem {
   badge: string;
   category: string;
   features: string[];
+  techStack: string[];
+  previewStats: { label: string; value: string };
   pricingPlaceholder: string;
   deliverables: string[];
   ctaText: string;
@@ -25,6 +27,8 @@ export const productsData: ProductItem[] = [
       'Automated SEO, Schema.org & AEO OpenGraph meta',
       'Integrated payment gateways (Stripe & Razorpay)',
     ],
+    techStack: ['Next.js 14', 'TypeScript', 'Tailwind CSS', 'Sanity CMS'],
+    previewStats: { label: 'Lighthouse Score', value: '98/100' },
     pricingPlaceholder: 'Pricing available on inquiry / Early Partner Access',
     deliverables: ['Full Source Code', 'Architecture Documentation', 'Setup Support'],
     ctaText: 'Inquire for Access',
@@ -34,7 +38,7 @@ export const productsData: ProductItem[] = [
     name: 'AutoFlow WhatsApp & CRM Engine',
     tagline: 'Automated lead capture, instant WhatsApp dispatch & pipeline sync.',
     description: 'A pre-integrated automation pipeline connecting web forms, WhatsApp Business Cloud API, CRM databases, and real-time sales team Slack/Discord notifications.',
-    badge: 'Coming Soon',
+    badge: 'Available Now',
     category: 'Automation & AI',
     features: [
       'Meta Official Cloud WhatsApp API Webhook Engine',
@@ -42,9 +46,11 @@ export const productsData: ProductItem[] = [
       'Multi-channel CRM synchronization (Zoho, HubSpot)',
       'Real-time team alerts & escalation logic',
     ],
+    techStack: ['Node.js', 'WhatsApp Cloud API', 'Supabase', 'n8n'],
+    previewStats: { label: 'Avg Lead Response', value: '< 30 sec' },
     pricingPlaceholder: 'Tiered rollout • Announcement TBA',
     deliverables: ['Custom Integration Script', 'Workflow Blueprints', 'Cloud Deployment Guide'],
-    ctaText: 'Join Waitlist',
+    ctaText: 'Deploy for Business',
   },
   {
     id: 'brandbox-design-system',
@@ -59,9 +65,68 @@ export const productsData: ProductItem[] = [
       'Vector icon suite & hand-drawn doodle asset pack',
       'Brand style guide & typography documentation',
     ],
+    techStack: ['Figma Tokens', 'SVG Vector Suite', 'Motion Presets'],
+    previewStats: { label: 'Tokenized UI Assets', value: '400+ items' },
     pricingPlaceholder: 'Product bundle • In Development',
     deliverables: ['Figma Design Files', 'Asset Exports (SVG/PNG)', 'Brand Guidelines PDF'],
     ctaText: 'Join Waitlist',
+  },
+  {
+    id: 'omnisync-billing-pos',
+    name: 'OmniSync Retail POS & Billing Core',
+    tagline: 'Offline-first hybrid POS terminal and multi-branch inventory engine.',
+    description: 'Engineered for retail counters, boutique stores, and cloud kitchens with lightning-fast barcode scanning, GST/VAT tax compliance, thermal receipt printing, and live stock reconciliation.',
+    badge: 'Coming Soon',
+    category: 'Digital Infrastructure',
+    features: [
+      'Offline-first IndexedDB local cache with automatic cloud sync',
+      'GST & VAT compliant e-invoicing and digital receipts',
+      'Multi-counter and multi-branch stock reconciliation',
+      'Thermal printer (USB/Bluetooth) & barcode scanner plug-and-play',
+    ],
+    techStack: ['React', 'Electron', 'PostgreSQL', 'WebSockets'],
+    previewStats: { label: 'Offline Sync Speed', value: '100% Zero-Loss' },
+    pricingPlaceholder: 'Commercial Licensing • Coming Q1',
+    deliverables: ['Desktop/Web POS App', 'Admin Cloud Dashboard', 'Hardware Drivers Setup'],
+    ctaText: 'Request Demo Preview',
+  },
+  {
+    id: 'synapse-copilot-rag',
+    name: 'Synapse RAG Enterprise Copilot',
+    tagline: 'Custom private LLM assistant trained on your company SOPs & databases.',
+    description: 'A secure generative AI assistant integrated with your knowledge bases, customer support tickets, and internal documentation — keeping client data 100% private.',
+    badge: 'Early Access',
+    category: 'Automation & AI',
+    features: [
+      'Hybrid semantic vector search with pgvector and OpenAI / Anthropic',
+      'Role-based access control (RBAC) with strict data isolation',
+      'Customer support auto-resolution with human fallback routing',
+      'Plug-and-play widget for website or Slack/Teams workspace',
+    ],
+    techStack: ['Python / FastAPI', 'LangChain', 'pgvector', 'OpenAI'],
+    previewStats: { label: 'Support Resolution', value: '68% Auto' },
+    pricingPlaceholder: 'Dedicated Pilot Deployment • Inquire for Pilot',
+    deliverables: ['Private Docker Container', 'Vector Database Pipeline', 'Embeddable Web Widget'],
+    ctaText: 'Inquire for Pilot',
+  },
+  {
+    id: 'saas-launchpad-pro',
+    name: 'SaaS Launchpad Multi-Tenant Core',
+    tagline: 'Production-ready subscription architecture with team workspaces & RBAC.',
+    description: 'Everything you need to ship a software product: pre-configured Stripe recurring billing, user onboarding flows, team invitations, dark/light themes, and transactional email templates.',
+    badge: 'Available Now',
+    category: 'Digital Infrastructure',
+    features: [
+      'Complete Stripe Subscriptions, Checkout, and Customer Portal',
+      'Multi-tenant workspace architecture with team member invites',
+      'Supabase / Prisma ORM with automated database migrations',
+      'Transactional emails via Resend with React Email templates',
+    ],
+    techStack: ['Next.js 14', 'Prisma', 'Stripe Billing', 'Resend'],
+    previewStats: { label: 'Time Saved', value: '180+ hours' },
+    pricingPlaceholder: 'Founder Licensing • Inquire Details',
+    deliverables: ['Production Next.js Boilerplate', 'Database Schema Models', 'Stripe Webhooks Engine'],
+    ctaText: 'Explore License',
   },
 ];
 
@@ -507,6 +572,90 @@ export const portfolioData: ProjectItem[] = [
     tags: ['Shopify Storefront API', 'Tailwind CSS', 'Vercel', 'Next.js'],
     visualGradient: 'from-zinc-900 to-neutral-950',
     imageAlt: 'Orbit modern e-commerce storefront preview'
+  },
+  {
+    id: 'pulse-delivery',
+    title: 'Pulse Rapid Fleet & Courier App',
+    client: 'Pulse Logistics',
+    category: 'Mobile App',
+    description: 'Real-time hyper-local courier tracking application with live geo-routing, driver telematics, and automated push notifications.',
+    metrics: '120K+ Monthly Deliveries',
+    year: '2026',
+    tags: ['React Native', 'Mapbox SDK', 'WebSockets', 'Go Engine'],
+    visualGradient: 'from-cyan-950 to-neutral-950',
+    imageAlt: 'Pulse mobile delivery tracker app preview'
+  },
+  {
+    id: 'coreflow-crm',
+    title: 'CoreFlow B2B Distribution & CRM',
+    client: 'CoreFlow Global',
+    category: 'ERP & CRM',
+    description: 'Comprehensive wholesale distribution platform handling credit terms, quotation workflows, automated tax invoices, and sales rep commission tracking.',
+    metrics: '$18M+ Processed Volume',
+    year: '2026',
+    tags: ['PostgreSQL', 'Tailwind', 'Next.js', 'Redis'],
+    visualGradient: 'from-slate-900 to-zinc-950',
+    imageAlt: 'CoreFlow distribution CRM and invoice platform'
+  },
+  {
+    id: 'cloudbridge-api',
+    title: 'CloudBridge Microservices Gateway',
+    client: 'FinTech Alliance',
+    category: 'Custom Software',
+    description: 'High-throughput secure API gateway connecting banking ledger cores to external payment partners with strict zero-trust security checks.',
+    metrics: '99.999% Service Uptime',
+    year: '2025',
+    tags: ['Golang', 'Docker', 'Kubernetes', 'gRPC'],
+    visualGradient: 'from-blue-950 to-neutral-950',
+    imageAlt: 'CloudBridge microservices architecture monitor'
+  },
+  {
+    id: 'hyperion-ml',
+    title: 'Hyperion Predictive Demand Forecasting',
+    client: 'Hyperion Supply',
+    category: 'AI & Automation',
+    description: 'Machine learning forecasting model predicting retail inventory shortages 3 weeks ahead, cutting dead stock and storage overhead.',
+    metrics: '42% Lower Warehousing Cost',
+    year: '2026',
+    tags: ['Python / PyTorch', 'scikit-learn', 'FastAPI', 'AWS'],
+    visualGradient: 'from-violet-950 to-zinc-950',
+    imageAlt: 'Hyperion ML inventory forecasting charts'
+  },
+  {
+    id: 'kintsugi-coffee',
+    title: 'Kintsugi Specialty Roasters Brand Pack',
+    client: 'Kintsugi Roastery',
+    category: 'Creative Design',
+    description: 'Artisanal coffee packaging, bespoke hand-lettered logo, tactile label finishes, and minimalist e-commerce storefront assets.',
+    metrics: 'Red Dot Design Nominee 2025',
+    year: '2025',
+    tags: ['Brand Strategy', 'Foil Stamp Packaging', 'Illustration', '3D Render'],
+    visualGradient: 'from-amber-950 to-neutral-950',
+    imageAlt: 'Kintsugi specialty coffee identity and packaging design'
+  },
+  {
+    id: 'verve-motion',
+    title: 'Verve Electric Mobility Launch Film',
+    client: 'Verve Motors',
+    category: 'Video Production',
+    description: 'Dynamic 3D CGI product reveal video and high-energy social cutdowns showcasing smart electric scooter engineering and safety systems.',
+    metrics: '2.8M Views Across Platforms',
+    year: '2026',
+    tags: ['Blender 3D', 'After Effects', 'Sound Mastering', 'Color Grade'],
+    visualGradient: 'from-emerald-950 to-black',
+    imageAlt: 'Verve electric scooter 3D motion video reel'
+  },
+  {
+    id: 'elevate-growth',
+    title: 'Elevate Omni-Channel D2C Scale Funnel',
+    client: 'Elevate Wellness',
+    category: 'Digital Marketing',
+    description: 'Scale marketing program orchestrating viral TikTok UGC ads, programmatic Google Search, and lifecycle email automation flows.',
+    metrics: '+430% Direct Revenue Growth',
+    year: '2026',
+    tags: ['TikTok Ads', 'Klaviyo Email Flows', 'CRO Audits', 'Meta Pixel'],
+    visualGradient: 'from-fuchsia-950 to-neutral-950',
+    imageAlt: 'Elevate omnichannel analytics dashboard'
   }
 ];
 

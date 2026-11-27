@@ -17,7 +17,7 @@ export const AboutSection: React.FC<{ onExploreServices: () => void }> = ({ onEx
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section id="about" className="relative w-full py-8 sm:py-10 md:py-12 px-4 sm:px-8 text-black bg-[#DCF4A2] overflow-hidden">
+    <section id="about" className="relative w-full py-8 sm:py-10 md:py-12 px-4 sm:px-8 text-black bg-transparent overflow-hidden">
       {/* Hand-Drawn Container Corners */}
       <div className="absolute top-3 left-4 z-10 opacity-70 pointer-events-none">
         <DoodleCorner position="top-left" color="#080808" className="w-8 h-8 sm:w-10 sm:h-10" />

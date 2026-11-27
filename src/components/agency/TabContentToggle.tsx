@@ -1,38 +1,133 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import gsap from 'gsap';
 import { SplitText } from 'gsap/SplitText';
-import { DoodleCorner, DoodleChatBubble, DoodleLightbulb, DoodleSparkle, DoodleCardBorder } from '../Doodles';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Users, Rocket, Palette, Terminal, CheckCircle2, ArrowUpRight, Zap, ShieldCheck } from 'lucide-react';
+import { DoodleCorner, DoodleChatBubble, DoodleLightbulb, DoodleSparkle, DoodleCardBorder, DoodleStar } from '../Doodles';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(SplitText);
 }
 
+interface RoleFeature {
+  title: string;
+  desc: string;
+  metric: string;
+  icon: React.ElementType;
+}
+
 interface TabItem {
   id: string;
   label: string;
+  badge: string;
   text: string;
+  features: RoleFeature[];
 }
 
 const TAB_CONTENT: TabItem[] = [
   {
     id: 'teams',
     label: 'Teams',
-    text: 'Work that moves at the speed of trust. Shared language, aligned direction, and a process that makes collaboration feel genuinely effortless.',
+    badge: 'Enterprise Collaboration',
+    text: 'Work that moves at the speed of trust. Shared language, aligned direction, and a battle-tested sprint cadence that makes cross-functional collaboration feel genuinely effortless.',
+    features: [
+      {
+        title: 'Daily Async Velocity',
+        desc: 'Dedicated Slack channels, Loom sprint walk-throughs, and real-time Figma updates.',
+        metric: 'Zero-Blocker SLA',
+        icon: Users,
+      },
+      {
+        title: 'Two-Week Sprints',
+        desc: 'Scoped backlog milestones delivered and demoed every 14 days without slippage.',
+        metric: '100% On-Time',
+        icon: Zap,
+      },
+      {
+        title: 'Direct Partner Access',
+        desc: 'Senior full-stack architects and design leads on every standup — no junior middlemen.',
+        metric: '< 2h Response',
+        icon: ShieldCheck,
+      },
+    ],
   },
   {
     id: 'founders',
     label: 'Founders',
-    text: 'Turn early conviction into something people actually want. From rough idea to refined product — without losing what made it compelling.',
+    badge: 'Zero to Product-Market Fit',
+    text: 'Turn early conviction into a commercial-grade product people genuinely want. From rough back-of-the-napkin concept to scalable market launch — without diluting your core vision.',
+    features: [
+      {
+        title: '4-Week Rapid MVP',
+        desc: 'Production-ready web application with auth, payments, database, and telemetry.',
+        metric: 'Launch in 28 Days',
+        icon: Rocket,
+      },
+      {
+        title: 'Investor Demo Assets',
+        desc: 'Clickable high-fidelity Figma prototypes and pitch deck visuals ready for funding rounds.',
+        metric: 'Fundraise-Ready',
+        icon: ArrowUpRight,
+      },
+      {
+        title: 'Unit Economics Audit',
+        desc: 'Architecture designed for low cloud overhead ($0-$50/mo startup infra costs).',
+        metric: '80% Cost Savings',
+        icon: Zap,
+      },
+    ],
   },
   {
     id: 'designers',
     label: 'Designers',
-    text: 'Craft interfaces that speak before a single word is read. Visual systems built to carry meaning across every touchpoint of a product.',
+    badge: 'Design Systems & Motion',
+    text: 'Craft interfaces that speak before a single word is read. Scalable visual design systems built with precision to carry emotion and clarity across every digital touchpoint.',
+    features: [
+      {
+        title: 'Tokenized UI Libraries',
+        desc: '400+ auto-layout Figma components mapped 1:1 to Tailwind tokens and CSS variables.',
+        metric: '400+ Components',
+        icon: Palette,
+      },
+      {
+        title: 'Micro-Interactions',
+        desc: 'Silky 60fps spring transitions, SVG doodle animations, and custom cursor physics.',
+        metric: '60fps GPU Easing',
+        icon: DoodleStar,
+      },
+      {
+        title: 'WCAG AAA Accessibility',
+        desc: 'Rigorous color contrast ratios, keyboard navigation, and semantic DOM trees.',
+        metric: '100% Accessible',
+        icon: CheckCircle2,
+      },
+    ],
   },
   {
     id: 'engineers',
     label: 'Engineers',
-    text: 'Build with precision on a foundation that scales. Architecture decisions that outlast the brief and hold up under real-world pressure.',
+    badge: 'Modern Architecture',
+    text: 'Build with surgical precision on a foundation that scales effortlessly. Software architecture decisions that outlast the initial brief and hold up under heavy production workloads.',
+    features: [
+      {
+        title: 'Strict TypeScript Core',
+        desc: 'End-to-end type safety from database schemas to client state and API payloads.',
+        metric: 'Zero Any Types',
+        icon: Terminal,
+      },
+      {
+        title: 'Lighthouse 95+ Guarantee',
+        desc: 'Sub-second Core Web Vitals, dynamic asset compression, and edge caching.',
+        metric: '98+ Vitals Core',
+        icon: Zap,
+      },
+      {
+        title: 'Automated CI/CD Test Pipeline',
+        desc: 'GitHub Actions running linting, TypeScript compilation, and automated deploy scripts.',
+        metric: 'Automated Deploy',
+        icon: ShieldCheck,
+      },
+    ],
   },
 ];
 
@@ -126,16 +221,14 @@ export const TabContentToggle: React.FC = () => {
   }, [switchTab]);
 
   useEffect(() => {
-    // Initialize SplitText on all role-content panels
     const panels = panelsRef.current.filter(Boolean) as HTMLDivElement[];
     if (panels.length === 0) return;
 
-    // Clean previous splits if any
     splitsRef.current.forEach((split) => {
       try {
         split.revert();
       } catch {
-        // ignore revert error
+        // ignore
       }
     });
 
@@ -156,7 +249,6 @@ export const TabContentToggle: React.FC = () => {
           },
         });
       } catch {
-        // Fallback if SplitText is not available
         return {
           lines: [el],
           revert: () => { },
@@ -164,7 +256,6 @@ export const TabContentToggle: React.FC = () => {
       }
     });
 
-    // Explicitly guarantee initial line states
     splitsRef.current.forEach((split, i) => {
       if (split && split.lines) {
         if (i === activeIndexRef.current) {
@@ -175,7 +266,6 @@ export const TabContentToggle: React.FC = () => {
       }
     });
 
-    // Re-trigger animation every time user visits (scrolls into view)
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -216,8 +306,10 @@ export const TabContentToggle: React.FC = () => {
     };
   }, []);
 
+  const activeTab = TAB_CONTENT[activeIndex] || TAB_CONTENT[0];
+
   return (
-    <section className="relative w-full py-8 sm:py-10 md:py-12 px-4 sm:px-8 bg-[#DCF4A2] border-y border-black/[0.06] overflow-hidden">
+    <section className="relative w-full py-8 sm:py-12 md:py-16 px-4 sm:px-8 bg-transparent overflow-hidden">
       {/* Hand-Drawn Container Corners */}
       <div className="absolute top-3 left-4 z-10 opacity-70 pointer-events-none">
         <DoodleCorner position="top-left" color="#080808" className="w-8 h-8 sm:w-10 sm:h-10" />
@@ -234,19 +326,22 @@ export const TabContentToggle: React.FC = () => {
         <DoodleChatBubble color="#080808" className="w-10 h-8" />
       </div>
 
-      <div ref={containerRef} className="tabs-demo relative z-10">
+      <div ref={containerRef} className="tabs-demo relative z-10 max-w-5xl mx-auto">
         {/* Section Header Label */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-royal-blue/10 text-royal-blue font-bold text-xs tracking-wider uppercase mb-3">
             <span>Collaboration Framework</span>
             <DoodleSparkle color="#080808" className="w-3.5 h-3.5" />
           </div>
-          <h2 className="text-sm font-semibold tracking-widest text-zinc-600 uppercase">
-            Built for High-Growth Product Environments
+          <h2 className="font-sans text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-primary-black">
+            Tailored Collaboration for High-Velocity Teams
           </h2>
+          <p className="text-zinc-600 text-xs sm:text-sm font-sans max-w-xl mx-auto mt-2">
+            Whether you are an established engineering organization, a venture-backed founder, or a creative agency team, we adapt to your operational tempo.
+          </p>
         </div>
 
-        {/* Tab Buttons matching himaaax code with ID #tabs */}
+        {/* Tab Buttons */}
         <div className="tabs" id="tabs" role="tablist">
           {TAB_CONTENT.map((tab, idx) => (
             <button
@@ -254,31 +349,78 @@ export const TabContentToggle: React.FC = () => {
               role="tab"
               aria-selected={activeIndex === idx}
               onClick={() => switchTab(idx)}
-              className={`tab ${activeIndex === idx ? 'active' : ''}`}
+              className={`tab font-sans font-semibold text-xs sm:text-sm tracking-wide cursor-pointer transition-all ${
+                activeIndex === idx ? 'active bg-royal-blue text-white shadow-md' : 'hover:bg-black/10'
+              }`}
             >
               {tab.label}
             </button>
           ))}
         </div>
 
-        {/* Content Wrapper matching himaaax code with ID #contentWrapper */}
-        <div className="content-wrapper relative bg-white/60 backdrop-blur-sm rounded-3xl p-6 sm:p-10 border border-black/[0.04] shadow-card-soft" id="contentWrapper">
+        {/* Animated Headline Text Box */}
+        <div className="content-wrapper relative bg-white rounded-3xl p-6 sm:p-8 md:p-10 border border-black/[0.06] shadow-card-soft mb-6" id="contentWrapper">
           <DoodleCardBorder color="#080808" />
+          
+          <div className="text-xs font-mono uppercase tracking-widest text-royal-blue font-bold mb-3 flex items-center space-x-2">
+            <span className="w-2 h-2 rounded-full bg-royal-blue animate-pulse" />
+            <span>{activeTab.badge}</span>
+          </div>
+
           {TAB_CONTENT.map((tab, idx) => (
             <div
               key={tab.id}
               ref={(el) => {
                 panelsRef.current[idx] = el;
               }}
-              className="role-content select-text"
+              className="role-content select-text text-lg sm:text-xl md:text-2xl font-light text-zinc-900 leading-snug"
               style={{
                 pointerEvents: activeIndex === idx ? 'auto' : 'none',
               }}
             >
-              {tab.text}
+              "{tab.text}"
             </div>
           ))}
         </div>
+
+        {/* Populated Role Feature Cards Grid - Fills Container Purposefully */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeTab.id}
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.35, ease: [0.19, 1, 0.22, 1] }}
+            className="grid grid-cols-1 sm:grid-cols-3 gap-4"
+          >
+            {activeTab.features.map((feat, fIdx) => {
+              const Icon = feat.icon;
+              return (
+                <div
+                  key={fIdx}
+                  className="bg-white/80 backdrop-blur-md rounded-2xl p-5 border border-black/[0.05] shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow"
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-3">
+                      <div className="w-9 h-9 rounded-xl bg-royal-blue/10 text-royal-blue flex items-center justify-center">
+                        <Icon className="w-4 h-4" />
+                      </div>
+                      <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-[#DCF4A2] text-black">
+                        {feat.metric}
+                      </span>
+                    </div>
+                    <h4 className="font-sans font-bold text-sm text-black">
+                      {feat.title}
+                    </h4>
+                    <p className="font-sans text-xs text-zinc-600 mt-1 leading-relaxed">
+                      {feat.desc}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </motion.div>
+        </AnimatePresence>
       </div>
     </section>
   );

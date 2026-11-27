@@ -1,7 +1,21 @@
-import React from 'react';
-import { motion, useReducedMotion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { Package, ArrowUpRight, CheckCircle2, Sparkles, Layers, Cpu, Palette } from 'lucide-react';
+import {
+  Package,
+  ArrowUpRight,
+  CheckCircle2,
+  Sparkles,
+  Layers,
+  Cpu,
+  Palette,
+  Terminal,
+  ShieldCheck,
+  Zap,
+  Info,
+  X,
+  ExternalLink,
+} from 'lucide-react';
 import { productsData } from '../../data/agencyData';
 import type { ProductItem } from '../../data/agencyData';
 import { MaskedLineReveal, FadeUpParagraph, FadeUpText, SlowHighlight } from '../AnimatedText';
@@ -18,18 +32,34 @@ const productIcons: Record<string, React.ElementType> = {
   'nexus-starter-suite': Cpu,
   'autoflow-crm-hub': Layers,
   'brandbox-design-system': Palette,
+  'omnisync-billing-pos': Terminal,
+  'synapse-copilot-rag': Zap,
+  'saas-launchpad-pro': ShieldCheck,
 };
 
 export const ProductsSection: React.FC = () => {
   const shouldReduceMotion = useReducedMotion();
   const navigate = useNavigate();
+  const [activeCategory, setActiveCategory] = useState<string>('All');
+  const [selectedProductModal, setSelectedProductModal] = useState<ProductItem | null>(null);
+
+  const categories = [
+    'All',
+    'Digital Infrastructure',
+    'Automation & AI',
+    'Branding & Creative',
+  ];
+
+  const filteredProducts = activeCategory === 'All'
+    ? productsData
+    : productsData.filter((p) => p.category === activeCategory);
 
   const handleInquire = (product: ProductItem) => {
     navigate('/contact', { state: { prefillService: `Product inquiry: ${product.name}` } });
   };
 
   return (
-    <section id="products" className="relative w-full py-8 sm:py-10 md:py-14 px-4 sm:px-8 text-black bg-[#FAFBFD] overflow-hidden">
+    <section id="products" className="relative w-full py-8 sm:py-12 md:py-16 px-4 sm:px-8 text-black bg-transparent overflow-hidden">
       {/* Hand-Drawn Container Corners */}
       <div className="absolute top-3 left-4 z-10 opacity-70 pointer-events-none">
         <DoodleCorner position="top-left" color="#080808" className="w-8 h-8 sm:w-10 sm:h-10" />
@@ -75,11 +105,28 @@ export const ProductsSection: React.FC = () => {
           </div>
         </div>
 
+        {/* Category Filter Pills */}
+        <div className="flex flex-wrap items-center gap-2 mb-8 sm:mb-10">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-sans tracking-wide transition-all cursor-pointer ${
+                activeCategory === cat
+                  ? 'bg-royal-blue text-white font-bold shadow-md scale-[1.02]'
+                  : 'bg-black/[0.05] text-zinc-700 hover:bg-black/10 font-medium'
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
         {/* =========================================================================
             PRODUCTS GRID (3 COLUMN RESPONSIVE)
            ========================================================================= */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
-          {productsData.map((product, idx) => {
+          {filteredProducts.map((product, idx) => {
             const Icon = productIcons[product.id] || Sparkles;
 
             return (
@@ -87,32 +134,33 @@ export const ProductsSection: React.FC = () => {
                 <motion.div
                   initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 25 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: false, amount: 0.15 }}
+                  viewport={{ once: false, amount: 0.12 }}
                   transition={{
-                    duration: shouldReduceMotion ? 0.01 : 0.95,
-                    delay: shouldReduceMotion ? 0 : idx * 0.12,
+                    duration: shouldReduceMotion ? 0.01 : 0.85,
+                    delay: shouldReduceMotion ? 0 : (idx % 3) * 0.1,
                     ease: [0.19, 1, 0.22, 1],
                   }}
-                  whileHover={{ y: -8, transition: { duration: 0.45, ease: [0.19, 1, 0.22, 1] } }}
-                  className="relative h-full bg-white rounded-[32px] p-6 sm:p-7 md:p-8 flex flex-col justify-between transition-all duration-500 shadow-card-soft hover:shadow-card-hover border border-black/[0.04] overflow-hidden"
+                  whileHover={{ y: -6, transition: { duration: 0.35, ease: [0.19, 1, 0.22, 1] } }}
+                  className="relative h-full bg-white rounded-[32px] p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 shadow-card-soft hover:shadow-card-hover border border-black/[0.04] overflow-hidden"
                 >
                   {/* Subtle hand-drawn card border overlay */}
                   <DoodleCardBorder color="#080808" />
 
                   <div className="relative z-10">
-                    {/* Top Row: Icon + Badge */}
-                    <div className="flex items-center justify-between mb-5">
+                    {/* Top Row: Icon + Status Badge */}
+                    <div className="flex items-center justify-between mb-4">
                       <div className="w-12 h-12 rounded-2xl bg-[#0645D8]/10 text-royal-blue flex items-center justify-center shadow-sm">
                         <Icon className="w-6 h-6" />
                       </div>
-                      <span className="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-[#DCF4A2] text-black border border-black/[0.06]">
+                      <span className="text-[10.5px] font-mono font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-[#DCF4A2] text-black border border-black/[0.06]">
                         {product.badge}
                       </span>
                     </div>
 
-                    {/* Category */}
-                    <div className="text-[11px] font-bold uppercase tracking-widest text-zinc-500 mb-1">
-                      {product.category}
+                    {/* Metric Highlight Pill */}
+                    <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-zinc-100 text-zinc-800 text-[11px] font-mono font-medium mb-3">
+                      <span className="text-royal-blue font-bold">{product.previewStats.label}:</span>
+                      <span>{product.previewStats.value}</span>
                     </div>
 
                     {/* Product Name */}
@@ -126,38 +174,60 @@ export const ProductsSection: React.FC = () => {
                     </p>
 
                     {/* Description */}
-                    <p className="font-sans text-xs text-zinc-500 mt-3 leading-relaxed">
+                    <p className="font-sans text-xs text-zinc-500 mt-2.5 leading-relaxed">
                       {product.description}
                     </p>
 
-                    {/* Key Highlights list */}
-                    <div className="mt-5 pt-4 border-t border-black/[0.06] space-y-2">
+                    {/* Tech Stack Badges */}
+                    <div className="mt-4 flex flex-wrap gap-1.5">
+                      {product.techStack.map((tech) => (
+                        <span
+                          key={tech}
+                          className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-zinc-100 text-zinc-700 border border-black/[0.04]"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Key Features List */}
+                    <div className="mt-4 pt-3.5 border-t border-black/[0.06] space-y-1.5">
                       <div className="text-[11px] font-bold uppercase tracking-wider text-black flex items-center space-x-1">
-                        <span>Key Highlights</span>
+                        <span>Core Highlights</span>
                         <DoodleStar className="w-3 h-3 text-royal-blue" />
                       </div>
-                      {product.features.map((feat, fIdx) => (
+                      {product.features.slice(0, 3).map((feat, fIdx) => (
                         <div key={fIdx} className="flex items-start space-x-2 text-xs text-zinc-700">
                           <CheckCircle2 className="w-3.5 h-3.5 text-royal-blue shrink-0 mt-0.5" />
-                          <span>{feat}</span>
+                          <span className="line-clamp-2">{feat}</span>
                         </div>
                       ))}
                     </div>
                   </div>
 
                   {/* Bottom Action Area */}
-                  <div className="relative z-10 mt-6 pt-4 border-t border-black/[0.06] flex flex-col space-y-3">
-                    <div className="text-[11px] font-mono text-zinc-500">
+                  <div className="relative z-10 mt-6 pt-4 border-t border-black/[0.06] flex flex-col space-y-2.5">
+                    <div className="text-[11px] font-mono text-zinc-500 truncate">
                       {product.pricingPlaceholder}
                     </div>
 
-                    <button
-                      onClick={() => handleInquire(product)}
-                      className="w-full group/btn bg-royal-blue hover:bg-neon-lime text-white hover:text-black py-3 px-4 rounded-2xl text-xs font-bold tracking-wide transition-all duration-300 flex items-center justify-center space-x-2 shadow-sm hover:shadow-md cursor-pointer"
-                    >
-                      <span>{product.ctaText}</span>
-                      <ArrowUpRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
-                    </button>
+                    <div className="flex items-center space-x-2">
+                      <button
+                        onClick={() => handleInquire(product)}
+                        className="flex-1 group/btn bg-royal-blue hover:bg-neon-lime text-white hover:text-black py-2.5 px-3.5 rounded-xl text-xs font-bold tracking-wide transition-all duration-200 flex items-center justify-center space-x-1.5 shadow-sm cursor-pointer"
+                      >
+                        <span>{product.ctaText}</span>
+                        <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+                      </button>
+
+                      <button
+                        onClick={() => setSelectedProductModal(product)}
+                        className="p-2.5 rounded-xl bg-zinc-100 hover:bg-zinc-200 text-zinc-800 transition-colors cursor-pointer"
+                        title="View Full Architecture Specs"
+                      >
+                        <Info className="w-4 h-4" />
+                      </button>
+                    </div>
                   </div>
                 </motion.div>
               </div>
@@ -165,6 +235,109 @@ export const ProductsSection: React.FC = () => {
           })}
         </div>
       </div>
+
+      {/* =========================================================================
+          INTERACTIVE SPECIFICATION MODAL
+         ========================================================================= */}
+      <AnimatePresence>
+        {selectedProductModal && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 bg-black/60 backdrop-blur-md flex items-center justify-center p-4 select-text"
+            onClick={() => setSelectedProductModal(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.92, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.92, y: 20 }}
+              transition={{ duration: 0.3, ease: [0.19, 1, 0.22, 1] }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative w-full max-w-2xl bg-white rounded-3xl p-6 sm:p-8 shadow-2xl border border-black/10 overflow-hidden"
+            >
+              <DoodleCardBorder color="#080808" />
+
+              {/* Close Button */}
+              <button
+                onClick={() => setSelectedProductModal(null)}
+                className="absolute top-5 right-5 p-2 rounded-full bg-zinc-100 hover:bg-zinc-200 text-zinc-700 transition-colors cursor-pointer"
+              >
+                <X className="w-4 h-4" />
+              </button>
+
+              <div className="flex items-center space-x-2 text-xs font-mono uppercase tracking-widest text-royal-blue font-bold mb-2">
+                <span>{selectedProductModal.category}</span>
+                <span>•</span>
+                <span className="px-2 py-0.5 rounded-full bg-[#DCF4A2] text-black">
+                  {selectedProductModal.badge}
+                </span>
+              </div>
+
+              <h3 className="font-sans text-2xl sm:text-3xl font-bold tracking-tight text-black">
+                {selectedProductModal.name}
+              </h3>
+              <p className="text-zinc-600 text-sm font-medium mt-1">
+                {selectedProductModal.tagline}
+              </p>
+
+              <p className="text-zinc-700 text-xs sm:text-sm mt-3 leading-relaxed">
+                {selectedProductModal.description}
+              </p>
+
+              {/* Tech Stack */}
+              <div className="mt-4 pt-3 border-t border-black/[0.06]">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-black mb-2">
+                  Architecture &amp; Frameworks
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {selectedProductModal.techStack.map((tech) => (
+                    <span
+                      key={tech}
+                      className="text-xs font-mono px-3 py-1 rounded-lg bg-zinc-100 text-zinc-800 border border-black/[0.06]"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Deliverables Checklist */}
+              <div className="mt-4 pt-3 border-t border-black/[0.06]">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-black mb-2">
+                  Deliverables Package Included
+                </h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  {selectedProductModal.deliverables.map((item, dIdx) => (
+                    <div key={dIdx} className="flex items-center space-x-2 text-xs text-zinc-800">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-royal-blue shrink-0" />
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Modal Footer CTA */}
+              <div className="mt-6 pt-4 border-t border-black/[0.08] flex items-center justify-between">
+                <span className="text-xs font-mono text-zinc-500">
+                  {selectedProductModal.pricingPlaceholder}
+                </span>
+                <button
+                  onClick={() => {
+                    const prod = selectedProductModal;
+                    setSelectedProductModal(null);
+                    handleInquire(prod);
+                  }}
+                  className="bg-royal-blue hover:bg-neon-lime text-white hover:text-black px-6 py-2.5 rounded-xl text-xs font-bold tracking-tight flex items-center space-x-1.5 transition-all shadow-md cursor-pointer"
+                >
+                  <span>Inquire for Deployment</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };

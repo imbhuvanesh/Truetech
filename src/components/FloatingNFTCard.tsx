@@ -30,8 +30,8 @@ export const FloatingNFTCard: React.FC<FloatingNFTCardProps> = ({
   const mouseXSpring = useSpring(x, { stiffness: 180, damping: 28 });
   const mouseYSpring = useSpring(y, { stiffness: 180, damping: 28 });
 
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ['8deg', '-8deg']);
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ['-8deg', '8deg']);
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ['6deg', '-6deg']);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ['-6deg', '6deg']);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!cardRef.current) return;
@@ -54,14 +54,14 @@ export const FloatingNFTCard: React.FC<FloatingNFTCardProps> = ({
   const renderAvatar = () => {
     switch (type) {
       case 'designer':
-        return <DesignerAvatar size={66} className="sm:w-[74px] sm:h-[74px] shadow-md border-[2.5px] border-white" />;
+        return <DesignerAvatar size={64} className="sm:w-[70px] sm:h-[70px] border-2 border-white" />;
       case 'developer':
-        return <DeveloperAvatar size={66} className="sm:w-[74px] sm:h-[74px] shadow-md border-[2.5px] border-white" />;
+        return <DeveloperAvatar size={64} className="sm:w-[70px] sm:h-[70px] border-2 border-white" />;
       case 'punk':
-        return <PunkAvatar size={66} className="sm:w-[74px] sm:h-[74px] shadow-md border-[2.5px] border-white" />;
+        return <PunkAvatar size={64} className="sm:w-[70px] sm:h-[70px] border-2 border-white" />;
       case 'ape':
       default:
-        return <ApeAvatar size={66} className="sm:w-[74px] sm:h-[74px] shadow-md border-[2.5px] border-white" />;
+        return <ApeAvatar size={64} className="sm:w-[70px] sm:h-[70px] border-2 border-white" />;
     }
   };
 
@@ -70,9 +70,9 @@ export const FloatingNFTCard: React.FC<FloatingNFTCardProps> = ({
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      initial={{ opacity: 0, scale: 0.88, y: 35 }}
+      initial={{ opacity: 0, scale: 0.9, y: 25 }}
       animate={{ opacity: 1, scale: 1, y: 0 }}
-      transition={{ duration: 1.2, delay: floatDelay, ease: [0.19, 1, 0.22, 1] }}
+      transition={{ duration: 1.0, delay: floatDelay, ease: [0.19, 1, 0.22, 1] }}
       style={{
         transformStyle: 'preserve-3d',
       }}
@@ -80,12 +80,12 @@ export const FloatingNFTCard: React.FC<FloatingNFTCardProps> = ({
     >
       <motion.div
         animate={{
-          y: [-5, 5, -5],
-          rotate: [defaultRotate - 1, defaultRotate + 1, defaultRotate - 1],
+          y: [-4, 4, -4],
+          rotate: [defaultRotate - 0.8, defaultRotate + 0.8, defaultRotate - 0.8],
         }}
         transition={{
           repeat: Infinity,
-          duration: 8.5,
+          duration: 7.5,
           ease: 'easeInOut',
           delay: floatDelay,
         }}
@@ -95,19 +95,19 @@ export const FloatingNFTCard: React.FC<FloatingNFTCardProps> = ({
           transformStyle: 'preserve-3d',
         }}
         whileHover={{
-          scale: 1.05,
-          transition: { duration: 0.45, ease: [0.19, 1, 0.22, 1] },
+          scale: 1.04,
+          transition: { duration: 0.35, ease: [0.19, 1, 0.22, 1] },
         }}
-        /* Clean, visually independent container without murky overlays or fuzzy layers */
-        className="bg-[#031B5B] border-2 border-white/40 rounded-[28px] p-5 sm:p-6 flex flex-col items-center justify-center min-w-[155px] sm:min-w-[180px] md:min-w-[200px] shadow-[0_20px_50px_rgba(0,10,50,0.55)] hover:border-white hover:shadow-[0_25px_60px_rgba(0,10,60,0.7)] transition-all duration-300"
+        /* Clean, visually independent solid container — zero overlays, zero murky layers */
+        className="bg-[#04206E] border border-white/30 rounded-[26px] p-5 sm:p-6 flex flex-col items-center justify-center min-w-[155px] sm:min-w-[175px] md:min-w-[195px] shadow-[0_16px_36px_rgba(0,8,40,0.5)] hover:border-white/70 hover:shadow-[0_20px_45px_rgba(0,8,40,0.65)] transition-all duration-300"
       >
-        {/* Avatar with pure white border ring */}
-        <div className="relative mb-3 sm:mb-3.5">
+        {/* Avatar with clean border ring */}
+        <div className="relative mb-3">
           {renderAvatar()}
         </div>
 
-        {/* Name in DM Sans Bold */}
-        <div className="font-sans text-white text-sm sm:text-[15px] font-bold tracking-tight text-center drop-shadow-[0_2px_4px_rgba(0,10,40,0.6)]">
+        {/* Name in clean DM Sans Bold */}
+        <div className="font-sans text-white text-sm sm:text-[15px] font-bold tracking-tight text-center">
           {name}
         </div>
 
