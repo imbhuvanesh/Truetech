@@ -312,13 +312,13 @@ export const TabContentToggle: React.FC = () => {
       <div ref={containerRef} className="tabs-demo relative z-10 max-w-5xl mx-auto">
         {/* Section Header Label */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-royal-blue/10 text-royal-blue font-bold text-xs tracking-wider uppercase mb-3">
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#050761]/10 text-[#050761] font-bold text-xs tracking-wider uppercase mb-3">
             <span>Collaboration Framework</span>
           </div>
-          <h2 className="font-sans text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-primary-black">
+          <h2 className="font-sans text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[#050761]">
             Tailored Collaboration for High-Velocity Teams
           </h2>
-          <p className="text-zinc-600 text-xs sm:text-sm font-sans max-w-xl mx-auto mt-2">
+          <p className="text-[#050761]/85 text-xs sm:text-sm font-sans max-w-xl mx-auto mt-2 font-medium">
             Whether you are an established engineering organization, a venture-backed founder, or a creative agency team, we adapt to your operational tempo.
           </p>
         </div>

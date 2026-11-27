@@ -82,7 +82,7 @@ export const ServicesPage: React.FC = () => {
       </div>
 
       {/* 4-Stage Agile Delivery Process */}
-      <div className="w-full max-w-[1260px] bg-[#FFFFFF] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(5,71,42,0.06)] border border-[#05472A]/[0.08] my-2 sm:my-3 overflow-hidden">
+      <div className="w-full max-w-[1260px] bg-[#40FFA7] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(64,255,167,0.3)] border border-[#050761]/[0.12] my-2 sm:my-3 overflow-hidden">
         <ProcessSection />
       </div>
 

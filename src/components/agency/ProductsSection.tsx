@@ -50,13 +50,13 @@ export const ProductsSection: React.FC = () => {
   };
 
   return (
-    <section id="products" className="relative w-full py-8 sm:py-12 md:py-16 px-4 sm:px-8 text-black bg-transparent overflow-hidden">
+    <section id="products" className="relative w-full py-8 sm:py-12 md:py-16 px-4 sm:px-8 text-[#050761] bg-transparent overflow-hidden">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 pb-4 border-b border-black/[0.08]">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 pb-4 border-b border-[#050761]/[0.12]">
           <div className="max-w-2xl">
             <div className="flex items-center space-x-3 mb-3">
-              <FadeUpText delay={0.05} className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-royal-blue/10 text-royal-blue font-bold text-xs tracking-wider uppercase">
+              <FadeUpText delay={0.05} className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#050761]/10 text-[#050761] font-bold text-xs tracking-wider uppercase">
                 <Package className="w-3.5 h-3.5" />
                 <span>Proprietary Toolkits &amp; Frameworks</span>
               </FadeUpText>
@@ -64,14 +64,14 @@ export const ProductsSection: React.FC = () => {
 
             <MaskedLineReveal
               lines={["PRE-ENGINEERED DIGITAL", "PRODUCTS & ACCELERATORS."]}
-              className="font-sans text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-black leading-[1.12]"
+              className="font-sans text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#050761] leading-[1.12]"
               delay={0.1}
             />
           </div>
 
           <div className="mt-4 md:mt-0 max-w-md">
             <FadeUpParagraph
-              className="text-sm sm:text-base text-zinc-600 font-normal font-sans leading-relaxed"
+              className="text-sm sm:text-base text-[#050761]/85 font-medium font-sans leading-relaxed"
               delay={0.25}
             >
               Battle-tested tools, software engines, and pre-built design systems crafted by Genora Studio to help companies launch in days instead of months.
@@ -87,8 +87,8 @@ export const ProductsSection: React.FC = () => {
               onClick={() => setActiveCategory(cat)}
               className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-sans tracking-wide transition-all cursor-pointer ${
                 activeCategory === cat
-                  ? 'bg-royal-blue text-white font-bold shadow-md scale-[1.02]'
-                  : 'bg-black/[0.05] text-zinc-700 hover:bg-black/10 font-medium'
+                  ? 'bg-[#050761] text-white font-bold shadow-md scale-[1.02]'
+                  : 'bg-black/[0.06] text-[#050761] hover:bg-black/10 font-medium'
               }`}
             >
               {cat}

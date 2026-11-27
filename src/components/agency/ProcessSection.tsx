@@ -17,27 +17,27 @@ export const ProcessSection: React.FC = () => {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section id="process" className="relative w-full py-8 sm:py-10 md:py-12 px-4 sm:px-8 text-black bg-transparent overflow-hidden">
+    <section id="process" className="relative w-full py-8 sm:py-10 md:py-12 px-4 sm:px-8 text-[#050761] bg-transparent overflow-hidden">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 sm:mb-8 pb-4 border-b border-black/[0.08]">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 sm:mb-8 pb-4 border-b border-[#050761]/[0.12]">
           <div className="max-w-2xl">
             <div className="flex items-center space-x-3 mb-3">
-              <FadeUpText delay={0.05} className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-royal-blue/10 text-royal-blue font-bold text-xs tracking-wider uppercase">
+              <FadeUpText delay={0.05} className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#050761]/10 text-[#050761] font-bold text-xs tracking-wider uppercase">
                 <span>How We Work</span>
               </FadeUpText>
             </div>
             
             <MaskedLineReveal
               lines={["OUR 4-STAGE AGILE", "DEVELOPMENT PROCESS."]}
-              className="font-sans text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-black leading-[1.12]"
+              className="font-sans text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#050761] leading-[1.12]"
               delay={0.1}
             />
           </div>
           
           <div className="mt-4 md:mt-0 max-w-md">
             <FadeUpParagraph
-              className="text-sm sm:text-base text-zinc-700 font-normal font-sans leading-relaxed"
+              className="text-sm sm:text-base text-[#050761]/85 font-medium font-sans leading-relaxed"
               delay={0.25}
             >
               A battle-tested methodology designed to <SlowHighlight>eliminate ambiguity</SlowHighlight>, <SlowHighlight>ship on time</SlowHighlight>, and maximize <SlowHighlight>commercial impact</SlowHighlight>.

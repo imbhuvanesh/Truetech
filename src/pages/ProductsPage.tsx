@@ -69,9 +69,9 @@ export const ProductsPage: React.FC = () => {
       </div>
 
       {/* =========================================================================
-          STACKED CONTAINER 2: PRODUCTS SHOWCASE GRID
+          STACKED CONTAINER 2: PRODUCTS SHOWCASE GRID (LIME BLUE #40FFA7)
          ========================================================================= */}
-      <div className="w-full max-w-[1260px] bg-[#FFFFFF] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(5,71,42,0.06)] border border-[#05472A]/[0.08] my-2 sm:my-3 overflow-hidden">
+      <div className="w-full max-w-[1260px] bg-[#40FFA7] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(64,255,167,0.3)] border border-[#050761]/[0.12] my-2 sm:my-3 overflow-hidden">
         <ProductsSection />
       </div>
 

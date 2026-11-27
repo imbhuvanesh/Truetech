@@ -53,12 +53,12 @@ export const HomePage: React.FC = () => {
       </ScrollMaskReveal>
 
       {/* =========================================================================
-          STACKED CONTAINER 2: COLLABORATION FRAMEWORK (CLEAN WHITE)
+          STACKED CONTAINER 2: COLLABORATION FRAMEWORK (LIME BLUE #40FFA7)
          ========================================================================= */}
       <ScrollMaskReveal
         threshold={0.15}
         duration={1.05}
-        className="w-full max-w-[1260px] bg-[#FFFFFF] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(5,71,42,0.06)] border border-[#05472A]/[0.08] my-3 sm:my-4 overflow-hidden"
+        className="w-full max-w-[1260px] bg-[#40FFA7] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(64,255,167,0.3)] border border-[#050761]/[0.12] my-3 sm:my-4 overflow-hidden"
       >
         <TabContentToggle />
       </ScrollMaskReveal>
@@ -76,13 +76,13 @@ export const HomePage: React.FC = () => {
       </ScrollMaskReveal>
 
       {/* =========================================================================
-          STACKED CONTAINER 5: PROPRIETARY PRODUCTS & TOOLS (CLEAN WHITE)
+          STACKED CONTAINER 5: PROPRIETARY PRODUCTS & TOOLS (LIME BLUE #40FFA7)
          ========================================================================= */}
       <ScrollMaskReveal
         id="products"
         threshold={0.15}
         duration={1.05}
-        className="w-full max-w-[1260px] bg-[#FFFFFF] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(5,71,42,0.06)] border border-[#05472A]/[0.08] my-3 sm:my-4 overflow-hidden"
+        className="w-full max-w-[1260px] bg-[#40FFA7] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(64,255,167,0.3)] border border-[#050761]/[0.12] my-3 sm:my-4 overflow-hidden"
       >
         <ProductsSection />
       </ScrollMaskReveal>
@@ -99,12 +99,12 @@ export const HomePage: React.FC = () => {
       </ScrollMaskReveal>
 
       {/* =========================================================================
-          STACKED CONTAINER 9: 4-STAGE AGILE PROCESS (CLEAN WHITE)
+          STACKED CONTAINER 9: 4-STAGE AGILE PROCESS (LIME BLUE #40FFA7)
          ========================================================================= */}
       <ScrollMaskReveal
         threshold={0.15}
         duration={1.05}
-        className="w-full max-w-[1260px] bg-[#FFFFFF] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(5,71,42,0.06)] border border-[#05472A]/[0.08] my-3 sm:my-4 overflow-hidden"
+        className="w-full max-w-[1260px] bg-[#40FFA7] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(64,255,167,0.3)] border border-[#050761]/[0.12] my-3 sm:my-4 overflow-hidden"
       >
         <ProcessSection />
       </ScrollMaskReveal>
