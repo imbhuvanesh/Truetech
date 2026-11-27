@@ -5,13 +5,13 @@ interface GenoraPreloaderProps {
   onComplete?: () => void;
 }
 
-const EASE_SPRING = [0.175, 0.885, 0.32, 1.275] as const;
 const EASE_WOBBLE = [0.34, 1.56, 0.64, 1] as const;
 const EASE_SETTLE = [0.19, 1, 0.22, 1] as const;
 
 export const GenoraPreloader: React.FC<GenoraPreloaderProps> = ({ onComplete }) => {
   const shouldReduceMotion = useReducedMotion();
-  const [phase, setPhase] = useState<'initial' | 'reveal' | 'morph' | 'settled' | 'exit' | 'done'>('initial');
+  // Starts directly with the typography animation without initial white screen delay
+  const [phase, setPhase] = useState<'morph' | 'settled' | 'exit' | 'done'>('morph');
 
   useEffect(() => {
     // Lock body scrolling while preloader is active
@@ -19,74 +19,51 @@ export const GenoraPreloader: React.FC<GenoraPreloaderProps> = ({ onComplete }) 
     document.body.style.overflow = 'hidden';
 
     // Sequence timeline:
-    // 0.0s – 0.5s: Initial reveal through liquid clipping mask
-    const t0 = setTimeout(() => {
-      setPhase('reveal');
-    }, 50);
-
-    // 0.5s – 2.0s: Typography fluid stretch, morph and staggered letter wave
+    // Starts directly with fluid typography morph & staggered letter wave from 0s
+    // At ~1.8s: Final elastic settle into perfectly sharp, stable logo
     const t1 = setTimeout(() => {
-      setPhase('morph');
-    }, shouldReduceMotion ? 100 : 500);
-
-    // 2.0s – 2.7s: Final elastic settle into perfectly sharp logo
-    const t2 = setTimeout(() => {
       setPhase('settled');
-    }, shouldReduceMotion ? 250 : 2000);
+    }, shouldReduceMotion ? 200 : 1800);
 
-    // 2.7s – 3.0s: Exit transition via circular/liquid mask wipe revealing site
-    const t3 = setTimeout(() => {
+    // At ~2.4s: Exit transition via smooth circular wipe revealing the site
+    const t2 = setTimeout(() => {
       setPhase('exit');
-    }, shouldReduceMotion ? 400 : 2700);
+    }, shouldReduceMotion ? 350 : 2400);
 
-    // Complete at 3.15s, restore scroll and unmount
-    const t4 = setTimeout(() => {
+    // At ~2.85s: Complete, restore scrolling and unmount
+    const t3 = setTimeout(() => {
       setPhase('done');
       document.body.style.overflow = originalOverflow;
       if (onComplete) onComplete();
-    }, shouldReduceMotion ? 500 : 3150);
+    }, shouldReduceMotion ? 450 : 2850);
 
     return () => {
-      clearTimeout(t0);
       clearTimeout(t1);
       clearTimeout(t2);
       clearTimeout(t3);
-      clearTimeout(t4);
       document.body.style.overflow = originalOverflow;
     };
   }, [shouldReduceMotion, onComplete]);
 
   if (phase === 'done') return null;
 
-  // Individual letter animation variants with elastic bounce & fluid squash/stretch
+  // Individual letter animation variants with playful fluid jelly wobble
   const letterVariants: Variants = {
     initial: {
-      scale: 0.8,
-      scaleY: 0.65,
-      scaleX: 1.25,
-      y: 40,
-      opacity: 0,
-    },
-    reveal: (i: number) => ({
       scale: 1,
       scaleY: 1,
       scaleX: 1,
       y: 0,
       opacity: 1,
-      transition: {
-        duration: shouldReduceMotion ? 0.2 : 0.7,
-        delay: shouldReduceMotion ? 0 : 0.08 + i * 0.07,
-        ease: EASE_SPRING,
-      },
-    }),
+    },
     morph: (i: number) => ({
-      scale: [1, 1.05, 0.98, 1.02, 1],
-      scaleY: [1, 1.14, 0.93, 1.03, 1],
-      scaleX: [1, 0.92, 1.06, 0.98, 1],
-      y: [0, -14, 4, -2, 0],
+      scale: [1, 1.06, 0.97, 1.02, 1],
+      scaleY: [1, 1.15, 0.92, 1.03, 1],
+      scaleX: [1, 0.91, 1.07, 0.98, 1],
+      y: [0, -16, 5, -2, 0],
       transition: {
-        duration: shouldReduceMotion ? 0.2 : 1.35,
-        delay: shouldReduceMotion ? 0 : 0.1 + i * 0.09,
+        duration: shouldReduceMotion ? 0.2 : 1.4,
+        delay: shouldReduceMotion ? 0 : i * 0.08,
         ease: EASE_WOBBLE,
       },
     }),
@@ -125,15 +102,15 @@ export const GenoraPreloader: React.FC<GenoraPreloaderProps> = ({ onComplete }) 
       >
         <div className="relative w-full max-w-[960px] px-6 sm:px-12 flex flex-col items-center justify-center">
           
-          {/* Main Logo Container */}
+          {/* Main Logo Container — Immediately visible */}
           <motion.div
-            initial={{ scale: 0.88, opacity: 0 }}
+            initial={{ scale: 0.95, opacity: 1 }}
             animate={{
               scale: phase === 'exit' ? 1.08 : phase === 'settled' ? 1 : 0.98,
               opacity: 1,
             }}
             transition={{
-              duration: 0.65,
+              duration: 0.5,
               ease: [0.19, 1, 0.22, 1],
             }}
             className="w-full flex items-center justify-center"
@@ -142,6 +119,7 @@ export const GenoraPreloader: React.FC<GenoraPreloaderProps> = ({ onComplete }) 
               CUSTOM VECTOR ORGANIC BUBBLE TYPOGRAPHY: GENORA
               Inspired by chunky 70s psych-rock bubble lettering (Cutpile Studio reference).
               Color: Vibrant Royal Blue #2857CC on clean white background.
+              Directly visible with fluid stretching and organic settling.
             */}
             <svg
               viewBox="0 0 1060 280"
@@ -156,20 +134,9 @@ export const GenoraPreloader: React.FC<GenoraPreloaderProps> = ({ onComplete }) 
                   <stop offset="45%" stopColor="#2857CC" />
                   <stop offset="100%" stopColor="#1E44B0" />
                 </linearGradient>
-
-                {/* Organic Liquid Reveal Clip Mask */}
-                <clipPath id="liquidRevealPath">
-                  <motion.circle
-                    cx="530"
-                    cy="140"
-                    initial={{ r: 0 }}
-                    animate={{ r: phase === 'initial' ? 0 : 700 }}
-                    transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-                  />
-                </clipPath>
               </defs>
 
-              <g clipPath="url(#liquidRevealPath)">
+              <g>
                 {/* =========================================================
                     LETTER 1: 'G' (Bulbous bubble loop with inner teardrop)
                    ========================================================= */}
@@ -177,7 +144,7 @@ export const GenoraPreloader: React.FC<GenoraPreloaderProps> = ({ onComplete }) 
                   custom={0}
                   variants={letterVariants}
                   initial="initial"
-                  animate={phase === 'morph' ? 'morph' : phase === 'settled' || phase === 'exit' ? 'settled' : 'reveal'}
+                  animate={phase === 'morph' ? 'morph' : 'settled'}
                 >
                   <path
                     fillRule="evenodd"
@@ -194,7 +161,7 @@ export const GenoraPreloader: React.FC<GenoraPreloaderProps> = ({ onComplete }) 
                   custom={1}
                   variants={letterVariants}
                   initial="initial"
-                  animate={phase === 'morph' ? 'morph' : phase === 'settled' || phase === 'exit' ? 'settled' : 'reveal'}
+                  animate={phase === 'morph' ? 'morph' : 'settled'}
                 >
                   <path
                     fillRule="evenodd"
@@ -211,7 +178,7 @@ export const GenoraPreloader: React.FC<GenoraPreloaderProps> = ({ onComplete }) 
                   custom={2}
                   variants={letterVariants}
                   initial="initial"
-                  animate={phase === 'morph' ? 'morph' : phase === 'settled' || phase === 'exit' ? 'settled' : 'reveal'}
+                  animate={phase === 'morph' ? 'morph' : 'settled'}
                 >
                   <path
                     fillRule="evenodd"
@@ -228,7 +195,7 @@ export const GenoraPreloader: React.FC<GenoraPreloaderProps> = ({ onComplete }) 
                   custom={3}
                   variants={letterVariants}
                   initial="initial"
-                  animate={phase === 'morph' ? 'morph' : phase === 'settled' || phase === 'exit' ? 'settled' : 'reveal'}
+                  animate={phase === 'morph' ? 'morph' : 'settled'}
                 >
                   <path
                     fillRule="evenodd"
@@ -245,7 +212,7 @@ export const GenoraPreloader: React.FC<GenoraPreloaderProps> = ({ onComplete }) 
                   custom={4}
                   variants={letterVariants}
                   initial="initial"
-                  animate={phase === 'morph' ? 'morph' : phase === 'settled' || phase === 'exit' ? 'settled' : 'reveal'}
+                  animate={phase === 'morph' ? 'morph' : 'settled'}
                 >
                   <path
                     fillRule="evenodd"
@@ -262,7 +229,7 @@ export const GenoraPreloader: React.FC<GenoraPreloaderProps> = ({ onComplete }) 
                   custom={5}
                   variants={letterVariants}
                   initial="initial"
-                  animate={phase === 'morph' ? 'morph' : phase === 'settled' || phase === 'exit' ? 'settled' : 'reveal'}
+                  animate={phase === 'morph' ? 'morph' : 'settled'}
                 >
                   <path
                     fillRule="evenodd"
@@ -283,7 +250,7 @@ export const GenoraPreloader: React.FC<GenoraPreloaderProps> = ({ onComplete }) 
                 ? { opacity: 1, y: 0 }
                 : { opacity: 0, y: 10 }
             }
-            transition={{ duration: 0.5, delay: 0.8 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
             className="mt-6 sm:mt-8 flex items-center space-x-2"
           >
             <span className="h-1.5 w-1.5 rounded-full bg-[#2857CC] animate-ping" />

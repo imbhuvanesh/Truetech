@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { HeroSection } from '../components/HeroSection';
-import { RewardsSection } from '../components/RewardsSection';
 import { TabContentToggle } from '../components/agency/TabContentToggle';
 import { ServicesSection } from '../components/agency/ServicesSection';
 import { ProductsSection } from '../components/agency/ProductsSection';
@@ -48,14 +47,7 @@ export const HomePage: React.FC = () => {
       </div>
 
       {/* =========================================================================
-          STACKED CONTAINER 2: WHAT WE DO / 3 PILLARS (CREAMY AVOCADO #DCF4A2)
-         ========================================================================= */}
-      <div className="w-full max-w-[1260px] bg-[#DCF4A2] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(0,10,40,0.08)] border border-black/[0.05] my-3 sm:my-4 overflow-hidden">
-        <RewardsSection />
-      </div>
-
-      {/* =========================================================================
-          STACKED CONTAINER 3: COLLABORATION FRAMEWORK (SOFT SLATE)
+          STACKED CONTAINER 2: COLLABORATION FRAMEWORK (SOFT SLATE)
          ========================================================================= */}
       <div className="w-full max-w-[1260px] bg-[#F2F5FA] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(0,10,40,0.06)] border border-black/[0.05] my-3 sm:my-4 overflow-hidden">
         <TabContentToggle />

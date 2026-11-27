@@ -18,7 +18,7 @@ import {
 } from 'lucide-react';
 import { productsData } from '../../data/agencyData';
 import type { ProductItem } from '../../data/agencyData';
-import { MaskedLineReveal, FadeUpParagraph, FadeUpText, SlowHighlight } from '../AnimatedText';
+import { MaskedLineReveal, FadeUpParagraph, FadeUpText } from '../AnimatedText';
 
 const productIcons: Record<string, React.ElementType> = {
   'nexus-starter-suite': Cpu,
@@ -75,7 +75,7 @@ export const ProductsSection: React.FC = () => {
               className="text-sm sm:text-base text-zinc-600 font-normal font-sans leading-relaxed"
               delay={0.25}
             >
-              Battle-tested tools, software engines, and pre-built design systems crafted by <SlowHighlight>Nexus Studio</SlowHighlight> to help companies launch in days instead of months.
+              Battle-tested tools, software engines, and pre-built design systems crafted by Genora Studio to help companies launch in days instead of months.
             </FadeUpParagraph>
           </div>
         </div>
