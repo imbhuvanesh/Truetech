@@ -48,21 +48,21 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
   const [activeServiceModal, setActiveServiceModal] = useState<ServiceCategory | null>(null);
 
   return (
-    <section id="services" className="relative w-full py-8 sm:py-10 md:py-12 px-4 sm:px-8 text-black bg-[#DCF4A2] overflow-hidden">
+    <section id="services" className="relative w-full py-8 sm:py-10 md:py-12 px-4 sm:px-8 text-[#050761] bg-[#40FFA7] overflow-hidden">
       <div className="max-w-6xl mx-auto">
 
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 sm:mb-8 pb-4 border-b border-black/[0.08]">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 sm:mb-8 pb-4 border-b border-[#050761]/[0.12]">
           <div className="max-w-2xl">
             <div className="flex items-center space-x-3 mb-3">
-              <FadeUpText delay={0.05} className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-royal-blue/10 text-royal-blue font-bold text-xs tracking-wider uppercase">
+              <FadeUpText delay={0.05} className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#050761]/10 text-[#050761] font-bold text-xs tracking-wider uppercase">
                 <span>Full-Spectrum Solutions</span>
               </FadeUpText>
             </div>
             
             <MaskedLineReveal
               lines={["OUR CORE DISCIPLINES", "& DIGITAL SERVICES."]}
-              className="font-sans text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-black leading-[1.12]"
+              className="font-sans text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#050761] leading-[1.12]"
               delay={0.1}
             />
           </div>
@@ -89,17 +89,26 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
             return (
               <div key={service.id} className="relative group">
                 <motion.div
-                  initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: false, amount: 0.1 }}
-                  transition={{
-                    duration: shouldReduceMotion ? 0.01 : 0.95,
-                    delay: shouldReduceMotion ? 0 : (idx % 3) * 0.12,
-                    ease: [0.19, 1, 0.22, 1],
+                  initial={{
+                    clipPath: shouldReduceMotion ? 'none' : 'inset(0% 0% 16% 0% round 24px)',
+                    opacity: shouldReduceMotion ? 1 : 0,
+                    y: shouldReduceMotion ? 0 : 30,
                   }}
-                  whileHover={{ y: -8, transition: { duration: 0.45, ease: [0.19, 1, 0.22, 1] } }}
+                  whileInView={{
+                    clipPath: shouldReduceMotion ? 'none' : 'inset(0% 0% 0% 0% round 32px)',
+                    opacity: 1,
+                    y: 0,
+                  }}
+                  viewport={{ once: true, amount: 0.12 }}
+                  transition={{
+                    duration: shouldReduceMotion ? 0.01 : 0.9,
+                    delay: shouldReduceMotion ? 0 : (idx % 3) * 0.1,
+                    ease: [0.16, 1, 0.3, 1] as const,
+                  }}
+                  whileHover={{ y: -6, transition: { duration: 0.35, ease: [0.19, 1, 0.22, 1] } }}
                   onClick={() => onSelectService(service.title)}
                   className="relative h-full bg-white rounded-[32px] p-6 sm:p-7 md:p-8 flex flex-col justify-between transition-shadow duration-500 shadow-card-soft hover:shadow-card-hover border border-black/[0.04] cursor-pointer overflow-hidden"
+                  style={{ willChange: 'clip-path, transform, opacity' }}
                 >
                   <div>
                     {/* Top Header: Icon + Popular Pill Badge */}

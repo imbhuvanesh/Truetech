@@ -17,15 +17,18 @@ export default {
         'subtle-text': '#71717A',
         'pure-white': '#FFFFFF',
 
-        // SocialFi / Reference Theme
-        'primary-blue': '#063DCE',
-        'royal-blue': '#063DCE',
-        'deep-navy': '#082A83',
-        'neon-lime': '#A6FF00',
-        'creamy-avocado': '#DCF4A2',
-        'primary-black': '#080808',
-        'soft-grey': '#F3F3F3',
-        'secondary-blue': '#174CCF',
+        // Evergreen & Sunny Lime Palette (@themoidesign)
+        'evergreen': '#05472A',
+        'sunny-lime': '#DFEF87',
+        'butter-white': '#FAF8F2',
+        'primary-blue': '#05472A',
+        'royal-blue': '#05472A',
+        'deep-navy': '#05472A',
+        'neon-lime': '#DFEF87',
+        'creamy-avocado': '#DFEF87',
+        'primary-black': '#05472A',
+        'soft-grey': '#F4F5EE',
+        'secondary-blue': '#083B23',
       },
       fontFamily: {
         sans: ['"DM Sans"', 'system-ui', 'sans-serif'],

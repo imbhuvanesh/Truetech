@@ -153,7 +153,7 @@ export const Navbar: React.FC = () => {
           duration: shouldReduceMotion ? 0.05 : 0.35,
           ease: [0.16, 1, 0.3, 1] as const,
         }}
-        className={`relative flex items-center bg-[#070D1E]/80 backdrop-blur-xl border border-white/[0.12] shadow-[0_10px_35px_-5px_rgba(0,0,0,0.35)] rounded-full transition-shadow duration-300 ${
+        className={`relative flex items-center bg-[#05472A]/90 backdrop-blur-xl border border-white/[0.15] shadow-[0_10px_35px_-5px_rgba(5,71,42,0.3)] rounded-full transition-shadow duration-300 ${
           expanded
             ? 'p-1.5 sm:p-2 overflow-x-auto no-scrollbar'
             : 'p-1.5 overflow-hidden'
@@ -180,7 +180,7 @@ export const Navbar: React.FC = () => {
                 className="flex items-center gap-2 px-3 sm:px-3.5 py-1.5 rounded-full hover:bg-white/[0.08] transition-colors duration-200 cursor-pointer focus:outline-none group"
               >
                 {/* Subtle Status Indicator Dot */}
-                <span className="w-2 h-2 rounded-full bg-neon-lime shadow-[0_0_8px_rgba(168,255,0,0.8)] shrink-0" />
+                <span className="w-2 h-2 rounded-full bg-[#DFEF87] shadow-[0_0_8px_rgba(223,239,135,0.8)] shrink-0" />
 
                 {/* Dynamic Active Section Label */}
                 <div className="text-left">
@@ -211,7 +211,7 @@ export const Navbar: React.FC = () => {
               {/* Start Project CTA Button */}
               <Link
                 to="/contact"
-                className="px-3.5 sm:px-4 py-1.5 rounded-full bg-neon-lime hover:bg-white text-[#041A55] font-sans font-bold text-xs tracking-tight flex items-center gap-1.5 shadow-[0_0_12px_rgba(168,255,0,0.35)] hover:shadow-[0_0_18px_rgba(255,255,255,0.4)] transition-all duration-200 active:scale-95 shrink-0 focus:outline-none"
+                className="px-3.5 sm:px-4 py-1.5 rounded-full bg-[#DFEF87] hover:bg-white text-[#05472A] font-sans font-bold text-xs tracking-tight flex items-center gap-1.5 shadow-[0_0_12px_rgba(223,239,135,0.35)] hover:shadow-[0_0_18px_rgba(255,255,255,0.4)] transition-all duration-200 active:scale-95 shrink-0 focus:outline-none"
               >
                 <span>Start Project</span>
                 <ArrowUpRight className="w-3.5 h-3.5 stroke-[2.5]" />
@@ -242,8 +242,8 @@ export const Navbar: React.FC = () => {
                         onClick={() => handleLinkClick(item.label)}
                         className={`block px-3 sm:px-3.5 py-1.5 rounded-full text-xs sm:text-[13px] font-sans tracking-wide transition-all duration-200 whitespace-nowrap focus:outline-none ${
                           isCurrentActive
-                            ? 'bg-white/[0.16] text-white font-semibold shadow-[inset_0_1px_0_rgba(255,255,255,0.18)]'
-                            : 'text-white/70 hover:text-white hover:bg-white/[0.08] font-normal'
+                            ? 'bg-white/[0.18] text-white font-semibold shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]'
+                            : 'text-white/75 hover:text-white hover:bg-white/[0.08] font-normal'
                         }`}
                       >
                         {item.label}
@@ -260,7 +260,7 @@ export const Navbar: React.FC = () => {
               <Link
                 to="/contact"
                 onClick={() => setExpanded(false)}
-                className="px-3.5 sm:px-4 py-1.5 rounded-full bg-neon-lime hover:bg-white text-[#041A55] font-sans font-bold text-xs tracking-tight flex items-center gap-1.5 shadow-[0_0_12px_rgba(168,255,0,0.35)] hover:shadow-[0_0_18px_rgba(255,255,255,0.4)] transition-all duration-200 active:scale-95 shrink-0 focus:outline-none"
+                className="px-3.5 sm:px-4 py-1.5 rounded-full bg-[#DFEF87] hover:bg-white text-[#05472A] font-sans font-bold text-xs tracking-tight flex items-center gap-1.5 shadow-[0_0_12px_rgba(223,239,135,0.35)] hover:shadow-[0_0_18px_rgba(255,255,255,0.4)] transition-all duration-200 active:scale-95 shrink-0 focus:outline-none"
               >
                 <span>Start Project</span>
                 <ArrowUpRight className="w-3.5 h-3.5 stroke-[2.5]" />

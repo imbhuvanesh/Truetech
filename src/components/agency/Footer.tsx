@@ -1,6 +1,5 @@
 import React from 'react';
-import { ArrowUp, Mail, Phone, MessageSquare, ArrowUpRight, Globe } from 'lucide-react';
-import { SlowHighlight } from '../AnimatedText';
+import { ArrowUp, Mail, Phone, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export const Footer: React.FC = () => {
@@ -27,61 +26,11 @@ export const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="w-full max-w-[1260px] mx-auto mt-8 sm:mt-12 md:mt-16 mb-6 sm:mb-10 px-2 sm:px-4 select-none relative">
-
-      {/* =========================================================================
-          SEPARATE STACKED-CARD CONTAINER
-          Distinct dark obsidian palette (#070B16), layered card styling,
-          proper depth, subtle shadows and rounded corners
-         ========================================================================= */}
-      <div className="w-full bg-[#070B16] text-white rounded-[36px] sm:rounded-[48px] md:rounded-[56px] p-6 sm:p-8 md:p-10 lg:p-12 border border-white/10 shadow-[0_25px_80px_rgba(0,0,0,0.5)] relative overflow-hidden">
-        {/* Subtle Tech Grid Accent */}
-        <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none" />
-
-        {/* =========================================================================
-            LAYER 1: TOP CALLOUT CARD (Pre-footer CTA Banner inside container)
-           ========================================================================= */}
-        <div className="relative z-10 bg-white/[0.04] border border-white/10 rounded-[28px] sm:rounded-[36px] p-6 sm:p-8 md:p-10 mb-8 sm:mb-10 flex flex-col lg:flex-row items-center justify-between gap-6 shadow-[0_12px_40px_rgba(0,0,0,0.3)] overflow-hidden">
-          <div className="text-center lg:text-left max-w-xl relative z-10">
-            <div className="flex items-center justify-center lg:justify-start space-x-2 mb-3">
-              <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-neon-lime/10 border border-neon-lime/20 text-neon-lime text-xs font-bold uppercase tracking-wider">
-                <span>Let's Build Together</span>
-              </div>
-            </div>
-            <h3 className="font-sans font-light text-2xl sm:text-3xl md:text-4xl text-white tracking-tight leading-snug">
-              Have a Project in Mind? Let's Create <SlowHighlight dark>Impact</SlowHighlight>.
-            </h3>
-            <p className="font-sans font-normal text-xs sm:text-sm text-zinc-400 mt-2">
-              From web platforms and custom software to brand systems and scalable Meta ad funnels.
-            </p>
-          </div>
-
-          <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">
-            <Link
-              to="/contact"
-              className="group px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-neon-lime hover:bg-white text-primary-black font-sans font-bold text-xs sm:text-sm tracking-tight flex items-center space-x-2 shadow-[0_8px_25px_rgba(168,255,0,0.4)] hover:shadow-[0_12px_35px_rgba(255,255,255,0.4)] transition-all duration-300 active:scale-95"
-            >
-              <span>Start Your Project</span>
-              <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </Link>
-
-            <a
-              href="https://wa.me/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-5 sm:px-6 py-3 sm:py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 font-sans font-semibold text-xs sm:text-sm tracking-tight flex items-center space-x-2 transition-all duration-200 active:scale-95"
-            >
-              <MessageSquare className="w-4 h-4 text-neon-lime" />
-              <span>WhatsApp Chat</span>
-            </a>
-          </div>
-        </div>
-
-        {/* =========================================================================
-            LAYER 2: MAIN FOOTER CONTENT GRID
-           ========================================================================= */}
-        <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 pb-8 sm:pb-10 border-b border-white/10 text-xs sm:text-sm">
-
+    <footer className="w-full bg-[#050761] text-white border-t border-white/10 mt-16 sm:mt-24 pt-12 sm:pt-16 pb-10 px-4 sm:px-8 select-none relative">
+      <div className="max-w-6xl mx-auto">
+        {/* Main Footer Content Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 pb-8 sm:pb-12 border-b border-white/10 text-xs sm:text-sm">
+          
           {/* Col 1 (5 cols): Company Brand & Philosophy */}
           <div className="lg:col-span-5 flex flex-col justify-between">
             <div>
@@ -90,23 +39,22 @@ export const Footer: React.FC = () => {
                 className="flex items-center space-x-2.5 mb-4 cursor-pointer group select-none"
                 onClick={scrollToTop}
               >
-                <div className="w-10 h-10 rounded-2xl bg-white text-[#0645D8] flex items-center justify-center font-sans font-bold text-lg shadow-[0_4px_20px_rgba(0,0,0,0.3)] group-hover:scale-105 transition-transform duration-200">
+                <div className="w-9 h-9 rounded-xl bg-[#40FFA7] text-[#050761] flex items-center justify-center font-sans font-black text-base shadow-sm group-hover:scale-105 transition-transform duration-200">
                   G
                 </div>
                 <div className="flex flex-col">
-                  <div className="flex items-center space-x-1.5">
-                    <span className="font-sans font-bold text-xl tracking-tight text-white">GENORA</span>
-                  </div>
-                  <span className="font-sans font-light text-white/70 text-[10px] tracking-wider uppercase">Digital Agency</span>
+                  <span className="font-sans font-bold text-lg tracking-tight text-white">GENORA</span>
+                  <span className="font-sans font-normal text-white/60 text-[10px] tracking-wider uppercase">Digital Agency</span>
                 </div>
               </div>
 
-              <p className="text-zinc-400 font-sans font-normal text-xs sm:text-sm leading-relaxed max-w-sm mb-6">
+              <p className="text-white/70 font-sans font-normal text-xs sm:text-sm leading-relaxed max-w-sm mb-5">
                 A creative technology and digital marketing agency providing complete digital solutions to businesses, startups and individuals. We turn vision into scalable digital experiences.
               </p>
 
               {/* Status Indicator */}
-              <div className="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-medium font-sans">
+              <div className="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-[#40FFA7]/10 border border-[#40FFA7]/20 text-[#40FFA7] text-xs font-medium font-sans">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#40FFA7] animate-pulse" />
                 <span>Accepting New Client Projects for Q1 2027</span>
               </div>
             </div>
@@ -125,7 +73,7 @@ export const Footer: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="w-9 h-9 rounded-full bg-white/5 hover:bg-neon-lime text-zinc-400 hover:text-black border border-white/10 flex items-center justify-center transition-all duration-200"
+                  className="w-8 h-8 rounded-full bg-white/10 hover:bg-[#40FFA7] text-white/70 hover:text-[#050761] border border-white/10 flex items-center justify-center transition-all duration-200"
                 >
                   {svg}
                 </a>
@@ -138,13 +86,13 @@ export const Footer: React.FC = () => {
             <div className="font-sans font-bold text-xs text-white uppercase tracking-wider mb-4">
               Navigation
             </div>
-            <ul className="space-y-2.5 text-zinc-400 font-sans text-xs sm:text-sm">
+            <ul className="space-y-2.5 text-white/70 font-sans text-xs sm:text-sm">
               {navLinks.map((link) => (
                 <li key={link.label}>
                   <Link
                     to={link.href}
                     onClick={scrollToTop}
-                    className="hover:text-neon-lime transition-colors font-medium flex items-center space-x-1"
+                    className="hover:text-[#40FFA7] transition-colors font-medium flex items-center space-x-1"
                   >
                     <span>{link.label}</span>
                   </Link>
@@ -158,13 +106,13 @@ export const Footer: React.FC = () => {
             <div className="font-sans font-bold text-xs text-white uppercase tracking-wider mb-4">
               Services
             </div>
-            <ul className="space-y-2.5 text-zinc-400 font-sans text-xs sm:text-sm">
+            <ul className="space-y-2.5 text-white/70 font-sans text-xs sm:text-sm">
               {serviceLinks.map((svc) => (
                 <li key={svc.label}>
                   <Link
                     to={svc.href}
                     onClick={scrollToTop}
-                    className="hover:text-neon-lime transition-colors font-medium"
+                    className="hover:text-[#40FFA7] transition-colors font-medium"
                   >
                     {svc.label}
                   </Link>
@@ -178,20 +126,20 @@ export const Footer: React.FC = () => {
             <div className="font-sans font-bold text-xs text-white uppercase tracking-wider mb-4">
               Direct Reach
             </div>
-            <ul className="space-y-3 text-zinc-400 font-sans text-xs">
+            <ul className="space-y-3 text-white/70 font-sans text-xs">
               <li className="flex items-start space-x-2">
-                <Mail className="w-4 h-4 text-neon-lime shrink-0 mt-0.5" />
+                <Mail className="w-4 h-4 text-[#40FFA7] shrink-0 mt-0.5" />
                 <a href="mailto:hello@genora.agency" className="hover:text-white transition-colors break-all">
                   hello@genora.agency
                 </a>
               </li>
               <li className="flex items-center space-x-2">
-                <Phone className="w-4 h-4 text-neon-lime shrink-0" />
-                <span className="text-zinc-300 font-medium">+1 (800) 450-GENORA</span>
+                <Phone className="w-4 h-4 text-[#40FFA7] shrink-0" />
+                <span className="text-white font-medium">+1 (800) 450-GENORA</span>
               </li>
               <li className="pt-2">
-                <div className="text-[11px] text-zinc-400 font-normal">
-                  Response Guarantee: <span className="text-neon-lime font-bold">&lt; 2 Hours</span>
+                <div className="text-[11px] text-white/60 font-normal">
+                  Response Guarantee: <span className="text-[#40FFA7] font-bold">&lt; 2 Hours</span>
                 </div>
               </li>
             </ul>
@@ -199,22 +147,20 @@ export const Footer: React.FC = () => {
 
         </div>
 
-        {/* =========================================================================
-            LAYER 3: BOTTOM COPYRIGHT & METADATA BAR
-           ========================================================================= */}
-        <div className="relative z-10 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-400 font-sans gap-4">
+        {/* Bottom Copyright & Legal Links Bar */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-white/60 font-sans gap-4">
           <div className="flex items-center space-x-2">
             <span>&copy; 2027 GENORA Digital Agency. Built with precision for ambitious brands.</span>
           </div>
 
           <div className="flex items-center space-x-4">
-            <Link to="/about" className="hover:text-neon-lime transition-colors">Privacy Policy</Link>
+            <Link to="/about" className="hover:text-[#40FFA7] transition-colors">Privacy Policy</Link>
             <span>•</span>
-            <Link to="/about" className="hover:text-neon-lime transition-colors">Terms of Service</Link>
+            <Link to="/about" className="hover:text-[#40FFA7] transition-colors">Terms of Service</Link>
             <span>•</span>
             <button
               onClick={scrollToTop}
-              className="inline-flex items-center space-x-1.5 text-zinc-300 hover:text-neon-lime transition-colors font-semibold"
+              className="inline-flex items-center space-x-1.5 text-white/80 hover:text-[#40FFA7] transition-colors font-semibold cursor-pointer"
             >
               <span>Back to Top</span>
               <ArrowUp className="w-3.5 h-3.5" />
@@ -223,7 +169,6 @@ export const Footer: React.FC = () => {
         </div>
 
       </div>
-
     </footer>
   );
 };

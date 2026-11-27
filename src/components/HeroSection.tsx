@@ -23,10 +23,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onGetStarted, onExplor
     <section className="relative w-full pt-8 sm:pt-10 md:pt-12 pb-10 sm:pb-14 md:pb-16 px-4 sm:px-6 md:px-8 select-none flex flex-col items-center justify-center overflow-hidden">
       {/* Decorative Container Hand-Drawn Corners */}
       <div className="absolute top-3 left-4 sm:left-6 z-10 opacity-70">
-        <DoodleCorner position="top-left" color="#A8FF00" className="w-8 h-8 sm:w-10 sm:h-10" />
+        <DoodleCorner position="top-left" color="#DFEF87" className="w-8 h-8 sm:w-10 sm:h-10" />
       </div>
       <div className="absolute top-3 right-4 sm:right-6 z-10 opacity-70">
-        <DoodleCorner position="top-right" color="#A8FF00" className="w-8 h-8 sm:w-10 sm:h-10" />
+        <DoodleCorner position="top-right" color="#DFEF87" className="w-8 h-8 sm:w-10 sm:h-10" />
       </div>
       
       {/* Centered Hero Composition */}
@@ -41,12 +41,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onGetStarted, onExplor
             className="inline-flex items-center justify-center space-x-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white font-sans text-xs sm:text-[13px] font-semibold tracking-wide shadow-sm"
           >
             <span className="uppercase tracking-wider">Creative Technology &amp; Digital Marketing</span>
-            <DoodleStar className="w-3.5 h-3.5 text-neon-lime ml-1" />
+            <DoodleStar className="w-3.5 h-3.5 text-[#DFEF87] ml-1" />
           </motion.div>
 
           {/* Hand-Drawn Sparkle Accent */}
           <div className="absolute -right-8 -top-3 hidden sm:block">
-            <DoodleSparkle color="#A8FF00" className="w-6 h-6" />
+            <DoodleSparkle color="#DFEF87" className="w-6 h-6" />
           </div>
         </div>
 
@@ -92,11 +92,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onGetStarted, onExplor
               <MaskedHeroWord text="CREATE." delay={0.4} />
             </div>
 
-            {/* Word 3: GROW. (Neon Lime Accent) */}
-            <div className="relative text-neon-lime font-extrabold mt-1 md:mt-2 flex items-center">
+            {/* Word 3: GROW. (Sunny Lime Accent) */}
+            <div className="relative text-[#DFEF87] font-extrabold mt-1 md:mt-2 flex items-center">
               <MaskedHeroWord text="GROW." delay={0.6} />
               <div className="absolute -right-10 -top-4 hidden sm:block pointer-events-none">
-                <DoodleBurst color="#A8FF00" className="w-9 h-9 opacity-85" />
+                <DoodleBurst color="#DFEF87" className="w-9 h-9 opacity-85" />
               </div>
             </div>
 

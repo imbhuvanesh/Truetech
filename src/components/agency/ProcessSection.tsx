@@ -54,16 +54,25 @@ export const ProcessSection: React.FC = () => {
             return (
               <div key={step.step} className="relative group">
                 <motion.div
-                  initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 25 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: false, amount: 0.15 }}
+                  initial={{
+                    clipPath: shouldReduceMotion ? 'none' : 'inset(0% 0% 16% 0% round 24px)',
+                    opacity: shouldReduceMotion ? 1 : 0,
+                    y: shouldReduceMotion ? 0 : 28,
+                  }}
+                  whileInView={{
+                    clipPath: shouldReduceMotion ? 'none' : 'inset(0% 0% 0% 0% round 32px)',
+                    opacity: 1,
+                    y: 0,
+                  }}
+                  viewport={{ once: true, amount: 0.12 }}
                   transition={{
-                    duration: shouldReduceMotion ? 0.01 : 0.95,
-                    delay: shouldReduceMotion ? 0 : idx * 0.12,
-                    ease: [0.19, 1, 0.22, 1],
+                    duration: shouldReduceMotion ? 0.01 : 0.85,
+                    delay: shouldReduceMotion ? 0 : idx * 0.1,
+                    ease: [0.16, 1, 0.3, 1] as const,
                   }}
                   whileHover={{ y: -6, transition: { duration: 0.35, ease: [0.19, 1, 0.22, 1] } }}
                   className="relative h-full bg-[#F6F6F6] rounded-[32px] p-6 sm:p-7 flex flex-col justify-between transition-shadow duration-300 shadow-card-soft hover:shadow-card-hover border border-black/[0.04] overflow-hidden"
+                  style={{ willChange: 'clip-path, transform, opacity' }}
                 >
                   <div>
                     {/* Top Header: Step Number & Duration Tag */}

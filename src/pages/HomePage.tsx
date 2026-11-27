@@ -7,6 +7,7 @@ import { ProductsSection } from '../components/agency/ProductsSection';
 import { WhyChooseUsSection } from '../components/agency/WhyChooseUsSection';
 import { ProcessSection } from '../components/agency/ProcessSection';
 import { ContactSection } from '../components/agency/ContactSection';
+import { ScrollMaskReveal } from '../components/ScrollMaskReveal';
 import confetti from 'canvas-confetti';
 import { useNavigate } from 'react-router-dom';
 
@@ -18,7 +19,7 @@ export const HomePage: React.FC = () => {
       particleCount: 80,
       spread: 70,
       origin: { y: 0.6 },
-      colors: ['#A8FF00', '#0645D8', '#FFFFFF'],
+      colors: ['#DFEF87', '#05472A', '#FFFFFF'],
     });
     navigate('/contact');
   };
@@ -36,56 +37,89 @@ export const HomePage: React.FC = () => {
       className="w-full flex flex-col items-center"
     >
       {/* =========================================================================
-          STACKED CONTAINER 1: HERO CONTAINER (ELECTRIC ROYAL BLUE)
+          STACKED CONTAINER 1: HERO CONTAINER (EVERGREEN #05472A)
          ========================================================================= */}
-      <div id="home" className="w-full max-w-[1260px] bg-[#0645D8] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_25px_80px_rgba(4,26,85,0.4)] border border-white/15 my-3 sm:my-4 overflow-hidden relative">
+      <ScrollMaskReveal
+        id="home"
+        delay={0.05}
+        duration={1.0}
+        threshold={0.1}
+        className="w-full max-w-[1260px] bg-[#05472A] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_25px_80px_rgba(5,71,42,0.3)] border border-white/15 my-3 sm:my-4 overflow-hidden relative"
+      >
         <HeroSection
           onGetStarted={handleGetStarted}
           onExploreServices={() => navigate('/services')}
         />
-      </div>
+      </ScrollMaskReveal>
 
       {/* =========================================================================
-          STACKED CONTAINER 2: COLLABORATION FRAMEWORK (SOFT SLATE)
+          STACKED CONTAINER 2: COLLABORATION FRAMEWORK (CLEAN WHITE)
          ========================================================================= */}
-      <div className="w-full max-w-[1260px] bg-[#F2F5FA] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(0,10,40,0.06)] border border-black/[0.05] my-3 sm:my-4 overflow-hidden">
+      <ScrollMaskReveal
+        threshold={0.15}
+        duration={1.05}
+        className="w-full max-w-[1260px] bg-[#FFFFFF] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(5,71,42,0.06)] border border-[#05472A]/[0.08] my-3 sm:my-4 overflow-hidden"
+      >
         <TabContentToggle />
-      </div>
+      </ScrollMaskReveal>
 
       {/* =========================================================================
-          STACKED CONTAINER 4: CORE DISCIPLINES / SERVICES (CREAMY AVOCADO #DCF4A2)
+          STACKED CONTAINER 4: CORE DISCIPLINES / SERVICES (SUNNY LIME #DFEF87)
          ========================================================================= */}
-      <div id="services" className="w-full max-w-[1260px] bg-[#DCF4A2] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(6,69,216,0.06)] border border-black/[0.05] my-3 sm:my-4 overflow-hidden">
+      <ScrollMaskReveal
+        id="services"
+        threshold={0.15}
+        duration={1.05}
+        className="w-full max-w-[1260px] bg-[#DFEF87] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(5,71,42,0.1)] border border-[#05472A]/[0.12] my-3 sm:my-4 overflow-hidden"
+      >
         <ServicesSection onSelectService={handleSelectService} />
-      </div>
+      </ScrollMaskReveal>
 
       {/* =========================================================================
-          STACKED CONTAINER 5: PROPRIETARY PRODUCTS & TOOLS (CLEAN WHITE #FAFBFD)
+          STACKED CONTAINER 5: PROPRIETARY PRODUCTS & TOOLS (CLEAN WHITE)
          ========================================================================= */}
-      <div id="products" className="w-full max-w-[1260px] bg-[#FAFBFD] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(0,10,40,0.06)] border border-black/[0.05] my-3 sm:my-4 overflow-hidden">
+      <ScrollMaskReveal
+        id="products"
+        threshold={0.15}
+        duration={1.05}
+        className="w-full max-w-[1260px] bg-[#FFFFFF] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(5,71,42,0.06)] border border-[#05472A]/[0.08] my-3 sm:my-4 overflow-hidden"
+      >
         <ProductsSection />
-      </div>
+      </ScrollMaskReveal>
 
       {/* =========================================================================
-          STACKED CONTAINER 6: WHY CHOOSE US (COOL LAVENDER SILVER)
+          STACKED CONTAINER 6: WHY CHOOSE US (EVERGREEN #05472A)
          ========================================================================= */}
-      <div className="w-full max-w-[1260px] bg-[#F4F7FB] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(0,10,40,0.06)] border border-black/[0.05] my-3 sm:my-4 overflow-hidden">
+      <ScrollMaskReveal
+        threshold={0.15}
+        duration={1.05}
+        className="w-full max-w-[1260px] bg-[#05472A] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_25px_80px_rgba(5,71,42,0.3)] border border-white/15 my-3 sm:my-4 overflow-hidden"
+      >
         <WhyChooseUsSection />
-      </div>
+      </ScrollMaskReveal>
 
       {/* =========================================================================
-          STACKED CONTAINER 9: 4-STAGE AGILE PROCESS (WARM PAPER SAND)
+          STACKED CONTAINER 9: 4-STAGE AGILE PROCESS (CLEAN WHITE)
          ========================================================================= */}
-      <div className="w-full max-w-[1260px] bg-[#FAF9F5] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(0,10,40,0.06)] border border-black/[0.05] my-3 sm:my-4 overflow-hidden">
+      <ScrollMaskReveal
+        threshold={0.15}
+        duration={1.05}
+        className="w-full max-w-[1260px] bg-[#FFFFFF] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(5,71,42,0.06)] border border-[#05472A]/[0.08] my-3 sm:my-4 overflow-hidden"
+      >
         <ProcessSection />
-      </div>
+      </ScrollMaskReveal>
 
       {/* =========================================================================
-          STACKED CONTAINER 10: CONTACT SECTION (DEEP ROYAL COBALT)
+          STACKED CONTAINER 10: CONTACT SECTION (EVERGREEN #05472A)
          ========================================================================= */}
-      <div id="contact" className="w-full max-w-[1260px] bg-[#062B88] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_25px_80px_rgba(4,26,85,0.4)] border border-white/15 my-3 sm:my-4 overflow-hidden">
+      <ScrollMaskReveal
+        id="contact"
+        threshold={0.15}
+        duration={1.05}
+        className="w-full max-w-[1260px] bg-[#05472A] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_25px_80px_rgba(5,71,42,0.3)] border border-white/15 my-3 sm:my-4 overflow-hidden"
+      >
         <ContactSection preselectedService="Web Development" />
-      </div>
+      </ScrollMaskReveal>
     </motion.div>
   );
 };
