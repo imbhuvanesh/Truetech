@@ -19,7 +19,7 @@ export const HomePage: React.FC = () => {
       particleCount: 80,
       spread: 70,
       origin: { y: 0.6 },
-      colors: ['#DFEF87', '#05472A', '#FFFFFF'],
+      colors: ['#F9D601', '#3670FF', '#FFFFFF'],
     });
     navigate('/contact');
   };
@@ -37,14 +37,14 @@ export const HomePage: React.FC = () => {
       className="w-full flex flex-col items-center"
     >
       {/* =========================================================================
-          STACKED CONTAINER 1: HERO CONTAINER (EVERGREEN #05472A)
+          STACKED CONTAINER 1: HERO CONTAINER (ULTRAMARINE BLUE #3670FF)
          ========================================================================= */}
       <ScrollMaskReveal
         id="home"
         delay={0.05}
         duration={1.0}
         threshold={0.1}
-        className="w-full max-w-[1260px] bg-[#05472A] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_25px_80px_rgba(5,71,42,0.3)] border border-white/15 my-3 sm:my-4 overflow-hidden relative"
+        className="w-full max-w-[1260px] bg-[#3670FF] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_25px_80px_rgba(54,112,255,0.35)] border border-white/20 my-3 sm:my-4 overflow-hidden relative"
       >
         <HeroSection
           onGetStarted={handleGetStarted}
@@ -53,72 +53,73 @@ export const HomePage: React.FC = () => {
       </ScrollMaskReveal>
 
       {/* =========================================================================
-          STACKED CONTAINER 2: COLLABORATION FRAMEWORK (LIME BLUE #40FFA7)
+          STACKED CONTAINER 2: COLLABORATION FRAMEWORK (PURE WHITE #FFFFFF)
          ========================================================================= */}
       <ScrollMaskReveal
         id="framework"
         threshold={0.15}
         duration={1.05}
-        className="w-full max-w-[1260px] bg-[#40FFA7] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(64,255,167,0.3)] border border-[#050761]/[0.12] my-3 sm:my-4 overflow-hidden"
+        className="w-full max-w-[1260px] bg-white rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(54,112,255,0.12)] border border-[#3670FF]/15 my-3 sm:my-4 overflow-hidden"
       >
         <TabContentToggle />
       </ScrollMaskReveal>
 
       {/* =========================================================================
-          STACKED CONTAINER 4: CORE DISCIPLINES / SERVICES (SUNNY LIME #DFEF87)
+          STACKED CONTAINER 3: CORE DISCIPLINES / SERVICES (GOLDEN #F9D601)
          ========================================================================= */}
       <ScrollMaskReveal
         id="services"
         threshold={0.15}
         duration={1.05}
-        className="w-full max-w-[1260px] bg-[#DFEF87] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(5,71,42,0.1)] border border-[#05472A]/[0.12] my-3 sm:my-4 overflow-hidden"
+        className="w-full max-w-[1260px] bg-[#F9D601] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(249,214,1,0.25)] border border-[#0C2B80]/[0.12] my-3 sm:my-4 overflow-hidden"
       >
         <ServicesSection onSelectService={handleSelectService} />
       </ScrollMaskReveal>
 
       {/* =========================================================================
-          STACKED CONTAINER 5: PROPRIETARY PRODUCTS & TOOLS (LIME BLUE #40FFA7)
+          STACKED CONTAINER 4: PROPRIETARY PRODUCTS & TOOLS (ULTRAMARINE BLUE #3670FF)
          ========================================================================= */}
       <ScrollMaskReveal
         id="products"
         threshold={0.15}
         duration={1.05}
-        className="w-full max-w-[1260px] bg-[#40FFA7] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(64,255,167,0.3)] border border-[#050761]/[0.12] my-3 sm:my-4 overflow-hidden"
+        className="w-full max-w-[1260px] bg-[#3670FF] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_25px_80px_rgba(54,112,255,0.35)] border border-white/20 my-3 sm:my-4 overflow-hidden"
       >
         <ProductsSection />
       </ScrollMaskReveal>
 
       {/* =========================================================================
-          STACKED CONTAINER 6: WHY CHOOSE US (EVERGREEN #05472A)
+          STACKED CONTAINER 5: WHY CHOOSE US (PURE WHITE #FFFFFF)
          ========================================================================= */}
       <ScrollMaskReveal
+        id="why-us"
         threshold={0.15}
         duration={1.05}
-        className="w-full max-w-[1260px] bg-[#05472A] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_25px_80px_rgba(5,71,42,0.3)] border border-white/15 my-3 sm:my-4 overflow-hidden"
+        className="w-full max-w-[1260px] bg-white rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(54,112,255,0.12)] border border-[#3670FF]/15 my-3 sm:my-4 overflow-hidden"
       >
         <WhyChooseUsSection />
       </ScrollMaskReveal>
 
       {/* =========================================================================
-          STACKED CONTAINER 9: 4-STAGE AGILE PROCESS (LIME BLUE #40FFA7)
+          STACKED CONTAINER 6: 4-STAGE AGILE PROCESS (GOLDEN #F9D601)
          ========================================================================= */}
       <ScrollMaskReveal
         id="process"
         threshold={0.15}
         duration={1.05}
-        className="w-full max-w-[1260px] bg-[#40FFA7] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(64,255,167,0.3)] border border-[#050761]/[0.12] my-3 sm:my-4 overflow-hidden"
+        className="w-full max-w-[1260px] bg-[#F9D601] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(249,214,1,0.25)] border border-[#0C2B80]/[0.12] my-3 sm:my-4 overflow-hidden"
       >
         <ProcessSection />
       </ScrollMaskReveal>
 
       {/* =========================================================================
-          STACKED CONTAINER 10: CONTACT SECTION (EVERGREEN #05472A)
+          STACKED CONTAINER 7: CONTACT SECTION (ULTRAMARINE BLUE #3670FF)
          ========================================================================= */}
       <ScrollMaskReveal
         id="contact"
         threshold={0.15}
         duration={1.05}
-        className="w-full max-w-[1260px] bg-[#05472A] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_25px_80px_rgba(5,71,42,0.3)] border border-white/15 my-3 sm:my-4 overflow-hidden"
+        className="w-full max-w-[1260px] bg-[#3670FF] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_25px_80px_rgba(54,112,255,0.35)] border border-white/20 my-3 sm:my-4 overflow-hidden"
       >
         <ContactSection preselectedService="Web Development" />
       </ScrollMaskReveal>

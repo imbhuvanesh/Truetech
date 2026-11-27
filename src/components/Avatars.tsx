@@ -25,7 +25,7 @@ export const DesignerAvatar: React.FC<{ size?: number; className?: string }> = (
         {/* Torso / Shoulders */}
         <path d="M22 84 C24 64, 38 58, 50 58 C62 58, 76 64, 78 84 Z" fill="#FFFFFF" />
         {/* Creative Accent Sparkle */}
-        <path d="M78 24 L80 29 L85 31 L80 33 L78 38 L76 33 L71 31 L76 29 Z" fill="#DFEF87" />
+        <path d="M78 24 L80 29 L85 31 L80 33 L78 38 L76 33 L71 31 L76 29 Z" fill="#F9D601" />
       </svg>
     </div>
   );
@@ -35,7 +35,7 @@ export const DesignerAvatar: React.FC<{ size?: number; className?: string }> = (
 export const DeveloperAvatar: React.FC<{ size?: number; className?: string }> = ({ size = 64, className = '' }) => {
   return (
     <div 
-      className={`rounded-full overflow-hidden bg-gradient-to-tr from-[#05472A] via-[#085A35] to-[#DFEF87] flex items-center justify-center shadow-lg border-2 border-white/80 ${className}`}
+      className={`rounded-full overflow-hidden bg-gradient-to-tr from-[#0C2B80] via-[#3670FF] to-[#F9D601] flex items-center justify-center shadow-lg border-2 border-white/80 ${className}`}
       style={{ width: size, height: size }}
     >
       <svg 
@@ -48,18 +48,18 @@ export const DeveloperAvatar: React.FC<{ size?: number; className?: string }> = 
         {/* Head */}
         <circle cx="50" cy="38" r="18" fill="#FFFFFF" />
         {/* Modern Cap / Headset */}
-        <path d="M30 36 C30 24, 70 24, 70 36" stroke="#0F172A" strokeWidth="4" strokeLinecap="round" />
-        <circle cx="28" cy="38" r="4" fill="#DFEF87" />
-        <circle cx="72" cy="38" r="4" fill="#DFEF87" />
+        <path d="M30 36 C30 24, 70 24, 70 36" stroke="#0C2B80" strokeWidth="4" strokeLinecap="round" />
+        <circle cx="28" cy="38" r="4" fill="#F9D601" />
+        <circle cx="72" cy="38" r="4" fill="#F9D601" />
         {/* Eyes */}
-        <circle cx="43" cy="38" r="2.5" fill="#0F172A" />
-        <circle cx="57" cy="38" r="2.5" fill="#0F172A" />
+        <circle cx="43" cy="38" r="2.5" fill="#0C2B80" />
+        <circle cx="57" cy="38" r="2.5" fill="#0C2B80" />
         {/* Confident Smile */}
-        <path d="M45 47 C48 50, 52 50, 55 47" stroke="#0F172A" strokeWidth="2.5" strokeLinecap="round" />
+        <path d="M45 47 C48 50, 52 50, 55 47" stroke="#0C2B80" strokeWidth="2.5" strokeLinecap="round" />
         {/* Torso / Hoodie */}
         <path d="M22 84 C24 64, 38 58, 50 58 C62 58, 76 64, 78 84 Z" fill="#FFFFFF" />
         {/* Code Accent </> */}
-        <text x="50" y="74" fill="#05472A" fontSize="13" fontWeight="bold" textAnchor="middle" fontFamily="monospace">&lt;/&gt;</text>
+        <text x="50" y="74" fill="#0C2B80" fontSize="13" fontWeight="bold" textAnchor="middle" fontFamily="monospace">&lt;/&gt;</text>
       </svg>
     </div>
   );

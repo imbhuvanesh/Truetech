@@ -26,10 +26,10 @@ export const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="w-full bg-[#05472A] text-white border-t border-white/10 mt-16 sm:mt-24 pt-12 sm:pt-16 pb-10 px-4 sm:px-8 select-none relative">
+    <footer className="w-full bg-[#2256DB] text-white border-t border-white/20 mt-16 sm:mt-24 pt-12 sm:pt-16 pb-10 px-4 sm:px-8 select-none relative">
       <div className="max-w-6xl mx-auto">
         {/* Main Footer Content Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 pb-8 sm:pb-12 border-b border-white/10 text-xs sm:text-sm">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 pb-8 sm:pb-12 border-b border-white/15 text-xs sm:text-sm">
           
           {/* Col 1 (5 cols): Company Brand & Philosophy */}
           <div className="lg:col-span-5 flex flex-col justify-between">
@@ -39,22 +39,22 @@ export const Footer: React.FC = () => {
                 className="flex items-center space-x-2.5 mb-4 cursor-pointer group select-none"
                 onClick={scrollToTop}
               >
-                <div className="w-9 h-9 rounded-xl bg-[#DFEF87] text-[#05472A] flex items-center justify-center font-sans font-black text-base shadow-sm group-hover:scale-105 transition-transform duration-200">
+                <div className="w-9 h-9 rounded-xl bg-[#F9D601] text-[#0C2B80] flex items-center justify-center font-sans font-black text-base shadow-sm group-hover:scale-105 transition-transform duration-200">
                   G
                 </div>
                 <div className="flex flex-col">
                   <span className="font-sans font-bold text-lg tracking-tight text-white">GENORA</span>
-                  <span className="font-sans font-normal text-white/60 text-[10px] tracking-wider uppercase">Digital Agency</span>
+                  <span className="font-sans font-normal text-white/70 text-[10px] tracking-wider uppercase">Digital Agency</span>
                 </div>
               </div>
 
-              <p className="text-white/70 font-sans font-normal text-xs sm:text-sm leading-relaxed max-w-sm mb-5">
+              <p className="text-white/80 font-sans font-normal text-xs sm:text-sm leading-relaxed max-w-sm mb-5">
                 A creative technology and digital marketing agency providing complete digital solutions to businesses, startups and individuals. We turn vision into scalable digital experiences.
               </p>
 
               {/* Status Indicator */}
-              <div className="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-[#DFEF87]/15 border border-[#DFEF87]/25 text-[#DFEF87] text-xs font-medium font-sans">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#DFEF87] animate-pulse" />
+              <div className="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-white/15 border border-white/25 text-[#F9D601] text-xs font-medium font-sans">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#F9D601] animate-pulse" />
                 <span>Accepting New Client Projects for Q1 2027</span>
               </div>
             </div>
@@ -73,7 +73,7 @@ export const Footer: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="w-8 h-8 rounded-full bg-white/10 hover:bg-[#DFEF87] text-white/70 hover:text-[#05472A] border border-white/10 flex items-center justify-center transition-all duration-200"
+                  className="w-8 h-8 rounded-full bg-white/15 hover:bg-[#F9D601] text-white hover:text-[#0C2B80] border border-white/20 flex items-center justify-center transition-all duration-200"
                 >
                   {svg}
                 </a>
@@ -86,13 +86,13 @@ export const Footer: React.FC = () => {
             <div className="font-sans font-bold text-xs text-white uppercase tracking-wider mb-4">
               Navigation
             </div>
-            <ul className="space-y-2.5 text-white/70 font-sans text-xs sm:text-sm">
+            <ul className="space-y-2.5 text-white/80 font-sans text-xs sm:text-sm">
               {navLinks.map((link) => (
                 <li key={link.label}>
                   <Link
                     to={link.href}
                     onClick={scrollToTop}
-                    className="hover:text-[#DFEF87] transition-colors font-medium flex items-center space-x-1"
+                    className="hover:text-[#F9D601] transition-colors font-medium flex items-center space-x-1"
                   >
                     <span>{link.label}</span>
                   </Link>
@@ -106,13 +106,13 @@ export const Footer: React.FC = () => {
             <div className="font-sans font-bold text-xs text-white uppercase tracking-wider mb-4">
               Services
             </div>
-            <ul className="space-y-2.5 text-white/70 font-sans text-xs sm:text-sm">
+            <ul className="space-y-2.5 text-white/80 font-sans text-xs sm:text-sm">
               {serviceLinks.map((svc) => (
                 <li key={svc.label}>
                   <Link
                     to={svc.href}
                     onClick={scrollToTop}
-                    className="hover:text-[#DFEF87] transition-colors font-medium"
+                    className="hover:text-[#F9D601] transition-colors font-medium"
                   >
                     {svc.label}
                   </Link>
@@ -126,20 +126,20 @@ export const Footer: React.FC = () => {
             <div className="font-sans font-bold text-xs text-white uppercase tracking-wider mb-4">
               Direct Reach
             </div>
-            <ul className="space-y-3 text-white/70 font-sans text-xs">
+            <ul className="space-y-3 text-white/80 font-sans text-xs">
               <li className="flex items-start space-x-2">
-                <Mail className="w-4 h-4 text-[#DFEF87] shrink-0 mt-0.5" />
+                <Mail className="w-4 h-4 text-[#F9D601] shrink-0 mt-0.5" />
                 <a href="mailto:hello@genora.agency" className="hover:text-white transition-colors break-all">
                   hello@genora.agency
                 </a>
               </li>
               <li className="flex items-center space-x-2">
-                <Phone className="w-4 h-4 text-[#DFEF87] shrink-0" />
+                <Phone className="w-4 h-4 text-[#F9D601] shrink-0" />
                 <span className="text-white font-medium">+1 (800) 450-GENORA</span>
               </li>
               <li className="pt-2">
-                <div className="text-[11px] text-white/60 font-normal">
-                  Response Guarantee: <span className="text-[#DFEF87] font-bold">&lt; 2 Hours</span>
+                <div className="text-[11px] text-white/70 font-normal">
+                  Response Guarantee: <span className="text-[#F9D601] font-bold">&lt; 2 Hours</span>
                 </div>
               </li>
             </ul>
@@ -148,19 +148,19 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Copyright & Legal Links Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-white/60 font-sans gap-4">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-white/70 font-sans gap-4">
           <div className="flex items-center space-x-2">
             <span>&copy; 2027 GENORA Digital Agency. Built with precision for ambitious brands.</span>
           </div>
 
           <div className="flex items-center space-x-4">
-            <Link to="/about" className="hover:text-[#DFEF87] transition-colors">Privacy Policy</Link>
+            <Link to="/about" className="hover:text-[#F9D601] transition-colors">Privacy Policy</Link>
             <span>•</span>
-            <Link to="/about" className="hover:text-[#DFEF87] transition-colors">Terms of Service</Link>
+            <Link to="/about" className="hover:text-[#F9D601] transition-colors">Terms of Service</Link>
             <span>•</span>
             <button
               onClick={scrollToTop}
-              className="inline-flex items-center space-x-1.5 text-white/80 hover:text-[#DFEF87] transition-colors font-semibold cursor-pointer"
+              className="inline-flex items-center space-x-1.5 text-white/90 hover:text-[#F9D601] transition-colors font-semibold cursor-pointer"
             >
               <span>Back to Top</span>
               <ArrowUp className="w-3.5 h-3.5" />

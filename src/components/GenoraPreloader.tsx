@@ -97,7 +97,7 @@ export const GenoraPreloader: React.FC<GenoraPreloaderProps> = ({ onComplete }) 
                 clipPath: 'circle(150% at 50% 50%)',
               }
         }
-        className="fixed inset-0 z-[99999] bg-[#40FFA7] flex flex-col items-center justify-center select-none overflow-hidden"
+        className="fixed inset-0 z-[99999] bg-[#3670FF] flex flex-col items-center justify-center select-none overflow-hidden"
         style={{ willChange: 'clip-path' }}
       >
         <div className="relative w-full max-w-[1020px] px-4 sm:px-8 md:px-12 flex flex-col items-center justify-center overflow-visible">
@@ -118,21 +118,21 @@ export const GenoraPreloader: React.FC<GenoraPreloaderProps> = ({ onComplete }) 
             {/*
               CUSTOM VECTOR ORGANIC BUBBLE TYPOGRAPHY: GENORA
               Inspired by chunky 70s psych-rock bubble lettering.
-              Color: Deep Midnight Blue #050761 on vibrant Lime Blue #40FFA7 background.
+              Color: Radiant Golden #F9D601 on Ultramarine Blue #3670FF background.
               Directly visible with fluid stretching and organic settling.
             */}
             <svg
               viewBox="-40 -30 1180 350"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="w-full h-auto max-h-[38vh] overflow-visible drop-shadow-[0_18px_45px_rgba(5,7,97,0.3)]"
+              className="w-full h-auto max-h-[38vh] overflow-visible drop-shadow-[0_20px_50px_rgba(23,23,23,0.35)]"
             >
               <defs>
-                {/* Deep Midnight Blue Gradient */}
-                <linearGradient id="genoraBlue" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#0B1340" />
-                  <stop offset="50%" stopColor="#050761" />
-                  <stop offset="100%" stopColor="#020438" />
+                {/* Radiant Golden Gradient from Reference Palette */}
+                <linearGradient id="genoraGolden" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#FFF275" />
+                  <stop offset="50%" stopColor="#F9D601" />
+                  <stop offset="100%" stopColor="#E5BE00" />
                 </linearGradient>
               </defs>
 
@@ -151,7 +151,7 @@ export const GenoraPreloader: React.FC<GenoraPreloaderProps> = ({ onComplete }) 
                     fillRule="evenodd"
                     clipRule="evenodd"
                     d="M115 28C164 24 196 54 200 100C203 128 191 150 174 162C167 167 159 170 148 171C146 181 149 190 160 192C175 195 193 189 204 183C211 179 217 184 216 193C213 220 201 252 170 264C134 278 76 276 43 238C13 205 9 152 15 103C22 51 64 32 115 28ZM118 84C94 86 76 105 73 137C69 171 84 207 117 209C134 210 147 200 149 183C136 181 125 178 114 174C105 170 104 156 113 152C126 146 141 145 151 144C153 124 150 101 138 90C133 85 126 83 118 84Z"
-                    fill="url(#genoraBlue)"
+                    fill="url(#genoraGolden)"
                   />
                 </motion.g>
 
@@ -169,7 +169,7 @@ export const GenoraPreloader: React.FC<GenoraPreloaderProps> = ({ onComplete }) 
                     fillRule="evenodd"
                     clipRule="evenodd"
                     d="M238 36C286 30 351 27 361 65C367 88 351 100 327 104C306 107 286 108 282 121C298 118 319 117 336 124C351 130 353 147 344 157C333 169 312 170 283 171C282 187 286 196 306 197C327 198 349 190 365 181C372 177 379 184 377 196C373 224 356 257 318 266C276 276 235 264 223 224C210 183 213 99 220 60C223 43 230 37 238 36Z"
-                    fill="url(#genoraBlue)"
+                    fill="url(#genoraGolden)"
                   />
                 </motion.g>
 
@@ -187,7 +187,7 @@ export const GenoraPreloader: React.FC<GenoraPreloaderProps> = ({ onComplete }) 
                     fillRule="evenodd"
                     clipRule="evenodd"
                     d="M400 42C420 36 443 46 447 67C451 86 452 110 455 137C471 105 494 65 519 44C541 26 569 36 575 64C581 92 578 189 576 228C575 251 558 265 539 264C520 263 514 246 515 226C517 195 519 152 520 131C503 162 478 210 456 241C442 260 422 267 408 255C394 245 392 226 393 202C396 156 395 89 392 58C391 50 394 45 400 42Z"
-                    fill="url(#genoraBlue)"
+                    fill="url(#genoraGolden)"
                   />
                 </motion.g>
 
@@ -205,7 +205,7 @@ export const GenoraPreloader: React.FC<GenoraPreloaderProps> = ({ onComplete }) 
                     fillRule="evenodd"
                     clipRule="evenodd"
                     d="M682 30C736 28 782 65 784 120C786 177 756 249 697 268C639 285 587 254 577 197C567 139 591 60 652 37C662 33 673 31 682 30ZM680 89C653 90 631 117 633 153C635 192 652 215 677 214C703 213 725 186 723 150C721 113 705 88 680 89Z"
-                    fill="url(#genoraBlue)"
+                    fill="url(#genoraGolden)"
                   />
                 </motion.g>
 
@@ -223,7 +223,7 @@ export const GenoraPreloader: React.FC<GenoraPreloaderProps> = ({ onComplete }) 
                     fillRule="evenodd"
                     clipRule="evenodd"
                     d="M804 38C853 31 922 32 928 80C933 117 913 145 875 155C895 172 915 201 929 234C940 256 926 272 906 269C888 266 874 251 863 230C848 202 833 179 818 175C813 174 811 179 811 189C810 210 810 241 808 254C807 266 797 272 784 269C772 266 767 254 767 239C769 187 769 95 774 59C777 44 788 40 804 38ZM813 87C812 105 812 126 813 138C829 138 853 136 862 126C871 116 874 102 869 92C862 80 840 81 824 83C819 84 815 85 813 87Z"
-                    fill="url(#genoraBlue)"
+                    fill="url(#genoraGolden)"
                   />
                 </motion.g>
 
@@ -241,7 +241,7 @@ export const GenoraPreloader: React.FC<GenoraPreloaderProps> = ({ onComplete }) 
                     fillRule="evenodd"
                     clipRule="evenodd"
                     d="M1000 28C1038 26 1067 51 1072 87C1078 128 1080 198 1085 238C1087 256 1074 269 1055 268C1037 267 1029 252 1027 234C1025 216 1023 202 1022 190C1001 191 974 192 958 194C955 210 952 230 948 244C942 261 928 270 911 266C897 262 891 247 896 229C905 187 929 101 959 55C970 38 985 30 1000 28ZM996 91C983 116 971 148 965 165C980 163 1000 161 1015 160C1013 141 1011 120 1007 100C1005 91 1000 86 996 91Z"
-                    fill="url(#genoraBlue)"
+                    fill="url(#genoraGolden)"
                   />
                 </motion.g>
               </g>

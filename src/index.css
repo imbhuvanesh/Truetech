@@ -2,21 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  /* Global Reference Palette: Golden, Ultramarine Blue, Bright Gray (ZERO BLACK) */
+  --color-golden: #F9D601;
+  --color-ultramarine: #3670FF;
+  --color-ultramarine-dark: #2256DB;
+  --color-bright-gray: #EFEFEF;
+  --color-deep-blue: #0C2B80;
+  --color-white: #FFFFFF;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
   }
   body {
-    background-color: #082B91;
-    color: #101010;
+    background-color: var(--color-bright-gray, #EFEFEF);
+    color: var(--color-deep-blue, #0C2B80);
     font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
   }
   ::selection {
-    background-color: #DFEF87;
-    color: #080808;
+    background-color: var(--color-golden, #F9D601);
+    color: var(--color-deep-blue, #0C2B80);
   }
 }
 
@@ -24,16 +34,16 @@
 .bg-grid-pattern {
   background-size: 40px 40px;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
 }
 
 /* Technical blue grid pattern matching reference */
 .hero-grid {
   background-size: 56px 56px;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 255, 255, 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
 }
 
 /* Translucent glass profile cards matching reference */
@@ -46,34 +56,34 @@
 
 .bg-dot-pattern {
   background-size: 24px 24px;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px);
 }
 
-/* Smooth custom dark scrollbar */
+/* Smooth custom blue/gold scrollbar (No Black) */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #09090b;
+  background: #EFEFEF;
 }
 ::-webkit-scrollbar-thumb {
-  background: #27272a;
+  background: #3670FF;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #3f3f46;
+  background: #2256DB;
 }
 
 /* Subtle glassmorphism */
 .glass-panel {
-  background: rgba(18, 18, 20, 0.75);
+  background: rgba(12, 43, 128, 0.75);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .glass-panel:hover {
-  border-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 /* Slow rotation animation for badges */
@@ -90,7 +100,7 @@
   animation: spin-slow 16s linear infinite;
 }
 
-/* Tab content toggle (GSAP/SplitText) by himaaax */
+/* Tab content toggle (GSAP/SplitText) */
 .tabs-demo {
   width: 100%;
   max-width: 1020px;
@@ -108,28 +118,29 @@
 
 .tab {
   border: none;
-  padding: 10px 20px;
+  padding: 10px 22px;
   border-radius: 999px;
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.02em;
-  color: #101010;
+  color: rgba(255, 255, 255, 0.85);
   cursor: pointer;
-  background: rgba(0, 0, 0, 0.06);
+  background: rgba(255, 255, 255, 0.12);
   transition: all 0.25s cubic-bezier(0.256, 0.009, 0.125, 0.997);
   outline: none;
   font-family: 'DM Sans', system-ui, sans-serif;
 }
 
 .tab:hover {
-  background: rgba(0, 0, 0, 0.12);
+  background: rgba(255, 255, 255, 0.22);
+  color: #ffffff;
   transform: translateY(-1px);
 }
 
 .tab.active {
-  background: #05472A;
-  color: #ffffff;
-  box-shadow: 0 8px 24px -4px rgba(6, 69, 216, 0.4);
+  background: #F9D601;
+  color: #0C2B80;
+  box-shadow: 0 8px 24px -4px rgba(249, 214, 1, 0.45);
 }
 
 .content-wrapper {
@@ -148,7 +159,7 @@
   font-weight: 300;
   line-height: 1.25;
   letter-spacing: -0.025em;
-  color: #101010;
+  color: #FFFFFF;
   font-family: 'DM Sans', system-ui, sans-serif;
   max-width: 900px;
   margin: 0 auto;

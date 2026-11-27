@@ -34,12 +34,12 @@ export const FloatingBackToTop: React.FC = () => {
           whileHover={{ scale: 1.08 }}
           whileTap={{ scale: 0.94 }}
           transition={{ duration: shouldReduceMotion ? 0 : 0.3, ease: [0.19, 1, 0.22, 1] }}
-          className="fixed bottom-6 right-6 z-50 group flex items-center justify-center w-12 h-12 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#DFEF87]/50 rounded-full bg-[#05472A] hover:bg-[#DFEF87] text-[#DFEF87] hover:text-[#05472A] border border-white/15 hover:border-[#DFEF87] shadow-[0_8px_30px_rgba(5,71,42,0.35)] hover:shadow-[0_8px_30px_rgba(223,239,135,0.4)] transition-all duration-300"
+          className="fixed bottom-6 right-6 z-50 group flex items-center justify-center w-12 h-12 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#F9D601]/50 rounded-full bg-[#0C2B80] hover:bg-[#F9D601] text-[#F9D601] hover:text-[#0C2B80] border border-white/20 hover:border-[#F9D601] shadow-[0_8px_30px_rgba(12,43,128,0.4)] hover:shadow-[0_8px_30px_rgba(249,214,1,0.5)] transition-all duration-300"
         >
           <ArrowUp className="w-5 h-5 transition-transform duration-200 group-hover:-translate-y-0.5" />
           
           {/* Minimal Tooltip */}
-          <span className="absolute -top-9 left-1/2 -translate-x-1/2 bg-[#070B16] text-white text-[10px] font-sans font-medium tracking-wide px-2 py-0.5 rounded-md border border-white/10 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap">
+          <span className="absolute -top-9 left-1/2 -translate-x-1/2 bg-[#0C2B80] text-white text-[10px] font-sans font-medium tracking-wide px-2 py-0.5 rounded-md border border-white/10 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap">
             Back to Top
           </span>
         </motion.button>

@@ -32,8 +32,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onStartProject }) => {
       <div 
         className={`max-w-7xl mx-auto rounded-full px-5 sm:px-7 py-3 sm:py-3.5 flex items-center justify-between transition-all duration-300 ${
           scrolled 
-            ? 'bg-black/85 backdrop-blur-xl border border-white/15 shadow-[0_10px_35px_rgba(0,0,0,0.6)]' 
-            : 'bg-black/40 backdrop-blur-md border border-white/10 shadow-sm'
+            ? 'bg-[#0C2B80]/90 backdrop-blur-xl border border-white/20 shadow-[0_10px_35px_rgba(12,43,128,0.5)]' 
+            : 'bg-[#0C2B80]/60 backdrop-blur-md border border-white/15 shadow-sm'
         }`}
       >
         {/* Brand Logo */}
@@ -41,7 +41,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onStartProject }) => {
           href="#"
           className="flex items-center space-x-2.5 text-white group select-none"
         >
-          <div className="w-8 h-8 rounded-xl bg-white text-black flex items-center justify-center font-display font-black text-sm shadow-[0_0_15px_rgba(255,255,255,0.4)] transition-transform group-hover:scale-105">
+          <div className="w-8 h-8 rounded-xl bg-white text-[#0C2B80] flex items-center justify-center font-display font-black text-sm shadow-[0_0_15px_rgba(255,255,255,0.4)] transition-transform group-hover:scale-105">
             N
           </div>
           <span className="font-display font-bold text-base sm:text-lg tracking-tight text-white">
@@ -66,7 +66,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onStartProject }) => {
         <div className="hidden sm:flex items-center space-x-3">
           <button
             onClick={onStartProject}
-            className="group relative inline-flex items-center space-x-2 bg-white text-black font-display text-xs sm:text-sm font-bold px-4 sm:px-5 py-2 sm:py-2.5 rounded-full shadow-[0_4px_20px_rgba(255,255,255,0.25)] hover:shadow-[0_6px_25px_rgba(255,255,255,0.4)] transition-all duration-200 hover:scale-[1.02] active:scale-95"
+            className="group relative inline-flex items-center space-x-2 bg-white text-[#0C2B80] font-display text-xs sm:text-sm font-bold px-4 sm:px-5 py-2 sm:py-2.5 rounded-full shadow-[0_4px_20px_rgba(255,255,255,0.25)] hover:shadow-[0_6px_25px_rgba(255,255,255,0.4)] transition-all duration-200 hover:scale-[1.02] active:scale-95"
           >
             <span>Start a Project</span>
             <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -93,7 +93,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onStartProject }) => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -10, scale: 0.98 }}
             transition={{ duration: 0.2 }}
-            className="sm:hidden mt-3 max-w-7xl mx-auto bg-black/95 backdrop-blur-2xl border border-white/15 rounded-3xl p-6 shadow-2xl text-white"
+            className="sm:hidden mt-3 max-w-7xl mx-auto bg-[#0C2B80]/95 backdrop-blur-2xl border border-white/20 rounded-3xl p-6 shadow-2xl text-white"
           >
             <div className="flex flex-col space-y-3">
               {navLinks.map((link) => (
@@ -101,7 +101,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onStartProject }) => {
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-sm font-medium text-zinc-300 hover:text-white py-2 border-b border-white/5 transition-colors"
+                  className="text-sm font-medium text-white/80 hover:text-white py-2 border-b border-white/10 transition-colors"
                 >
                   {link.label}
                 </a>
@@ -112,7 +112,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onStartProject }) => {
                     setMobileMenuOpen(false);
                     onStartProject();
                   }}
-                  className="w-full py-3 bg-white text-black font-display text-sm font-bold rounded-2xl flex items-center justify-center space-x-2 shadow-lg"
+                  className="w-full py-3 bg-[#F9D601] text-[#0C2B80] font-display text-sm font-bold rounded-2xl flex items-center justify-center space-x-2 shadow-lg"
                 >
                   <Sparkles className="w-4 h-4" />
                   <span>Start a Project</span>

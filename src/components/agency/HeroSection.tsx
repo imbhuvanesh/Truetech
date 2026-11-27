@@ -15,7 +15,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="relative w-full pt-32 sm:pt-40 md:pt-48 pb-20 sm:pb-28 md:pb-36 px-4 sm:px-8 select-none overflow-hidden bg-[#09090b] bg-grid-pattern">
+    <section className="relative w-full pt-32 sm:pt-40 md:pt-48 pb-20 sm:pb-28 md:pb-36 px-4 sm:px-8 select-none overflow-hidden bg-[#3670FF] bg-grid-pattern">
       
       {/* Ambient background glow highlights */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[900px] h-[350px] sm:h-[450px] bg-gradient-to-tr from-white/10 via-zinc-800/15 to-transparent blur-[140px] pointer-events-none rounded-full" />
@@ -69,7 +69,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           {/* CTA 1: Start a Project */}
           <button
             onClick={onStartProject}
-            className="w-full sm:w-auto group inline-flex items-center justify-center space-x-2.5 bg-white text-black font-display text-sm sm:text-base font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded-full shadow-[0_4px_25px_rgba(255,255,255,0.25)] hover:shadow-[0_8px_35px_rgba(255,255,255,0.45)] transition-all duration-300 hover:scale-[1.02] active:scale-95"
+            className="w-full sm:w-auto group inline-flex items-center justify-center space-x-2.5 bg-white text-[#0C2B80] font-display text-sm sm:text-base font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded-full shadow-[0_4px_25px_rgba(255,255,255,0.25)] hover:shadow-[0_8px_35px_rgba(255,255,255,0.45)] transition-all duration-300 hover:scale-[1.02] active:scale-95"
           >
             <span>Start a Project</span>
             <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />

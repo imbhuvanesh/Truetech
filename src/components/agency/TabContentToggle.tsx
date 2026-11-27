@@ -309,13 +309,13 @@ export const TabContentToggle: React.FC = () => {
   const activeTab = TAB_CONTENT[activeIndex] || TAB_CONTENT[0];
 
   return (
-    <section className="relative w-full py-8 sm:py-12 md:py-16 px-4 sm:px-8 bg-transparent overflow-hidden">
+    <section className="relative w-full py-8 sm:py-12 md:py-16 px-4 sm:px-8 bg-transparent overflow-hidden text-[#0C2B80]">
       <div ref={containerRef} className="tabs-demo relative z-10 max-w-6xl mx-auto">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 pb-4 border-b border-[#050761]/[0.12]">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 pb-4 border-b border-[#3670FF]/15">
           <div className="max-w-2xl">
             <div className="flex items-center space-x-3 mb-3">
-              <FadeUpText delay={0.05} className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#050761]/10 text-[#050761] font-bold text-xs tracking-wider uppercase">
+              <FadeUpText delay={0.05} className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#3670FF]/10 border border-[#3670FF]/20 text-[#3670FF] font-bold text-xs tracking-wider uppercase">
                 <Users className="w-3.5 h-3.5" />
                 <span>Collaboration Framework</span>
               </FadeUpText>
@@ -323,14 +323,14 @@ export const TabContentToggle: React.FC = () => {
 
             <MaskedLineReveal
               lines={["TAILORED COLLABORATION", "FOR HIGH-VELOCITY TEAMS."]}
-              className="font-sans text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#050761] leading-[1.12]"
+              className="font-sans text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#0C2B80] leading-[1.12]"
               delay={0.1}
             />
           </div>
 
           <div className="mt-4 md:mt-0 max-w-md">
             <FadeUpParagraph
-              className="text-sm sm:text-base text-[#050761]/85 font-medium font-sans leading-relaxed"
+              className="text-sm sm:text-base text-[#0C2B80]/80 font-medium font-sans leading-relaxed"
               delay={0.25}
             >
               Whether you are an established engineering organization, a venture-backed founder, or a creative agency team, we adapt to your operational tempo.
@@ -346,8 +346,10 @@ export const TabContentToggle: React.FC = () => {
               role="tab"
               aria-selected={activeIndex === idx}
               onClick={() => switchTab(idx)}
-              className={`tab font-sans font-semibold text-xs sm:text-sm tracking-wide cursor-pointer transition-all ${
-                activeIndex === idx ? 'active bg-royal-blue text-white shadow-md' : 'hover:bg-black/10'
+              className={`px-5 py-2.5 rounded-full font-sans font-semibold text-xs sm:text-sm tracking-wide cursor-pointer transition-all ${
+                activeIndex === idx
+                  ? 'bg-[#3670FF] text-white font-bold shadow-md scale-[1.02]'
+                  : 'bg-[#EFEFEF] text-[#0C2B80] hover:bg-[#3670FF]/15 hover:text-[#3670FF]'
               }`}
             >
               {tab.label}
@@ -356,9 +358,9 @@ export const TabContentToggle: React.FC = () => {
         </div>
 
         {/* Animated Headline Text Box */}
-        <div className="content-wrapper relative bg-white rounded-3xl p-6 sm:p-8 md:p-10 border border-black/[0.06] shadow-card-soft mb-6" id="contentWrapper">
-          <div className="text-xs font-mono uppercase tracking-widest text-royal-blue font-bold mb-3 flex items-center space-x-2">
-            <span className="w-2 h-2 rounded-full bg-royal-blue animate-pulse" />
+        <div className="content-wrapper relative bg-[#EFEFEF] rounded-3xl p-6 sm:p-8 md:p-10 border border-[#3670FF]/10 shadow-card-soft mb-6" id="contentWrapper">
+          <div className="text-xs font-mono uppercase tracking-widest text-[#3670FF] font-bold mb-3 flex items-center space-x-2">
+            <span className="w-2 h-2 rounded-full bg-[#3670FF] animate-pulse" />
             <span>{activeTab.badge}</span>
           </div>
 
@@ -368,7 +370,7 @@ export const TabContentToggle: React.FC = () => {
               ref={(el) => {
                 panelsRef.current[idx] = el;
               }}
-              className="role-content select-text text-lg sm:text-xl md:text-2xl font-light text-zinc-900 leading-snug"
+              className="role-content select-text text-lg sm:text-xl md:text-2xl font-light text-[#0C2B80] leading-snug"
               style={{
                 pointerEvents: activeIndex === idx ? 'auto' : 'none',
               }}
@@ -378,7 +380,7 @@ export const TabContentToggle: React.FC = () => {
           ))}
         </div>
 
-        {/* Populated Role Feature Cards Grid - Fills Container Purposefully */}
+        {/* Populated Role Feature Cards Grid */}
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab.id}
@@ -393,21 +395,21 @@ export const TabContentToggle: React.FC = () => {
               return (
                 <div
                   key={fIdx}
-                  className="bg-white/80 backdrop-blur-md rounded-2xl p-5 border border-black/[0.05] shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow"
+                  className="bg-[#EFEFEF] rounded-2xl p-5 border border-[#3670FF]/10 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-3">
-                      <div className="w-9 h-9 rounded-xl bg-royal-blue/10 text-royal-blue flex items-center justify-center">
+                      <div className="w-9 h-9 rounded-xl bg-white text-[#3670FF] flex items-center justify-center shadow-sm">
                         <Icon className="w-4 h-4" />
                       </div>
-                      <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-[#DFEF87] text-[#05472A]">
+                      <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-[#F9D601] text-[#0C2B80]">
                         {feat.metric}
                       </span>
                     </div>
-                    <h4 className="font-sans font-bold text-sm text-black">
+                    <h4 className="font-sans font-bold text-sm text-[#0C2B80]">
                       {feat.title}
                     </h4>
-                    <p className="font-sans text-xs text-zinc-600 mt-1 leading-relaxed">
+                    <p className="font-sans text-xs text-[#0C2B80]/75 mt-1 leading-relaxed">
                       {feat.desc}
                     </p>
                   </div>
