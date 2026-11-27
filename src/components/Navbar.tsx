@@ -156,13 +156,13 @@ export const Navbar: React.FC = () => {
         className={`relative flex items-center bg-[#070D1E]/80 backdrop-blur-xl border border-white/[0.12] shadow-[0_10px_35px_-5px_rgba(0,0,0,0.35)] rounded-full transition-shadow duration-300 ${
           expanded
             ? 'p-1.5 sm:p-2 overflow-x-auto no-scrollbar'
-            : 'h-11 sm:h-12 pl-1.5 pr-3 py-1.5 cursor-pointer hover:border-white/25 active:scale-95'
+            : 'h-10 sm:h-11 cursor-pointer hover:border-white/25 active:scale-95'
         }`}
       >
         <AnimatePresence mode="wait" initial={false}>
           {!expanded ? (
             /* =========================================================================
-               NORDIC COMPACT PILL WITH 'G' LOGO & DYNAMIC ACTIVE SECTION
+               NORDIC MINIMAL PILL: DYNAMIC ACTIVE SECTION (NO LOGO)
                ========================================================================= */
             <motion.button
               key="compact-trigger"
@@ -173,18 +173,13 @@ export const Navbar: React.FC = () => {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.2 }}
-              className="w-full h-full flex items-center gap-2 cursor-pointer focus:outline-none group rounded-full"
+              className="w-full h-full flex items-center gap-2.5 px-4 sm:px-5 py-2 sm:py-2.5 cursor-pointer focus:outline-none group rounded-full"
             >
-              {/* 'G' Logo Badge */}
-              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-neon-lime text-[#041A55] font-black text-xs sm:text-sm flex items-center justify-center shrink-0 shadow-[0_0_14px_rgba(168,255,0,0.45)] transition-all duration-200 group-hover:scale-105 group-hover:shadow-[0_0_20px_rgba(168,255,0,0.65)] select-none">
-                <span>G</span>
-              </div>
-
-              {/* Minimal Divider */}
-              <div className="w-[1px] h-3.5 bg-white/15 shrink-0" />
+              {/* Subtle Status Indicator Dot */}
+              <span className="w-2 h-2 rounded-full bg-neon-lime shadow-[0_0_8px_rgba(168,255,0,0.8)] shrink-0" />
 
               {/* Dynamic Active Section Label with Smooth Transition */}
-              <div className="min-w-[48px] sm:min-w-[56px] text-left">
+              <div className="text-left">
                 <AnimatePresence mode="wait">
                   <motion.span
                     key={activeSection}
@@ -202,30 +197,17 @@ export const Navbar: React.FC = () => {
                 </AnimatePresence>
               </div>
 
-              {/* Subtle Expanding Hint Icon */}
+              {/* Subtle Expanding Hint Chevron */}
               <ChevronDown className="w-3.5 h-3.5 text-white/40 group-hover:text-white transition-colors duration-200 shrink-0" />
             </motion.button>
           ) : (
             /* =========================================================================
-               EXPANDED NORDIC PILL NAVBAR
+               EXPANDED NORDIC PILL NAVBAR (NO LOGO)
                ========================================================================= */
             <motion.div
               key="expanded-menu"
-              className="flex items-center gap-1 sm:gap-1.5"
+              className="flex items-center gap-1 sm:gap-1.5 px-1 py-0.5"
             >
-              {/* Brand 'G' Logo (Links to Home and collapses menu) */}
-              <Link
-                to="/"
-                onClick={() => handleLinkClick('Home')}
-                className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-neon-lime text-[#041A55] font-black text-xs sm:text-sm flex items-center justify-center shrink-0 shadow-[0_0_12px_rgba(168,255,0,0.35)] hover:scale-105 active:scale-95 transition-all duration-150 select-none focus:outline-none"
-                title="Genora Home"
-              >
-                <span>G</span>
-              </Link>
-
-              {/* Minimal Divider */}
-              <div className="w-[1px] h-4 bg-white/10 shrink-0 mx-0.5" />
-
               {/* Staggered Navigation Links */}
               <motion.ul
                 variants={listVariants}
@@ -241,9 +223,9 @@ export const Navbar: React.FC = () => {
                       <Link
                         to={item.path}
                         onClick={() => handleLinkClick(item.label)}
-                        className={`block px-3 sm:px-3.5 py-1.5 rounded-full text-xs sm:text-[13px] font-sans tracking-wide transition-all duration-200 whitespace-nowrap focus:outline-none ${
+                        className={`block px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-[13px] font-sans tracking-wide transition-all duration-200 whitespace-nowrap focus:outline-none ${
                           isCurrentActive
-                            ? 'bg-white/[0.16] text-white font-medium shadow-[inset_0_1px_0_rgba(255,255,255,0.18)]'
+                            ? 'bg-white/[0.16] text-white font-semibold shadow-[inset_0_1px_0_rgba(255,255,255,0.18)]'
                             : 'text-white/70 hover:text-white hover:bg-white/[0.08] font-normal'
                         }`}
                       >
@@ -261,7 +243,7 @@ export const Navbar: React.FC = () => {
               <button
                 onClick={() => setExpanded(false)}
                 aria-label="Close navigation menu"
-                className="w-7 h-7 rounded-full flex items-center justify-center text-white/50 hover:text-white hover:bg-white/[0.08] active:scale-90 transition-all duration-150 cursor-pointer shrink-0 focus:outline-none"
+                className="w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-white/50 hover:text-white hover:bg-white/[0.08] active:scale-90 transition-all duration-150 cursor-pointer shrink-0 focus:outline-none"
               >
                 <X className="w-3.5 h-3.5 stroke-[2]" />
               </button>

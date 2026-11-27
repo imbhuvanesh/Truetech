@@ -20,7 +20,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onGetStarted, onExplor
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="relative w-full pt-6 sm:pt-8 md:pt-10 pb-10 sm:pb-14 md:pb-16 px-4 sm:px-6 md:px-8 select-none flex flex-col items-center justify-center overflow-hidden">
+    <section className="relative w-full pt-8 sm:pt-10 md:pt-12 pb-10 sm:pb-14 md:pb-16 px-4 sm:px-6 md:px-8 select-none flex flex-col items-center justify-center overflow-hidden">
       {/* Decorative Container Hand-Drawn Corners */}
       <div className="absolute top-3 left-4 sm:left-6 z-10 opacity-70">
         <DoodleCorner position="top-left" color="#A8FF00" className="w-8 h-8 sm:w-10 sm:h-10" />
