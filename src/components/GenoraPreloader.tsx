@@ -100,7 +100,7 @@ export const GenoraPreloader: React.FC<GenoraPreloaderProps> = ({ onComplete }) 
         className="fixed inset-0 z-[99999] bg-white flex flex-col items-center justify-center select-none overflow-hidden"
         style={{ willChange: 'clip-path' }}
       >
-        <div className="relative w-full max-w-[960px] px-6 sm:px-12 flex flex-col items-center justify-center">
+        <div className="relative w-full max-w-[1020px] px-4 sm:px-8 md:px-12 flex flex-col items-center justify-center overflow-visible">
           
           {/* Main Logo Container — Immediately visible */}
           <motion.div
@@ -113,19 +113,19 @@ export const GenoraPreloader: React.FC<GenoraPreloaderProps> = ({ onComplete }) 
               duration: 0.5,
               ease: [0.19, 1, 0.22, 1],
             }}
-            className="w-full flex items-center justify-center"
+            className="w-full flex items-center justify-center overflow-visible"
           >
             {/*
               CUSTOM VECTOR ORGANIC BUBBLE TYPOGRAPHY: GENORA
-              Inspired by chunky 70s psych-rock bubble lettering (Cutpile Studio reference).
+              Inspired by chunky 70s psych-rock bubble lettering.
               Color: Vibrant Royal Blue #2857CC on clean white background.
               Directly visible with fluid stretching and organic settling.
             */}
             <svg
-              viewBox="0 0 1060 280"
+              viewBox="-40 -30 1180 350"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="w-full h-auto max-h-[36vh] drop-shadow-[0_18px_45px_rgba(40,87,204,0.15)]"
+              className="w-full h-auto max-h-[38vh] overflow-visible drop-shadow-[0_18px_45px_rgba(40,87,204,0.15)]"
             >
               <defs>
                 {/* Pure Vibrant Royal Blue Gradient */}
@@ -145,6 +145,7 @@ export const GenoraPreloader: React.FC<GenoraPreloaderProps> = ({ onComplete }) 
                   variants={letterVariants}
                   initial="initial"
                   animate={phase === 'morph' ? 'morph' : 'settled'}
+                  style={{ transformBox: 'fill-box', transformOrigin: 'center center' }}
                 >
                   <path
                     fillRule="evenodd"
@@ -162,6 +163,7 @@ export const GenoraPreloader: React.FC<GenoraPreloaderProps> = ({ onComplete }) 
                   variants={letterVariants}
                   initial="initial"
                   animate={phase === 'morph' ? 'morph' : 'settled'}
+                  style={{ transformBox: 'fill-box', transformOrigin: 'center center' }}
                 >
                   <path
                     fillRule="evenodd"
@@ -179,6 +181,7 @@ export const GenoraPreloader: React.FC<GenoraPreloaderProps> = ({ onComplete }) 
                   variants={letterVariants}
                   initial="initial"
                   animate={phase === 'morph' ? 'morph' : 'settled'}
+                  style={{ transformBox: 'fill-box', transformOrigin: 'center center' }}
                 >
                   <path
                     fillRule="evenodd"
@@ -196,6 +199,7 @@ export const GenoraPreloader: React.FC<GenoraPreloaderProps> = ({ onComplete }) 
                   variants={letterVariants}
                   initial="initial"
                   animate={phase === 'morph' ? 'morph' : 'settled'}
+                  style={{ transformBox: 'fill-box', transformOrigin: 'center center' }}
                 >
                   <path
                     fillRule="evenodd"
@@ -213,6 +217,7 @@ export const GenoraPreloader: React.FC<GenoraPreloaderProps> = ({ onComplete }) 
                   variants={letterVariants}
                   initial="initial"
                   animate={phase === 'morph' ? 'morph' : 'settled'}
+                  style={{ transformBox: 'fill-box', transformOrigin: 'center center' }}
                 >
                   <path
                     fillRule="evenodd"
@@ -230,6 +235,7 @@ export const GenoraPreloader: React.FC<GenoraPreloaderProps> = ({ onComplete }) 
                   variants={letterVariants}
                   initial="initial"
                   animate={phase === 'morph' ? 'morph' : 'settled'}
+                  style={{ transformBox: 'fill-box', transformOrigin: 'center center' }}
                 >
                   <path
                     fillRule="evenodd"
