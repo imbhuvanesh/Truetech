@@ -5,9 +5,7 @@ import {
   Package,
   ArrowUpRight,
   CheckCircle2,
-  Sparkles,
   Layers,
-  Cpu,
   Palette,
   Terminal,
   ShieldCheck,
@@ -21,7 +19,8 @@ import type { ProductItem } from '../../data/agencyData';
 import { MaskedLineReveal, FadeUpParagraph, FadeUpText } from '../AnimatedText';
 
 const productIcons: Record<string, React.ElementType> = {
-  'nexus-starter-suite': Cpu,
+  'genora-starter-suite': Package,
+  'nexus-starter-suite': Package,
   'autoflow-crm-hub': Layers,
   'brandbox-design-system': Palette,
   'omnisync-billing-pos': Terminal,
@@ -102,7 +101,7 @@ export const ProductsSection: React.FC = () => {
            ========================================================================= */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
           {filteredProducts.map((product, idx) => {
-            const Icon = productIcons[product.id] || Sparkles;
+            const Icon = productIcons[product.id] || Package;
 
             return (
               <div key={product.id} className="relative group">

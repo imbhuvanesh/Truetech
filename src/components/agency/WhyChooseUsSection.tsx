@@ -1,11 +1,11 @@
 import React from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { Sparkles, Terminal, CheckCircle2, Layers, Target, ArrowUpRight } from 'lucide-react';
+import { Zap, Terminal, CheckCircle2, Layers, Target, ArrowUpRight } from 'lucide-react';
 import { whyChooseUsData } from '../../data/agencyData';
 import { MaskedLineReveal, FadeUpParagraph, FadeUpText, SlowHighlight } from '../AnimatedText';
 
 const iconMap: Record<string, React.ElementType> = {
-  Sparkles,
+  Zap,
   Terminal,
   CheckCircle2,
   Layers,
@@ -55,7 +55,7 @@ export const WhyChooseUsSection: React.FC = () => {
         {/* Pillar Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
           {whyChooseUsData.map((item, idx) => {
-            const Icon = iconMap[item.icon] || Sparkles;
+            const Icon = iconMap[item.icon] || Zap;
             const lines = pillarTwoLines[item.title] || [item.title, 'EXCELLENCE'];
 
             return (

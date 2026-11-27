@@ -6,7 +6,7 @@ import {
   Palette,
   Video,
   TrendingUp,
-  Cpu,
+  Zap,
   ArrowUpRight,
   CheckCircle2,
   Code2,
@@ -26,7 +26,7 @@ const iconMap: Record<string, React.ElementType> = {
   Palette,
   Video,
   TrendingUp,
-  Cpu,
+  Zap,
   Code2,
   Database,
 };
@@ -153,55 +153,14 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                     </div>
                   </div>
 
-                  {/* Bottom Graphical Sticker Matching The Theme */}
-                  <div className="mt-8 pt-4 pb-2 flex flex-col items-center justify-center">
-                    {idx % 3 === 0 && (
-                      /* Sticker Type 1: Tilted Blue Pill + Overlapping Neon Pill */
-                      <div className="relative flex items-center justify-center pr-6">
-                        <div className="relative bg-royal-blue text-white rounded-2xl px-4 py-2.5 flex items-center space-x-2.5 shadow-pill-blue transform -rotate-4 transition-transform hover:scale-105">
-                          <div className="w-7 h-7 rounded-full bg-white/15 flex items-center justify-center border border-white/20">
-                            <Code2 className="w-4 h-4 text-neon-lime" />
-                          </div>
-                          <div>
-                            <div className="font-sans text-xs font-bold leading-tight">custom.dev</div>
-                            <div className="font-sans text-[10px] text-white/80">100% custom code</div>
-                          </div>
-                        </div>
-                        <div className="absolute -right-2 -bottom-2.5 bg-neon-lime text-black font-sans text-[11px] font-bold px-3 py-1 rounded-full shadow-pill-neon border border-black/10">
-                          FAST & SCALABLE
-                        </div>
-                      </div>
-                    )}
-
-                    {idx % 3 === 1 && (
-                      /* Sticker Type 2: Dual Capsule Pill + Neon Circle Sticker */
-                      <div className="relative flex flex-col items-center">
-                        <div className="inline-flex items-center rounded-full bg-[#08236B] p-1 shadow-card-soft border border-white/10">
-                          <div className="bg-[#041A55] text-white font-sans text-xs font-bold px-3.5 py-2 rounded-full">
-                            PRO DESIGN
-                          </div>
-                          <div className="bg-royal-blue text-white font-sans text-xs font-bold px-3.5 py-2 rounded-full flex items-center space-x-1">
-                            <span>MEDIA</span>
-                          </div>
-                        </div>
-                      </div>
-                    )}
-
-                    {idx % 3 === 2 && (
-                      /* Sticker Type 3: Neon Speech Bubble with Stat & Tail */
-                      <div className="relative w-full max-w-[220px]">
-                        <div className="relative bg-neon-lime rounded-[20px] px-4 py-3 shadow-bubble-neon border border-black/10 flex flex-col items-center justify-center">
-                          <div className="font-sans text-[10px] font-bold text-black/75 tracking-wider uppercase">
-                            CLIENT GROWTH GUARANTEE
-                          </div>
-                          <div className="font-sans text-xl font-bold text-black tracking-tight mt-0.5 flex items-center space-x-1">
-                            <span>+310% ROI</span>
-                            <ArrowUpRight className="w-4 h-4 stroke-[3]" />
-                          </div>
-                          <div className="absolute -bottom-2 left-5 w-3.5 h-3.5 bg-neon-lime rotate-45 transform origin-top-left border-r border-b border-black/10" />
-                        </div>
-                      </div>
-                    )}
+                  {/* Clean Service Card Action Footer */}
+                  <div className="mt-8 pt-4 border-t border-black/[0.04] flex items-center justify-between">
+                    <span className="text-xs font-semibold text-zinc-500 font-sans group-hover:text-black transition-colors">
+                      View Service Scope &amp; Deliverables
+                    </span>
+                    <div className="w-8 h-8 rounded-full bg-[#F6F6F6] group-hover:bg-[#0645D8] text-zinc-600 group-hover:text-white flex items-center justify-center transition-all duration-200">
+                      <ArrowUpRight className="w-4 h-4" />
+                    </div>
                   </div>
                 </motion.div>
               </div>

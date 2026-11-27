@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { MaskedLineReveal, FadeUpParagraph, SlowHighlight } from './AnimatedText';
-import { Code2, ArrowUpRight, Sparkles, TrendingUp } from 'lucide-react';
+import { Code2, ArrowUpRight, Zap, TrendingUp } from 'lucide-react';
 
 export const RewardsSection: React.FC = () => {
   const shouldReduceMotion = useReducedMotion();
@@ -120,7 +120,7 @@ export const RewardsSection: React.FC = () => {
                     delay={0.15}
                   />
                   <div className="w-8 h-8 rounded-full bg-neon-lime/30 text-primary-black flex items-center justify-center">
-                    <Sparkles className="w-4 h-4" />
+                    <Zap className="w-4 h-4" />
                   </div>
                 </div>
                 <FadeUpParagraph

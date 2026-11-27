@@ -328,7 +328,7 @@ export const servicesData: ServiceCategory[] = [
       { question: 'Can you automate repetitive tasks in my business without replacing my existing software?', answer: 'Yes. We integrate automation layers (via n8n, Make, or custom APIs) on top of your existing tools — CRM, email, billing software, spreadsheets — so you get automated workflows without replacing what already works.' },
       { question: 'What is RAG and how can it help my business?', answer: 'RAG (Retrieval-Augmented Generation) allows an AI model to answer questions based on your own business documents, product catalogues, or knowledge base — not just general internet data. It is ideal for internal knowledge bots, customer support automation, and smart document search.' },
     ],
-    icon: 'Cpu',
+    icon: 'Zap',
     popularTag: 'High Demand',
   },
 
@@ -665,7 +665,7 @@ export const whyChooseUsData = [
     title: 'Creative Thinking',
     subtitle: 'Beyond standard conventions',
     description: 'We do not recycle cookie-cutter templates. Every project is conceived from first principles with unique visual character and compelling narrative.',
-    icon: 'Sparkles',
+    icon: 'Zap',
     metric: '100% Custom'
   },
   {

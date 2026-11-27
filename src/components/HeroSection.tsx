@@ -10,7 +10,7 @@ import {
   DoodleCorner,
 } from './Doodles';
 import { MaskedHeroWord, SlowHighlight } from './AnimatedText';
-import { ArrowUpRight, Sparkles } from 'lucide-react';
+import { ArrowUpRight, Compass } from 'lucide-react';
 
 interface HeroSectionProps {
   onGetStarted?: () => void;
@@ -164,7 +164,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onGetStarted, onExplor
             onClick={onExploreServices}
             className="px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/25 font-sans font-semibold text-xs sm:text-sm tracking-tight flex items-center space-x-2 backdrop-blur-md transition-all duration-200 hover:scale-105 active:scale-95 cursor-pointer"
           >
-            <Sparkles className="w-4 h-4 text-neon-lime" />
+            <Compass className="w-4 h-4 text-neon-lime" />
             <span>Explore Services</span>
           </button>
         </motion.div>

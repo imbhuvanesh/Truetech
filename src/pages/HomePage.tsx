@@ -4,7 +4,6 @@ import { HeroSection } from '../components/HeroSection';
 import { TabContentToggle } from '../components/agency/TabContentToggle';
 import { ServicesSection } from '../components/agency/ServicesSection';
 import { ProductsSection } from '../components/agency/ProductsSection';
-import { PortfolioSection } from '../components/agency/PortfolioSection';
 import { WhyChooseUsSection } from '../components/agency/WhyChooseUsSection';
 import { ProcessSection } from '../components/agency/ProcessSection';
 import { ContactSection } from '../components/agency/ContactSection';
@@ -61,21 +60,14 @@ export const HomePage: React.FC = () => {
       </div>
 
       {/* =========================================================================
-          STACKED CONTAINER 6: PROPRIETARY PRODUCTS & TOOLS (CLEAN WHITE #FAFBFD)
+          STACKED CONTAINER 5: PROPRIETARY PRODUCTS & TOOLS (CLEAN WHITE #FAFBFD)
          ========================================================================= */}
       <div className="w-full max-w-[1260px] bg-[#FAFBFD] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(0,10,40,0.06)] border border-black/[0.05] my-3 sm:my-4 overflow-hidden">
         <ProductsSection />
       </div>
 
       {/* =========================================================================
-          STACKED CONTAINER 7: SELECTED PORTFOLIO (DEEP OBSIDIAN MIDNIGHT)
-         ========================================================================= */}
-      <div className="w-full max-w-[1260px] bg-[#0A1022] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_30px_90px_rgba(0,0,0,0.45)] border border-white/10 my-3 sm:my-4 overflow-hidden">
-        <PortfolioSection />
-      </div>
-
-      {/* =========================================================================
-          STACKED CONTAINER 8: WHY CHOOSE US (COOL LAVENDER SILVER)
+          STACKED CONTAINER 6: WHY CHOOSE US (COOL LAVENDER SILVER)
          ========================================================================= */}
       <div className="w-full max-w-[1260px] bg-[#F4F7FB] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(0,10,40,0.06)] border border-black/[0.05] my-3 sm:my-4 overflow-hidden">
         <WhyChooseUsSection />

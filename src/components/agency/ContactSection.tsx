@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Send, CheckCircle, Sparkles, MessageSquare, Mail, ArrowUpRight } from 'lucide-react';
+import { Send, CheckCircle, Clock, MessageSquare, Mail, ArrowUpRight } from 'lucide-react';
 import { MaskedLineReveal, FadeUpParagraph, FadeUpText, SlowHighlight } from '../AnimatedText';
 
 const servicesList = [
@@ -106,7 +106,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ preselectedServi
               {/* Card 1: Fast Response Guarantee */}
               <div className="bg-white rounded-[28px] p-6 sm:p-7 border border-black/[0.035] shadow-card-soft">
                 <div className="w-10 h-10 rounded-2xl bg-royal-blue text-white flex items-center justify-center mb-3.5 shadow-md">
-                  <Sparkles className="w-5 h-5 text-neon-lime" />
+                  <Clock className="w-5 h-5 text-neon-lime" />
                 </div>
                 <h3 className="font-sans font-bold text-lg sm:text-xl text-black">
                   Fast-Track Discovery

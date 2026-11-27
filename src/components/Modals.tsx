@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, CheckCircle, Shield, Zap, Gift, Users, Coins, Sparkles } from 'lucide-react';
+import { X, CheckCircle, Shield, Zap, Gift, Users, Coins } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 interface ModalsProps {
@@ -269,7 +269,7 @@ export const Modals: React.FC<ModalsProps> = ({
                     <span>Querying On-Chain Records...</span>
                   ) : (
                     <>
-                      <Sparkles className="w-4 h-4" />
+                      <Zap className="w-4 h-4" />
                       <span>Check Allocation</span>
                     </>
                   )}

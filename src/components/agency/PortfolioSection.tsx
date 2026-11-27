@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowUpRight, Sparkles, CheckCircle2 } from 'lucide-react';
+import { ArrowUpRight, TrendingUp, CheckCircle2 } from 'lucide-react';
 import { portfolioData } from '../../data/agencyData';
 import type { ProjectItem } from '../../data/agencyData';
 import { MaskedLineReveal, FadeUpParagraph, FadeUpText, SlowHighlight } from '../AnimatedText';
@@ -127,7 +127,7 @@ export const PortfolioSection: React.FC = () => {
 
                   {/* Impact Metric Pill */}
                   <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-neon-lime/10 border border-neon-lime/20 text-neon-lime text-xs font-bold font-sans">
-                    <Sparkles className="w-3.5 h-3.5 text-neon-lime" />
+                    <TrendingUp className="w-3.5 h-3.5 text-neon-lime" />
                     <span>{project.metrics}</span>
                   </div>
                 </div>
