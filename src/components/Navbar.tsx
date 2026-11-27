@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence, useReducedMotion, type Variants } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
-import { X, ChevronDown } from 'lucide-react';
+import { X, ChevronDown, ArrowUpRight } from 'lucide-react';
 
 interface NavItem {
   label: string;
@@ -156,53 +156,70 @@ export const Navbar: React.FC = () => {
         className={`relative flex items-center bg-[#070D1E]/80 backdrop-blur-xl border border-white/[0.12] shadow-[0_10px_35px_-5px_rgba(0,0,0,0.35)] rounded-full transition-shadow duration-300 ${
           expanded
             ? 'p-1.5 sm:p-2 overflow-x-auto no-scrollbar'
-            : 'h-10 sm:h-11 cursor-pointer hover:border-white/25 active:scale-95'
+            : 'p-1.5 overflow-hidden'
         }`}
       >
         <AnimatePresence mode="wait" initial={false}>
           {!expanded ? (
             /* =========================================================================
-               NORDIC MINIMAL PILL: DYNAMIC ACTIVE SECTION (NO LOGO)
+               NORDIC COMPACT PILL: ACTIVE SECTION + START PROJECT BUTTON
                ========================================================================= */
-            <motion.button
-              key="compact-trigger"
-              onClick={() => setExpanded(true)}
-              aria-expanded={false}
-              aria-label={`Open navigation menu. Currently on ${activeSection}`}
-              initial={{ opacity: 0, scale: 0.9 }}
+            <motion.div
+              key="compact-nav"
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
+              exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.2 }}
-              className="w-full h-full flex items-center gap-2.5 px-4 sm:px-5 py-2 sm:py-2.5 cursor-pointer focus:outline-none group rounded-full"
+              className="flex items-center gap-1.5 sm:gap-2"
             >
-              {/* Subtle Status Indicator Dot */}
-              <span className="w-2 h-2 rounded-full bg-neon-lime shadow-[0_0_8px_rgba(168,255,0,0.8)] shrink-0" />
+              {/* Menu Toggle Pill */}
+              <button
+                onClick={() => setExpanded(true)}
+                aria-expanded={false}
+                aria-label={`Open navigation menu. Currently on ${activeSection}`}
+                className="flex items-center gap-2 px-3 sm:px-3.5 py-1.5 rounded-full hover:bg-white/[0.08] transition-colors duration-200 cursor-pointer focus:outline-none group"
+              >
+                {/* Subtle Status Indicator Dot */}
+                <span className="w-2 h-2 rounded-full bg-neon-lime shadow-[0_0_8px_rgba(168,255,0,0.8)] shrink-0" />
 
-              {/* Dynamic Active Section Label with Smooth Transition */}
-              <div className="text-left">
-                <AnimatePresence mode="wait">
-                  <motion.span
-                    key={activeSection}
-                    initial={{ opacity: 0, y: 5, filter: shouldReduceMotion ? 'none' : 'blur(2px)' }}
-                    animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                    exit={{ opacity: 0, y: -5, filter: shouldReduceMotion ? 'none' : 'blur(2px)' }}
-                    transition={{
-                      duration: shouldReduceMotion ? 0.05 : 0.22,
-                      ease: [0.16, 1, 0.3, 1] as const,
-                    }}
-                    className="block text-xs sm:text-[13px] font-sans font-medium text-white/95 tracking-wide whitespace-nowrap"
-                  >
-                    {activeSection}
-                  </motion.span>
-                </AnimatePresence>
-              </div>
+                {/* Dynamic Active Section Label */}
+                <div className="text-left">
+                  <AnimatePresence mode="wait">
+                    <motion.span
+                      key={activeSection}
+                      initial={{ opacity: 0, y: 5, filter: shouldReduceMotion ? 'none' : 'blur(2px)' }}
+                      animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                      exit={{ opacity: 0, y: -5, filter: shouldReduceMotion ? 'none' : 'blur(2px)' }}
+                      transition={{
+                        duration: shouldReduceMotion ? 0.05 : 0.22,
+                        ease: [0.16, 1, 0.3, 1] as const,
+                      }}
+                      className="block text-xs sm:text-[13px] font-sans font-medium text-white/95 tracking-wide whitespace-nowrap"
+                    >
+                      {activeSection}
+                    </motion.span>
+                  </AnimatePresence>
+                </div>
 
-              {/* Subtle Expanding Hint Chevron */}
-              <ChevronDown className="w-3.5 h-3.5 text-white/40 group-hover:text-white transition-colors duration-200 shrink-0" />
-            </motion.button>
+                {/* Subtle Expanding Hint Chevron */}
+                <ChevronDown className="w-3.5 h-3.5 text-white/40 group-hover:text-white transition-colors duration-200 shrink-0" />
+              </button>
+
+              {/* Minimal Divider */}
+              <div className="w-[1px] h-4 bg-white/15 shrink-0" />
+
+              {/* Start Project CTA Button */}
+              <Link
+                to="/contact"
+                className="px-3.5 sm:px-4 py-1.5 rounded-full bg-neon-lime hover:bg-white text-[#041A55] font-sans font-bold text-xs tracking-tight flex items-center gap-1.5 shadow-[0_0_12px_rgba(168,255,0,0.35)] hover:shadow-[0_0_18px_rgba(255,255,255,0.4)] transition-all duration-200 active:scale-95 shrink-0 focus:outline-none"
+              >
+                <span>Start Project</span>
+                <ArrowUpRight className="w-3.5 h-3.5 stroke-[2.5]" />
+              </Link>
+            </motion.div>
           ) : (
             /* =========================================================================
-               EXPANDED NORDIC PILL NAVBAR (NO LOGO)
+               EXPANDED NORDIC PILL NAVBAR WITH START PROJECT BUTTON
                ========================================================================= */
             <motion.div
               key="expanded-menu"
@@ -223,7 +240,7 @@ export const Navbar: React.FC = () => {
                       <Link
                         to={item.path}
                         onClick={() => handleLinkClick(item.label)}
-                        className={`block px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-[13px] font-sans tracking-wide transition-all duration-200 whitespace-nowrap focus:outline-none ${
+                        className={`block px-3 sm:px-3.5 py-1.5 rounded-full text-xs sm:text-[13px] font-sans tracking-wide transition-all duration-200 whitespace-nowrap focus:outline-none ${
                           isCurrentActive
                             ? 'bg-white/[0.16] text-white font-semibold shadow-[inset_0_1px_0_rgba(255,255,255,0.18)]'
                             : 'text-white/70 hover:text-white hover:bg-white/[0.08] font-normal'
@@ -235,6 +252,19 @@ export const Navbar: React.FC = () => {
                   );
                 })}
               </motion.ul>
+
+              {/* Minimal Divider */}
+              <div className="w-[1px] h-4 bg-white/10 shrink-0 mx-0.5" />
+
+              {/* Start Project CTA Button */}
+              <Link
+                to="/contact"
+                onClick={() => setExpanded(false)}
+                className="px-3.5 sm:px-4 py-1.5 rounded-full bg-neon-lime hover:bg-white text-[#041A55] font-sans font-bold text-xs tracking-tight flex items-center gap-1.5 shadow-[0_0_12px_rgba(168,255,0,0.35)] hover:shadow-[0_0_18px_rgba(255,255,255,0.4)] transition-all duration-200 active:scale-95 shrink-0 focus:outline-none"
+              >
+                <span>Start Project</span>
+                <ArrowUpRight className="w-3.5 h-3.5 stroke-[2.5]" />
+              </Link>
 
               {/* Minimal Divider */}
               <div className="w-[1px] h-4 bg-white/10 shrink-0 mx-0.5" />
