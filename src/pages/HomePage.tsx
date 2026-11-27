@@ -38,7 +38,7 @@ export const HomePage: React.FC = () => {
       {/* =========================================================================
           STACKED CONTAINER 1: HERO CONTAINER (ELECTRIC ROYAL BLUE)
          ========================================================================= */}
-      <div className="w-full max-w-[1260px] bg-[#0645D8] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_25px_80px_rgba(4,26,85,0.4)] border border-white/15 my-3 sm:my-4 overflow-hidden relative">
+      <div id="home" className="w-full max-w-[1260px] bg-[#0645D8] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_25px_80px_rgba(4,26,85,0.4)] border border-white/15 my-3 sm:my-4 overflow-hidden relative">
         <HeroSection
           onGetStarted={handleGetStarted}
           onExploreServices={() => navigate('/services')}
@@ -55,14 +55,14 @@ export const HomePage: React.FC = () => {
       {/* =========================================================================
           STACKED CONTAINER 4: CORE DISCIPLINES / SERVICES (CREAMY AVOCADO #DCF4A2)
          ========================================================================= */}
-      <div className="w-full max-w-[1260px] bg-[#DCF4A2] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(6,69,216,0.06)] border border-black/[0.05] my-3 sm:my-4 overflow-hidden">
+      <div id="services" className="w-full max-w-[1260px] bg-[#DCF4A2] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(6,69,216,0.06)] border border-black/[0.05] my-3 sm:my-4 overflow-hidden">
         <ServicesSection onSelectService={handleSelectService} />
       </div>
 
       {/* =========================================================================
           STACKED CONTAINER 5: PROPRIETARY PRODUCTS & TOOLS (CLEAN WHITE #FAFBFD)
          ========================================================================= */}
-      <div className="w-full max-w-[1260px] bg-[#FAFBFD] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(0,10,40,0.06)] border border-black/[0.05] my-3 sm:my-4 overflow-hidden">
+      <div id="products" className="w-full max-w-[1260px] bg-[#FAFBFD] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(0,10,40,0.06)] border border-black/[0.05] my-3 sm:my-4 overflow-hidden">
         <ProductsSection />
       </div>
 
@@ -83,7 +83,7 @@ export const HomePage: React.FC = () => {
       {/* =========================================================================
           STACKED CONTAINER 10: CONTACT SECTION (DEEP ROYAL COBALT)
          ========================================================================= */}
-      <div className="w-full max-w-[1260px] bg-[#062B88] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_25px_80px_rgba(4,26,85,0.4)] border border-white/15 my-3 sm:my-4 overflow-hidden">
+      <div id="contact" className="w-full max-w-[1260px] bg-[#062B88] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_25px_80px_rgba(4,26,85,0.4)] border border-white/15 my-3 sm:my-4 overflow-hidden">
         <ContactSection preselectedService="Web Development" />
       </div>
     </motion.div>

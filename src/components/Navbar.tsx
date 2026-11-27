@@ -1,22 +1,79 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence, useReducedMotion, type Variants } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
-import { X } from 'lucide-react';
+import { X, ChevronDown } from 'lucide-react';
+
+interface NavItem {
+  label: string;
+  path: string;
+  sectionId: string;
+}
+
+const NAV_ITEMS: NavItem[] = [
+  { label: 'Home', path: '/', sectionId: 'home' },
+  { label: 'About', path: '/about', sectionId: 'about' },
+  { label: 'Services', path: '/services', sectionId: 'services' },
+  { label: 'Products', path: '/products', sectionId: 'products' },
+  { label: 'Our Work', path: '/work', sectionId: 'work' },
+  { label: 'Contact', path: '/contact', sectionId: 'contact' },
+];
+
+const getRouteSection = (pathname: string): string => {
+  const matched = NAV_ITEMS.find(
+    (item) => item.path !== '/' && pathname.startsWith(item.path)
+  );
+  return matched ? matched.label : 'Home';
+};
 
 export const Navbar: React.FC = () => {
   const [expanded, setExpanded] = useState(false);
+  const [scrollSection, setScrollSection] = useState('Home');
   const containerRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
   const shouldReduceMotion = useReducedMotion();
 
-  const navItems = [
-    { label: 'Home', path: '/' },
-    { label: 'About', path: '/about' },
-    { label: 'Services', path: '/services' },
-    { label: 'Products', path: '/products' },
-    { label: 'Our Work', path: '/work' },
-    { label: 'Contact', path: '/contact' },
-  ];
+  // Derive active section: route-based on subpages, scroll-based on homepage ('/')
+  const activeSection = location.pathname === '/' ? scrollSection : getRouteSection(location.pathname);
+
+  // Dynamic active section detection based on scroll position when on homepage
+  useEffect(() => {
+    if (location.pathname !== '/') return;
+
+    const sectionIds = ['home', 'services', 'products', 'contact'];
+    const sectionMap: Record<string, string> = {
+      home: 'Home',
+      services: 'Services',
+      products: 'Products',
+      contact: 'Contact',
+    };
+
+    const handleScroll = () => {
+      if (window.scrollY < 220) {
+        setScrollSection('Home');
+        return;
+      }
+
+      const viewportTrigger = 280;
+      let current = 'Home';
+
+      for (const id of sectionIds) {
+        const el = document.getElementById(id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= viewportTrigger && rect.bottom > 120) {
+            current = sectionMap[id];
+          }
+        }
+      }
+
+      setScrollSection((prev) => (prev !== current ? current : prev));
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [location.pathname]);
 
   // Collapse on outside click
   const handleClickOutside = useCallback((event: MouseEvent | TouchEvent) => {
@@ -42,11 +99,6 @@ export const Navbar: React.FC = () => {
       document.removeEventListener('keydown', handleKeyDown);
     };
   }, [handleClickOutside, handleKeyDown]);
-
-  const isActive = (path: string) => {
-    if (path === '/') return location.pathname === '/';
-    return location.pathname.startsWith(path);
-  };
 
   const listVariants: Variants = {
     hidden: { opacity: 0 },
@@ -84,6 +136,11 @@ export const Navbar: React.FC = () => {
     },
   };
 
+  const handleLinkClick = (label: string) => {
+    setScrollSection(label);
+    setExpanded(false);
+  };
+
   return (
     <nav
       ref={containerRef}
@@ -99,28 +156,54 @@ export const Navbar: React.FC = () => {
         className={`relative flex items-center bg-[#070D1E]/80 backdrop-blur-xl border border-white/[0.12] shadow-[0_10px_35px_-5px_rgba(0,0,0,0.35)] rounded-full transition-shadow duration-300 ${
           expanded
             ? 'p-1.5 sm:p-2 overflow-x-auto no-scrollbar'
-            : 'w-11 h-11 sm:w-12 sm:h-12 justify-center hover:border-white/25 active:scale-95'
+            : 'h-11 sm:h-12 pl-1.5 pr-3 py-1.5 cursor-pointer hover:border-white/25 active:scale-95'
         }`}
       >
         <AnimatePresence mode="wait" initial={false}>
           {!expanded ? (
             /* =========================================================================
-               NORDIC MINIMAL CIRCULAR BUTTON WITH 'G' LOGO (TOP-CENTER)
+               NORDIC COMPACT PILL WITH 'G' LOGO & DYNAMIC ACTIVE SECTION
                ========================================================================= */
             <motion.button
-              key="trigger"
+              key="compact-trigger"
               onClick={() => setExpanded(true)}
               aria-expanded={false}
-              aria-label="Open navigation menu"
-              initial={{ opacity: 0, scale: 0.85 }}
+              aria-label={`Open navigation menu. Currently on ${activeSection}`}
+              initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.85 }}
+              exit={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.2 }}
-              className="w-full h-full flex items-center justify-center cursor-pointer focus:outline-none group rounded-full"
+              className="w-full h-full flex items-center gap-2 cursor-pointer focus:outline-none group rounded-full"
             >
-              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-neon-lime text-[#041A55] font-black text-xs sm:text-sm flex items-center justify-center shadow-[0_0_14px_rgba(168,255,0,0.45)] transition-all duration-200 group-hover:scale-105 group-hover:shadow-[0_0_20px_rgba(168,255,0,0.65)] select-none">
+              {/* 'G' Logo Badge */}
+              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-neon-lime text-[#041A55] font-black text-xs sm:text-sm flex items-center justify-center shrink-0 shadow-[0_0_14px_rgba(168,255,0,0.45)] transition-all duration-200 group-hover:scale-105 group-hover:shadow-[0_0_20px_rgba(168,255,0,0.65)] select-none">
                 <span>G</span>
               </div>
+
+              {/* Minimal Divider */}
+              <div className="w-[1px] h-3.5 bg-white/15 shrink-0" />
+
+              {/* Dynamic Active Section Label with Smooth Transition */}
+              <div className="min-w-[48px] sm:min-w-[56px] text-left">
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={activeSection}
+                    initial={{ opacity: 0, y: 5, filter: shouldReduceMotion ? 'none' : 'blur(2px)' }}
+                    animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                    exit={{ opacity: 0, y: -5, filter: shouldReduceMotion ? 'none' : 'blur(2px)' }}
+                    transition={{
+                      duration: shouldReduceMotion ? 0.05 : 0.22,
+                      ease: [0.16, 1, 0.3, 1] as const,
+                    }}
+                    className="block text-xs sm:text-[13px] font-sans font-medium text-white/95 tracking-wide whitespace-nowrap"
+                  >
+                    {activeSection}
+                  </motion.span>
+                </AnimatePresence>
+              </div>
+
+              {/* Subtle Expanding Hint Icon */}
+              <ChevronDown className="w-3.5 h-3.5 text-white/40 group-hover:text-white transition-colors duration-200 shrink-0" />
             </motion.button>
           ) : (
             /* =========================================================================
@@ -133,7 +216,7 @@ export const Navbar: React.FC = () => {
               {/* Brand 'G' Logo (Links to Home and collapses menu) */}
               <Link
                 to="/"
-                onClick={() => setExpanded(false)}
+                onClick={() => handleLinkClick('Home')}
                 className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-neon-lime text-[#041A55] font-black text-xs sm:text-sm flex items-center justify-center shrink-0 shadow-[0_0_12px_rgba(168,255,0,0.35)] hover:scale-105 active:scale-95 transition-all duration-150 select-none focus:outline-none"
                 title="Genora Home"
               >
@@ -151,16 +234,16 @@ export const Navbar: React.FC = () => {
                 exit="exit"
                 className="flex items-center gap-1 sm:gap-1.5 list-none m-0 p-0"
               >
-                {navItems.map((item) => {
-                  const active = isActive(item.path);
+                {NAV_ITEMS.map((item) => {
+                  const isCurrentActive = activeSection === item.label;
                   return (
                     <motion.li key={item.label} variants={itemVariants} className="shrink-0">
                       <Link
                         to={item.path}
-                        onClick={() => setExpanded(false)}
+                        onClick={() => handleLinkClick(item.label)}
                         className={`block px-3 sm:px-3.5 py-1.5 rounded-full text-xs sm:text-[13px] font-sans tracking-wide transition-all duration-200 whitespace-nowrap focus:outline-none ${
-                          active
-                            ? 'bg-white/[0.14] text-white font-medium shadow-[inset_0_1px_0_rgba(255,255,255,0.15)]'
+                          isCurrentActive
+                            ? 'bg-white/[0.16] text-white font-medium shadow-[inset_0_1px_0_rgba(255,255,255,0.18)]'
                             : 'text-white/70 hover:text-white hover:bg-white/[0.08] font-normal'
                         }`}
                       >
