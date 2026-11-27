@@ -42,9 +42,9 @@ export const HomePage: React.FC = () => {
           STACKED CONTAINER 1: HERO CONTAINER (ELECTRIC ROYAL BLUE)
          ========================================================================= */}
       <div className="w-full max-w-[1260px] bg-[#0645D8] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_25px_80px_rgba(4,26,85,0.4)] border border-white/15 my-3 sm:my-4 overflow-hidden relative">
-        <HeroSection 
-          onGetStarted={handleGetStarted} 
-          onExploreServices={() => navigate('/services')} 
+        <HeroSection
+          onGetStarted={handleGetStarted}
+          onExploreServices={() => navigate('/services')}
         />
       </div>
 

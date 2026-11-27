@@ -1,15 +1,5 @@
 import React from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import {
-  ConnectorArrow1,
-  ConnectorArrow2,
-  SmallNeonSticker,
-  DoodleCorner,
-  DoodleWashiTape,
-  DoodleCrown,
-  DoodleCardBorder,
-  DoodleSquiggle,
-} from '../Doodles';
 import { MaskedLineReveal, FadeUpParagraph, FadeUpText, SlowHighlight } from '../AnimatedText';
 import { Code2, ArrowUpRight, CheckCircle2 } from 'lucide-react';
 
@@ -18,14 +8,6 @@ export const AboutSection: React.FC<{ onExploreServices: () => void }> = ({ onEx
 
   return (
     <section id="about" className="relative w-full py-8 sm:py-10 md:py-12 px-4 sm:px-8 text-black bg-transparent overflow-hidden">
-      {/* Hand-Drawn Container Corners */}
-      <div className="absolute top-3 left-4 z-10 opacity-70 pointer-events-none">
-        <DoodleCorner position="top-left" color="#080808" className="w-8 h-8 sm:w-10 sm:h-10" />
-      </div>
-      <div className="absolute top-3 right-4 z-10 opacity-70 pointer-events-none">
-        <DoodleCorner position="top-right" color="#080808" className="w-8 h-8 sm:w-10 sm:h-10" />
-      </div>
-
       <div className="max-w-6xl mx-auto">
         
         {/* Section Header */}
@@ -35,19 +17,13 @@ export const AboutSection: React.FC<{ onExploreServices: () => void }> = ({ onEx
               <FadeUpText delay={0.05} className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-royal-blue/10 text-royal-blue font-bold text-xs tracking-wider uppercase">
                 <span>About Nexus Studio</span>
               </FadeUpText>
-              <DoodleWashiTape text="EST. 2024" color="#FFFFFF" className="hidden sm:inline-flex" />
             </div>
             
-            <div className="flex items-center space-x-2">
-              <MaskedLineReveal
-                lines={["WE COMBINE TECHNOLOGY,", "CREATIVITY & MARKETING."]}
-                className="font-sans text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-black leading-[1.12]"
-                delay={0.1}
-              />
-              <div className="hidden lg:block shrink-0 -mt-6">
-                <DoodleCrown color="#080808" className="w-9 h-7" />
-              </div>
-            </div>
+            <MaskedLineReveal
+              lines={["WE COMBINE TECHNOLOGY,", "CREATIVITY & MARKETING."]}
+              className="font-sans text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-black leading-[1.12]"
+              delay={0.1}
+            />
           </div>
           
           <div className="mt-4 md:mt-0 max-w-sm">
@@ -57,23 +33,17 @@ export const AboutSection: React.FC<{ onExploreServices: () => void }> = ({ onEx
             >
               We are a creative technology and digital marketing agency providing complete digital solutions to businesses, startups and individuals.
             </FadeUpParagraph>
-            <div className="mt-2">
-              <DoodleSquiggle color="#080808" className="w-28 h-5 opacity-70" />
-            </div>
           </div>
         </div>
 
-        {/* Big Narrative Highlight Banner (Light Container with Soft Layered Shadow & Sketch Border) */}
+        {/* Big Narrative Highlight Banner */}
         <motion.div
           initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.15 }}
           transition={{ duration: 1.05, ease: [0.19, 1, 0.22, 1] }}
-          className="relative bg-[#FAFAFB] rounded-[36px] p-6 sm:p-10 md:p-12 mb-8 border border-black/[0.04] shadow-card-soft overflow-hidden"
+          className="relative bg-[#FAFAFB] rounded-[36px] p-6 sm:p-10 md:p-12 mb-8 border border-black/[0.06] shadow-card-soft overflow-hidden"
         >
-          {/* Hand-Drawn Sketch Border Overlay */}
-          <DoodleCardBorder color="#080808" />
-
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
             <div className="lg:col-span-7">
               <FadeUpText delay={0.1} className="font-sans font-light text-2xl sm:text-3xl text-black leading-snug">
@@ -104,7 +74,7 @@ export const AboutSection: React.FC<{ onExploreServices: () => void }> = ({ onEx
             <div className="lg:col-span-5 grid grid-cols-2 gap-3.5">
               {[
                 { number: '100%', label: 'End-to-End Delivery' },
-                { number: '6-in-1', label: 'Unified Disciplines' },
+                { number: '8-in-1', label: 'Unified Disciplines' },
                 { number: '<2h', label: 'Response Guarantee' },
                 { number: '+310%', label: 'Average Client ROI' },
               ].map((stat, i) => (
@@ -121,12 +91,7 @@ export const AboutSection: React.FC<{ onExploreServices: () => void }> = ({ onEx
           </div>
         </motion.div>
 
-        {/* =========================================================================
-            THE 3 PILLAR CARDS MATCHING REFERENCE CARD THEME
-            1. MODERN TECHNOLOGY (Code Pill + Neon Pill) -> Arrow 1
-            2. BOLD CREATIVITY (Dual Pill + Neon Sticker) -> Arrow 2
-            3. SMART MARKETING (Neon Speech Bubble + Stat)
-           ========================================================================= */}
+        {/* The 3 Pillar Cards Grid */}
         <div className="relative grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
           
           {/* Card 1: Modern Technology */}
@@ -136,9 +101,9 @@ export const AboutSection: React.FC<{ onExploreServices: () => void }> = ({ onEx
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.1 }}
               transition={{ duration: 0.95, delay: 0.1, ease: [0.19, 1, 0.22, 1] }}
-              whileHover={{ y: -8, transition: { duration: 0.45, ease: [0.19, 1, 0.22, 1] } }}
+              whileHover={{ y: -6, transition: { duration: 0.35, ease: [0.19, 1, 0.22, 1] } }}
               onClick={onExploreServices}
-              className="h-full bg-[#F6F6F6] rounded-[32px] p-6 sm:p-7 md:p-8 flex flex-col justify-between transition-shadow duration-500 shadow-card-soft hover:shadow-card-hover border border-black/[0.035] cursor-pointer"
+              className="h-full bg-[#F6F6F6] rounded-[32px] p-6 sm:p-7 md:p-8 flex flex-col justify-between transition-shadow duration-300 shadow-card-soft hover:shadow-card-hover border border-black/[0.04] cursor-pointer"
             >
               <div>
                 <MaskedLineReveal
@@ -150,15 +115,14 @@ export const AboutSection: React.FC<{ onExploreServices: () => void }> = ({ onEx
                   className="font-sans text-xs sm:text-[13px] text-[#555555] mt-2.5 font-normal leading-relaxed"
                   delay={0.2}
                 >
-                  robust engineering, high-speed web apps & custom software architectures
+                  robust engineering, high-speed web apps &amp; custom software architectures
                 </FadeUpParagraph>
               </div>
 
-              {/* Bottom Sticker Graphic */}
+              {/* Bottom Badge Graphic */}
               <div className="mt-10 sm:mt-12 pt-4 pb-4 px-2 flex flex-col items-center justify-center">
                 <div className="relative flex items-center justify-center pr-6 sm:pr-8">
-                  {/* Tilted Blue Pill */}
-                  <div className="relative bg-royal-blue text-white rounded-2xl px-4 py-3 flex items-center space-x-3 shadow-pill-blue transform -rotate-6 transition-all duration-200 hover:scale-[1.03]">
+                  <div className="relative bg-royal-blue text-white rounded-2xl px-4 py-3 flex items-center space-x-3 shadow-pill-blue transform -rotate-4 transition-all duration-200 hover:scale-[1.03]">
                     <div className="relative w-9 h-9 rounded-full bg-white/15 flex items-center justify-center border border-white/30 shadow-inner">
                       <Code2 className="w-5 h-5 text-neon-lime" />
                     </div>
@@ -168,18 +132,12 @@ export const AboutSection: React.FC<{ onExploreServices: () => void }> = ({ onEx
                     </div>
                   </div>
 
-                  {/* Overlapping Neon Pill */}
-                  <div className="absolute -right-2 sm:-right-4 -bottom-3 bg-neon-lime text-primary-black font-sans text-xs font-bold px-3.5 py-1.5 rounded-full shadow-pill-neon border border-black/10 select-none transition-all duration-200 hover:scale-105">
+                  <div className="absolute -right-2 sm:-right-4 -bottom-3 bg-neon-lime text-primary-black font-sans text-xs font-bold px-3.5 py-1.5 rounded-full shadow-pill-neon border border-black/10 select-none">
                     HIGH PERFORMANCE
                   </div>
                 </div>
               </div>
             </motion.div>
-
-            {/* Hand-drawn connector arrow between Card 1 & Card 2 */}
-            <div className="hidden md:block absolute -right-6 lg:-right-7 top-1/2 transform -translate-y-1/2 z-20 pointer-events-none">
-              <ConnectorArrow1 />
-            </div>
           </div>
 
           {/* Card 2: Bold Creativity */}
@@ -189,9 +147,9 @@ export const AboutSection: React.FC<{ onExploreServices: () => void }> = ({ onEx
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.1 }}
               transition={{ duration: 0.95, delay: 0.2, ease: [0.19, 1, 0.22, 1] }}
-              whileHover={{ y: -8, transition: { duration: 0.45, ease: [0.19, 1, 0.22, 1] } }}
+              whileHover={{ y: -6, transition: { duration: 0.35, ease: [0.19, 1, 0.22, 1] } }}
               onClick={onExploreServices}
-              className="h-full bg-[#F6F6F6] rounded-[32px] p-6 sm:p-7 md:p-8 flex flex-col justify-between transition-shadow duration-500 shadow-card-soft hover:shadow-card-hover border border-black/[0.035] cursor-pointer"
+              className="h-full bg-[#F6F6F6] rounded-[32px] p-6 sm:p-7 md:p-8 flex flex-col justify-between transition-shadow duration-300 shadow-card-soft hover:shadow-card-hover border border-black/[0.04] cursor-pointer"
             >
               <div>
                 <MaskedLineReveal
@@ -203,14 +161,13 @@ export const AboutSection: React.FC<{ onExploreServices: () => void }> = ({ onEx
                   className="font-sans text-xs sm:text-[13px] text-[#555555] mt-2.5 font-normal leading-relaxed"
                   delay={0.25}
                 >
-                  distinctive brand systems, poster design & high-converting video production
+                  distinctive brand systems, poster design &amp; high-converting video production
                 </FadeUpParagraph>
               </div>
 
-              {/* Bottom Sticker Graphic */}
+              {/* Bottom Badge Graphic */}
               <div className="mt-10 sm:mt-12 pt-4 pb-6 px-2 flex flex-col items-center justify-center">
                 <div className="relative flex flex-col items-center">
-                  {/* Dual Capsule Pill Sticker */}
                   <div className="inline-flex items-center rounded-full bg-[#08236B] p-1 shadow-card-soft border border-white/10">
                     <div className="bg-[#041A55] text-white font-sans text-xs sm:text-sm font-bold px-4 py-2.5 rounded-full">
                       IDENTITY
@@ -220,18 +177,13 @@ export const AboutSection: React.FC<{ onExploreServices: () => void }> = ({ onEx
                     </div>
                   </div>
 
-                  {/* Overlapping Small Neon Sticker */}
-                  <div className="absolute -bottom-6 right-3 sm:right-5">
-                    <SmallNeonSticker />
+                  <div className="absolute -bottom-4 right-2 bg-neon-lime text-primary-black font-sans text-[11px] font-bold px-3 py-1 rounded-full shadow-md border border-black/10 flex items-center space-x-1">
+                    <span>AESTHETICS</span>
+                    <ArrowUpRight className="w-3 h-3" />
                   </div>
                 </div>
               </div>
             </motion.div>
-
-            {/* Hand-drawn connector arrow between Card 2 & Card 3 */}
-            <div className="hidden md:block absolute -right-6 lg:-right-7 top-1/2 transform -translate-y-1/2 z-20 pointer-events-none">
-              <ConnectorArrow2 />
-            </div>
           </div>
 
           {/* Card 3: Smart Marketing */}
@@ -241,9 +193,9 @@ export const AboutSection: React.FC<{ onExploreServices: () => void }> = ({ onEx
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.1 }}
               transition={{ duration: 0.95, delay: 0.3, ease: [0.19, 1, 0.22, 1] }}
-              whileHover={{ y: -8, transition: { duration: 0.45, ease: [0.19, 1, 0.22, 1] } }}
+              whileHover={{ y: -6, transition: { duration: 0.35, ease: [0.19, 1, 0.22, 1] } }}
               onClick={onExploreServices}
-              className="h-full bg-[#F6F6F6] rounded-[32px] p-6 sm:p-7 md:p-8 flex flex-col justify-between transition-shadow duration-500 shadow-card-soft hover:shadow-card-hover border border-black/[0.035] cursor-pointer"
+              className="h-full bg-[#F6F6F6] rounded-[32px] p-6 sm:p-7 md:p-8 flex flex-col justify-between transition-shadow duration-300 shadow-card-soft hover:shadow-card-hover border border-black/[0.04] cursor-pointer"
             >
               <div>
                 <MaskedLineReveal
@@ -255,14 +207,13 @@ export const AboutSection: React.FC<{ onExploreServices: () => void }> = ({ onEx
                   className="font-sans text-xs sm:text-[13px] text-[#555555] mt-2.5 font-normal leading-relaxed"
                   delay={0.3}
                 >
-                  Meta campaigns, organic growth & intelligent automated sales pipelines
+                  Meta campaigns, organic growth &amp; intelligent automated sales pipelines
                 </FadeUpParagraph>
               </div>
 
-              {/* Bottom Sticker Graphic */}
+              {/* Bottom Badge Graphic */}
               <div className="mt-10 sm:mt-12 pt-4 pb-5 px-2 flex flex-col items-center justify-center">
                 <div className="relative w-full max-w-[250px]">
-                  {/* Large Neon Speech Bubble */}
                   <div className="relative bg-neon-lime rounded-[24px] px-5 py-4 shadow-bubble-neon border border-black/10 flex flex-col items-center justify-center transition-transform duration-200 hover:scale-[1.03]">
                     <div className="font-sans text-[11px] font-bold text-black/75 tracking-wide uppercase">
                       CLIENT PIPELINE BOOST
@@ -271,9 +222,6 @@ export const AboutSection: React.FC<{ onExploreServices: () => void }> = ({ onEx
                       <span>10X VELOCITY</span>
                       <ArrowUpRight className="w-5 h-5 text-black stroke-[3]" />
                     </div>
-
-                    {/* Speech Bubble Tail at bottom left */}
-                    <div className="absolute -bottom-2 left-6 w-4 h-4 bg-neon-lime rotate-45 transform origin-top-left border-r border-b border-black/10" />
                   </div>
                 </div>
               </div>
@@ -286,3 +234,4 @@ export const AboutSection: React.FC<{ onExploreServices: () => void }> = ({ onEx
     </section>
   );
 };
+

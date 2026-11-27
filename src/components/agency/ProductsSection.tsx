@@ -19,14 +19,6 @@ import {
 import { productsData } from '../../data/agencyData';
 import type { ProductItem } from '../../data/agencyData';
 import { MaskedLineReveal, FadeUpParagraph, FadeUpText, SlowHighlight } from '../AnimatedText';
-import {
-  DoodleCorner,
-  DoodleWashiTape,
-  DoodleCardBorder,
-  DoodleStar,
-  DoodleSparkle,
-  DoodleUnderline,
-} from '../Doodles';
 
 const productIcons: Record<string, React.ElementType> = {
   'nexus-starter-suite': Cpu,
@@ -60,14 +52,6 @@ export const ProductsSection: React.FC = () => {
 
   return (
     <section id="products" className="relative w-full py-8 sm:py-12 md:py-16 px-4 sm:px-8 text-black bg-transparent overflow-hidden">
-      {/* Hand-Drawn Container Corners */}
-      <div className="absolute top-3 left-4 z-10 opacity-70 pointer-events-none">
-        <DoodleCorner position="top-left" color="#080808" className="w-8 h-8 sm:w-10 sm:h-10" />
-      </div>
-      <div className="absolute top-3 right-4 z-10 opacity-70 pointer-events-none">
-        <DoodleCorner position="top-right" color="#080808" className="w-8 h-8 sm:w-10 sm:h-10" />
-      </div>
-
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 pb-4 border-b border-black/[0.08]">
@@ -77,19 +61,13 @@ export const ProductsSection: React.FC = () => {
                 <Package className="w-3.5 h-3.5" />
                 <span>Proprietary Toolkits &amp; Frameworks</span>
               </FadeUpText>
-              <DoodleWashiTape text="PRODUCTS // ACCELERATORS" color="#DCF4A2" className="hidden sm:inline-flex" />
             </div>
 
-            <div className="flex items-center space-x-3">
-              <MaskedLineReveal
-                lines={["PRE-ENGINEERED DIGITAL", "PRODUCTS & ACCELERATORS."]}
-                className="font-sans text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-black leading-[1.12]"
-                delay={0.1}
-              />
-              <div className="hidden lg:block shrink-0 -mt-4">
-                <DoodleSparkle color="#0645D8" className="w-8 h-8" />
-              </div>
-            </div>
+            <MaskedLineReveal
+              lines={["PRE-ENGINEERED DIGITAL", "PRODUCTS & ACCELERATORS."]}
+              className="font-sans text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-black leading-[1.12]"
+              delay={0.1}
+            />
           </div>
 
           <div className="mt-4 md:mt-0 max-w-md">
@@ -99,9 +77,6 @@ export const ProductsSection: React.FC = () => {
             >
               Battle-tested tools, software engines, and pre-built design systems crafted by <SlowHighlight>Nexus Studio</SlowHighlight> to help companies launch in days instead of months.
             </FadeUpParagraph>
-            <div className="mt-2 flex items-center space-x-2">
-              <DoodleUnderline className="w-48 h-3 text-royal-blue opacity-75" />
-            </div>
           </div>
         </div>
 
@@ -141,11 +116,8 @@ export const ProductsSection: React.FC = () => {
                     ease: [0.19, 1, 0.22, 1],
                   }}
                   whileHover={{ y: -6, transition: { duration: 0.35, ease: [0.19, 1, 0.22, 1] } }}
-                  className="relative h-full bg-white rounded-[32px] p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 shadow-card-soft hover:shadow-card-hover border border-black/[0.04] overflow-hidden"
+                  className="relative h-full bg-white rounded-[32px] p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 shadow-card-soft hover:shadow-card-hover border border-black/[0.06] overflow-hidden"
                 >
-                  {/* Subtle hand-drawn card border overlay */}
-                  <DoodleCardBorder color="#080808" />
-
                   <div className="relative z-10">
                     {/* Top Row: Icon + Status Badge */}
                     <div className="flex items-center justify-between mb-4">
@@ -192,9 +164,8 @@ export const ProductsSection: React.FC = () => {
 
                     {/* Key Features List */}
                     <div className="mt-4 pt-3.5 border-t border-black/[0.06] space-y-1.5">
-                      <div className="text-[11px] font-bold uppercase tracking-wider text-black flex items-center space-x-1">
-                        <span>Core Highlights</span>
-                        <DoodleStar className="w-3 h-3 text-royal-blue" />
+                      <div className="text-[11px] font-bold uppercase tracking-wider text-black">
+                        Core Highlights
                       </div>
                       {product.features.slice(0, 3).map((feat, fIdx) => (
                         <div key={fIdx} className="flex items-start space-x-2 text-xs text-zinc-700">
@@ -256,8 +227,6 @@ export const ProductsSection: React.FC = () => {
               onClick={(e) => e.stopPropagation()}
               className="relative w-full max-w-2xl bg-white rounded-3xl p-6 sm:p-8 shadow-2xl border border-black/10 overflow-hidden"
             >
-              <DoodleCardBorder color="#080808" />
-
               {/* Close Button */}
               <button
                 onClick={() => setSelectedProductModal(null)}

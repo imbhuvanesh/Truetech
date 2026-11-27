@@ -51,7 +51,7 @@ export const ContactPage: React.FC = () => {
         {/* 3 Direct Reach Pillars */}
         <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-3xl mx-auto text-left">
           <a
-            href="https://wa.me/15551234567?text=Hello%20Nexus%20Studio%2C%20I%20have%20a%20project%20in%20mind!"
+            href="https://wa.me/15551234567?text=Hello%20Genora%20Studio%2C%20I%20have%20a%20project%20in%20mind!"
             target="_blank"
             rel="noreferrer"
             className="bg-white/10 hover:bg-white/20 border border-white/15 rounded-2xl p-4 flex items-center space-x-3 transition-colors"
@@ -66,7 +66,7 @@ export const ContactPage: React.FC = () => {
           </a>
 
           <a
-            href="mailto:hello@nexusdigital.agency"
+            href="mailto:hello@genora.agency"
             className="bg-white/10 hover:bg-white/20 border border-white/15 rounded-2xl p-4 flex items-center space-x-3 transition-colors"
           >
             <div className="w-10 h-10 rounded-xl bg-neon-lime text-black flex items-center justify-center shrink-0">
@@ -74,7 +74,7 @@ export const ContactPage: React.FC = () => {
             </div>
             <div>
               <div className="text-[11px] text-white/70 uppercase">Email Directly</div>
-              <div className="text-sm font-bold text-white">hello@nexusdigital.agency</div>
+              <div className="text-sm font-bold text-white">hello@genora.agency</div>
             </div>
           </a>
 

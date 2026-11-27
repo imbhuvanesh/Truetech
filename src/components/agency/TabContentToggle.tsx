@@ -3,7 +3,6 @@ import gsap from 'gsap';
 import { SplitText } from 'gsap/SplitText';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Users, Rocket, Palette, Terminal, CheckCircle2, ArrowUpRight, Zap, ShieldCheck } from 'lucide-react';
-import { DoodleCorner, DoodleChatBubble, DoodleLightbulb, DoodleSparkle, DoodleCardBorder, DoodleStar } from '../Doodles';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(SplitText);
@@ -91,9 +90,9 @@ const TAB_CONTENT: TabItem[] = [
       },
       {
         title: 'Micro-Interactions',
-        desc: 'Silky 60fps spring transitions, SVG doodle animations, and custom cursor physics.',
+        desc: 'Silky 60fps spring transitions, smooth SVG animations, and custom cursor physics.',
         metric: '60fps GPU Easing',
-        icon: DoodleStar,
+        icon: Zap,
       },
       {
         title: 'WCAG AAA Accessibility',
@@ -310,28 +309,11 @@ export const TabContentToggle: React.FC = () => {
 
   return (
     <section className="relative w-full py-8 sm:py-12 md:py-16 px-4 sm:px-8 bg-transparent overflow-hidden">
-      {/* Hand-Drawn Container Corners */}
-      <div className="absolute top-3 left-4 z-10 opacity-70 pointer-events-none">
-        <DoodleCorner position="top-left" color="#080808" className="w-8 h-8 sm:w-10 sm:h-10" />
-      </div>
-      <div className="absolute top-3 right-4 z-10 opacity-70 pointer-events-none">
-        <DoodleCorner position="top-right" color="#080808" className="w-8 h-8 sm:w-10 sm:h-10" />
-      </div>
-
-      {/* Floating Doodle Accents */}
-      <div className="absolute top-8 left-8 hidden lg:block pointer-events-none opacity-80">
-        <DoodleLightbulb color="#080808" className="w-9 h-11" />
-      </div>
-      <div className="absolute top-8 right-8 hidden lg:block pointer-events-none opacity-80">
-        <DoodleChatBubble color="#080808" className="w-10 h-8" />
-      </div>
-
       <div ref={containerRef} className="tabs-demo relative z-10 max-w-5xl mx-auto">
         {/* Section Header Label */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-royal-blue/10 text-royal-blue font-bold text-xs tracking-wider uppercase mb-3">
             <span>Collaboration Framework</span>
-            <DoodleSparkle color="#080808" className="w-3.5 h-3.5" />
           </div>
           <h2 className="font-sans text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-primary-black">
             Tailored Collaboration for High-Velocity Teams
@@ -360,8 +342,6 @@ export const TabContentToggle: React.FC = () => {
 
         {/* Animated Headline Text Box */}
         <div className="content-wrapper relative bg-white rounded-3xl p-6 sm:p-8 md:p-10 border border-black/[0.06] shadow-card-soft mb-6" id="contentWrapper">
-          <DoodleCardBorder color="#080808" />
-          
           <div className="text-xs font-mono uppercase tracking-widest text-royal-blue font-bold mb-3 flex items-center space-x-2">
             <span className="w-2 h-2 rounded-full bg-royal-blue animate-pulse" />
             <span>{activeTab.badge}</span>

@@ -1,18 +1,7 @@
 import React from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import {
-  ConnectorArrow1,
-  ConnectorArrow2,
-  SmallNeonSticker,
-  DoodleCorner,
-  DoodleWashiTape,
-  DoodleCodeTag,
-  DoodleSparkle,
-  DoodleRocket,
-  DoodleCardBorder,
-} from './Doodles';
 import { MaskedLineReveal, FadeUpParagraph, SlowHighlight } from './AnimatedText';
-import { Code2, ArrowUpRight } from 'lucide-react';
+import { Code2, ArrowUpRight, Sparkles, TrendingUp } from 'lucide-react';
 
 export const RewardsSection: React.FC = () => {
   const shouldReduceMotion = useReducedMotion();
@@ -26,18 +15,12 @@ export const RewardsSection: React.FC = () => {
 
   return (
     <section className="relative w-full bg-transparent pt-6 sm:pt-8 md:pt-10 pb-8 sm:pb-10 md:pb-12 px-4 sm:px-8 md:px-12 text-primary-black overflow-hidden">
-      {/* Hand-Drawn Container Corners */}
-      <div className="absolute top-3 left-4 z-10 opacity-70 pointer-events-none">
-        <DoodleCorner position="top-left" color="#080808" className="w-8 h-8 sm:w-10 sm:h-10" />
-      </div>
-      <div className="absolute top-3 right-4 z-10 opacity-70 pointer-events-none">
-        <DoodleCorner position="top-right" color="#080808" className="w-8 h-8 sm:w-10 sm:h-10" />
-      </div>
-
       <div className="max-w-6xl mx-auto">
-        {/* Notebook Tape Header Badge */}
+        {/* Header Badge */}
         <div className="flex items-center justify-center mb-6">
-          <DoodleWashiTape text="NOTEBOOK // THREE CORE PILLARS" color="#FFFFFF" className="shadow-sm" />
+          <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-black/10 text-black font-bold text-xs tracking-wider uppercase shadow-sm">
+            <span>Core Disciplines // Three Foundations</span>
+          </div>
         </div>
         
         {/* The 3 Horizontal Reward / Pillar Cards Grid */}
@@ -45,7 +28,6 @@ export const RewardsSection: React.FC = () => {
           
           {/* =========================================================================
               CARD 1: WE BUILD (Web & App Development)
-              Layered Shadow, Hover Elevation, Tilted Pill + Neon Pill
              ========================================================================= */}
           <div className="relative group">
             <motion.div
@@ -59,31 +41,25 @@ export const RewardsSection: React.FC = () => {
               }}
               viewport={{ once: false, amount: 0.05 }}
               transition={{
-                duration: shouldReduceMotion ? 0.01 : 0.95,
+                duration: shouldReduceMotion ? 0.01 : 0.85,
                 delay: shouldReduceMotion ? 0 : 0.05,
                 ease: [0.19, 1, 0.22, 1],
               }}
-              whileHover={{ y: -8, transition: { duration: 0.45, ease: [0.19, 1, 0.22, 1] } }}
+              whileHover={{ y: -6, transition: { duration: 0.35, ease: [0.19, 1, 0.22, 1] } }}
               onClick={() => scrollTo('services')}
-              className="relative h-full bg-white rounded-[32px] p-6 sm:p-7 md:p-8 flex flex-col justify-between transition-shadow duration-500 shadow-card-soft hover:shadow-card-hover border border-black/[0.04] cursor-pointer overflow-hidden"
+              className="relative h-full bg-white rounded-[32px] p-6 sm:p-7 md:p-8 flex flex-col justify-between transition-all duration-300 shadow-card-soft hover:shadow-card-hover border border-black/[0.05] cursor-pointer overflow-hidden"
             >
-              {/* Hand-Drawn Sketch Card Border Overlay */}
-              <DoodleCardBorder color="#080808" />
-
               <div>
                 <div className="flex items-start justify-between">
-                  {/* Heading with smooth line reveal */}
                   <MaskedLineReveal
                     lines={["WE BUILD", "DIGITAL PRODUCTS"]}
                     className="font-sans text-xl sm:text-[22px] font-bold uppercase tracking-tight text-primary-black leading-[1.1]"
                     delay={0.1}
                   />
-                  {/* Hand-Drawn Code Tag Sketch */}
-                  <div className="opacity-80">
-                    <DoodleCodeTag color="#080808" className="w-9 h-6" />
+                  <div className="w-8 h-8 rounded-full bg-royal-blue/10 text-royal-blue flex items-center justify-center">
+                    <Code2 className="w-4 h-4" />
                   </div>
                 </div>
-                {/* Subtitle with fade up and slow green highlight */}
                 <FadeUpParagraph
                   className="font-sans text-xs sm:text-[13px] text-[#444444] mt-2.5 font-normal leading-relaxed"
                   delay={0.25}
@@ -92,57 +68,29 @@ export const RewardsSection: React.FC = () => {
                 </FadeUpParagraph>
               </div>
 
-              {/* Bottom Sticker Graphic - Fully visible with generous padding */}
-              <div className="mt-10 sm:mt-12 pt-4 pb-4 px-2 flex flex-col items-center justify-center">
-                <motion.div
-                  initial={{
-                    scale: shouldReduceMotion ? 1 : 0.92,
-                    opacity: shouldReduceMotion ? 1 : 0,
-                    y: shouldReduceMotion ? 0 : 12,
-                  }}
-                  whileInView={{
-                    scale: 1,
-                    opacity: 1,
-                    y: 0,
-                  }}
-                  viewport={{ once: false, amount: 0.05 }}
-                  transition={{
-                    duration: shouldReduceMotion ? 0.01 : 0.85,
-                    delay: shouldReduceMotion ? 0 : 0.2,
-                    ease: [0.19, 1, 0.22, 1],
-                  }}
-                  className="relative flex items-center justify-center pr-6 sm:pr-8"
-                >
-                  
-                  {/* Tilted Blue Pill Sticker with Layered Shadow */}
-                  <div className="relative bg-royal-blue text-white rounded-2xl px-4 py-3 flex items-center space-x-3 shadow-pill-blue transform -rotate-6 transition-all duration-300 hover:scale-[1.03]">
-                    <div className="relative w-9 h-9 rounded-full bg-white/15 flex items-center justify-center border border-white/30 shadow-inner">
-                      <Code2 className="w-5 h-5 text-neon-lime" />
+              {/* Bottom Graphic Badge */}
+              <div className="mt-8 pt-4 pb-2 px-2 flex flex-col items-center justify-center">
+                <div className="relative flex items-center justify-center pr-6 sm:pr-8">
+                  <div className="relative bg-royal-blue text-white rounded-2xl px-4 py-3 flex items-center space-x-3 shadow-pill-blue transform -rotate-4 transition-all duration-300 hover:scale-[1.03]">
+                    <div className="relative w-8 h-8 rounded-full bg-white/15 flex items-center justify-center border border-white/30 shadow-inner">
+                      <Code2 className="w-4 h-4 text-neon-lime" />
                     </div>
                     <div>
-                      <div className="font-sans text-xs font-bold leading-tight">nexus.dev</div>
-                      <div className="font-sans text-[10.5px] text-white/80 font-normal">100% custom code</div>
+                      <div className="font-sans text-xs font-bold leading-tight">genora.dev</div>
+                      <div className="font-sans text-[10px] text-white/80 font-normal">100% custom code</div>
                     </div>
                   </div>
 
-                  {/* Overlapping Neon Lime Green Pill Sticker with Glow Shadow */}
-                  <div className="absolute -right-2 sm:-right-4 -bottom-3 bg-neon-lime text-primary-black font-sans text-xs font-bold px-3.5 py-1.5 rounded-full shadow-pill-neon border border-black/10 select-none transition-all duration-300 hover:scale-105">
-                    FAST & SCALABLE
+                  <div className="absolute -right-2 sm:-right-4 -bottom-3 bg-neon-lime text-primary-black font-sans text-xs font-bold px-3 py-1 rounded-full shadow-pill-neon border border-black/10 select-none">
+                    FAST &amp; SCALABLE
                   </div>
-
-                </motion.div>
+                </div>
               </div>
             </motion.div>
-
-            {/* Hand-drawn connector arrow between Card 1 & Card 2 (Desktop only) */}
-            <div className="hidden md:block absolute -right-6 lg:-right-7 top-1/2 transform -translate-y-1/2 z-20 pointer-events-none">
-              <ConnectorArrow1 />
-            </div>
           </div>
 
           {/* =========================================================================
               CARD 2: WE CREATE (Creative Design & Video Production)
-              Layered Shadow, Hover Elevation, Dual Capsule + Neon Circle Sticker
              ========================================================================= */}
           <div className="relative group">
             <motion.div
@@ -156,31 +104,25 @@ export const RewardsSection: React.FC = () => {
               }}
               viewport={{ once: false, amount: 0.05 }}
               transition={{
-                duration: shouldReduceMotion ? 0.01 : 0.95,
+                duration: shouldReduceMotion ? 0.01 : 0.85,
                 delay: shouldReduceMotion ? 0 : 0.1,
                 ease: [0.19, 1, 0.22, 1],
               }}
-              whileHover={{ y: -8, transition: { duration: 0.45, ease: [0.19, 1, 0.22, 1] } }}
+              whileHover={{ y: -6, transition: { duration: 0.35, ease: [0.19, 1, 0.22, 1] } }}
               onClick={() => scrollTo('work')}
-              className="relative h-full bg-white rounded-[32px] p-6 sm:p-7 md:p-8 flex flex-col justify-between transition-shadow duration-500 shadow-card-soft hover:shadow-card-hover border border-black/[0.04] cursor-pointer overflow-hidden"
+              className="relative h-full bg-white rounded-[32px] p-6 sm:p-7 md:p-8 flex flex-col justify-between transition-all duration-300 shadow-card-soft hover:shadow-card-hover border border-black/[0.05] cursor-pointer overflow-hidden"
             >
-              {/* Hand-Drawn Sketch Card Border Overlay */}
-              <DoodleCardBorder color="#080808" />
-
               <div>
                 <div className="flex items-start justify-between">
-                  {/* Heading with smooth line reveal */}
                   <MaskedLineReveal
                     lines={["WE CREATE", "POWERFUL BRANDS"]}
                     className="font-sans text-xl sm:text-[22px] font-bold uppercase tracking-tight text-primary-black leading-[1.1]"
                     delay={0.15}
                   />
-                  {/* Doodle Sparkle Accent */}
-                  <div className="opacity-80">
-                    <DoodleSparkle color="#A8FF00" className="w-6 h-6" />
+                  <div className="w-8 h-8 rounded-full bg-neon-lime/30 text-primary-black flex items-center justify-center">
+                    <Sparkles className="w-4 h-4" />
                   </div>
                 </div>
-                {/* Subtitle with fade up and slow green highlight */}
                 <FadeUpParagraph
                   className="font-sans text-xs sm:text-[13px] text-[#444444] mt-2.5 font-normal leading-relaxed"
                   delay={0.3}
@@ -189,58 +131,29 @@ export const RewardsSection: React.FC = () => {
                 </FadeUpParagraph>
               </div>
 
-              {/* Bottom Sticker Graphic - Fully visible with clearance */}
-              <div className="mt-10 sm:mt-12 pt-4 pb-6 px-2 flex flex-col items-center justify-center">
-                <motion.div
-                  initial={{
-                    scale: shouldReduceMotion ? 1 : 0.92,
-                    opacity: shouldReduceMotion ? 1 : 0,
-                    y: shouldReduceMotion ? 0 : 12,
-                  }}
-                  whileInView={{
-                    scale: 1,
-                    opacity: 1,
-                    y: 0,
-                  }}
-                  viewport={{ once: false, amount: 0.05 }}
-                  transition={{
-                    duration: shouldReduceMotion ? 0.01 : 0.85,
-                    delay: shouldReduceMotion ? 0 : 0.25,
-                    ease: [0.19, 1, 0.22, 1],
-                  }}
-                  className="relative flex flex-col items-center"
-                >
-                  
-                  {/* Dual Capsule Pill Sticker with Soft Inset Border */}
+              {/* Bottom Graphic Badge */}
+              <div className="mt-8 pt-4 pb-4 px-2 flex flex-col items-center justify-center">
+                <div className="relative flex flex-col items-center">
                   <div className="inline-flex items-center rounded-full bg-[#08236B] p-1 shadow-card-soft border border-white/10">
-                    {/* Left Darker Blue Pill */}
-                    <div className="bg-[#041A55] text-white font-sans text-xs sm:text-sm font-bold px-4 py-2.5 rounded-full">
+                    <div className="bg-[#041A55] text-white font-sans text-xs font-bold px-3.5 py-2 rounded-full">
                       CREATIVE
                     </div>
-                    {/* Right Royal Blue Pill */}
-                    <div className="bg-royal-blue text-white font-sans text-xs sm:text-sm font-bold px-4 py-2.5 rounded-full flex items-center space-x-1">
+                    <div className="bg-royal-blue text-white font-sans text-xs font-bold px-3.5 py-2 rounded-full flex items-center space-x-1">
                       <span>MARKETING</span>
                     </div>
                   </div>
 
-                  {/* Floating Small Neon Sticker with Doodle Arrow directly overlapping */}
-                  <div className="absolute -bottom-6 right-3 sm:right-5">
-                    <SmallNeonSticker />
+                  <div className="absolute -bottom-4 right-2 bg-neon-lime text-primary-black font-sans text-[11px] font-bold px-3 py-1 rounded-full shadow-md border border-black/10 flex items-center space-x-1">
+                    <span>AESTHETICS</span>
+                    <ArrowUpRight className="w-3 h-3" />
                   </div>
-
-                </motion.div>
+                </div>
               </div>
             </motion.div>
-
-            {/* Hand-drawn connector arrow between Card 2 & Card 3 (Desktop only) */}
-            <div className="hidden md:block absolute -right-6 lg:-right-7 top-1/2 transform -translate-y-1/2 z-20 pointer-events-none">
-              <ConnectorArrow2 />
-            </div>
           </div>
 
           {/* =========================================================================
               CARD 3: WE GROW (Digital Marketing & Automation)
-              Layered Shadow, Hover Elevation, Large Neon Speech Bubble
              ========================================================================= */}
           <div className="relative group">
             <motion.div
@@ -254,80 +167,54 @@ export const RewardsSection: React.FC = () => {
               }}
               viewport={{ once: false, amount: 0.05 }}
               transition={{
-                duration: shouldReduceMotion ? 0.01 : 0.95,
+                duration: shouldReduceMotion ? 0.01 : 0.85,
                 delay: shouldReduceMotion ? 0 : 0.15,
                 ease: [0.19, 1, 0.22, 1],
               }}
-              whileHover={{ y: -8, transition: { duration: 0.45, ease: [0.19, 1, 0.22, 1] } }}
+              whileHover={{ y: -6, transition: { duration: 0.35, ease: [0.19, 1, 0.22, 1] } }}
               onClick={() => scrollTo('contact')}
-              className="relative h-full bg-white rounded-[32px] p-6 sm:p-7 md:p-8 flex flex-col justify-between transition-shadow duration-500 shadow-card-soft hover:shadow-card-hover border border-black/[0.04] cursor-pointer overflow-hidden"
+              className="relative h-full bg-white rounded-[32px] p-6 sm:p-7 md:p-8 flex flex-col justify-between transition-all duration-300 shadow-card-soft hover:shadow-card-hover border border-black/[0.05] cursor-pointer overflow-hidden"
             >
-              {/* Hand-Drawn Sketch Card Border Overlay */}
-              <DoodleCardBorder color="#080808" />
-
               <div>
                 <div className="flex items-start justify-between">
-                  {/* Heading with smooth line reveal */}
                   <MaskedLineReveal
                     lines={["WE GROW", "YOUR BUSINESS"]}
                     className="font-sans text-xl sm:text-[22px] font-bold uppercase tracking-tight text-primary-black leading-[1.1]"
                     delay={0.2}
                   />
-                  {/* Hand-Drawn Rocket Doodle */}
-                  <div className="opacity-80">
-                    <DoodleRocket color="#080808" className="w-8 h-8" />
+                  <div className="w-8 h-8 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center">
+                    <TrendingUp className="w-4 h-4" />
                   </div>
                 </div>
-                {/* Subtitle with fade up and slow green highlight */}
                 <FadeUpParagraph
                   className="font-sans text-xs sm:text-[13px] text-[#444444] mt-2.5 font-normal leading-relaxed"
                   delay={0.35}
                 >
-                  <SlowHighlight>Meta ad campaigns</SlowHighlight>, social growth &amp; <SlowHighlight>workflow automation</SlowHighlight>
+                  <SlowHighlight>Meta ad funnels</SlowHighlight>, SEO ranking &amp; <SlowHighlight>intelligent automation</SlowHighlight>
                 </FadeUpParagraph>
               </div>
 
-              {/* Bottom Sticker Graphic - Fully visible speech bubble & tail */}
-              <div className="mt-10 sm:mt-12 pt-4 pb-5 px-2 flex flex-col items-center justify-center">
-                <motion.div
-                  initial={{
-                    scale: shouldReduceMotion ? 1 : 0.92,
-                    opacity: shouldReduceMotion ? 1 : 0,
-                    y: shouldReduceMotion ? 0 : 12,
-                  }}
-                  whileInView={{
-                    scale: 1,
-                    opacity: 1,
-                    y: 0,
-                  }}
-                  viewport={{ once: false, amount: 0.05 }}
-                  transition={{
-                    duration: shouldReduceMotion ? 0.01 : 0.55,
-                    delay: shouldReduceMotion ? 0 : 0.3,
-                    ease: [0.16, 1, 0.3, 1],
-                  }}
-                  className="relative w-full max-w-[250px]"
-                >
-                  {/* Large Neon Lime Speech Bubble Sticker with Layered Glow Shadow */}
-                  <div className="relative bg-neon-lime rounded-[24px] px-5 py-4 shadow-bubble-neon border border-black/10 flex flex-col items-center justify-center transition-transform duration-200 hover:scale-[1.03]">
-                    <div className="font-sans text-[11px] font-bold text-black/75 tracking-wide uppercase">
-                      EST. CLIENT ROI BOOST
-                    </div>
-                    <div className="font-sans text-2xl sm:text-[26px] font-bold text-primary-black tracking-tight mt-0.5 flex items-center space-x-1">
-                      <span>+310% GROWTH</span>
-                      <ArrowUpRight className="w-5 h-5 text-black stroke-[3]" />
-                    </div>
-
-                    {/* Speech Bubble Tail at bottom left */}
-                    <div className="absolute -bottom-2 left-6 w-4 h-4 bg-neon-lime rotate-45 transform origin-top-left border-r border-b border-black/10" />
+              {/* Bottom Graphic Badge */}
+              <div className="mt-8 pt-4 pb-2 px-2 flex flex-col items-center justify-center">
+                <div className="relative bg-neon-lime text-primary-black rounded-3xl p-4 sm:p-5 w-full max-w-[240px] shadow-pill-neon border border-black/10 select-none">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[10px] font-mono font-bold tracking-wider uppercase text-black/75">
+                      Client ROI Boost
+                    </span>
+                    <TrendingUp className="w-4 h-4 text-primary-black" />
                   </div>
-                </motion.div>
+                  <div className="text-2xl sm:text-3xl font-extrabold tracking-tight text-primary-black mt-1">
+                    +310%
+                  </div>
+                  <div className="text-[11px] font-bold tracking-tight text-primary-black/80">
+                    SCALABLE GROWTH
+                  </div>
+                </div>
               </div>
             </motion.div>
           </div>
 
         </div>
-
       </div>
     </section>
   );

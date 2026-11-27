@@ -78,9 +78,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onStartProject }) => {
         {/* Logo / Brand */}
         <Link to="/" className="flex items-center space-x-2 group">
           <div className="w-8 h-8 rounded-xl bg-neon-lime flex items-center justify-center shadow-[0_0_16px_rgba(168,255,0,0.5)] group-hover:shadow-[0_0_28px_rgba(168,255,0,0.8)] transition-shadow duration-300">
-            <span className="text-[#041A55] font-black text-sm leading-none">N</span>
+            <span className="text-[#041A55] font-black text-sm leading-none">G</span>
           </div>
-          <span className="hidden sm:block text-white font-bold text-sm tracking-tight">Nexus</span>
+          <span className="hidden sm:block text-white font-bold text-sm tracking-tight">Genora</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -106,7 +106,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onStartProject }) => {
         {/* Mobile brand badge */}
         <div className="md:hidden">
           <span className="text-xs font-bold text-white uppercase tracking-wider px-3 py-1 rounded-full bg-white/10 border border-white/20">
-            NEXUS
+            GENORA
           </span>
         </div>
 

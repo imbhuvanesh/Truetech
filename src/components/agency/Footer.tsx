@@ -1,12 +1,5 @@
 import React from 'react';
 import { ArrowUp, Mail, Phone, MessageSquare, ArrowUpRight, Globe } from 'lucide-react';
-import {
-  DoodleStar,
-  DoodleCorner,
-  DoodleHeart,
-  DoodleCardBorder,
-  DoodleWashiTape,
-} from '../Doodles';
 import { SlowHighlight } from '../AnimatedText';
 import { Link } from 'react-router-dom';
 
@@ -42,15 +35,6 @@ export const Footer: React.FC = () => {
           proper depth, subtle shadows and rounded corners
          ========================================================================= */}
       <div className="w-full bg-[#070B16] text-white rounded-[36px] sm:rounded-[48px] md:rounded-[56px] p-6 sm:p-8 md:p-10 lg:p-12 border border-white/10 shadow-[0_25px_80px_rgba(0,0,0,0.5)] relative overflow-hidden">
-
-        {/* Hand-Drawn Container Corners */}
-        <div className="absolute top-3 left-4 z-20 opacity-70 pointer-events-none">
-          <DoodleCorner position="top-left" color="#A8FF00" className="w-8 h-8 sm:w-10 sm:h-10" />
-        </div>
-        <div className="absolute top-3 right-4 z-20 opacity-70 pointer-events-none">
-          <DoodleCorner position="top-right" color="#A8FF00" className="w-8 h-8 sm:w-10 sm:h-10" />
-        </div>
-
         {/* Subtle Tech Grid Accent */}
         <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none" />
 
@@ -58,16 +42,11 @@ export const Footer: React.FC = () => {
             LAYER 1: TOP CALLOUT CARD (Pre-footer CTA Banner inside container)
            ========================================================================= */}
         <div className="relative z-10 bg-white/[0.04] border border-white/10 rounded-[28px] sm:rounded-[36px] p-6 sm:p-8 md:p-10 mb-8 sm:mb-10 flex flex-col lg:flex-row items-center justify-between gap-6 shadow-[0_12px_40px_rgba(0,0,0,0.3)] overflow-hidden">
-          {/* Hand-Drawn Card Border */}
-          <DoodleCardBorder color="#A8FF00" />
-
           <div className="text-center lg:text-left max-w-xl relative z-10">
             <div className="flex items-center justify-center lg:justify-start space-x-2 mb-3">
               <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-neon-lime/10 border border-neon-lime/20 text-neon-lime text-xs font-bold uppercase tracking-wider">
                 <span>Let's Build Together</span>
-                <DoodleStar className="w-3 h-3 text-neon-lime" />
               </div>
-              <DoodleWashiTape text="OPEN SLOTS: 2" color="#A8FF00" className="hidden sm:inline-flex" />
             </div>
             <h3 className="font-sans font-light text-2xl sm:text-3xl md:text-4xl text-white tracking-tight leading-snug">
               Have a Project in Mind? Let's Create <SlowHighlight dark>Impact</SlowHighlight>.
@@ -112,11 +91,11 @@ export const Footer: React.FC = () => {
                 onClick={scrollToTop}
               >
                 <div className="w-10 h-10 rounded-2xl bg-white text-[#0645D8] flex items-center justify-center font-sans font-bold text-lg shadow-[0_4px_20px_rgba(0,0,0,0.3)] group-hover:scale-105 transition-transform duration-200">
-                  N
+                  G
                 </div>
                 <div className="flex flex-col">
                   <div className="flex items-center space-x-1.5">
-                    <span className="font-sans font-bold text-xl tracking-tight text-white">NEXUS</span>
+                    <span className="font-sans font-bold text-xl tracking-tight text-white">GENORA</span>
                   </div>
                   <span className="font-sans font-light text-white/70 text-[10px] tracking-wider uppercase">Digital Agency</span>
                 </div>
@@ -202,13 +181,13 @@ export const Footer: React.FC = () => {
             <ul className="space-y-3 text-zinc-400 font-sans text-xs">
               <li className="flex items-start space-x-2">
                 <Mail className="w-4 h-4 text-neon-lime shrink-0 mt-0.5" />
-                <a href="mailto:hello@nexusdigital.agency" className="hover:text-white transition-colors break-all">
-                  hello@nexusdigital.agency
+                <a href="mailto:hello@genora.agency" className="hover:text-white transition-colors break-all">
+                  hello@genora.agency
                 </a>
               </li>
               <li className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 text-neon-lime shrink-0" />
-                <span className="text-zinc-300 font-medium">+1 (800) 450-NEXUS</span>
+                <span className="text-zinc-300 font-medium">+1 (800) 450-GENORA</span>
               </li>
               <li className="pt-2">
                 <div className="text-[11px] text-zinc-400 font-normal">
@@ -225,9 +204,7 @@ export const Footer: React.FC = () => {
            ========================================================================= */}
         <div className="relative z-10 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-400 font-sans gap-4">
           <div className="flex items-center space-x-2">
-            <span>&copy; 2027 NEXUS Digital Agency. Hand-crafted with</span>
-            <DoodleHeart color="#A8FF00" className="w-4 h-4 inline-block" />
-            <span>for ambitious brands.</span>
+            <span>&copy; 2027 GENORA Digital Agency. Built with precision for ambitious brands.</span>
           </div>
 
           <div className="flex items-center space-x-4">

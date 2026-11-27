@@ -1,15 +1,6 @@
 import React, { useState } from 'react';
 import { Send, CheckCircle, Sparkles, MessageSquare, Mail, ArrowUpRight } from 'lucide-react';
 import { MaskedLineReveal, FadeUpParagraph, FadeUpText, SlowHighlight } from '../AnimatedText';
-import {
-  DoodleStar,
-  DoodleUnderline,
-  DoodleCorner,
-  DoodlePaperPlane,
-  DoodleChatBubble,
-  DoodleCardBorder,
-  DoodleWashiTape,
-} from '../Doodles';
 
 const servicesList = [
   'Web Development',
@@ -70,19 +61,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ preselectedServi
 
   return (
     <section id="contact" className="relative w-full py-10 sm:py-14 md:py-16 px-4 sm:px-6 md:px-8 text-white bg-[#062B88] select-none overflow-hidden">
-      {/* Hand-Drawn Container Corners */}
-      <div className="absolute top-3 left-4 z-20 opacity-70 pointer-events-none">
-        <DoodleCorner position="top-left" color="#A8FF00" className="w-8 h-8 sm:w-10 sm:h-10" />
-      </div>
-      <div className="absolute top-3 right-4 z-20 opacity-70 pointer-events-none">
-        <DoodleCorner position="top-right" color="#A8FF00" className="w-8 h-8 sm:w-10 sm:h-10" />
-      </div>
-
-      {/* Floating Paper Aeroplane Doodle */}
-      <div className="absolute top-6 right-10 hidden md:block pointer-events-none opacity-85">
-        <DoodlePaperPlane color="#A8FF00" className="w-24 h-16" />
-      </div>
-
       {/* Subtle Tech Grid Accent */}
       <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none" />
 
@@ -94,9 +72,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ preselectedServi
             <div className="flex items-center space-x-3 mb-2.5">
               <FadeUpText delay={0.05} className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-neon-lime font-bold text-xs tracking-wider uppercase">
                 <span>Let's Collaborate</span>
-                <DoodleStar className="w-3 h-3 text-neon-lime" />
               </FadeUpText>
-              <DoodleWashiTape text="PROJECT ENQUIRY" color="#A8FF00" className="hidden sm:inline-flex" />
             </div>
             
             <div className="flex items-center space-x-3">
@@ -105,9 +81,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ preselectedServi
                 className="font-sans text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-white leading-[1.12]"
                 delay={0.1}
               />
-              <div className="hidden lg:block shrink-0 -mt-4">
-                <DoodleChatBubble color="#A8FF00" className="w-9 h-8" />
-              </div>
             </div>
           </div>
           
@@ -118,17 +91,13 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ preselectedServi
             >
               Let's turn your ideas into something extraordinary. Tell us about your goals and our partners will reply with a detailed project proposal <SlowHighlight dark>within 2 hours</SlowHighlight>.
             </FadeUpParagraph>
-            <DoodleUnderline className="w-48 h-3 text-neon-lime mt-2" />
           </div>
         </div>
 
         {/* =========================================================================
-            PARENT CONTAINER WITH TIGHT BALANCED SPACING & SKETCH BORDER
+            PARENT CONTAINER WITH TIGHT BALANCED SPACING
            ========================================================================= */}
         <div className="relative bg-[#FAFAFB] rounded-[32px] sm:rounded-[40px] p-6 sm:p-8 md:p-10 border border-black/[0.04] shadow-card-soft text-black overflow-hidden">
-          {/* Hand-Drawn Sketch Border Overlay */}
-          <DoodleCardBorder color="#080808" />
-
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start relative z-10">
 
             {/* Left Column: Direct Channels & Guarantee */}
@@ -153,7 +122,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ preselectedServi
 
               {/* Card 2: Direct WhatsApp Chat */}
               <a
-                href="https://wa.me/15551234567?text=Hello%20Nexus%20Studio%2C%20I%20have%20a%20project%20in%20mind!"
+                href="https://wa.me/15551234567?text=Hello%20Genora%20Studio%2C%20I%20have%20a%20project%20in%20mind!"
                 target="_blank"
                 rel="noreferrer"
                 className="bg-white rounded-[28px] p-5 sm:p-6 border border-emerald-200 shadow-card-soft hover:shadow-card-hover transition-all duration-300 group flex items-center justify-between"
@@ -174,7 +143,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ preselectedServi
 
               {/* Card 3: Direct Email */}
               <a
-                href="mailto:hello@nexusdigital.agency"
+                href="mailto:hello@genora.agency"
                 className="bg-white rounded-[28px] p-5 sm:p-6 border border-black/[0.035] shadow-card-soft hover:shadow-card-hover transition-all duration-300 group flex items-center justify-between"
               >
                 <div className="flex items-center space-x-3.5">
@@ -183,7 +152,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ preselectedServi
                   </div>
                   <div>
                     <div className="text-[10.5px] font-bold uppercase tracking-wider text-zinc-400 font-sans">Email Directly</div>
-                    <div className="font-sans font-bold text-xs sm:text-sm text-black break-all">hello@nexusdigital.agency</div>
+                    <div className="font-sans font-bold text-xs sm:text-sm text-black break-all">hello@genora.agency</div>
                   </div>
                 </div>
                 <div className="w-8 h-8 rounded-full bg-zinc-100 group-hover:bg-royal-blue text-zinc-600 group-hover:text-white flex items-center justify-center transition-colors">

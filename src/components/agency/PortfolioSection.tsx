@@ -4,13 +4,6 @@ import { ArrowUpRight, Sparkles, CheckCircle2 } from 'lucide-react';
 import { portfolioData } from '../../data/agencyData';
 import type { ProjectItem } from '../../data/agencyData';
 import { MaskedLineReveal, FadeUpParagraph, FadeUpText, SlowHighlight } from '../AnimatedText';
-import {
-  DoodleStar,
-  DoodleUnderline,
-  DoodleCorner,
-  DoodleCamera,
-  DoodleWashiTape,
-} from '../Doodles';
 
 export const PortfolioSection: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>('All');
@@ -34,14 +27,6 @@ export const PortfolioSection: React.FC = () => {
 
   return (
     <section id="work" className="relative w-full py-8 sm:py-10 md:py-12 px-4 sm:px-8 text-white bg-[#0A1022] select-none overflow-hidden">
-      {/* Hand-Drawn Container Corners */}
-      <div className="absolute top-3 left-4 z-20 opacity-70 pointer-events-none">
-        <DoodleCorner position="top-left" color="#A8FF00" className="w-8 h-8 sm:w-10 sm:h-10" />
-      </div>
-      <div className="absolute top-3 right-4 z-20 opacity-70 pointer-events-none">
-        <DoodleCorner position="top-right" color="#A8FF00" className="w-8 h-8 sm:w-10 sm:h-10" />
-      </div>
-      
       {/* Subtle Tech Grid inside Midnight Container */}
       <div className="absolute inset-0 bg-grid-pattern opacity-15 pointer-events-none" />
 
@@ -53,9 +38,7 @@ export const PortfolioSection: React.FC = () => {
             <div className="flex items-center space-x-3 mb-3">
               <FadeUpText delay={0.05} className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-neon-lime/10 border border-neon-lime/20 text-neon-lime font-bold text-xs tracking-wider uppercase">
                 <span>Selected Portfolio</span>
-                <DoodleStar className="w-3.5 h-3.5 text-neon-lime" />
               </FadeUpText>
-              <DoodleWashiTape text="FEATURED RELEASES" color="#A8FF00" className="hidden sm:inline-flex" />
             </div>
             
             <div className="flex items-center space-x-3">
@@ -64,9 +47,6 @@ export const PortfolioSection: React.FC = () => {
                 className="font-sans text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-white leading-[1.12]"
                 delay={0.1}
               />
-              <div className="hidden lg:block shrink-0 -mt-4">
-                <DoodleCamera color="#A8FF00" className="w-9 h-8 opacity-80" />
-              </div>
             </div>
           </div>
           
@@ -77,7 +57,6 @@ export const PortfolioSection: React.FC = () => {
             >
               A curated showcase of <SlowHighlight dark>high-performance websites</SlowHighlight>, <SlowHighlight dark>scalable software</SlowHighlight>, brand systems, and <SlowHighlight dark>high-impact digital campaigns</SlowHighlight>.
             </FadeUpParagraph>
-            <DoodleUnderline className="w-48 h-3 text-neon-lime mt-2" />
           </div>
         </div>
 

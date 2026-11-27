@@ -15,14 +15,6 @@ import {
 import { servicesData } from '../../data/agencyData';
 import type { ServiceCategory } from '../../data/agencyData';
 import { MaskedLineReveal, FadeUpParagraph, FadeUpText, SlowHighlight } from '../AnimatedText';
-import {
-  SmallNeonSticker,
-  ConnectorArrow1,
-  DoodleCorner,
-  DoodleWashiTape,
-  DoodleCardBorder,
-  DoodleSquiggle,
-} from '../Doodles';
 
 interface ServicesSectionProps {
   onSelectService: (serviceName: string) => void;
@@ -57,14 +49,6 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
 
   return (
     <section id="services" className="relative w-full py-8 sm:py-10 md:py-12 px-4 sm:px-8 text-black bg-[#DCF4A2] overflow-hidden">
-      {/* Hand-Drawn Container Corners */}
-      <div className="absolute top-3 left-4 z-10 opacity-70 pointer-events-none">
-        <DoodleCorner position="top-left" color="#080808" className="w-8 h-8 sm:w-10 sm:h-10" />
-      </div>
-      <div className="absolute top-3 right-4 z-10 opacity-70 pointer-events-none">
-        <DoodleCorner position="top-right" color="#080808" className="w-8 h-8 sm:w-10 sm:h-10" />
-      </div>
-
       <div className="max-w-6xl mx-auto">
 
         {/* Section Header */}
@@ -74,7 +58,6 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
               <FadeUpText delay={0.05} className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-royal-blue/10 text-royal-blue font-bold text-xs tracking-wider uppercase">
                 <span>Full-Spectrum Solutions</span>
               </FadeUpText>
-              <DoodleWashiTape text="DISCIPLINES // 01-08" color="#FFFFFF" className="hidden sm:inline-flex" />
             </div>
             
             <MaskedLineReveal
@@ -91,9 +74,6 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
             >
               Eight cohesive disciplines covering your entire digital ecosystem — from <SlowHighlight>high-performance engineering</SlowHighlight> and enterprise ERP systems to AI automation, cinematic video and <SlowHighlight>data-driven marketing</SlowHighlight>.
             </FadeUpParagraph>
-            <div className="mt-2">
-              <DoodleSquiggle color="#080808" className="w-24 h-4 opacity-60" />
-            </div>
           </div>
         </div>
 
@@ -121,8 +101,6 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                   onClick={() => onSelectService(service.title)}
                   className="relative h-full bg-white rounded-[32px] p-6 sm:p-7 md:p-8 flex flex-col justify-between transition-shadow duration-500 shadow-card-soft hover:shadow-card-hover border border-black/[0.04] cursor-pointer overflow-hidden"
                 >
-                  {/* Subtle hand-drawn card border overlay */}
-                  <DoodleCardBorder color="#080808" />
                   <div>
                     {/* Top Header: Icon + Popular Pill Badge */}
                     <div className="flex items-center justify-between mb-5">
@@ -206,9 +184,6 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                             <span>MEDIA</span>
                           </div>
                         </div>
-                        <div className="absolute -bottom-5 right-1">
-                          <SmallNeonSticker />
-                        </div>
                       </div>
                     )}
 
@@ -229,13 +204,6 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                     )}
                   </div>
                 </motion.div>
-
-                {/* Desktop connector arrows: between col 1→2 and col 2→3 in each row */}
-                {(idx % 3 === 0 || idx % 3 === 1) && (
-                  <div className="hidden lg:block absolute -right-5 top-1/2 transform -translate-y-1/2 z-20 pointer-events-none opacity-60">
-                    <ConnectorArrow1 />
-                  </div>
-                )}
               </div>
             );
           })}
