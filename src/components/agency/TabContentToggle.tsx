@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import { SplitText } from 'gsap/SplitText';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Users, Rocket, Palette, Terminal, CheckCircle2, ArrowUpRight, Zap, ShieldCheck } from 'lucide-react';
+import { MaskedLineReveal, FadeUpParagraph, FadeUpText } from '../AnimatedText';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(SplitText);
@@ -309,18 +310,32 @@ export const TabContentToggle: React.FC = () => {
 
   return (
     <section className="relative w-full py-8 sm:py-12 md:py-16 px-4 sm:px-8 bg-transparent overflow-hidden">
-      <div ref={containerRef} className="tabs-demo relative z-10 max-w-5xl mx-auto">
-        {/* Section Header Label */}
-        <div className="text-center mb-8">
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#050761]/10 text-[#050761] font-bold text-xs tracking-wider uppercase mb-3">
-            <span>Collaboration Framework</span>
+      <div ref={containerRef} className="tabs-demo relative z-10 max-w-6xl mx-auto">
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 pb-4 border-b border-[#050761]/[0.12]">
+          <div className="max-w-2xl">
+            <div className="flex items-center space-x-3 mb-3">
+              <FadeUpText delay={0.05} className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#050761]/10 text-[#050761] font-bold text-xs tracking-wider uppercase">
+                <Users className="w-3.5 h-3.5" />
+                <span>Collaboration Framework</span>
+              </FadeUpText>
+            </div>
+
+            <MaskedLineReveal
+              lines={["TAILORED COLLABORATION", "FOR HIGH-VELOCITY TEAMS."]}
+              className="font-sans text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#050761] leading-[1.12]"
+              delay={0.1}
+            />
           </div>
-          <h2 className="font-sans text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[#050761]">
-            Tailored Collaboration for High-Velocity Teams
-          </h2>
-          <p className="text-[#050761]/85 text-xs sm:text-sm font-sans max-w-xl mx-auto mt-2 font-medium">
-            Whether you are an established engineering organization, a venture-backed founder, or a creative agency team, we adapt to your operational tempo.
-          </p>
+
+          <div className="mt-4 md:mt-0 max-w-md">
+            <FadeUpParagraph
+              className="text-sm sm:text-base text-[#050761]/85 font-medium font-sans leading-relaxed"
+              delay={0.25}
+            >
+              Whether you are an established engineering organization, a venture-backed founder, or a creative agency team, we adapt to your operational tempo.
+            </FadeUpParagraph>
+          </div>
         </div>
 
         {/* Tab Buttons */}

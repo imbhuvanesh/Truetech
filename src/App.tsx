@@ -36,7 +36,7 @@ export function App() {
         <Navbar />
 
         {/* Dedicated Page Routes */}
-        <main className="w-full flex flex-col items-center flex-1">
+        <main className="w-full flex flex-col items-center flex-1 px-3 sm:px-4 md:px-6 lg:px-8">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />

@@ -56,6 +56,7 @@ export const HomePage: React.FC = () => {
           STACKED CONTAINER 2: COLLABORATION FRAMEWORK (LIME BLUE #40FFA7)
          ========================================================================= */}
       <ScrollMaskReveal
+        id="framework"
         threshold={0.15}
         duration={1.05}
         className="w-full max-w-[1260px] bg-[#40FFA7] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(64,255,167,0.3)] border border-[#050761]/[0.12] my-3 sm:my-4 overflow-hidden"
@@ -102,6 +103,7 @@ export const HomePage: React.FC = () => {
           STACKED CONTAINER 9: 4-STAGE AGILE PROCESS (LIME BLUE #40FFA7)
          ========================================================================= */}
       <ScrollMaskReveal
+        id="process"
         threshold={0.15}
         duration={1.05}
         className="w-full max-w-[1260px] bg-[#40FFA7] rounded-[36px] sm:rounded-[48px] md:rounded-[56px] shadow-[0_20px_60px_-15px_rgba(64,255,167,0.3)] border border-[#050761]/[0.12] my-3 sm:my-4 overflow-hidden"

@@ -39,16 +39,19 @@ export const Navbar: React.FC = () => {
   useEffect(() => {
     if (location.pathname !== '/') return;
 
-    const sectionIds = ['home', 'services', 'products', 'contact'];
+    const sectionIds = ['home', 'framework', 'services', 'products', 'why-us', 'process', 'contact'];
     const sectionMap: Record<string, string> = {
       home: 'Home',
+      framework: 'Framework',
       services: 'Services',
       products: 'Products',
+      'why-us': 'Why Us',
+      process: 'Process',
       contact: 'Contact',
     };
 
     const handleScroll = () => {
-      if (window.scrollY < 220) {
+      if (window.scrollY < 180) {
         setScrollSection('Home');
         return;
       }
@@ -60,8 +63,8 @@ export const Navbar: React.FC = () => {
         const el = document.getElementById(id);
         if (el) {
           const rect = el.getBoundingClientRect();
-          if (rect.top <= viewportTrigger && rect.bottom > 120) {
-            current = sectionMap[id];
+          if (rect.top <= viewportTrigger && rect.bottom > 100) {
+            current = sectionMap[id] || 'Home';
           }
         }
       }
@@ -150,13 +153,13 @@ export const Navbar: React.FC = () => {
       <motion.div
         layout
         transition={{
-          duration: shouldReduceMotion ? 0.05 : 0.35,
+          duration: shouldReduceMotion ? 0.05 : 0.32,
           ease: [0.16, 1, 0.3, 1] as const,
         }}
-        className={`relative flex items-center bg-[#05472A]/90 backdrop-blur-xl border border-white/[0.15] shadow-[0_10px_35px_-5px_rgba(5,71,42,0.3)] rounded-full transition-shadow duration-300 ${
+        className={`relative flex items-center bg-[#05472A]/90 backdrop-blur-xl border border-white/[0.15] shadow-[0_12px_36px_-6px_rgba(5,71,42,0.35)] transition-shadow duration-300 ${
           expanded
-            ? 'p-1.5 sm:p-2 overflow-x-auto no-scrollbar'
-            : 'p-1.5 overflow-hidden'
+            ? 'p-2 sm:p-2 rounded-3xl sm:rounded-full w-[calc(100vw-2.5rem)] sm:w-auto max-w-sm sm:max-w-none'
+            : 'p-1.5 rounded-full overflow-hidden'
         }`}
       >
         <AnimatePresence mode="wait" initial={false}>
@@ -170,7 +173,7 @@ export const Navbar: React.FC = () => {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.2 }}
-              className="flex items-center gap-1.5 sm:gap-2"
+              className="flex items-center gap-1.5 sm:gap-2 leading-none"
             >
               {/* Menu Toggle Pill */}
               <button
@@ -194,7 +197,7 @@ export const Navbar: React.FC = () => {
                         duration: shouldReduceMotion ? 0.05 : 0.22,
                         ease: [0.16, 1, 0.3, 1] as const,
                       }}
-                      className="block text-xs sm:text-[13px] font-sans font-medium text-white/95 tracking-wide whitespace-nowrap"
+                      className="block text-xs sm:text-[13px] font-sans font-semibold text-white tracking-wide whitespace-nowrap"
                     >
                       {activeSection}
                     </motion.span>
@@ -202,11 +205,11 @@ export const Navbar: React.FC = () => {
                 </div>
 
                 {/* Subtle Expanding Hint Chevron */}
-                <ChevronDown className="w-3.5 h-3.5 text-white/40 group-hover:text-white transition-colors duration-200 shrink-0" />
+                <ChevronDown className="w-3.5 h-3.5 text-white/50 group-hover:text-white transition-colors duration-200 shrink-0" />
               </button>
 
               {/* Minimal Divider */}
-              <div className="w-[1px] h-4 bg-white/15 shrink-0" />
+              <div className="w-[1px] h-4 bg-white/20 shrink-0" />
 
               {/* Start Project CTA Button */}
               <Link
@@ -219,19 +222,40 @@ export const Navbar: React.FC = () => {
             </motion.div>
           ) : (
             /* =========================================================================
-               EXPANDED NORDIC PILL NAVBAR WITH START PROJECT BUTTON
+               EXPANDED MENU: RESPONSIVE DESKTOP PILL & MOBILE FLOATING CARD
                ========================================================================= */
             <motion.div
               key="expanded-menu"
-              className="flex items-center gap-1 sm:gap-1.5 px-1 py-0.5"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.2 }}
+              className="w-full flex flex-col sm:flex-row items-center gap-2 sm:gap-1.5 px-2 py-1.5 sm:px-1 sm:py-0.5"
             >
-              {/* Staggered Navigation Links */}
+              {/* Mobile Top Bar with Status and Close Button */}
+              <div className="flex sm:hidden items-center justify-between w-full pb-2 mb-1 border-b border-white/10">
+                <div className="flex items-center gap-2 px-1">
+                  <span className="w-2 h-2 rounded-full bg-[#DFEF87] shadow-[0_0_8px_rgba(223,239,135,0.8)]" />
+                  <span className="text-xs font-sans font-semibold text-white/90 uppercase tracking-wider">
+                    Navigation
+                  </span>
+                </div>
+                <button
+                  onClick={() => setExpanded(false)}
+                  aria-label="Close navigation menu"
+                  className="w-7 h-7 rounded-full flex items-center justify-center text-white/70 hover:text-white hover:bg-white/10 active:scale-90 transition-all cursor-pointer"
+                >
+                  <X className="w-4 h-4 stroke-[2]" />
+                </button>
+              </div>
+
+              {/* Navigation Links (Grid on mobile, flex row on sm+) */}
               <motion.ul
                 variants={listVariants}
                 initial="hidden"
                 animate="visible"
                 exit="exit"
-                className="flex items-center gap-1 sm:gap-1.5 list-none m-0 p-0"
+                className="grid grid-cols-2 sm:flex sm:items-center gap-1 sm:gap-1.5 list-none m-0 p-0 w-full sm:w-auto"
               >
                 {NAV_ITEMS.map((item) => {
                   const isCurrentActive = activeSection === item.label;
@@ -240,7 +264,7 @@ export const Navbar: React.FC = () => {
                       <Link
                         to={item.path}
                         onClick={() => handleLinkClick(item.label)}
-                        className={`block px-3 sm:px-3.5 py-1.5 rounded-full text-xs sm:text-[13px] font-sans tracking-wide transition-all duration-200 whitespace-nowrap focus:outline-none ${
+                        className={`block text-center sm:text-left px-3 sm:px-3.5 py-2 sm:py-1.5 rounded-xl sm:rounded-full text-xs sm:text-[13px] font-sans tracking-wide transition-all duration-200 whitespace-nowrap focus:outline-none ${
                           isCurrentActive
                             ? 'bg-white/[0.18] text-white font-semibold shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]'
                             : 'text-white/75 hover:text-white hover:bg-white/[0.08] font-normal'
@@ -253,27 +277,25 @@ export const Navbar: React.FC = () => {
                 })}
               </motion.ul>
 
-              {/* Minimal Divider */}
-              <div className="w-[1px] h-4 bg-white/10 shrink-0 mx-0.5" />
+              {/* Minimal Divider for Desktop */}
+              <div className="hidden sm:block w-[1px] h-4 bg-white/15 shrink-0 mx-0.5" />
 
-              {/* Start Project CTA Button */}
+              {/* Start Project CTA Button (Full width on mobile, auto on sm+) */}
               <Link
                 to="/contact"
                 onClick={() => setExpanded(false)}
-                className="px-3.5 sm:px-4 py-1.5 rounded-full bg-[#DFEF87] hover:bg-white text-[#05472A] font-sans font-bold text-xs tracking-tight flex items-center gap-1.5 shadow-[0_0_12px_rgba(223,239,135,0.35)] hover:shadow-[0_0_18px_rgba(255,255,255,0.4)] transition-all duration-200 active:scale-95 shrink-0 focus:outline-none"
+                className="w-full sm:w-auto text-center justify-center px-4 py-2 sm:py-1.5 rounded-xl sm:rounded-full bg-[#DFEF87] hover:bg-white text-[#05472A] font-sans font-bold text-xs tracking-tight flex items-center gap-1.5 shadow-[0_0_12px_rgba(223,239,135,0.35)] hover:shadow-[0_0_18px_rgba(255,255,255,0.4)] transition-all duration-200 active:scale-95 shrink-0 focus:outline-none mt-1 sm:mt-0"
               >
                 <span>Start Project</span>
                 <ArrowUpRight className="w-3.5 h-3.5 stroke-[2.5]" />
               </Link>
 
-              {/* Minimal Divider */}
-              <div className="w-[1px] h-4 bg-white/10 shrink-0 mx-0.5" />
-
-              {/* Close / Collapse Button */}
+              {/* Close Button for Desktop */}
+              <div className="hidden sm:block w-[1px] h-4 bg-white/15 shrink-0 mx-0.5" />
               <button
                 onClick={() => setExpanded(false)}
                 aria-label="Close navigation menu"
-                className="w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-white/50 hover:text-white hover:bg-white/[0.08] active:scale-90 transition-all duration-150 cursor-pointer shrink-0 focus:outline-none"
+                className="hidden sm:flex w-7 h-7 sm:w-8 sm:h-8 rounded-full items-center justify-center text-white/50 hover:text-white hover:bg-white/[0.08] active:scale-90 transition-all duration-150 cursor-pointer shrink-0 focus:outline-none"
               >
                 <X className="w-3.5 h-3.5 stroke-[2]" />
               </button>
