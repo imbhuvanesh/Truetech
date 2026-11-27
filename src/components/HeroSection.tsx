@@ -2,7 +2,6 @@ import React from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import {
   HeroHashtag,
-  GetStartedBadge,
   DoodleConnectorBracket,
   DoodleStar,
   DoodleSparkle,
@@ -51,36 +50,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onGetStarted, onExplor
           </div>
         </div>
 
-        {/* Circular Neon Rotating Badge - Safely contained inside container bounds */}
-        <motion.div
-          initial={{
-            opacity: 0,
-            scale: shouldReduceMotion ? 1 : 0.6,
-            rotate: shouldReduceMotion ? 0 : -20,
-            y: shouldReduceMotion ? 0 : 20,
-          }}
-          animate={{
-            opacity: 1,
-            scale: 1,
-            rotate: 0,
-            y: 0,
-          }}
-          transition={{
-            duration: shouldReduceMotion ? 0.01 : 0.85,
-            delay: shouldReduceMotion ? 0 : 0.4,
-            ease: [0.16, 1, 0.3, 1],
-          }}
-          className="absolute z-20 
-            bottom-2 right-2 
-            sm:bottom-3 sm:right-4 
-            md:bottom-4 md:right-6 
-            lg:bottom-6 lg:right-8"
-        >
-          <GetStartedBadge 
-            onClick={onGetStarted}
-            className="w-18 h-18 sm:w-22 sm:h-22 md:w-28 md:h-28 lg:w-32 lg:h-32 cursor-pointer" 
-          />
-        </motion.div>
 
         {/* =========================================================================
             THE SINGLE BIG "WE" TYPOGRAPHY LOCKUP
